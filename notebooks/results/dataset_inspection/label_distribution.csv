@@ -1,0 +1,17 @@
+,count
+Benign,13484708
+DDOS attack-HOIC,686012
+DDoS attacks-LOIC-HTTP,576191
+DoS attacks-Hulk,461912
+Bot,286191
+FTP-BruteForce,193360
+SSH-Bruteforce,187589
+Infilteration,161934
+DoS attacks-SlowHTTPTest,139890
+DoS attacks-GoldenEye,41508
+DoS attacks-Slowloris,10990
+DDOS attack-LOIC-UDP,1730
+Brute Force -Web,611
+Brute Force -XSS,230
+SQL Injection,87
+Label,59

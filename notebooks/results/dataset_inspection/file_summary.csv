@@ -1,0 +1,11 @@
+file,file_size_mb,rows,columns,nan_count,inf_count,duplicate_count,memory_mb
+Friday-02-03-2018_TrafficForML_CICFlowMeter.csv,336.04,1048575,80,2558,5542,1501,664.18
+Friday-16-02-2018_TrafficForML_CICFlowMeter.csv,318.26,1048575,80,0,0,136696,692.81
+Friday-23-02-2018_TrafficForML_CICFlowMeter.csv,365.11,1048575,80,3754,7662,769,665.01
+Thuesday-20-02-2018_TrafficForML_CICFlowMeter.csv,3867.08,7948748,84,36767,82139,2,5755.24
+Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv,102.85,331125,80,1834,2388,91,238.33
+Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv,358.53,1048575,80,4921,11133,1217,665.75
+Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv,364.91,1048575,80,3569,7651,872,665.0
+Wednesday-14-02-2018_TrafficForML_CICFlowMeter.csv,341.63,1048575,80,2277,5371,224603,667.91
+Wednesday-21-02-2018_TrafficForML_CICFlowMeter.csv,313.66,1048575,80,0,0,17523,671.57
+Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv,199.56,613104,80,4041,0,348,527.05

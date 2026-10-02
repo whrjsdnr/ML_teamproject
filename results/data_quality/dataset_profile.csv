@@ -1,0 +1,2 @@
+dataset,rows,columns,feature_columns,file_size_gb,estimated_pandas_memory_gb,total_nan,total_inf,duplicate_rows,duplicate_ratio,class_count,sample_size_for_distribution
+CSE-CIC-IDS2018,16232943,81,79,7.029,10.937,59721,131799,422815,0.026046724860673755,15,300000
