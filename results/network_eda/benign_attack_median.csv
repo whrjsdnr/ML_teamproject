@@ -1,0 +1,55 @@
+,Attack,Benign
+Flow Duration,12183.5,43042.5
+Tot Fwd Pkts,2.0,2.0
+Tot Bwd Pkts,1.0,1.0
+TotLen Fwd Pkts,0.0,51.0
+TotLen Bwd Pkts,0.0,120.0
+Flow Byts/s,0.0,1076.6813732655507
+Flow Pkts/s,281.57118945,81.75612148959654
+Fwd Pkts/s,204.50594795,39.7808077847
+Bwd Pkts/s,2.3633126454999998,3.9747498365
+Down/Up Ratio,0.0,0.0
+Fwd Pkt Len Max,0.0,44.0
+Fwd Pkt Len Min,0.0,0.0
+Fwd Pkt Len Mean,0.0,40.0
+Fwd Pkt Len Std,0.0,0.0
+Bwd Pkt Len Max,0.0,104.0
+Bwd Pkt Len Min,0.0,0.0
+Bwd Pkt Len Mean,0.0,79.0
+Bwd Pkt Len Std,0.0,0.0
+Pkt Len Min,0.0,0.0
+Pkt Len Max,0.0,106.0
+Pkt Len Mean,0.0,56.3333333333
+Pkt Len Std,0.0,36.95041722813605
+Pkt Len Var,0.0,1365.3333333333333
+Pkt Size Avg,0.0,78.5
+Flow IAT Mean,6250.0,18381.33333333335
+Flow IAT Std,0.0,117.18589218909858
+Flow IAT Max,11409.0,31341.5
+Flow IAT Min,22.0,54.0
+Fwd IAT Tot,1724.0,24106.5
+Fwd IAT Mean,1361.0,16829.0
+Fwd IAT Std,0.0,0.0
+Fwd IAT Max,1591.5,22654.0
+Fwd IAT Min,329.0,29.0
+Bwd IAT Tot,0.0,0.0
+Bwd IAT Mean,0.0,0.0
+Bwd IAT Std,0.0,0.0
+Bwd IAT Max,0.0,0.0
+Bwd IAT Min,0.0,0.0
+FIN Flag Cnt,0.0,0.0
+SYN Flag Cnt,0.0,0.0
+RST Flag Cnt,0.0,0.0
+PSH Flag Cnt,0.0,0.0
+ACK Flag Cnt,1.0,0.0
+URG Flag Cnt,0.0,0.0
+CWE Flag Count,0.0,0.0
+ECE Flag Cnt,0.0,0.0
+Active Mean,0.0,0.0
+Active Std,0.0,0.0
+Active Max,0.0,0.0
+Active Min,0.0,0.0
+Idle Mean,0.0,0.0
+Idle Std,0.0,0.0
+Idle Max,0.0,0.0
+Idle Min,0.0,0.0

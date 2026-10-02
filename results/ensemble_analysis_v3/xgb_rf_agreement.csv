@@ -1,0 +1,5 @@
+category,count,ratio
+Both correct,132420,0.9319970158077729
+XGBoost only correct,1580,0.011120338959192578
+RandomForest only correct,1562,0.010993651553328359
+Both wrong,6520,0.045888993679706086

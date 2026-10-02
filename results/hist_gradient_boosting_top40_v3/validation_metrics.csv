@@ -1,0 +1,2 @@
+model,accuracy,macro_precision,macro_recall,macro_f1,weighted_f1
+HistGradientBoosting-Top40,0.9412944637603637,0.830949365313151,0.8679120202223058,0.8445669590049079,0.9412312782309119

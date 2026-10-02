@@ -1,0 +1,29 @@
+source_file,Label,label_id,count
+Friday-02-03-2018_TrafficForML_CICFlowMeter.csv,Benign,0,762384
+Friday-02-03-2018_TrafficForML_CICFlowMeter.csv,Bot,1,286191
+Friday-16-02-2018_TrafficForML_CICFlowMeter.csv,DoS attacks-Hulk,8,461912
+Friday-16-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,446772
+Friday-16-02-2018_TrafficForML_CICFlowMeter.csv,DoS attacks-SlowHTTPTest,9,139890
+Friday-23-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,1048009
+Friday-23-02-2018_TrafficForML_CICFlowMeter.csv,Brute Force -Web,2,362
+Friday-23-02-2018_TrafficForML_CICFlowMeter.csv,Brute Force -XSS,3,151
+Friday-23-02-2018_TrafficForML_CICFlowMeter.csv,SQL Injection,13,53
+Thuesday-20-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,7372557
+Thuesday-20-02-2018_TrafficForML_CICFlowMeter.csv,DDoS attacks-LOIC-HTTP,6,576191
+Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv,Benign,0,238037
+Thursday-01-03-2018_TrafficForML_CICFlowMeter.csv,Infilteration,12,93063
+Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,996077
+Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv,DoS attacks-GoldenEye,7,41508
+Thursday-15-02-2018_TrafficForML_CICFlowMeter.csv,DoS attacks-Slowloris,10,10990
+Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,1048213
+Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv,Brute Force -Web,2,249
+Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv,Brute Force -XSS,3,79
+Thursday-22-02-2018_TrafficForML_CICFlowMeter.csv,SQL Injection,13,34
+Wednesday-14-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,667626
+Wednesday-14-02-2018_TrafficForML_CICFlowMeter.csv,FTP-BruteForce,11,193360
+Wednesday-14-02-2018_TrafficForML_CICFlowMeter.csv,SSH-Bruteforce,14,187589
+Wednesday-21-02-2018_TrafficForML_CICFlowMeter.csv,DDOS attack-HOIC,4,686012
+Wednesday-21-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,360833
+Wednesday-21-02-2018_TrafficForML_CICFlowMeter.csv,DDOS attack-LOIC-UDP,5,1730
+Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv,Benign,0,544200
+Wednesday-28-02-2018_TrafficForML_CICFlowMeter.csv,Infilteration,12,68871

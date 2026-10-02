@@ -1,0 +1,16 @@
+class_id,class,support,both_correct,xgb_only_correct,lgbm_only_correct,both_wrong
+0,Benign,20000,14850,547,714,3889
+1,Bot,20000,19999,0,0,1
+2,Brute Force -Web,88,77,1,2,8
+3,Brute Force -XSS,27,24,1,0,2
+4,DDOS attack-HOIC,20000,20000,0,0,0
+5,DDOS attack-LOIC-UDP,268,249,8,9,2
+6,DDoS attacks-LOIC-HTTP,20000,19986,4,2,8
+7,DoS attacks-GoldenEye,6141,6140,0,0,1
+8,DoS attacks-Hulk,20000,20000,0,0,0
+9,DoS attacks-SlowHTTPTest,6,3,0,1,2
+10,DoS attacks-Slowloris,1474,1472,0,0,2
+11,FTP-BruteForce,6,0,1,2,3
+12,Infilteration,20000,16039,530,742,2689
+13,SQL Injection,13,12,0,0,1
+14,SSH-Bruteforce,14059,14057,0,0,2

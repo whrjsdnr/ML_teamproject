@@ -1,0 +1,5 @@
+category,count,ratio
+Both correct,132908,0.9354316521445363
+XGBoost only correct,1092,0.007685702622429302
+LightGBM only correct,1472,0.010360214524007264
+Both wrong,6610,0.04652243070902718

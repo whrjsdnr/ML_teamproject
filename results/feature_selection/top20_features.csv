@@ -1,0 +1,21 @@
+rank,feature
+1,Fwd Act Data Pkts
+2,Fwd Seg Size Min
+3,Fwd Header Len
+4,ECE Flag Cnt
+5,Init Fwd Win Byts
+6,URG Flag Cnt
+7,RST Flag Cnt
+8,Dst Port
+9,Fwd PSH Flags
+10,Fwd Pkts/s
+11,Fwd Pkt Len Mean
+12,Pkt Len Max
+13,SYN Flag Cnt
+14,Fwd Seg Size Avg
+15,Bwd Header Len
+16,Init Bwd Win Byts
+17,Fwd IAT Std
+18,Fwd IAT Max
+19,Pkt Size Avg
+20,Fwd IAT Tot

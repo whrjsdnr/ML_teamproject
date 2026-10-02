@@ -1,0 +1,16 @@
+Label,FIN Flag Cnt,SYN Flag Cnt,RST Flag Cnt,PSH Flag Cnt,ACK Flag Cnt,URG Flag Cnt,CWE Flag Count,ECE Flag Cnt
+Benign,0.0056,0.0529,0.1566,0.3712,0.2938,0.0424,0.0,0.1566
+Bot,0.0,0.0,0.5026,0.5026,0.4967,0.0,0.0,0.5026
+Brute Force -Web,0.0,0.0,0.5,0.5,0.3125,0.0,0.0,0.5
+Brute Force -XSS,0.0,0.0,0.6,0.6,0.4,0.0,0.0,0.6
+DDOS attack-HOIC,0.0,0.0,0.4383,0.4383,0.5617,0.0,0.0,0.4383
+DDOS attack-LOIC-UDP,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+DDoS attacks-LOIC-HTTP,0.0,0.0,0.5019,0.5019,0.4971,0.0,0.0,0.5019
+DoS attacks-GoldenEye,0.0,0.0,0.0,0.654,0.346,0.0,0.0,0.0
+DoS attacks-Hulk,0.0028,0.0,0.0,0.0322,0.965,0.021,0.0,0.0
+DoS attacks-SlowHTTPTest,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+DoS attacks-Slowloris,0.0049,0.3252,0.0,0.665,0.3301,0.0049,0.0,0.0
+FTP-BruteForce,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+Infilteration,0.0033,0.0576,0.1896,0.5427,0.1646,0.0421,0.0067,0.1896
+SQL Injection,0.0,0.0,0.3333,0.3333,0.6667,0.0,0.0,0.3333
+SSH-Bruteforce,0.0,0.0,0.0,0.5118,0.4882,0.4882,0.0,0.0

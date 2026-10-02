@@ -23,3 +23,12 @@ data/processed/
 .DS_Store
 .vscode/
 .idea/
+
+# Large ML datasets
+data/
+
+# Trained model artifacts
+models/
+
+# Large diagnostic artifacts
+results/split_diagnosis/split_v2_problem_pattern_frequency.csv
