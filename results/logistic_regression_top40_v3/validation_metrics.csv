@@ -1,0 +1,2 @@
+model,accuracy,macro_precision,macro_recall,macro_f1,weighted_f1,validation_samples,inference_seconds,train_seconds
+LogisticRegression-Top40,0.831273489956504,0.5761627189454865,0.7690180437950958,0.5883580191203147,0.8347374708569343,142082,0.08190369899966754,437.3906628129989
