@@ -1,0 +1,900 @@
+model,scope,metric,value,source,status
+LightGBM-Top40,V3 sampled validation,accuracy,0.9457918666685436,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LightGBM-Top40,V3 sampled validation,macro_precision,0.8711108181347125,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LightGBM-Top40,V3 sampled validation,macro_recall,0.8858211801464819,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LightGBM-Top40,V3 sampled validation,macro_f1,0.8765633785924632,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LightGBM-Top40,V3 sampled validation,weighted_f1,0.945745162967593,results/model_comparison_v3/model_diversity_comparison.csv,verified
+XGBoost-Top40,V3 sampled validation,accuracy,0.9431173547669656,results/model_comparison_v3/model_diversity_comparison.csv,verified
+XGBoost-Top40,V3 sampled validation,macro_precision,0.8592091669617009,results/model_comparison_v3/model_diversity_comparison.csv,verified
+XGBoost-Top40,V3 sampled validation,macro_recall,0.8638050950835808,results/model_comparison_v3/model_diversity_comparison.csv,verified
+XGBoost-Top40,V3 sampled validation,macro_f1,0.8595730905300552,results/model_comparison_v3/model_diversity_comparison.csv,verified
+XGBoost-Top40,V3 sampled validation,weighted_f1,0.9430701299514062,results/model_comparison_v3/model_diversity_comparison.csv,verified
+HistGradientBoosting-Top40,V3 sampled validation,accuracy,0.9412944637603636,results/model_comparison_v3/model_diversity_comparison.csv,verified
+HistGradientBoosting-Top40,V3 sampled validation,macro_precision,0.830949365313151,results/model_comparison_v3/model_diversity_comparison.csv,verified
+HistGradientBoosting-Top40,V3 sampled validation,macro_recall,0.8679120202223058,results/model_comparison_v3/model_diversity_comparison.csv,verified
+HistGradientBoosting-Top40,V3 sampled validation,macro_f1,0.8445669590049079,results/model_comparison_v3/model_diversity_comparison.csv,verified
+HistGradientBoosting-Top40,V3 sampled validation,weighted_f1,0.941231278230912,results/model_comparison_v3/model_diversity_comparison.csv,verified
+MLP-Top40,V3 sampled validation,accuracy,0.9234948832364408,results/model_comparison_v3/model_diversity_comparison.csv,verified
+MLP-Top40,V3 sampled validation,macro_precision,0.8817275280817083,results/model_comparison_v3/model_diversity_comparison.csv,verified
+MLP-Top40,V3 sampled validation,macro_recall,0.8092715655044855,results/model_comparison_v3/model_diversity_comparison.csv,verified
+MLP-Top40,V3 sampled validation,macro_f1,0.8277117089407363,results/model_comparison_v3/model_diversity_comparison.csv,verified
+MLP-Top40,V3 sampled validation,weighted_f1,0.9233951865770752,results/model_comparison_v3/model_diversity_comparison.csv,verified
+RandomForest-Top40,V3 sampled validation,accuracy,0.9429906673611014,results/model_comparison_v3/model_diversity_comparison.csv,verified
+RandomForest-Top40,V3 sampled validation,macro_precision,0.8063741183102461,results/model_comparison_v3/model_diversity_comparison.csv,verified
+RandomForest-Top40,V3 sampled validation,macro_recall,0.8524249541738985,results/model_comparison_v3/model_diversity_comparison.csv,verified
+RandomForest-Top40,V3 sampled validation,macro_f1,0.8251711255605285,results/model_comparison_v3/model_diversity_comparison.csv,verified
+RandomForest-Top40,V3 sampled validation,weighted_f1,0.9429427422555282,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LogisticRegression-Top40,V3 sampled validation,accuracy,0.831273489956504,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LogisticRegression-Top40,V3 sampled validation,macro_precision,0.5761627189454865,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LogisticRegression-Top40,V3 sampled validation,macro_recall,0.7690180437950958,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LogisticRegression-Top40,V3 sampled validation,macro_f1,0.5883580191203147,results/model_comparison_v3/model_diversity_comparison.csv,verified
+LogisticRegression-Top40,V3 sampled validation,weighted_f1,0.8347374708569343,results/model_comparison_v3/model_diversity_comparison.csv,verified
+0,V3 Full78 sampled validation,accuracy,0.9455455300460296,results/xgboost_v3/validation_metrics.csv,verified
+0,V3 Full78 sampled validation,macro_precision,0.841777533066918,results/xgboost_v3/validation_metrics.csv,verified
+0,V3 Full78 sampled validation,macro_recall,0.8548290088480915,results/xgboost_v3/validation_metrics.csv,verified
+0,V3 Full78 sampled validation,macro_f1,0.8463765728804711,results/xgboost_v3/validation_metrics.csv,verified
+0,V3 Full78 sampled validation,weighted_f1,0.9455033076652448,results/xgboost_v3/validation_metrics.csv,verified
+Full78,V3 feature reduction,features,78.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,accuracy,0.9455455300460296,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,macro_precision,0.841777533066918,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,macro_recall,0.8548290088480915,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,macro_f1,0.8463765728804711,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,weighted_f1,0.9455033076652448,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,model_size_mb,53.155290603637695,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,feature_reduction_pct,0.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Full78,V3 feature reduction,macro_f1_delta_vs_full,0.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,features,40.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,accuracy,0.9431173547669656,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,macro_precision,0.8592091669617009,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,macro_recall,0.8638050950835808,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,macro_f1,0.8595730905300552,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,weighted_f1,0.9430701299514062,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,model_size_mb,52.26426029205322,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,feature_reduction_pct,48.71794871794872,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top40,V3 feature reduction,macro_f1_delta_vs_full,0.013196517649584,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,features,20.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,accuracy,0.940238735378162,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,macro_precision,0.8368206267198616,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,macro_recall,0.8735734608306032,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,macro_f1,0.8498308292106177,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,weighted_f1,0.9401675953362382,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,model_size_mb,49.86120223999024,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,feature_reduction_pct,74.35897435897436,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top20,V3 feature reduction,macro_f1_delta_vs_full,0.0034542563301466,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,features,10.0,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,accuracy,0.9296744133669288,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,macro_precision,0.8259733662696233,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,macro_recall,0.8198977295934977,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,macro_f1,0.8085444238200541,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,weighted_f1,0.9295072357689326,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,model_size_mb,31.54498291015625,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,feature_reduction_pct,87.17948717948718,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+Top10,V3 feature reduction,macro_f1_delta_vs_full,-0.0378321490604169,results/feature_selection/feature_reduction_comparison_v3.csv,verified
+0,original EDA dataset profile,rows,16232943.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,columns,81.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,feature_columns,79.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,file_size_gb,7.029,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,estimated_pandas_memory_gb,10.937,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,total_nan,59721.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,total_inf,131799.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,duplicate_rows,422815.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,duplicate_ratio,0.0260467248606737,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,class_count,15.0,results/data_quality/dataset_profile.csv,verified
+0,original EDA dataset profile,sample_size_for_distribution,300000.0,results/data_quality/dataset_profile.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,accuracy,0.9807104763929068,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,macro_precision,0.8113958439250619,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,macro_recall,0.8126457102038542,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,macro_f1,0.7921641200450111,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,weighted_f1,0.9762285686658988,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,train_patterns,1946494.0,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,benign_sampling,1000000.0,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-A,V4 Full Validation,validation_rows,2390002.0,results/lightgbm_top40_v4a/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,accuracy,0.9798757490579506,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,macro_precision,0.8102688061340471,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,macro_recall,0.8272083924882712,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,macro_f1,0.8029620812928441,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,weighted_f1,0.9769839566230252,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,train_patterns,1946494.0,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,infilteration_correction,2.0,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B1,V4 Full Validation,validation_rows,2390002.0,results/lightgbm_top40_v4b1/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,accuracy,0.9793125696129124,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,macro_precision,0.8334412511244678,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,macro_recall,0.8300824160316641,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,macro_f1,0.8086545334668387,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,weighted_f1,0.9771939800758066,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,train_patterns,1946494.0,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,infilteration_correction,3.0,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,validation_rows,2390002.0,results/lightgbm_top40_v4b2/metrics.csv,verified
+LightGBM Top40 V4-B2,V4 Full Validation,evaluation_seconds,1877.5296543409927,results/lightgbm_top40_v4b2/metrics.csv,verified
+DNN fp32,V4 Full Validation,accuracy,0.9841786743274692,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,macro_precision,0.7177269661407693,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,macro_recall,0.7042970405083965,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,macro_f1,0.6986469531097897,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,weighted_f1,0.9814402841180764,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,rows,2390002.0,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN fp32,V4 Full Validation,elapsed_seconds,9.3877686370397,results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,accuracy,0.9841104735477209,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,macro_precision,0.7186339223442473,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,macro_recall,0.7035979520804608,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,macro_f1,0.6988359018400893,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,weighted_f1,0.981409048334049,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,rows,2390002.0,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+DNN torchao_int8,V4 Full Validation,elapsed_seconds,20.05895732698264,results/dnn_top40_v4/dnn_torchao_int8_full_valid_metrics.csv,verified
+LightGBM V3,consumed Test V2; audit only,accuracy,0.6896601456071442,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2; audit only,macro_precision,0.6476338445465772,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2; audit only,macro_recall,0.78788289591219,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2; audit only,macro_f1,0.6562523477058325,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2; audit only,weighted_f1,0.7950212103069494,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,macro_f1,0.8086545334668387,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,accuracy,0.9793125696129124,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,serialized_size_mib,46.38429260253906,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,batch1_median_latency_ms,3.80833,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,batch32_median_latency_ms,98.782107,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,batch256_median_latency_ms,669.460105,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,batch4096_median_latency_ms,11414.477328,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,batch4096_throughput_flows_s,358.84253674519186,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,baseline_rss_mb,645.3671875,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,after_input_rss_mb,683.734375,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,after_model_rss_mb,722.421875,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,after_inference_rss_mb,723.00390625,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,peak_rss_mb,777.68359375,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,model_load_delta_mb,38.6875,results/final_report/ondevice_model_comparison.csv,verified
+LightGBM V4-B2,WSL CPU report remeasurement,peak_delta_from_baseline_mb,132.31640625,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,macro_f1,0.6986469531097897,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,accuracy,0.9841786743274692,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,serialized_size_mib,0.12855243682861328,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,batch1_median_latency_ms,0.03426,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,batch32_median_latency_ms,0.059944,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,batch256_median_latency_ms,0.2989765,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,batch4096_median_latency_ms,5.6103615,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,batch4096_throughput_flows_s,730077.7320677108,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,baseline_rss_mb,645.45703125,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,after_input_rss_mb,728.04296875,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,after_model_rss_mb,732.09375,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,after_inference_rss_mb,738.09375,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,peak_rss_mb,741.5859375,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,model_load_delta_mb,4.05078125,results/final_report/ondevice_model_comparison.csv,verified
+DNN FP32,WSL CPU report remeasurement,peak_delta_from_baseline_mb,96.12890625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,macro_f1,0.6988359018400893,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,accuracy,0.9841104735477209,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,serialized_size_mib,0.04591846466064453,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,batch1_median_latency_ms,0.6288555,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,batch32_median_latency_ms,1.38028,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,batch256_median_latency_ms,4.6804625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,batch4096_median_latency_ms,77.387111,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,batch4096_throughput_flows_s,52928.71057042044,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,baseline_rss_mb,645.44140625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,after_input_rss_mb,728.00390625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,after_model_rss_mb,891.0390625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,after_inference_rss_mb,896.70703125,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,peak_rss_mb,902.734375,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,model_load_delta_mb,163.03515625,results/final_report/ondevice_model_comparison.csv,verified
+TorchAO INT8,WSL CPU report remeasurement,peak_delta_from_baseline_mb,257.29296875,results/final_report/ondevice_model_comparison.csv,verified
+78-feature hash audit,entire Split V2,conflicting_patterns,22373.0,results/final_report/data_verification.json,verified
+78-feature hash audit,entire Split V2,affected_rows,423390.0,results/final_report/data_verification.json,verified
+78-feature hash audit,entire Split V2,max_labels,3.0,results/final_report/data_verification.json,verified
+78-feature hash audit,entire Split V2,0_1_overlap,0.0,results/final_report/data_verification.json,verified
+78-feature hash audit,entire Split V2,0_2_overlap,0.0,results/final_report/data_verification.json,verified
+78-feature hash audit,entire Split V2,1_2_overlap,0.0,results/final_report/data_verification.json,verified
+train.parquet,Split V2 Parquet footer,rows,11416137.0,data/processed/network_ml_split_v2/train.parquet,verified
+valid.parquet,Split V2 Parquet footer,rows,2390002.0,data/processed/network_ml_split_v2/valid.parquet,verified
+test.parquet,Split V2 Parquet footer,rows,2426804.0,data/processed/network_ml_split_v2/test.parquet,verified
+9 vs 11,entire Split V2 conflict pairs,class_a,9.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 11,entire Split V2 conflict pairs,class_b,11.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 11,entire Split V2 conflict pairs,patterns,12.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 11,entire Split V2 conflict pairs,affected_pair_rows,239731.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 12,entire Split V2 conflict pairs,class_a,0.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 12,entire Split V2 conflict pairs,class_b,12.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 12,entire Split V2 conflict pairs,patterns,22348.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 12,entire Split V2 conflict pairs,affected_pair_rows,170849.0,results/final_report/label_conflict_pairs_verified.csv,verified
+11 vs 14,entire Split V2 conflict pairs,class_a,11.0,results/final_report/label_conflict_pairs_verified.csv,verified
+11 vs 14,entire Split V2 conflict pairs,class_b,14.0,results/final_report/label_conflict_pairs_verified.csv,verified
+11 vs 14,entire Split V2 conflict pairs,patterns,7.0,results/final_report/label_conflict_pairs_verified.csv,verified
+11 vs 14,entire Split V2 conflict pairs,affected_pair_rows,169775.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 14,entire Split V2 conflict pairs,class_a,9.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 14,entire Split V2 conflict pairs,class_b,14.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 14,entire Split V2 conflict pairs,patterns,5.0,results/final_report/label_conflict_pairs_verified.csv,verified
+9 vs 14,entire Split V2 conflict pairs,affected_pair_rows,68697.0,results/final_report/label_conflict_pairs_verified.csv,verified
+2 vs 13,entire Split V2 conflict pairs,class_a,2.0,results/final_report/label_conflict_pairs_verified.csv,verified
+2 vs 13,entire Split V2 conflict pairs,class_b,13.0,results/final_report/label_conflict_pairs_verified.csv,verified
+2 vs 13,entire Split V2 conflict pairs,patterns,5.0,results/final_report/label_conflict_pairs_verified.csv,verified
+2 vs 13,entire Split V2 conflict pairs,affected_pair_rows,24.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 2,entire Split V2 conflict pairs,class_a,0.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 2,entire Split V2 conflict pairs,class_b,2.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 2,entire Split V2 conflict pairs,patterns,3.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 2,entire Split V2 conflict pairs,affected_pair_rows,11.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 13,entire Split V2 conflict pairs,class_a,0.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 13,entire Split V2 conflict pairs,class_b,13.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 13,entire Split V2 conflict pairs,patterns,1.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 13,entire Split V2 conflict pairs,affected_pair_rows,4.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 3,entire Split V2 conflict pairs,class_a,0.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 3,entire Split V2 conflict pairs,class_b,3.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 3,entire Split V2 conflict pairs,patterns,1.0,results/final_report/label_conflict_pairs_verified.csv,verified
+0 vs 3,entire Split V2 conflict pairs,affected_pair_rows,2.0,results/final_report/label_conflict_pairs_verified.csv,verified
+3 vs 13,entire Split V2 conflict pairs,class_a,3.0,results/final_report/label_conflict_pairs_verified.csv,verified
+3 vs 13,entire Split V2 conflict pairs,class_b,13.0,results/final_report/label_conflict_pairs_verified.csv,verified
+3 vs 13,entire Split V2 conflict pairs,patterns,1.0,results/final_report/label_conflict_pairs_verified.csv,verified
+3 vs 13,entire Split V2 conflict pairs,affected_pair_rows,2.0,results/final_report/label_conflict_pairs_verified.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,rank_top40,8.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,u_statistic,1338947655.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,effect_size,-0.7322104689,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Dst Port,Benign vs Bot; LIMIT sample,abs_effect_size,0.7322104689,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,rank_top40,10.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,u_statistic,2240261351.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,effect_size,-0.5519477298,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkts/s,Benign vs Bot; LIMIT sample,abs_effect_size,0.5519477298,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,rank_top40,34.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,u_statistic,7496510081.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,effect_size,0.4993020162999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow Duration,Benign vs Bot; LIMIT sample,abs_effect_size,0.4993020162999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,rank_top40,23.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,u_statistic,7463544790.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,effect_size,0.4927089580999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Mean,Benign vs Bot; LIMIT sample,abs_effect_size,0.4927089580999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,rank_top40,19.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,u_statistic,7450067693.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,effect_size,0.4900135387,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Size Avg,Benign vs Bot; LIMIT sample,abs_effect_size,0.4900135387,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,rank_top40,35.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,u_statistic,7419883506.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,effect_size,0.4839767012,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Flow IAT Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.4839767012,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,rank_top40,30.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,u_statistic,7093913459.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,effect_size,0.4187826918999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+TotLen Bwd Pkts,Benign vs Bot; LIMIT sample,abs_effect_size,0.4187826918999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,rank_top40,36.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,u_statistic,7093913459.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,effect_size,0.4187826918999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Subflow Bwd Byts,Benign vs Bot; LIMIT sample,abs_effect_size,0.4187826918999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,rank_top40,26.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,u_statistic,7082871749.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,effect_size,0.4165743499000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Mean,Benign vs Bot; LIMIT sample,abs_effect_size,0.4165743499000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,rank_top40,21.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,u_statistic,7048891256.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,effect_size,0.4097782512999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.4097782512999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,rank_top40,20.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,u_statistic,6845165194.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,effect_size,0.3690330388,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Tot,Benign vs Bot; LIMIT sample,abs_effect_size,0.3690330388,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,rank_top40,18.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,u_statistic,6816810502.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,effect_size,0.3633621005,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.3633621005,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,rank_top40,17.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,u_statistic,6773384906.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,effect_size,0.3546769811999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd IAT Std,Benign vs Bot; LIMIT sample,abs_effect_size,0.3546769811999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,rank_top40,15.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,u_statistic,6764998103.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,effect_size,0.3529996206999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Header Len,Benign vs Bot; LIMIT sample,abs_effect_size,0.3529996206999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,rank_top40,12.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,u_statistic,6537364669.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,effect_size,0.3074729337999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.3074729337999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,rank_top40,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,u_statistic,6491635609.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,effect_size,0.2983271218000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Act Data Pkts,Benign vs Bot; LIMIT sample,abs_effect_size,0.2983271218000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,rank_top40,31.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,u_statistic,6481157195.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,effect_size,0.296231439,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Pkt Len Std,Benign vs Bot; LIMIT sample,abs_effect_size,0.296231439,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,rank_top40,33.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,u_statistic,6380069092.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,effect_size,0.2760138184,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Mean,Benign vs Bot; LIMIT sample,abs_effect_size,0.2760138184,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,rank_top40,27.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,u_statistic,6380000275.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,effect_size,0.2760000550999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.2760000550999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,29.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,3744150000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,-0.25117,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ACK Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.25117,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,rank_top40,2.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,u_statistic,3780125603.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,effect_size,-0.2439748793999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,Benign vs Bot; LIMIT sample,abs_effect_size,0.2439748793999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,7.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,3794150000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,-0.24117,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+RST Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.24117,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,4.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,3794200000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,-0.24116,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+ECE Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.24116,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,rank_top40,16.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,u_statistic,6114620826.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,effect_size,0.2229241653,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Bwd Win Byts,Benign vs Bot; LIMIT sample,abs_effect_size,0.2229241653,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,rank_top40,25.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,u_statistic,6103258776.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,effect_size,0.2206517552,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkt Len Std,Benign vs Bot; LIMIT sample,abs_effect_size,0.2206517552,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,rank_top40,40.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,u_statistic,6081209564.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,effect_size,0.2162419127999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Std,Benign vs Bot; LIMIT sample,abs_effect_size,0.2162419127999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,rank_top40,24.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,u_statistic,6070547930.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,effect_size,0.2141095860999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd IAT Min,Benign vs Bot; LIMIT sample,abs_effect_size,0.2141095860999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,rank_top40,11.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,u_statistic,5937023925.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,effect_size,0.187404785,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Mean,Benign vs Bot; LIMIT sample,abs_effect_size,0.187404785,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,rank_top40,14.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,u_statistic,5937023925.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,effect_size,0.187404785,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Avg,Benign vs Bot; LIMIT sample,abs_effect_size,0.187404785,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,rank_top40,3.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,u_statistic,5819243753.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,effect_size,0.1638487505999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Header Len,Benign vs Bot; LIMIT sample,abs_effect_size,0.1638487505999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,rank_top40,37.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,u_statistic,5787715642.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,effect_size,0.1575431284999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Idle Max,Benign vs Bot; LIMIT sample,abs_effect_size,0.1575431284999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,rank_top40,28.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,u_statistic,5537340425.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,effect_size,0.107468085,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Pkt Len Std,Benign vs Bot; LIMIT sample,abs_effect_size,0.107468085,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,rank_top40,5.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,u_statistic,4508209711.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,effect_size,-0.0983580577999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Init Fwd Win Byts,Benign vs Bot; LIMIT sample,abs_effect_size,0.0983580577999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,rank_top40,39.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,u_statistic,5400011390.5,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,p_value,1.9206124330549818e-219,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,effect_size,0.0800022781,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,p_value_fdr,2.0244293213282247e-219,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Bwd Pkts/s,Benign vs Bot; LIMIT sample,abs_effect_size,0.0800022781,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,rank_top40,9.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,u_statistic,5254000000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,effect_size,0.0507999999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd PSH Flags,Benign vs Bot; LIMIT sample,abs_effect_size,0.0507999999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,13.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,5254000000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,0.0507999999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+SYN Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.0507999999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,6.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,5159450000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,0.0318899999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+URG Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.0318899999999999,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,32.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,5019400000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,p_value,1.5471119106704102e-86,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,0.0038800000000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,1.5878253820038421e-86,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+FIN Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.0038800000000001,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,rank_top40,22.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,u_statistic,4992250000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,p_value,0.4880201781957578,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,effect_size,-0.00155,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,p_value_fdr,0.4880201781957578,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,significant_fdr_005,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+PSH Flag Cnt,Benign vs Bot; LIMIT sample,abs_effect_size,0.00155,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,rank_top40,38.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,u_statistic,5000000000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,effect_size,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,n_benign,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,n_attack,100000.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd URG Flags,Benign vs Bot; LIMIT sample,abs_effect_size,0.0,results/statistical_analysis_v4/mann_whitney_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,rank_top40,2.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,h_statistic,194581.04474086,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,epsilon_squared,0.9282645989840794,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Min,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,rank_top40,8.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,h_statistic,172298.59630907248,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,epsilon_squared,0.8219567291931532,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Dst Port,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,rank_top40,23.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,h_statistic,153586.31346056968,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,epsilon_squared,0.7326818483541251,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Mean,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,rank_top40,10.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,h_statistic,152647.3618322121,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,epsilon_squared,0.728202181420171,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkts/s,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,rank_top40,35.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,h_statistic,151961.29036208417,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,epsilon_squared,0.724928986522541,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow IAT Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,rank_top40,34.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,h_statistic,148740.20777931277,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,epsilon_squared,0.70956144606381,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Flow Duration,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,rank_top40,5.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,h_statistic,125011.6401887145,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,epsilon_squared,0.5963542515551519,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Fwd Win Byts,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,rank_top40,18.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,h_statistic,122040.02146941604,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,epsilon_squared,0.5821768842498248,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,rank_top40,20.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,h_statistic,121982.38016209989,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,epsilon_squared,0.581901881948731,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Tot,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,rank_top40,39.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,h_statistic,119392.11886766422,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,epsilon_squared,0.5695439419648775,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkts/s,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,rank_top40,4.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,h_statistic,116223.87430615182,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.5544284876941257,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ECE Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,rank_top40,7.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,h_statistic,116223.87430615182,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.5544284876941257,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+RST Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,rank_top40,25.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,h_statistic,103125.4496287559,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,epsilon_squared,0.4919368979869367,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Std,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,rank_top40,31.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,h_statistic,99190.58231823822,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,epsilon_squared,0.4731639447824612,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Std,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,rank_top40,27.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,h_statistic,97427.29910874812,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,epsilon_squared,0.4647514544579424,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,rank_top40,33.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,h_statistic,96911.85712126589,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,epsilon_squared,0.4622923198678735,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Mean,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,rank_top40,40.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,h_statistic,95705.89061954584,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,epsilon_squared,0.4565387452448,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Std,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,rank_top40,30.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,h_statistic,93420.84037114964,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,epsilon_squared,0.4456369439900652,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+TotLen Bwd Pkts,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,rank_top40,36.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,h_statistic,93420.84037114964,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,epsilon_squared,0.4456369439900652,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Subflow Bwd Byts,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,rank_top40,21.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,h_statistic,91710.68070380444,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,epsilon_squared,0.4374779020519956,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Pkt Len Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,rank_top40,12.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,h_statistic,87044.52939074318,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,epsilon_squared,0.4152160483902576,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,rank_top40,37.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,h_statistic,78239.41264410151,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,epsilon_squared,0.3732075048739832,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Idle Max,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,rank_top40,3.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,h_statistic,77544.1333562337,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,epsilon_squared,0.3698903801769712,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Header Len,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,rank_top40,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,h_statistic,75931.2863098501,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,epsilon_squared,0.362195609365563,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Act Data Pkts,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,rank_top40,19.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,h_statistic,73621.49438174684,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,epsilon_squared,0.351175767435327,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Size Avg,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,rank_top40,24.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,h_statistic,73598.68258697534,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,epsilon_squared,0.3510669340943371,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd IAT Min,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,rank_top40,26.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,h_statistic,71890.39214826268,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,epsilon_squared,0.342916810104162,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Pkt Len Mean,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,rank_top40,17.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,h_statistic,69833.86770662686,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,epsilon_squared,0.3331052881238668,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd IAT Std,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,rank_top40,28.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,h_statistic,59424.03572490242,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,epsilon_squared,0.2834407700505356,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Std,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,rank_top40,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,h_statistic,59124.7553502444,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,epsilon_squared,0.2820129261043229,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Bwd Header Len,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,rank_top40,16.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,h_statistic,57742.56148438135,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,epsilon_squared,0.2754185841060545,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Init Bwd Win Byts,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,rank_top40,11.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,h_statistic,57408.433950245584,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,epsilon_squared,0.2738244870075599,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Pkt Len Mean,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,rank_top40,14.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,h_statistic,57408.433950245584,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,epsilon_squared,0.2738244870075599,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd Seg Size Avg,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,rank_top40,6.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,h_statistic,45045.44907543802,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.2148416247641399,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+URG Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,rank_top40,22.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,h_statistic,44368.63487963965,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.2116125956195266,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+PSH Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,rank_top40,29.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,h_statistic,42554.20907124431,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.2029561078383625,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+ACK Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,rank_top40,9.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,h_statistic,38459.82963728124,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,epsilon_squared,0.183422134403044,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd PSH Flags,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,rank_top40,13.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,h_statistic,38459.82963728124,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.183422134403044,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+SYN Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,rank_top40,38.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,h_statistic,2182.9918501809134,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,p_value,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,epsilon_squared,0.0103480954479702,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,p_value_fdr,0.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+Fwd URG Flags,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,rank_top40,32.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,h_statistic,1211.166639119259,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,p_value,6.894996496632241e-250,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,epsilon_squared,0.005711591146688,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,n_total,209618.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,n_groups,15.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,p_value_fdr,6.894996496632241e-250,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+FIN Flag Cnt,15 classes; LIMIT sample,significant_fdr_005,1.0,results/statistical_analysis_v4/kruskal_wallis_top40.csv,verified
+LightGBM V3,consumed Test V2 audit,Benign_to_Infilteration,699881.0,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2 audit,SlowHTTP_to_FTP,47535.0,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2 audit,Infilteration_to_Benign,3388.0,results/final_evaluation/test_confusion_matrix.csv,verified
+LightGBM V3,consumed Test V2 audit,FTP_to_SlowHTTP,1272.0,results/final_evaluation/test_confusion_matrix.csv,verified
+Top40 statistical analysis,Train samples; MW Bot-only,MW_FDR_significant,38.0,results/statistical_analysis_v4/,verified
+Top40 statistical analysis,Train samples; MW Bot-only,KW_FDR_significant,40.0,results/statistical_analysis_v4/,verified

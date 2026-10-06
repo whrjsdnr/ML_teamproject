@@ -1,0 +1,20 @@
+{
+  "pdf_pages": 30,
+  "embedded_image_instances": 21,
+  "new_figures": 14,
+  "fonts": [
+    "AAAAAA+NanumGothic",
+    "AAAAAA+NanumGothicBold",
+    "AAAAAB+NanumGothic",
+    "AAAAAB+NanumGothicBold",
+    "Helvetica"
+  ],
+  "replacement_characters": 0,
+  "evidence_hashes_consistent": true,
+  "confusion_metrics_recomputed": true,
+  "full_csv_loaded": false,
+  "models_trained": false,
+  "pdf_sha256": "bf6683c6e91737190fc180e606196fcee3ed15ec97b5c18017748eba491c410e",
+  "review": "All pages rasterized and reviewed; overflow corrected; Korean font embedded. DOCX is editable and has matching 21 images; PDF is the reviewed layout.",
+  "figure_files_present_in_directory": 23
+}

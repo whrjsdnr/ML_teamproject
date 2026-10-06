@@ -1,0 +1,39 @@
+item,user_value,repository_value,decision
+lightgbm batch1 median_ms,4.2867,3.80833,Use existing verification artifact; original benchmark CSV absent
+lightgbm batch32 median_ms,58.2476,98.782107,Use existing verification artifact; original benchmark CSV absent
+lightgbm batch256 median_ms,431.5961,669.460105,Use existing verification artifact; original benchmark CSV absent
+lightgbm batch4096 median_ms,7140.9082,11414.477328,Use existing verification artifact; original benchmark CSV absent
+lightgbm baseline_rss_mb,644.4727,645.3671875,Use verification JSON; process-dependent RSS; units MiB
+lightgbm after_input_rss_mb,705.7148,683.734375,Use verification JSON; process-dependent RSS; units MiB
+lightgbm after_model_rss_mb,730.8711,722.421875,Use verification JSON; process-dependent RSS; units MiB
+lightgbm after_inference_rss_mb,692.2109,723.00390625,Use verification JSON; process-dependent RSS; units MiB
+lightgbm peak_rss_mb,786.8594,777.68359375,Use verification JSON; process-dependent RSS; units MiB
+lightgbm model_load_delta_mb,25.1563,38.6875,Use verification JSON; process-dependent RSS; units MiB
+lightgbm peak_delta_from_baseline_mb,142.3867,132.31640625,Use verification JSON; process-dependent RSS; units MiB
+fp32 batch1 median_ms,0.0374,0.03426,Use existing verification artifact; original benchmark CSV absent
+fp32 batch32 median_ms,0.0816,0.059944,Use existing verification artifact; original benchmark CSV absent
+fp32 batch256 median_ms,0.209,0.2989765,Use existing verification artifact; original benchmark CSV absent
+fp32 batch4096 median_ms,3.2689,5.6103615,Use existing verification artifact; original benchmark CSV absent
+fp32 baseline_rss_mb,642.7344,645.45703125,Use verification JSON; process-dependent RSS; units MiB
+fp32 after_input_rss_mb,679.6484,728.04296875,Use verification JSON; process-dependent RSS; units MiB
+fp32 after_model_rss_mb,683.1719,732.09375,Use verification JSON; process-dependent RSS; units MiB
+fp32 after_inference_rss_mb,687.043,738.09375,Use verification JSON; process-dependent RSS; units MiB
+fp32 peak_rss_mb,690.4648,741.5859375,Use verification JSON; process-dependent RSS; units MiB
+fp32 model_load_delta_mb,3.5234,4.05078125,Use verification JSON; process-dependent RSS; units MiB
+fp32 peak_delta_from_baseline_mb,47.7305,96.12890625,Use verification JSON; process-dependent RSS; units MiB
+int8 batch1 median_ms,0.5198,0.6288555,Use existing verification artifact; original benchmark CSV absent
+int8 batch32 median_ms,0.9835,1.38028,Use existing verification artifact; original benchmark CSV absent
+int8 batch256 median_ms,4.4311,4.6804625,Use existing verification artifact; original benchmark CSV absent
+int8 batch4096 median_ms,63.5359,77.387111,Use existing verification artifact; original benchmark CSV absent
+int8 baseline_rss_mb,645.2188,645.44140625,Use verification JSON; process-dependent RSS; units MiB
+int8 after_input_rss_mb,679.3594,728.00390625,Use verification JSON; process-dependent RSS; units MiB
+int8 after_model_rss_mb,808.5977,891.0390625,Use verification JSON; process-dependent RSS; units MiB
+int8 after_inference_rss_mb,792.9258,896.70703125,Use verification JSON; process-dependent RSS; units MiB
+int8 peak_rss_mb,820.3633,902.734375,Use verification JSON; process-dependent RSS; units MiB
+int8 model_load_delta_mb,129.2383,163.03515625,Use verification JSON; process-dependent RSS; units MiB
+int8 peak_delta_from_baseline_mb,175.1445,257.29296875,Use verification JSON; process-dependent RSS; units MiB
+legacy_int8_macro_f1,0.286261,,User-provided record only; original result absent; excluded from verified metrics
+legacy_int8_accuracy,0.878532,,User-provided record only; original result absent; excluded from verified metrics
+legacy_int8_weighted_f1,0.865403,,User-provided record only; original result absent; excluded from verified metrics
+legacy_prediction_agreement,0.88516,,User-provided record only; original result absent; excluded from verified metrics
+torchao_8192_sanity_agreement,0.999878,,User-provided record only; original result absent; excluded from verified metrics

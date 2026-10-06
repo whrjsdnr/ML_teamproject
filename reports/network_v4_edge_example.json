@@ -1,0 +1,25 @@
+{
+  "prediction": {
+    "prediction": "Infilteration",
+    "confidence": 0.9999942779541016,
+    "scores": "{\"class_probabilities\":{\"Benign\":5.711382073059212e-06,\"Bot\":0.0,\"Brute Force -Web\":0.0,\"Brute Force -XSS\":0.0,\"DDOS attack-HOIC\":0.0,\"DDOS attack-LOIC-UDP\":0.0,\"DDoS attacks-LOIC-HTTP\":0.0,\"DoS attacks-GoldenEye\":0.0,\"DoS attacks-Hulk\":0.0,\"DoS attacks-SlowHTTPTest\":0.0,\"DoS attacks-Slowloris\":0.0,\"FTP-BruteForce\":0.0,\"Infilteration\":0.9999942779541016,\"SQL Injection\":0.0,\"SSH-Bruteforce\":0.0},\"threat_score\":0.9999942886179269}",
+    "explanation": "{\"class_id\":12,\"confidence_calibrated\":false,\"confidence_semantics\":\"raw argmax probability\",\"dataset\":\"CSE-CIC-IDS2018\",\"deployment_profile\":\"edge\",\"evaluation_scope\":\"development validation\",\"feature_contract_digest\":\"ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649\",\"feature_fingerprint\":\"8e4063f5103cb235fc751817a3f27a7cc99cc1afc833e2c4e8facca9ad43fe18\",\"feature_set_version\":\"cse-cic-ids2018-top40-v1\",\"inference_latency_ms\":3808.042158,\"inferred_at\":\"2026-10-06T06:48:57.017458+00:00\",\"label_mapping_digest\":\"1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd\",\"latency_scope\":\"backend_call_including_preprocessing_and_cold_load\",\"model_artifact_digest\":\"85cbc702d1b0a137c4f44b23be6911691cc89d5bfef0c388cf282e9500c49160\",\"model_derived\":true,\"source_evidence_ids\":[],\"threat_score_semantics\":\"1 - P(Benign); uncalibrated model output\",\"type\":\"network_threat_prediction\"}",
+    "result_id": "4d3913cd-c615-4870-ad49-f24a85c01ea3",
+    "incident_id": "03b1bb0b-47a4-437f-a9fd-5bee92c86685",
+    "model_name": "network_cse2018_dnn_fp32",
+    "model_version": "v4-fp32-epoch13",
+    "task_type": "classification",
+    "created_at": "2026-10-06T06:48:57.021793Z"
+  },
+  "evidence": {
+    "evidence_id": "a1792056-9a56-4842-88d9-1bb8f8401cd3",
+    "incident_id": "03b1bb0b-47a4-437f-a9fd-5bee92c86685",
+    "source": "network_security_ai",
+    "summary": "Network model produced an uncalibrated prediction; attack unconfirmed",
+    "raw_data": "{\"attack_confirmed\":false,\"class_id\":12,\"confidence\":0.9999942779541016,\"confidence_calibrated\":false,\"deployment_profile\":\"edge\",\"feature_contract_digest\":\"ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649\",\"feature_fingerprint\":\"8e4063f5103cb235fc751817a3f27a7cc99cc1afc833e2c4e8facca9ad43fe18\",\"feature_set_version\":\"cse-cic-ids2018-top40-v1\",\"inference_latency_ms\":3808.042158,\"inferred_at\":\"2026-10-06T06:48:57.017458+00:00\",\"label_mapping_digest\":\"1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd\",\"latency_scope\":\"backend_call_including_preprocessing_and_cold_load\",\"model\":\"network_cse2018_dnn_fp32\",\"model_artifact_digest\":\"85cbc702d1b0a137c4f44b23be6911691cc89d5bfef0c388cf282e9500c49160\",\"model_derived\":true,\"model_version\":\"v4-fp32-epoch13\",\"predicted_class\":\"Infilteration\",\"result_id\":\"4d3913cd-c615-4870-ad49-f24a85c01ea3\",\"scores\":{\"class_probabilities\":{\"Benign\":5.711382073059212e-06,\"Bot\":0.0,\"Brute Force -Web\":0.0,\"Brute Force -XSS\":0.0,\"DDOS attack-HOIC\":0.0,\"DDOS attack-LOIC-UDP\":0.0,\"DDoS attacks-LOIC-HTTP\":0.0,\"DoS attacks-GoldenEye\":0.0,\"DoS attacks-Hulk\":0.0,\"DoS attacks-SlowHTTPTest\":0.0,\"DoS attacks-Slowloris\":0.0,\"FTP-BruteForce\":0.0,\"Infilteration\":0.9999942779541016,\"SQL Injection\":0.0,\"SSH-Bruteforce\":0.0},\"threat_score\":0.9999942886179269},\"source_evidence_ids\":[],\"threat_score_semantics\":\"1 - P(Benign); uncalibrated model output\",\"type\":\"network_threat_prediction\"}",
+    "observed_at": "2026-10-06T06:48:57.021793Z",
+    "collected_at": "2026-10-06T06:48:57.024082Z",
+    "tool_name": null,
+    "reliability": null
+  }
+}

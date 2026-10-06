@@ -1,0 +1,9 @@
+최종 PDF: 30페이지, A4, 한글 폰트 포함.
+보고서 수록 이미지: 21개 (새 그래프 14개 + 기존 그림 7개).
+전체 페이지 raster 검수 완료. 표 넘침 수정, 잘림·대체문자 없음.
+Full Validation 혼동행렬에서 Accuracy·Macro F1 재계산 및 CSV 일치 확인.
+원본 CSV 전체 로드 및 모델 재학습 없음.
+제공 benchmark/RSS와 실제 검증 파일 값의 차이를 discrepancy_log.csv와 부록 B에 기록.
+Legacy INT8와 8192 sanity는 사용자 제공 기록으로만 표시; 현재 원본 지표 파일 없음.
+DNN 학습/benchmark 노트북은 0 bytes로 provenance 제한 명시.
+DOCX는 동일 본문·표·이미지를 가진 편집용 원본이며 PDF가 레이아웃 검수본.

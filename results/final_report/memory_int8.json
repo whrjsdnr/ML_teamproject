@@ -1,0 +1,10 @@
+{
+  "model": "int8",
+  "baseline_rss_mb": 645.44140625,
+  "after_input_rss_mb": 728.00390625,
+  "after_model_rss_mb": 891.0390625,
+  "after_inference_rss_mb": 896.70703125,
+  "peak_rss_mb": 902.734375,
+  "model_load_delta_mb": 163.03515625,
+  "peak_delta_from_baseline_mb": 257.29296875
+}

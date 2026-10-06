@@ -1,0 +1,10 @@
+{
+  "model": "fp32",
+  "baseline_rss_mb": 645.45703125,
+  "after_input_rss_mb": 728.04296875,
+  "after_model_rss_mb": 732.09375,
+  "after_inference_rss_mb": 738.09375,
+  "peak_rss_mb": 741.5859375,
+  "model_load_delta_mb": 4.05078125,
+  "peak_delta_from_baseline_mb": 96.12890625
+}

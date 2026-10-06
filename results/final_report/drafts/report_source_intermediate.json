@@ -1,0 +1,1541 @@
+[
+  {
+    "title": "Security AI 최종 실험 보고서",
+    "subtitle": "CSE-CIC-IDS2018 | 취업 포트폴리오 · 기술 검토 | 2026.10.06",
+    "paras": [
+      "대규모 보안 데이터의 품질 문제에서 시작해 검증 설계를 다시 만든 프로젝트",
+      "중복·label conflict·split leakage·class prior distortion을 진단하고, frequency-aware 학습과 통계 검증, 경량 DNN 및 INT8 실험, CPU 추론 측정을 통해 목적별 모델 후보를 도출했다.",
+      "검토 범위: 저장소에 실제 존재하는 CSV, Parquet metadata, 모델 파일, 코드, 노트북 출력과 기존 검증 산출물. 원본 16M CSV 전체 pandas 로드 및 모델 재학습 없이 작성했다.",
+      "핵심 결론: 탐지 품질은 LightGBM V4-B2, 현 WSL/x86 계산 환경의 경량 추론 후보는 DNN FP32. TorchAO INT8은 파일 크기를 줄이고 품질을 보존했으나 현재 runtime에서 지연과 메모리 부담이 있었다.",
+      "평가 경계: V4 결과는 development validation 성능이다. V3에서 소비된 Test V2를 V4 선택·추가 튜닝에 재사용하지 않았다. 실제 드론·ARM·NPU 성능을 입증한 보고서가 아니다."
+    ],
+    "tables": [
+      {
+        "caption": "표 1. 목적별 후보",
+        "headers": [
+          "후보",
+          "목적",
+          "Full Validation Macro F1"
+        ],
+        "rows": [
+          [
+            "LightGBM V4-B2",
+            "탐지 품질",
+            "0.808655"
+          ],
+          [
+            "DNN FP32",
+            "경량 CPU 추론",
+            "0.698647"
+          ],
+          [
+            "TorchAO INT8",
+            "저장 공간·양자화 검토",
+            "0.698836"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/v4_model_comparison/overall_metrics.csv",
+      "results/dnn_top40_v4/*_full_valid_metrics.csv"
+    ]
+  },
+  {
+    "title": "01  Executive Summary",
+    "subtitle": "점수보다 중요한 것은 검증 설계의 변화",
+    "paras": [
+      "16,232,943행·15개 클래스에서 Benign 비율은 83.0700%였다. 다수 클래스를 잘 맞추기만 해도 Accuracy가 높아질 수 있으므로 클래스별 F1의 평균인 Macro F1을 주요 선택 지표로 사용했다. Weighted F1은 전체 traffic 품질을 보조적으로 보여주지만 희소 공격의 실패를 가릴 수 있다.",
+      "78개 feature가 같은데 label이 다른 패턴은 22,373개, 영향 행은 423,390개였다. 이를 점수 개선 목적으로 임의 삭제하지 않고 관측 feature의 식별 한계로 분석했다.",
+      "V3 LightGBM sampled Validation Macro F1 0.876563은 Test V2에서 0.656252로 떨어졌다. unique-pattern deduplication과 클래스별 최대 100k cap이 class prior를 왜곡한 것이 주된 원인이라는 진단을 얻었다.",
+      "V4는 frequency와 sampling correction을 반영했다. 동일 Full Validation에서 V4-A → B1 → B2의 Macro F1은 0.792164 → 0.802962 → 0.808655로 개선됐다. 높은 Accuracy만으로 DNN을 우승 모델이라고 판단하지 않았다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/02_macro_f1.png",
+        "그림 1. 동일 Full Validation에서 목적별 모델 품질 비교"
+      ]
+    ],
+    "sources": [
+      "results/data_quality/dataset_profile.csv",
+      "results/final_evaluation/test_confusion_matrix.csv",
+      "results/final_report/data_verification.json"
+    ]
+  },
+  {
+    "title": "02  연구 질문과 전체 구성",
+    "subtitle": "데이터 품질 → 평가 설계 → 모델 품질 → 배포 비용",
+    "paras": [
+      "연구 질문 1: 대규모 flow 데이터의 높은 점수가 실제 일반화와 연결되는가? 동일 관측 패턴의 split 중복, label conflict와 클래스별 반복 빈도를 분리해 진단한다.",
+      "연구 질문 2: feature를 줄여도 희소 공격 정보를 유지할 수 있는가? importance 기반 Top40을 reduction, conflict projection 및 통계 검정으로 함께 검토한다.",
+      "연구 질문 3: 탐지 품질과 edge 자원 비용 사이의 절충은 무엇인가? 같은 Top40 입력에 대해 LightGBM·DNN·INT8의 품질, 파일 크기, 순수 추론 지연, process RSS를 구분한다.",
+      "보고서 읽기: 03–08 데이터 품질·split, 09–15 ML 비교·실패·V4 재설계, 16–17 통계, 18–20 DNN·양자화, 21–24 시스템 비교, 25–27 통합 전략·한계·근거."
+    ],
+    "tables": [
+      {
+        "caption": "표 2. 실험 파이프라인",
+        "headers": [
+          "단계",
+          "발견 또는 의사결정"
+        ],
+        "rows": [
+          [
+            "Data Quality / Security EDA",
+            "결측·무한대·불균형·고상관 확인"
+          ],
+          [
+            "Duplicate / Label Conflict",
+            "반복 패턴·구조적 모호성 진단"
+          ],
+          [
+            "V1 → V2 Split",
+            "feature-only hash로 패턴 누수 차단"
+          ],
+          [
+            "Feature Engineering / Selection",
+            "Top40 채택·통계 및 projection 검토"
+          ],
+          [
+            "V3 Final Test",
+            "prior 왜곡으로 대규모 오탐 발견"
+          ],
+          [
+            "V4 Frequency-aware",
+            "빈도 가중·Infilteration ×3 선정"
+          ],
+          [
+            "DNN / INT8 / CPU Benchmark",
+            "품질·지연·파일·RSS trade-off"
+          ],
+          [
+            "Autonomous SOC 연결",
+            "향후 integration 후보 및 검증 조건"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "notebooks/preprocessing.ipynb",
+      "notebooks/model_sample_v4.ipynb",
+      "scripts/benchmark_model_memory.py"
+    ]
+  },
+  {
+    "title": "03  Dataset Overview",
+    "subtitle": "원본 규모와 모델 입력을 구분한다",
+    "paras": [
+      "주 데이터셋은 CSE-CIC-IDS2018이며 원본 병합 CSV는 data/processed/cse_cic_ids2018/cse_cic_ids2018_merged.csv이다. 실제 파일 존재를 확인했으며 규모 수치는 기존 dataset_profile와 class_distribution에서 다시 읽었다.",
+      "원본 81개 컬럼과 모델 입력 78개 feature는 같은 개념이 아니다. profile의 feature_columns=79 역시 원본 단계 집계값이다. 모델용 Parquet에서는 Label·label_id·source_file·Timestamp·hour·day_of_week를 입력에서 제외한 78개를 사용한다.",
+      "Benign 13,484,708행에 비해 SQL Injection은 87행뿐이다. 희소 공격의 검증 support가 작으므로 클래스별 점수의 작은 변화를 안정적 일반화 증거로 확대 해석하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 3. 기존 EDA profile 검증",
+        "headers": [
+          "항목",
+          "원본 결과"
+        ],
+        "rows": [
+          [
+            "전체 행",
+            "16,232,943"
+          ],
+          [
+            "전체 컬럼",
+            "81"
+          ],
+          [
+            "클래스",
+            "15"
+          ],
+          [
+            "Benign 비율",
+            "83.0700%"
+          ],
+          [
+            "SQL Injection 행",
+            "87"
+          ],
+          [
+            "원본 크기 (기존 profile)",
+            "7.029 GB"
+          ],
+          [
+            "pandas 예상 메모리 (기존 profile)",
+            "10.937 GB"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/14_class_distribution.png",
+        "그림 2. 클래스별 행 수; x축 log scale"
+      ]
+    ],
+    "sources": [
+      "results/data_quality/dataset_profile.csv",
+      "results/data_quality/class_distribution.csv"
+    ]
+  },
+  {
+    "title": "04  Data Quality Analysis",
+    "subtitle": "generic duplicates와 feature-only conflict는 별개다",
+    "paras": [
+      "문제: 결측·무한대와 반복 레코드는 모델 입력과 평가 분포를 바꿀 수 있다. 원본 결과에 NaN 59,721개, ±Inf 131,799개, generic duplicate 422,815행이 기록되어 있다. NaN·Inf 값은 cell 집계이므로 서로 독립적인 결함 행 수처럼 합산하지 않는다.",
+      "generic duplicate 비율은 2.6047%이다. 이는 EDA에서 정의한 전체 레코드 중복 집계다. label이나 metadata를 제외한 모델 feature vector 중복은 훨씬 많을 수 있어 이 비율만으로 누수 위험을 평가할 수 없다.",
+      "처리 설계: 모델별 비유한 값 처리를 구분한다. CPU 검증 코드에서 LightGBM은 비유한 값을 NaN으로 받으며, DNN은 Train scaler 평균으로 대체한 뒤 표준화한다. preprocessing·disk I/O 시간은 inference benchmark에서 제외한다.",
+      "검토 범위: data_quality_report.csv는 현재 존재하지 않는다. outlier_report·feature_distribution·correlation CSV는 존재하며 분포 분석이 sample_size_for_distribution=300,000에 기반한다는 profile 정보를 함께 표시한다. 표본 기반 상관·이상치 결과를 전체 16M행의 확정 속성으로 일반화하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 4. 품질 문제와 평가 영향",
+        "headers": [
+          "집계",
+          "확인값",
+          "해석"
+        ],
+        "rows": [
+          [
+            "NaN cells",
+            "59,721",
+            "결측 입력 처리 필요"
+          ],
+          [
+            "±Inf cells",
+            "131,799",
+            "비유한 값 정규화 필요"
+          ],
+          [
+            "Generic duplicate rows",
+            "422,815",
+            "레코드 중복 집계"
+          ],
+          [
+            "Duplicate ratio",
+            "2.6047%",
+            "feature-only 반복과 구분"
+          ],
+          [
+            "Distribution sample",
+            "300,000",
+            "EDA 분포·상관 표본 규모"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/data_quality/dataset_profile.csv",
+      "results/data_quality/outlier_report.csv",
+      "results/data_quality/feature_distribution.csv",
+      "results/final_report/verify_benchmark.py"
+    ]
+  },
+  {
+    "title": "05  Security EDA",
+    "subtitle": "클래스별 flow 행태와 고상관 입력",
+    "paras": [
+      "Flow Duration, Flow/Fwd IAT, packet length, Flow Byts/s·Pkts/s는 공격의 시간·전송량·패킷 형태를 관측하는 후보다. EDA 후보와 최종 model importance 순위는 같은 것이 아니다. 예를 들어 Fwd IAT Min은 탐색 후보지만 최종 Top40에는 포함되지 않는다.",
+      "고상관 feature는 정보 중복을 시사한다. RST/ECE처럼 거의 같은 flag와 duration/IAT total 같은 시간 입력은 reduction 실험에서 함께 검토할 수 있다. 상관계수만으로 label 분리 정보가 동일하다고 단정하지 않는다.",
+      "Attack을 하나로 묶은 평균은 서로 다른 공격군의 혼합과 극단값에 민감하다. key_feature_median_by_attack, 클래스별 flag summary, benign_attack_median을 함께 읽어 클래스 이질성을 보존한다. binary 통계만으로 feature를 제거하지 않는 이유와도 연결된다."
+    ],
+    "tables": [
+      {
+        "caption": "표 5. EDA 상위 고상관 쌍",
+        "headers": [
+          "Feature A",
+          "Feature B",
+          "r"
+        ],
+        "rows": [
+          [
+            "RST Flag Cnt",
+            "ECE Flag Cnt",
+            "0.999988"
+          ],
+          [
+            "Flow Duration",
+            "Fwd IAT Tot",
+            "0.996835"
+          ],
+          [
+            "Idle Mean",
+            "Idle Min",
+            "0.996692"
+          ],
+          [
+            "Idle Mean",
+            "Idle Max",
+            "0.995985"
+          ],
+          [
+            "Tot Bwd Pkts",
+            "TotLen Bwd Pkts",
+            "0.995241"
+          ],
+          [
+            "Pkt Len Mean",
+            "Pkt Size Avg",
+            "0.992742"
+          ],
+          [
+            "Flow IAT Max",
+            "Fwd IAT Max",
+            "0.992535"
+          ],
+          [
+            "Flow IAT Mean",
+            "Flow IAT Min",
+            "0.992176"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/network_eda/eda_feature_candidates.csv",
+      "results/network_eda/high_correlation_candidates.csv",
+      "results/network_eda/key_feature_median_by_attack.csv",
+      "results/network_eda/benign_attack_median.csv"
+    ]
+  },
+  {
+    "title": "06  Duplicate와 Label Conflict",
+    "subtitle": "현재 flow feature가 관측하지 못하는 차이",
+    "paras": [
+      "78개 feature-only 기준 hash 검증 산출물에서 conflicting patterns=22,373, affected rows=423,390, 최대 labels per pattern=3을 확인했다. generic duplicate와 달리 동일 입력에 서로 다른 정답이 부여된 경우다.",
+      "같은 vector에서 label이 두 개라면 deterministic classifier는 양쪽을 모두 정확히 분류할 수 없다. 원인은 데이터 라벨링, 수집 조건 또는 현재 feature로 관측되지 않는 행태일 수 있으며, 이 결과만으로 어느 label이 틀렸다고 확정할 수 없다.",
+      "conflict는 점수를 높이기 위해 임의 삭제하지 않았다. 서로 겹치는 conflict pair의 affected_pair_rows는 동일 행을 여러 번 포함할 수 있어 pair 합계를 전체 affected rows로 해석하면 안 된다.",
+      "검증 산출물은 DuckDB 64-bit feature hash를 사용했다. hash overlap 0은 실용적 패턴 분리의 강한 근거지만 수학적으로 hash collision 가능성이 배제된 exact vector 증명은 아니다."
+    ],
+    "tables": [
+      {
+        "caption": "표 6. 주요 conflict pair",
+        "headers": [
+          "Pair",
+          "Patterns",
+          "Affected pair rows"
+        ],
+        "rows": [
+          [
+            "SlowHTTPTest ↔ FTP",
+            "12",
+            "239,731"
+          ],
+          [
+            "Benign ↔ Infilteration",
+            "22,348",
+            "170,849"
+          ],
+          [
+            "FTP ↔ SSH",
+            "7",
+            "169,775"
+          ],
+          [
+            "SlowHTTPTest ↔ SSH",
+            "5",
+            "68,697"
+          ],
+          [
+            "Web ↔ SQL",
+            "5",
+            "24"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/final_report/data_verification.json",
+      "results/final_report/label_conflict_pairs_verified.csv",
+      "results/final_report/verify_data.py",
+      "notebooks/preprocessing.ipynb"
+    ]
+  },
+  {
+    "title": "07  반복 빈도가 만드는 학습 왜곡",
+    "subtitle": "소수 패턴의 반복과 class cap의 결합",
+    "paras": [
+      "문제: SlowHTTPTest와 FTP-BruteForce의 Train V2 행 대부분은 매우 적은 패턴의 반복이다. SlowHTTPTest 85,458행은 44개 unique pattern, FTP 173,083행은 39개 pattern으로 표현된다. SSH는 155,484행에 66,117개 pattern으로 반복이 상당하다.",
+      "행 단위 random split에서는 같은 패턴이 train과 evaluation에 남아 암기 성능이 일반화처럼 보일 수 있다. 반대로 unique-pattern만 남기면 반복량이 전달하는 빈도 정보를 잃는다.",
+      "V3는 deduplication에 클래스별 최대 100,000개 sampling을 결합했다. 따라서 문제는 unique-pattern을 쓰는 방식 자체가 아니라, frequency를 버린 상태에서 cap까지 적용해 prior를 왜곡한 설계다.",
+      "다음 결정: 패턴의 중복을 분리해 누수를 차단하되 원래 빈도는 frequency로 저장하고 학습 가중치에 반영한다. Train과 Validation의 원래 support는 평가 해석에서 유지한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 7. Train V2의 패턴 반복",
+        "headers": [
+          "Class",
+          "Rows",
+          "Unique patterns",
+          "Rows/pattern"
+        ],
+        "rows": [
+          [
+            "Benign",
+            "9,451,891",
+            "7,445,818",
+            "1.27"
+          ],
+          [
+            "DoS attacks-SlowHTTPTest",
+            "85,458",
+            "44",
+            "1942.23"
+          ],
+          [
+            "FTP-BruteForce",
+            "173,083",
+            "39",
+            "4438.03"
+          ],
+          [
+            "Infilteration",
+            "113,111",
+            "98,237",
+            "1.15"
+          ],
+          [
+            "SSH-Bruteforce",
+            "155,484",
+            "66,117",
+            "2.35"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/split_diagnosis/split_v2_train_pattern_stats.csv",
+      "results/model_sample_v4/train_v3_distribution.csv"
+    ]
+  },
+  {
+    "title": "08  V1 누수 진단과 V2 Split",
+    "subtitle": "label을 split key에서 제거한 패턴 단위 평가",
+    "paras": [
+      "V1은 features + label_id를 hash key로 사용했다. 동일 feature vector가 다른 label을 가지면 서로 다른 hash를 얻어 서로 다른 split에 들어갈 수 있었다. 이는 입력 패턴 관점의 누수 위험이다.",
+      "V2는 78개 model feature만으로 hash bucket을 만들었다. bucket <70은 Train, 70–84는 Validation, ≥85는 Test다. label이 달라도 같은 feature pattern은 같은 split에 남는다.",
+      "Parquet metadata를 직접 읽어 Train 11,416,137행, Validation 2,390,002행, Test 2,426,804행을 확인했다. 합계 16,232,943행은 원본 profile과 일치한다.",
+      "검증 결과 train-valid, train-test, valid-test feature hash overlap은 모두 0이다. random row split보다 반복 패턴 누수에 엄격하지만 시간·공격 캠페인·외부 환경 일반화를 보증하는 split은 아니다. Top40 projection 후 새로운 패턴 동일성이 생길 여지도 별도 검토했다."
+    ],
+    "tables": [
+      {
+        "caption": "표 8. Split V2와 교차 검증",
+        "headers": [
+          "항목",
+          "확인값"
+        ],
+        "rows": [
+          [
+            "Train",
+            "11,416,137"
+          ],
+          [
+            "Validation",
+            "2,390,002"
+          ],
+          [
+            "Test",
+            "2,426,804"
+          ],
+          [
+            "Train–Validation overlap",
+            "0"
+          ],
+          [
+            "Train–Test overlap",
+            "0"
+          ],
+          [
+            "Validation–Test overlap",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "notebooks/preprocessing.ipynb",
+      "data/processed/network_ml_split_v2/*.parquet",
+      "results/final_report/data_verification.json"
+    ]
+  },
+  {
+    "title": "09  V3 Baseline Model Comparison",
+    "subtitle": "sampled Validation 결과를 구분해 제시",
+    "paras": [
+      "동일 V3 개발 sample 평가에서 LightGBM Top40 Macro F1이 0.876563으로 비교 후보 중 가장 높았다. 다수 클래스를 잘 맞추는 모델보다 여러 공격군의 평균 품질을 우선해 선정했다.",
+      "이 표는 V3 sampled Validation 결과이며 Full Validation 또는 independent final Test가 아니다. sampling prior가 바뀐 상태이므로 다음 V3 Test 실패 분석과 함께 읽어야 한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 9. V3 모델 비교",
+        "headers": [
+          "Model",
+          "Accuracy",
+          "Macro F1"
+        ],
+        "rows": [
+          [
+            "LightGBM-Top40",
+            "0.945792",
+            "0.876563"
+          ],
+          [
+            "XGBoost-Top40",
+            "0.943117",
+            "0.859573"
+          ],
+          [
+            "HistGradientBoosting-Top40",
+            "0.941294",
+            "0.844567"
+          ],
+          [
+            "MLP-Top40",
+            "0.923495",
+            "0.827712"
+          ],
+          [
+            "RandomForest-Top40",
+            "0.942991",
+            "0.825171"
+          ],
+          [
+            "LogisticRegression-Top40",
+            "0.831273",
+            "0.588358"
+          ],
+          [
+            "XGBoost-Full78",
+            "0.945546",
+            "0.846377"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/01_model_macro_f1_comparison.png",
+        "그림 3. 기존 V3 sampled Validation 모델 비교 그림"
+      ]
+    ],
+    "sources": [
+      "results/model_comparison_v3/model_diversity_comparison.csv",
+      "results/feature_selection/feature_reduction_comparison_v3.csv"
+    ]
+  },
+  {
+    "title": "10  V3 클래스별 성능과 모델 일치",
+    "subtitle": "높은 전체 점수에 남아 있는 오류 구조",
+    "paras": [
+      "클래스별 F1과 confusion matrix는 Macro F1의 원인을 보여준다. 희소 label의 support와 conflict pair의 혼동을 함께 해석해야 한다. 전체 평균만으로 minority attack 탐지의 완성도를 판단하지 않는다.",
+      "XGBoost와 LightGBM의 prediction agreement는 공통 오류 또는 상호 보완 가능성을 탐색하는 근거다. 일치율만으로 ensemble이 더 좋다고 결론내리지 않는다. 저장소의 agreement·disagreement 결과를 기존 그림과 함께 제시한다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/04_lightgbm_per_class_f1.png",
+        "그림 4. V3 sampled Validation의 LightGBM per-class F1"
+      ],
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/06_xgb_lgbm_agreement.png",
+        "그림 5. 기존 XGBoost / LightGBM prediction agreement 분석"
+      ]
+    ],
+    "sources": [
+      "results/lightgbm_top40_v3/classification_report.csv",
+      "results/ensemble_analysis_v3/xgb_lgbm_agreement.csv"
+    ]
+  },
+  {
+    "title": "11  Feature Importance와 Reduction",
+    "subtitle": "Top40을 선택한 실험적 이유",
+    "paras": [
+      "XGBoost Full78 importance의 상위 입력은 Fwd Act Data Pkts, Fwd Seg Size Min, Fwd Header Len, ECE Flag Cnt 등이다. 이는 모델 의존적 importance이며 causal evidence가 아니다.",
+      "Full78 → Top40은 feature 수를 48.7179% 줄이면서 sampled Validation Macro F1을 0.846377 → 0.859573으로 높였다. Top20은 0.849831, Top10은 0.808544로 감소했다. 계산 입력 축소와 품질의 균형으로 Top40을 후속 기본 feature set으로 채택했다.",
+      "Top40 검증은 model importance, reduction, conflict projection, 후속 통계 분석을 종합했다. 통계 p-value만으로 선택한 feature set이 아니다."
+    ],
+    "tables": [
+      {
+        "caption": "표 10. XGBoost V3 feature reduction",
+        "headers": [
+          "Set",
+          "Features",
+          "Accuracy",
+          "Macro F1"
+        ],
+        "rows": [
+          [
+            "Full78",
+            "78",
+            "0.945546",
+            "0.846377"
+          ],
+          [
+            "Top40",
+            "40",
+            "0.943117",
+            "0.859573"
+          ],
+          [
+            "Top20",
+            "20",
+            "0.940239",
+            "0.849831"
+          ],
+          [
+            "Top10",
+            "10",
+            "0.929674",
+            "0.808544"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/12_feature_importance.png",
+        "그림 6. Full78 모델의 gain importance 상위 10개"
+      ]
+    ],
+    "sources": [
+      "results/xgboost_v3/feature_importance_full78.csv",
+      "results/feature_selection/top40_features.csv",
+      "results/feature_selection/feature_reduction_comparison_v3.csv"
+    ]
+  },
+  {
+    "title": "12  Feature Reduction 검증",
+    "subtitle": "입력 축소 후 conflict projection을 재확인",
+    "paras": [
+      "입력을 줄이면 원래 구분되던 78개 vector가 40개 projection에서 동일해질 수 있다. top40_projection_integrity는 frequency 합 보존과 새로 합쳐진 패턴 수를 함께 기록한다.",
+      "Train Benign에서 7,445,818개 Full78 pattern이 7,445,262개 Top40 pattern으로 줄어 556개가 합쳐졌다. class별 전체 frequency는 유지됐다. SlowHTTP/FTP conflict는 Full78과 Top40에서 동일했으며 Benign/Infilteration conflict는 15,493 → 15,508 patterns로 소폭 늘었다.",
+      "따라서 Top40의 후속 품질 검증은 필요하다. feature reduction이 leakage를 모든 표현 공간에서 완전히 제거했다고 주장하지 않는다. V2의 overlap=0은 78개 feature hash 기준이다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/09_feature_reduction.png",
+        "그림 7. 새로 생성한 feature 수 대비 Macro F1"
+      ],
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/03_feature_reduction.png",
+        "그림 8. 저장소의 기존 feature reduction 결과 그림"
+      ]
+    ],
+    "sources": [
+      "results/model_sample_v4/top40_projection_integrity.csv",
+      "results/model_sample_v4/full78_vs_top40_conflict.csv"
+    ]
+  },
+  {
+    "title": "13  V3 Final Test 실패",
+    "subtitle": "실패를 보존하고 원인을 분해한다",
+    "paras": [
+      "문제: sampled Validation에서 선정한 V3 LightGBM을 Test V2에 적용했을 때 Accuracy 0.689660, Macro F1 0.656252로 떨어졌다. Test confusion matrix에서 전체 지표를 다시 계산하여 출력과 일치함을 확인했다.",
+      "Benign → Infilteration 699,881건이 대규모 오탐의 중심이었다. SlowHTTPTest → FTP 47,535건, Infilteration → Benign 3,388건, FTP → SlowHTTPTest 1,272건도 관찰됐다.",
+      "해석: 패턴 누수를 막은 이후에도 학습 prior와 실제 평가 빈도의 불일치가 큰 오류를 만들 수 있다. 이 실패를 숨기지 않고 학습 설계를 수정하는 근거로 활용했다.",
+      "이 평가로 Test V2는 이미 소비됐다. 이후 V4 모델 선택·추가 튜닝에는 Test를 재사용하지 않았으며 V4의 independent final 성능으로 이 Test 점수를 제시하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 11. V3 Test V2 재계산 지표",
+        "headers": [
+          "Metric",
+          "Value"
+        ],
+        "rows": [
+          [
+            "accuracy",
+            "0.689660"
+          ],
+          [
+            "macro_precision",
+            "0.647634"
+          ],
+          [
+            "macro_recall",
+            "0.787883"
+          ],
+          [
+            "macro_f1",
+            "0.656252"
+          ],
+          [
+            "weighted_f1",
+            "0.795021"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/07_benign_infilteration_errors.png",
+        "그림 9. 저장소의 Benign / Infilteration 오류 분석; 평가 범위는 원본 그림 표시를 따른다"
+      ]
+    ],
+    "sources": [
+      "results/final_evaluation/test_confusion_matrix.csv",
+      "notebooks/final_evaluation.ipynb"
+    ]
+  },
+  {
+    "title": "14  Class Prior Distortion",
+    "subtitle": "deduplication + per-class cap이 핵심 원인",
+    "paras": [
+      "Original Train V2에서 Benign/Infilteration은 9,451,891 / 113,111 = 83.563:1이다. V3 sample에서는 100,000 / 98,237 = 1.018:1로 바뀌었다. Infilteration의 상대 비중이 과도하게 커졌다.",
+      "원인 진단: unique-pattern 사용 자체가 아니라 원래 반복 frequency를 버리고 클래스별 최대 100k cap을 결합한 것이 주된 분포 왜곡이다. 이 변화는 Benign을 Infilteration으로 과도 예측한 Test 결과와 일관된다. 다만 별도 causal ablation 없이 단일 원인으로 완전히 입증됐다고 말하지 않는다.",
+      "V4 의사결정: 중복 제거를 되돌려 row 암기를 허용하기보다 unique pattern에 frequency를 연결한다. 대규모 Benign reservoir sampling의 선택 확률 보정도 반영한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 12. V2 → V3 분포 변화",
+        "headers": [
+          "Class",
+          "Train V2 rows",
+          "V3 sample rows",
+          "V3/V2 상대비중 배율"
+        ],
+        "rows": [
+          [
+            "Benign",
+            "9,451,891",
+            "100,000",
+            "0.172×"
+          ],
+          [
+            "SlowHTTPTest",
+            "85,458",
+            "44",
+            "0.008×"
+          ],
+          [
+            "FTP",
+            "173,083",
+            "39",
+            "0.004×"
+          ],
+          [
+            "Infilteration",
+            "113,111",
+            "98,237",
+            "14.119×"
+          ],
+          [
+            "SSH",
+            "155,484",
+            "66,117",
+            "6.913×"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/01_v3_v4_evolution.png",
+        "그림 10. V3와 V4 성능 기록. V3 sample / Test / V4 Full Validation은 서로 다른 집단으로 직접 개선량 비교 불가"
+      ]
+    ],
+    "sources": [
+      "results/model_sample_v4/v2_v3_distribution_compare.csv",
+      "results/final_evaluation/test_confusion_matrix.csv"
+    ]
+  },
+  {
+    "title": "15  V4 Frequency-aware Learning",
+    "subtitle": "frequency 보존과 제한된 가중치 탐색",
+    "paras": [
+      "설계: 각 unique pattern의 원래 frequency를 보존한다. V4-A는 Benign unique pattern 1,000,000개 reservoir sample과 다른 클래스의 unique pattern을 사용하고 sqrt(frequency) 가중치를 부여했다. Benign sampling correction으로 표본 선택의 빈도 축소를 보정했다.",
+      "unique는 반복 정보를 완전히 버리고 raw frequency는 반복 패턴의 영향이 매우 커질 수 있다. log1p와 sqrt는 그 사이의 압축 전략이다. sqrt를 첫 전략으로 사용한 이유는 반복량을 반영하면서 극단적 frequency 지배를 완화하기 위해서다. 후보별 full model 학습이 모두 수행됐다는 의미는 아니다.",
+      "V4-B1과 B2는 Infilteration sample_weight를 각각 ×2와 ×3으로 조정했다. 동일 Full Validation에서 Macro F1이 0.792164 → 0.802962 → 0.808655로 개선되며 Accuracy는 0.980710 → 0.979876 → 0.979313으로 소폭 낮아졌다.",
+      "최종 development 후보는 V4-B2다. Infilteration recall 0.109207 → 0.227714 → 0.272063, F1 0.171618 → 0.286276 → 0.310527로 개선됐다. 이 클래스의 F1은 여전히 낮아 완전 해결로 표현하지 않는다.",
+      "×4·×5는 검증된 실험으로 기록하지 않는다. 추가 validation 탐색은 같은 집단에 대한 과적합 위험을 키우므로 보고서의 의사결정은 ×3에서 마감한다. 탐색 중단의 과거 동기가 별도 로그로 입증된 것은 아니다."
+    ],
+    "tables": [
+      {
+        "caption": "표 13. 동일 Full Validation의 V4 비교",
+        "headers": [
+          "Variant",
+          "Accuracy",
+          "Macro F1",
+          "Weighted F1"
+        ],
+        "rows": [
+          [
+            "V4-A_x1",
+            "0.980710",
+            "0.792164",
+            "0.976229"
+          ],
+          [
+            "V4-B1_x2",
+            "0.979876",
+            "0.802962",
+            "0.976984"
+          ],
+          [
+            "V4-B2_x3",
+            "0.979313",
+            "0.808655",
+            "0.977194"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "notebooks/model_sample_v4.ipynb",
+      "results/v4_model_comparison/overall_metrics.csv",
+      "results/v4_model_comparison/focus_class_metrics.csv"
+    ]
+  },
+  {
+    "title": "16  Structural Ambiguity",
+    "subtitle": "관측 정보의 한계와 개선 가능한 오류를 구분",
+    "paras": [
+      "Validation의 동일 feature pattern에서 두 label의 빈도를 비교했다. 각 conflict pattern의 작은 label 빈도를 합친 값은 deterministic 분류가 피할 수 없는 minority 오류의 하한을 나타낸다. ambiguity ratio는 이 합계를 해당 pair의 conflict rows로 나눈 비율이며 전체 Validation error ceiling이 아니다.",
+      "SlowHTTP/FTP에서 SlowHTTP support의 79.1340%, FTP support의 28.6714%가 conflict에 해당하고 conflict rows 내 ambiguity는 40.9179%다. 현재 flow feature만으로 해결하기 어려운 structural ambiguity가 크다.",
+      "Benign/Infilteration의 conflict 비율은 각각 0.9502%, 25.6346%, pair ambiguity 24.1734%다. weighting 개선 여지가 있지만 conflict 자체가 사라진 것은 아니다.",
+      "V4-B2에서 FTP F1은 0.040371, SlowHTTPTest F1은 0.378036이다. aggregate Macro F1 0.808655에도 특정 공격군의 한계가 남는다. feature 확장·데이터 라벨 검토·추가 관측 맥락은 미래 검증 과제다."
+    ],
+    "tables": [
+      {
+        "caption": "표 14. Validation pair conflict 분석",
+        "headers": [
+          "Pair",
+          "Class A conflict",
+          "Class B conflict",
+          "Pair ambiguity"
+        ],
+        "rows": [
+          [
+            "SlowHTTP / FTP",
+            "79.1340%",
+            "28.6714%",
+            "40.9179%"
+          ],
+          [
+            "Benign / Infilteration",
+            "0.9502%",
+            "25.6346%",
+            "24.1734%"
+          ]
+        ]
+      },
+      {
+        "caption": "표 15. V4 minority focus F1",
+        "headers": [
+          "Class",
+          "V4-A",
+          "V4-B1",
+          "V4-B2"
+        ],
+        "rows": [
+          [
+            "Benign",
+            "0.993559",
+            "0.993051",
+            "0.992602"
+          ],
+          [
+            "SlowHTTPTest",
+            "0.371505",
+            "0.371517",
+            "0.378036"
+          ],
+          [
+            "FTP",
+            "0.000000",
+            "0.000000",
+            "0.040371"
+          ],
+          [
+            "Infilteration",
+            "0.171618",
+            "0.286276",
+            "0.310527"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "notebooks/model_sample_v4.ipynb, cells 63–65",
+      "results/v4_model_comparison/focus_class_metrics.csv"
+    ]
+  },
+  {
+    "title": "17  Statistical Validation: Binary",
+    "subtitle": "유의성보다 효과 크기까지 검토",
+    "paras": [
+      "Mann–Whitney U는 Benign 100,000 vs Attack 100,000 표본의 분포 차이를 비교했다. 40개 검정에 Benjamini–Hochberg FDR 보정을 적용한 결과 38/40이 유의했다. feature들이 독립적인 증거라는 의미는 아니다.",
+      "signed rank-biserial effect는 U/(n_benign·n_attack)에서 계산되는 방향·크기 지표다. Dst Port -0.732210, Fwd Pkts/s -0.551948은 Benign 쪽 값이 상대적으로 작음을 뜻한다. Flow Duration +0.499302, Flow IAT Mean +0.492709 등은 반대 방향이다.",
+      "큰 표본에서 p-value가 매우 작아지는 현상을 고려해 effect size를 함께 제시한다. CSV p=0은 부동소수점 표현 또는 수치 underflow의 결과로, 실제 확률이 수학적으로 0이라는 주장이 아니다.",
+      "Attack 혼합의 효과는 개별 공격 클래스 간 차이를 대신하지 않는다. 다음 multiclass 검정이 binary 분석의 정보 손실을 보완한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 16. Binary 검정 요약",
+        "headers": [
+          "항목",
+          "결과"
+        ],
+        "rows": [
+          [
+            "표본",
+            "Benign 100k / Attack 100k"
+          ],
+          [
+            "FDR significant",
+            "38/40"
+          ],
+          [
+            "큰 효과 feature",
+            "2"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/10_mann_whitney_effect.png",
+        "그림 11. 절대 effect 상위 10개; 부호는 Benign 대비 방향"
+      ]
+    ],
+    "sources": [
+      "results/statistical_analysis_v4/mann_whitney_top40.csv",
+      "notebooks/statistical_analysis_v4.ipynb"
+    ]
+  },
+  {
+    "title": "18  Statistical Validation: Multiclass",
+    "subtitle": "binary p-value만으로 제거하면 정보가 사라진다",
+    "paras": [
+      "Kruskal–Wallis는 15개 클래스를 비교했다. 저장된 총 표본은 209,618개로 모든 클래스에서 100k씩 뽑은 검정이 아니다. FDR 유의는 40/40, large effect는 38개다.",
+      "상위 입력은 Fwd Seg Size Min, Dst Port, Flow IAT Mean, Fwd Pkts/s, Flow IAT Max, Flow Duration, Init Fwd Win Byts, Fwd IAT Max, Fwd IAT Tot, Bwd Pkts/s다. effect는 epsilon squared로 보고한다.",
+      "PSH Flag Cnt는 binary MW에서는 유의하지 않지만 multiclass KW에서는 큰 효과다. Benign/Attack 합산에서 상쇄되는 차이가 공격 클래스 사이에는 남을 수 있다. binary p-value만으로 제거하면 multiclass 정보를 잃을 수 있다.",
+      "통계 검정은 모델 성능·conflict 분석을 보완하는 검증이다. 독립 test의 일반화나 feature의 인과 관계를 증명하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 17. PSH Flag Cnt 검정 비교",
+        "headers": [
+          "검정",
+          "FDR significant",
+          "Effect",
+          "Level"
+        ],
+        "rows": [
+          [
+            "Mann–Whitney",
+            "False",
+            "-0.001550",
+            "negligible"
+          ],
+          [
+            "Kruskal–Wallis",
+            "True",
+            "0.211613",
+            "large"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/11_kruskal_effect.png",
+        "그림 12. multiclass epsilon squared 상위 10개"
+      ]
+    ],
+    "sources": [
+      "results/statistical_analysis_v4/kruskal_wallis_top40.csv",
+      "results/statistical_analysis_v4/top40_statistical_validation.csv"
+    ]
+  },
+  {
+    "title": "19  DNN 경량 모델",
+    "subtitle": "checkpoint·학습 이력·최종 지표를 분리",
+    "paras": [
+      "확인된 구조: 40 → Linear128 → BatchNorm → ReLU → Dropout0.2 → Linear128 → BatchNorm → ReLU → Dropout0.2 → Linear64 → ReLU → Linear15. scripts/benchmark_model_memory.py의 모델 정의와 checkpoint tensor shape가 일치한다.",
+      "checkpoint의 best epoch=13, development subset Macro F1=0.6630381655를 training_history와 함께 확인했다. 이는 Full Validation Macro F1=0.6986469531과 서로 다른 평가 집단이다.",
+      "StandardScaler 파일과 checkpoint 내 feature 순서는 존재한다. Train에서만 scaler fit 및 V4-B2 sample_weight 기반 Weighted Cross Entropy는 제공된 실험 설명이지만 dnn_top40_v4.ipynb가 0 bytes라 학습 코드를 직접 재확인할 수 없다. 학습 provenance의 이 제한을 유지한다.",
+      "Full Validation Accuracy 0.984179는 LightGBM보다 높지만 Macro F1 0.698647은 낮다. DNN은 탐지 품질 우승 모델이 아니라 작은 파일과 낮은 CPU inference latency를 가진 경량 후보로 평가한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 18. DNN FP32 Full Validation",
+        "headers": [
+          "Metric",
+          "Value"
+        ],
+        "rows": [
+          [
+            "accuracy",
+            "0.984179"
+          ],
+          [
+            "macro_precision",
+            "0.717727"
+          ],
+          [
+            "macro_recall",
+            "0.704297"
+          ],
+          [
+            "macro_f1",
+            "0.698647"
+          ],
+          [
+            "weighted_f1",
+            "0.981440"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/13_dnn_training.png",
+        "그림 13. 저장된 development epoch별 Macro F1"
+      ]
+    ],
+    "sources": [
+      "models/network/dnn_top40_v4_best.pt",
+      "results/dnn_top40_v4/training_history.csv",
+      "results/dnn_top40_v4/dnn_fp32_full_valid_metrics.csv",
+      "scripts/benchmark_model_memory.py"
+    ]
+  },
+  {
+    "title": "20  INT8 Quantization 실험",
+    "subtitle": "실패 기록과 검증 가능한 결과를 구분",
+    "paras": [
+      "Legacy dynamic INT8: torch.ao.quantization.quantize_dynamic 실험의 모델 파일은 존재한다. 제공된 결과는 Accuracy 0.878532, Macro F1 0.286261, Weighted F1 0.865403, prediction agreement 0.885160으로 품질 붕괴·rejected다. 그러나 해당 metric CSV·노트북 출력은 현재 저장소에서 찾지 못했다. 수치는 사용자 제공 기록으로 표시하며 검증 CSV와 공식 성능 그래프에는 합치지 않는다.",
+      "TorchAO INT8 PTQ: Int8DynamicActivationInt8WeightConfig 사용은 loader 코드에서 확인했다. Full Validation CSV와 confusion matrix로 품질을 검증했다. Accuracy 0.984110, Macro F1 0.698836, Weighted F1 0.981409다.",
+      "8192-row sanity의 agreement 0.999878, changed=1/8192는 제공된 기록이다. 별도 sanity 결과 파일이 없어 독립 재확인하지 못했다. full-validation 품질 보존 판단은 존재하는 CSV에 근거한다.",
+      "FP32 대비 Macro F1 +0.000189는 작은 점 추정 차이다. paired significance나 반복 실험이 없어 양자화에 의한 성능 향상으로 해석하지 않고 실질적으로 FP32 품질을 보존했다고 표현한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 19. TorchAO - FP32, 동일 Full Validation",
+        "headers": [
+          "Metric",
+          "FP32",
+          "TorchAO INT8",
+          "Delta"
+        ],
+        "rows": [
+          [
+            "accuracy",
+            "0.984179",
+            "0.984110",
+            "-0.000068"
+          ],
+          [
+            "macro_precision",
+            "0.717727",
+            "0.718634",
+            "+0.000907"
+          ],
+          [
+            "macro_recall",
+            "0.704297",
+            "0.703598",
+            "-0.000699"
+          ],
+          [
+            "macro_f1",
+            "0.698647",
+            "0.698836",
+            "+0.000189"
+          ],
+          [
+            "weighted_f1",
+            "0.981440",
+            "0.981409",
+            "-0.000031"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "models/network/dnn_top40_v4_dynamic_int8.pt",
+      "results/dnn_top40_v4/*_full_valid_metrics.csv",
+      "scripts/benchmark_model_memory.py"
+    ]
+  },
+  {
+    "title": "21  CPU Benchmark Protocol",
+    "subtitle": "현재 환경에서의 순수 inference 비용",
+    "paras": [
+      "환경은 WSL2 Ubuntu Linux, x86 CPU, PyTorch 2.14.1+cu130, CPU 1 thread다. 이 보고서의 benchmark는 실제 drone·ARM·NPU hardware 결과가 아니다. 모든 모델에 동일 Top40 원시 입력을 사용하며 DNN에는 Train scaler 기반 preprocessing을 적용한다.",
+      "사용자 지정 results/ondevice_benchmark_v4/inference_benchmark.csv는 현재 없다. 대신 results/final_report/benchmark_*.csv와 benchmark_environment.json에 남아 있는 검증 측정 산출물을 사용했다. ondevice_benchmark_v4.ipynb 역시 0 bytes다.",
+      "검증 산출물 protocol: 4096-row 입력에서 batch 1/32/256/4096, 2 warm-ups 이후 DNN 30회·LightGBM 3회 반복의 median이다. preprocessing과 disk I/O를 timing에서 제외하고 모델마다 새 process를 사용한다. LightGBM 반복 수가 적고 시스템 부하에 민감하므로 이 측정의 절대 latency는 제한적으로 해석한다.",
+      "원래 제공 수치와 검증 산출물은 차이가 있다. batch4096 FP32 3.2689 → 5.6104ms, INT8 63.5359 → 77.3871ms, LightGBM 7140.9082 → 11414.4773ms. 서로 다른 측정 기록을 섞지 않고 표·그래프는 현재 검증 파일 값으로 통일한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 20. 확인된 직렬화 크기",
+        "headers": [
+          "Model",
+          "Size (MiB)",
+          "포함 범위"
+        ],
+        "rows": [
+          [
+            "LightGBM V4-B2",
+            "46.3843",
+            "LightGBM text"
+          ],
+          [
+            "DNN FP32",
+            "0.1286",
+            "state_dict only"
+          ],
+          [
+            "TorchAO INT8",
+            "0.0459",
+            "state_dict only"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/03_model_size.png",
+        "그림 14. 직렬화 파일 크기; log scale, bytes/1024²"
+      ]
+    ],
+    "sources": [
+      "results/final_report/benchmark_environment.json",
+      "results/final_report/verify_benchmark.py",
+      "results/ondevice_benchmark_v4/*_state_dict.pt",
+      "models/network/lightgbm_top40_v4b2.txt"
+    ]
+  },
+  {
+    "title": "22  Batch Latency와 Throughput",
+    "subtitle": "모델 품질과 CPU 속도를 따로 판단",
+    "paras": [
+      "검증 파일에서 batch1 median은 FP32 0.0342600ms, INT8 0.6288555ms, LightGBM 3.808330ms다. batch4096 처리량은 FP32 730,078, INT8 52,929, LightGBM 359 flows/s다.",
+      "Throughput은 batch size×1000/median latency(ms)로 계산한 순수 model inference 처리량이다. 실제 flow 수집·전처리·queue·agent orchestration을 포함한 end-to-end SOC 처리량이 아니다.",
+      "FP32가 현재 x86 환경에서 가장 빠르다. INT8 파일은 작지만 dynamic activation quantization 및 kernel/runtime 경로의 비용이 이 소형 MLP에 크게 작용했을 가능성이 있다. profiling 없이 단일 원인으로 확정하지 않는다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/04_latency.png",
+        "그림 15. batch별 median latency; x/y축 log scale"
+      ],
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/05_throughput.png",
+        "그림 16. batch별 throughput; x/y축 log scale"
+      ]
+    ],
+    "sources": [
+      "results/final_report/benchmark_fp32.csv",
+      "results/final_report/benchmark_int8.csv",
+      "results/final_report/benchmark_lightgbm.csv"
+    ]
+  },
+  {
+    "title": "23  Runtime Memory Benchmark",
+    "subtitle": "RSS는 weight memory가 아니라 process 비용",
+    "paras": [
+      "독립 process의 baseline, input, model load, inference 후 RSS와 ru_maxrss를 비교했다. Python·PyTorch·TorchAO·LightGBM runtime, allocator, kernel 초기화 등이 포함된다. RSS를 모델 weight memory 또는 실제 embedded board 필요 RAM이라고 표현하지 않는다.",
+      "제공된 원래 RSS 기록을 뒷받침하는 결과 파일은 없다. 이 표는 기존 memory_*.json 검증 산출물이다. baseline부터 다르므로 원래 제시값과 통합 평균을 만들지 않는다.",
+      "FP32 model load delta는 4.0508MiB, peak delta는 96.1289MiB다. allocator·lazy loading·회수와 측정 시점이 RSS에 영향을 준다. baseline에는 이미 큰 Python/ML runtime 비용이 있으므로 파일 크기와 RSS를 같은 메모리 개념으로 비교하지 않는다.",
+      "INT8 load delta 163.0352MiB와 peak delta 257.2930MiB는 FP32보다 크다. LightGBM peak delta는 132.3164MiB다. INT8은 파일이 가장 작지만 현 x86 runtime 부담이 크다. 그 원인을 kernel overhead 하나로 단정하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 21. 독립 process RSS (MiB)",
+        "headers": [
+          "측정 시점",
+          "LightGBM",
+          "FP32",
+          "INT8"
+        ],
+        "rows": [
+          [
+            "Baseline",
+            "645.3672",
+            "645.4570",
+            "645.4414"
+          ],
+          [
+            "After input",
+            "683.7344",
+            "728.0430",
+            "728.0039"
+          ],
+          [
+            "After model",
+            "722.4219",
+            "732.0938",
+            "891.0391"
+          ],
+          [
+            "After inference",
+            "723.0039",
+            "738.0938",
+            "896.7070"
+          ],
+          [
+            "Peak RSS",
+            "777.6836",
+            "741.5859",
+            "902.7344"
+          ],
+          [
+            "Model load delta",
+            "38.6875",
+            "4.0508",
+            "163.0352"
+          ],
+          [
+            "Peak delta",
+            "132.3164",
+            "96.1289",
+            "257.2930"
+          ]
+        ]
+      }
+    ],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/06_model_load_rss.png",
+        "그림 17. model load delta RSS; process runtime 변화"
+      ]
+    ],
+    "sources": [
+      "results/final_report/memory_lightgbm.json",
+      "results/final_report/memory_fp32.json",
+      "results/final_report/memory_int8.json"
+    ]
+  },
+  {
+    "title": "24  최종 모델 Trade-off",
+    "subtitle": "단일 winner 대신 배치 목적별 선택",
+    "paras": [
+      "Detection Quality — LightGBM V4-B2: Full Validation Macro F1 0.808655로 비교 후보 중 가장 높다. 서버/SOC 분석 후보이며 Infilteration·FTP·SlowHTTP 한계를 계속 감시해야 한다.",
+      "On-Device / Edge Candidate — DNN FP32: 0.1286MiB state_dict, batch1 0.0343ms, 작은 peak RSS 증가로 현 CPU 경량 추론 후보에 적합하다. minority-class Macro F1 손실을 수용할 수 있는 용도인지 별도 판단해야 한다.",
+      "Extreme Storage / Quantization Experiment — TorchAO INT8: 0.0459MiB로 가장 작고 FP32 품질을 거의 보존한다. 그러나 현 x86에서 FP32보다 지연과 RSS 부담이 크다. 실제 ARM/NPU target에 맞는 runtime·kernel에서 재검증해야 한다.",
+      "파일 크기는 inference weights의 직렬화 크기다. scaler, 라이브러리·runtime·의존성 배포 크기는 포함하지 않는다. 최종 후보 지정은 deployment 완료 또는 independent final holdout 통과를 뜻하지 않는다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/08_accuracy_macro_f1.png",
+        "그림 18. Accuracy는 DNN이 높지만 Macro F1은 LightGBM이 높다"
+      ],
+      [
+        "/home/geonug/kdt-linux/ML/results/final_report/figures/07_peak_rss.png",
+        "그림 19. baseline 대비 peak RSS delta 비교"
+      ]
+    ],
+    "sources": [
+      "results/final_report/ondevice_model_comparison.csv"
+    ]
+  },
+  {
+    "title": "25  Autonomous SOC Agent 연결 전략",
+    "subtitle": "향후 integration 설계이며 완료된 구현이 아니다",
+    "paras": [
+      "제안 경로: Network Flow → Security AI Adapter → LightGBM / DNN inference → normalized threat evidence → ThreatAssessor → Investigation → Policy / Human Approval → Response.",
+      "현재 ML 저장소에서 이 통합 흐름의 구현을 확인하지 못했다. 따라서 이 절은 통합 후보·설계 제안으로 제시한다. 실제 agent API 계약, 운영 정책 및 response 권한은 별도 저장소와 검토가 필요하다.",
+      "Adapter는 Top40 이름·순서·dtype, 결측 처리, model/scaler version을 고정하고 예측 label·score·관측 시간·flow 식별자를 evidence로 전달하도록 설계할 수 있다. calibrated probability 검증 전 score를 확정 위협 확률로 표현하지 않는다.",
+      "서버측 LightGBM은 높은 탐지 품질을 활용하는 분석 후보이고 DNN FP32는 제한된 계산 환경의 edge inference 후보다. 모든 흐름을 이중 추론하는 구현이 이미 존재한다고 주장하지 않는다.",
+      "후속 검증은 실제 drone network flow feature 호환성, 독립 holdout과 target board end-to-end latency, minority recall, 오탐에 따른 조사 비용부터 수행한다. 모델 출력 단독으로 자동 차단을 확정하는 정책은 별도 human approval 설계가 필요하다."
+    ],
+    "tables": [
+      {
+        "caption": "표 22. 통합 단계별 검증 조건",
+        "headers": [
+          "단계",
+          "필요 검증"
+        ],
+        "rows": [
+          [
+            "Flow / Adapter",
+            "feature schema·순서·단위·결측 규칙"
+          ],
+          [
+            "Inference",
+            "version pinning·품질·target latency"
+          ],
+          [
+            "Threat evidence",
+            "score calibration·traceability"
+          ],
+          [
+            "Investigation",
+            "외부 증거와 상충 판단"
+          ],
+          [
+            "Policy / Approval",
+            "위험별 권한·human decision"
+          ],
+          [
+            "Response",
+            "실행 계약·감사 기록·복구"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/feature_selection/top40_features.csv",
+      "scripts/benchmark_model_memory.py",
+      "통합 내용은 향후 설계 제안; 구현 증거 없음"
+    ]
+  },
+  {
+    "title": "26  Limitations와 다음 검증",
+    "subtitle": "결론의 적용 범위를 명확히 한다",
+    "paras": [
+      "데이터: CSE-CIC-IDS2018 자체의 duplicate와 label ambiguity가 남는다. SQL Injection 등 일부 클래스는 전체 support부터 매우 작고 per-class metric의 안정성이 낮다. SlowHTTP/FTP의 structural ambiguity는 단순 hyperparameter 조정만으로 해결하기 어렵다.",
+      "평가: V4는 Validation 중심 개발이다. Test V2는 V3 final 평가에서 소비됐고 V4 선택·추가 튜닝에 재사용하지 않았다. 새로운 independent final holdout, 시간·source/campaign 단위 평가가 필요하다.",
+      "모델: DNN의 Accuracy 우위는 minority detection 우위를 뜻하지 않는다. FP32/INT8 Macro F1은 약 0.699로 LightGBM보다 낮다. class별 support와 false-positive 비용을 운영 기준에 연결해야 한다.",
+      "시스템: benchmark는 WSL/x86 CPU 1 thread 순수 inference이다. 실제 embedded board·drone·ARM·NPU latency/RAM/전력과 다르다. INT8 효과는 target hardware와 kernel에 따라 바뀌며 drone network traffic 일반화는 아직 검증되지 않았다.",
+      "기록: DNN·benchmark 노트북이 비어 있고 legacy INT8 metric·sanity 결과·원래 benchmark CSV가 없다. Training scaler fit 및 weighted loss provenance를 완전히 재현할 수 없다. 검증 파일의 RSS는 allocator 변화와 시스템 조건에 민감하다.",
+      "권장 순서: 실험 provenance 복구 → untouched holdout 확보 → 희소 공격 및 conflict 오류 재검증 → target board end-to-end·전력 측정 → SOC evidence contract 구현·정책 검토. 이는 완료된 실험 목록이 아니다."
+    ],
+    "tables": [],
+    "images": [],
+    "sources": [
+      "results/data_quality/class_distribution.csv",
+      "results/v4_model_comparison/focus_class_metrics.csv",
+      "results/final_report/benchmark_environment.json",
+      "notebooks/dnn_top40_v4.ipynb (0 bytes)",
+      "notebooks/ondevice_benchmark_v4.ipynb (0 bytes)"
+    ]
+  },
+  {
+    "title": "27  결론과 근거 파일",
+    "subtitle": "실험 설계를 재구성한 Security AI 프로젝트",
+    "paras": [
+      "이 프로젝트의 기술적 가치는 높은 Accuracy 하나에 있지 않다. 대규모 데이터의 반복·label conflict와 split 설계의 누수 가능성을 발견하고, 패턴 단위 분리 이후에도 prior distortion으로 실패할 수 있음을 Test에서 확인했다.",
+      "frequency-aware weighting으로 학습 설계를 수정하고, Top40을 importance·reduction·projection·통계로 검증했다. DNN 및 INT8에서는 품질과 경량화가 같은 목표가 아님을 실제 CPU 산출물로 드러냈다.",
+      "현재 근거가 지지하는 선택은 LightGBM V4-B2의 탐지 품질, DNN FP32의 x86 CPU 경량 추론, TorchAO INT8의 저장 공간 절충이다. independent final holdout과 실제 target hardware 검증 전에는 drone 실배포 성능을 주장하지 않는다."
+    ],
+    "tables": [
+      {
+        "caption": "표 23. 핵심 주장과 원본 근거",
+        "headers": [
+          "주장",
+          "근거 파일 (프로젝트 상대 경로)"
+        ],
+        "rows": [
+          [
+            "데이터 규모·품질",
+            "results/data_quality/dataset_profile.csv"
+          ],
+          [
+            "Class imbalance",
+            "results/data_quality/class_distribution.csv"
+          ],
+          [
+            "Conflict / overlap",
+            "results/final_report/data_verification.json"
+          ],
+          [
+            "V3 prior distortion",
+            "results/model_sample_v4/v2_v3_distribution_compare.csv"
+          ],
+          [
+            "V3 Test 실패",
+            "results/final_evaluation/test_confusion_matrix.csv"
+          ],
+          [
+            "V4 모델 선택",
+            "results/v4_model_comparison/overall_metrics.csv"
+          ],
+          [
+            "Minority 성능",
+            "results/v4_model_comparison/focus_class_metrics.csv"
+          ],
+          [
+            "Feature reduction",
+            "results/feature_selection/feature_reduction_comparison_v3.csv"
+          ],
+          [
+            "통계 검증",
+            "results/statistical_analysis_v4/*top40.csv"
+          ],
+          [
+            "DNN / INT8 품질",
+            "results/dnn_top40_v4/*_full_valid_metrics.csv"
+          ],
+          [
+            "CPU / RSS",
+            "results/final_report/benchmark_*.csv; memory_*.json"
+          ],
+          [
+            "측정 protocol",
+            "results/final_report/verify_benchmark.py"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "전체 파일 해시·크기: results/final_report/evidence_manifest.csv",
+      "수치 차이 및 provenance: results/final_report/discrepancy_log.csv"
+    ]
+  },
+  {
+    "title": "부록 A  기존 V3 결과 시각화",
+    "subtitle": "원본 그림의 평가 범위를 유지해 수록",
+    "paras": [
+      "기존 보고서 그림을 재사용한다. 아래 그림은 V3 개발 결과이며 V4 또는 drone hardware 성능을 나타내지 않는다. V3 Test 실패를 보여주는 독립 confusion matrix와 혼동하지 않는다."
+    ],
+    "tables": [],
+    "images": [
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/02_accuracy_vs_macro_f1.png",
+        "그림 A1. 기존 V3 모델 Accuracy vs Macro F1"
+      ],
+      [
+        "/home/geonug/kdt-linux/ML/results/experiment_report/figures/05_lightgbm_confusion_matrix.png",
+        "그림 A2. 기존 V3 LightGBM confusion matrix; 원본 평가 범위"
+      ]
+    ],
+    "sources": [
+      "results/experiment_report/figures/02_accuracy_vs_macro_f1.png",
+      "results/experiment_report/figures/05_lightgbm_confusion_matrix.png"
+    ]
+  },
+  {
+    "title": "부록 B  CPU 측정 상세와 수치 대조",
+    "subtitle": "제공 수치와 실제 검증 산출물을 구분",
+    "paras": [
+      "아래 결과는 동일 verification artifact에서 읽었다. LightGBM은 반복 3회이므로 median의 안정성이 제한적이다. 수치의 단위는 ms, flows/s 및 MiB다. 원래 제공된 benchmark와 RSS 수치는 별도 discrepancy_log.csv에 모두 보존한다."
+    ],
+    "tables": [
+      {
+        "caption": "표 B1. Batch별 실제 검증 결과",
+        "headers": [
+          "Model / Batch",
+          "Median (ms)",
+          "Throughput (flows/s)"
+        ],
+        "rows": [
+          [
+            "LightGBM V4-B2 / 1",
+            "3.808330",
+            "263"
+          ],
+          [
+            "LightGBM V4-B2 / 32",
+            "98.782107",
+            "324"
+          ],
+          [
+            "LightGBM V4-B2 / 256",
+            "669.460105",
+            "382"
+          ],
+          [
+            "LightGBM V4-B2 / 4096",
+            "11414.477328",
+            "359"
+          ],
+          [
+            "DNN FP32 / 1",
+            "0.034260",
+            "29,189"
+          ],
+          [
+            "DNN FP32 / 32",
+            "0.059944",
+            "533,832"
+          ],
+          [
+            "DNN FP32 / 256",
+            "0.298976",
+            "856,255"
+          ],
+          [
+            "DNN FP32 / 4096",
+            "5.610361",
+            "730,078"
+          ],
+          [
+            "TorchAO INT8 / 1",
+            "0.628856",
+            "1,590"
+          ],
+          [
+            "TorchAO INT8 / 32",
+            "1.380280",
+            "23,184"
+          ],
+          [
+            "TorchAO INT8 / 256",
+            "4.680462",
+            "54,695"
+          ],
+          [
+            "TorchAO INT8 / 4096",
+            "77.387111",
+            "52,929"
+          ]
+        ]
+      },
+      {
+        "caption": "표 B2. 제공 기록과 실제 검증 비교",
+        "headers": [
+          "항목",
+          "제공 기록",
+          "실제 검증"
+        ],
+        "rows": [
+          [
+            "LightGBM V4-B2 batch4096 ms",
+            "7140.9082",
+            "11414.4773"
+          ],
+          [
+            "DNN FP32 batch4096 ms",
+            "3.2689",
+            "5.6104"
+          ],
+          [
+            "TorchAO INT8 batch4096 ms",
+            "63.5359",
+            "77.3871"
+          ],
+          [
+            "LightGBM V4-B2 load RSS MiB",
+            "25.1563",
+            "38.6875"
+          ],
+          [
+            "DNN FP32 load RSS MiB",
+            "3.5234",
+            "4.0508"
+          ],
+          [
+            "TorchAO INT8 load RSS MiB",
+            "129.2383",
+            "163.0352"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "sources": [
+      "results/final_report/benchmark_*.csv",
+      "results/final_report/memory_*.json",
+      "results/final_report/discrepancy_log.csv"
+    ]
+  }
+]

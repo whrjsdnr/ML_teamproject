@@ -1,0 +1,29 @@
+........................................................................ [  3%]
+........................................................................ [  6%]
+........................................................................ [  9%]
+............................................
+============================= slowest 20 durations =============================
+36.23s call     tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[DEFER]
+33.88s call     tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[REJECT]
+20.15s call     tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[DEFER]
+19.80s call     tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[REJECT]
+17.04s call     tests/integration/improvement_review/test_review.py::test_new_candidate_and_comparison_do_not_rebind_old_review
+15.91s call     tests/integration/improvement_promotion/test_eligibility.py::test_source_and_confirmation_corruption_raise_integrity_errors
+15.61s call     tests/integration/improvement_review/test_review.py::test_reviewable_summary_snapshot_and_idempotent_queries
+14.76s setup    tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[REJECT]
+14.35s setup    tests/integration/improvement_promotion/test_eligibility.py::test_measured_improvement_does_not_create_promotion_authority
+14.06s setup    tests/integration/improvement_promotion/test_eligibility.py::test_source_and_confirmation_corruption_raise_integrity_errors
+13.72s setup    tests/integration/improvement_review/test_review.py::test_reviewable_summary_snapshot_and_idempotent_queries
+13.65s setup    tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[DEFER]
+13.20s call     tests/integration/improvement_review/test_transactions.py::test_independent_process_terminal_decision_and_replay[True]
+13.16s call     tests/integration/improvement_review/test_transactions.py::test_independent_process_terminal_decision_and_replay[False]
+13.07s setup    tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[DEFER]
+12.89s call     tests/integration/offline_comparison/test_execution.py::test_explicit_capture_no_auto_selection_digest_and_baseline_snapshot
+12.67s call     tests/integration/offline_comparison/test_execution.py::test_measured_vertical_slice_provenance_restart_and_authority
+12.25s setup    tests/integration/improvement_review/test_review.py::test_confirmation_exact_identity_purpose_snapshot_expiry[expires_at]
+12.25s setup    tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[REJECT]
+12.23s setup    tests/integration/improvement_review/test_review.py::test_separate_permission_and_unauthenticated_denied[roles1]
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/home/geonug/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/typing.py:1213: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+260 passed in 852.15s (0:14:12)

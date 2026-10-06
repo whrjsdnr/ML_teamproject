@@ -1,0 +1,97 @@
+[
+  {
+    "path": "packages/network-security-ai/README.md",
+    "bytes": 8453,
+    "sha256": "5b0c67122fc0a71d88bc0c138a8df252527e7d1f58314d49d4f8cf8916cde72c"
+  },
+  {
+    "path": "packages/network-security-ai/examples/synthetic_top40.json",
+    "bytes": 984,
+    "sha256": "f4ec6c7c5ccae8be71490eb7dd1f970bf96dc5efbd520d3c57e9e13f126c1ec2"
+  },
+  {
+    "path": "packages/network-security-ai/pyproject.toml",
+    "bytes": 816,
+    "sha256": "8e99c491fc06daab27438024d8098ef144814a6bb9664dab51a9e5a2dcd15c6e"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/__init__.py",
+    "bytes": 945,
+    "sha256": "8c068eaf23ba32b253f3970fe67727842edd3fb864e9be80c82a9e86e1173bd0"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/__main__.py",
+    "bytes": 2119,
+    "sha256": "638cb5597551ba7147d318f4437da402096915387dc69e6a0605675ddc14e28e"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/adapter.py",
+    "bytes": 1269,
+    "sha256": "45429d500779c5855441f304bbc5d4ef3587e616c67aa635025eff5e90f2fc61"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/artifact_manifest.json",
+    "bytes": 514,
+    "sha256": "4db00b19111638de47528ba6cf7da35f0777715b5eb514243112dc50987e6657"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/contracts.py",
+    "bytes": 8628,
+    "sha256": "bee1fa5d8a42848ca1f049b9dfe4e33ce7a82f29039b20d1f0bfe0fa86a72502"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/errors.py",
+    "bytes": 558,
+    "sha256": "385bb5fc7929eb5ffb97089a3ff82fa71055d5b0efc06ec26a9f0fb9a1b54dd2"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/evidence.py",
+    "bytes": 1128,
+    "sha256": "ec3e8e34185936a1b57ab67e6d1904d4fd37dad69f503c892acecb8e28c2420c"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/predictors.py",
+    "bytes": 9165,
+    "sha256": "1b2bccbb1c8e44dcb934c9a607b181ddcf0b10d21b232f39aab398939b8c157f"
+  },
+  {
+    "path": "packages/network-security-ai/src/network_security_ai/schema.py",
+    "bytes": 1702,
+    "sha256": "21ff4597307842e3ecc2195f4639bc8b56387b27c0c45a025616089a3b909bc3"
+  },
+  {
+    "path": "packages/network-security-ai/tests/conftest.py",
+    "bytes": 2521,
+    "sha256": "dc8aa3b7dee43e3346aadbf63a82fa9ba08de5432f52ef2a4ea56788dbe4662f"
+  },
+  {
+    "path": "packages/network-security-ai/tests/fixtures/label_mapping.json",
+    "bytes": 377,
+    "sha256": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd"
+  },
+  {
+    "path": "packages/network-security-ai/tests/fixtures/top40_features.csv",
+    "bytes": 675,
+    "sha256": "feef58ff01b7d9a8b992fb4475ebaeb910b11ebdf23cd9ff5658c10e86865b3d"
+  },
+  {
+    "path": "packages/network-security-ai/tests/test_contracts.py",
+    "bytes": 5913,
+    "sha256": "6eb8edba3f29f8aaa4992c9292e91af7898584ef4c237c15151cdd1ee45cc77b"
+  },
+  {
+    "path": "packages/network-security-ai/tests/test_predictors.py",
+    "bytes": 6761,
+    "sha256": "e9d01b4eabd279452961bc1c546a14b0599de3b6ec186d93e4597a6c25be986e"
+  },
+  {
+    "path": "packages/network-security-ai/tests/test_standalone.py",
+    "bytes": 5045,
+    "sha256": "3d9123a9aa6d85b4c0bb46223186765fc1e3e98dcf1bec58ccc0611e7b46dd3e"
+  },
+  {
+    "path": "packages/network-security-ai/uv.lock",
+    "bytes": 159821,
+    "sha256": "ec004502d5db45668bf8eec02025478dc9d118bd2166a75edab4df73fe6c09d5"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "bundle_version": "cse-cic-ids2018-v4-reviewed-1",
+  "sha256": {
+    "top40_path": "feef58ff01b7d9a8b992fb4475ebaeb910b11ebdf23cd9ff5658c10e86865b3d",
+    "label_mapping_path": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+    "lightgbm_path": "eb28cc855a65d336cd1b2720ec4fcc2958874444e33fae5b78c1cae4e4c62924",
+    "dnn_path": "85cbc702d1b0a137c4f44b23be6911691cc89d5bfef0c388cf282e9500c49160",
+    "scaler_path": "528cfa770181bb61bdcc5d30b2cae8a171dfa63399f3fd33f9a15ab5fbc67d32"
+  }
+}

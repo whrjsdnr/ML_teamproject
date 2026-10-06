@@ -1,0 +1,2 @@
+model,accuracy,macro_precision,macro_recall,macro_f1,weighted_f1,train_patterns,weight_strategy,infilteration_correction,validation_rows,evaluation_seconds
+LightGBM Top40 V4-B2,0.9793125696129125,0.8334412511244678,0.8300824160316641,0.8086545334668387,0.9771939800758066,1946494,sqrt_frequency,3.0,2390002,1877.5296543409931

@@ -1,0 +1,8 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "torch": "2.14.1+cu130",
+  "cpu_threads": 1,
+  "preprocessing": "excluded from latency; raw Top40 for LightGBM; Train scaler for DNN",
+  "memory_unit": "MiB (bytes / 1024**2)",
+  "protocol": "report verification run; 2 warmups, 3 LightGBM repeats / 30 DNN repeats; 4096-row input; sequential fresh processes"
+}

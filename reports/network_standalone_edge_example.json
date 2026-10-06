@@ -1,0 +1,163 @@
+{
+  "prediction": {
+    "predicted_class": "Infilteration",
+    "confidence": 0.9999942779541016,
+    "class_probabilities": [
+      {
+        "label": "Benign",
+        "probability": 5.711382073059212e-06
+      },
+      {
+        "label": "Bot",
+        "probability": 0.0
+      },
+      {
+        "label": "Brute Force -Web",
+        "probability": 0.0
+      },
+      {
+        "label": "Brute Force -XSS",
+        "probability": 0.0
+      },
+      {
+        "label": "DDOS attack-HOIC",
+        "probability": 0.0
+      },
+      {
+        "label": "DDOS attack-LOIC-UDP",
+        "probability": 0.0
+      },
+      {
+        "label": "DDoS attacks-LOIC-HTTP",
+        "probability": 0.0
+      },
+      {
+        "label": "DoS attacks-GoldenEye",
+        "probability": 0.0
+      },
+      {
+        "label": "DoS attacks-Hulk",
+        "probability": 0.0
+      },
+      {
+        "label": "DoS attacks-SlowHTTPTest",
+        "probability": 0.0
+      },
+      {
+        "label": "DoS attacks-Slowloris",
+        "probability": 0.0
+      },
+      {
+        "label": "FTP-BruteForce",
+        "probability": 0.0
+      },
+      {
+        "label": "Infilteration",
+        "probability": 0.9999942779541016
+      },
+      {
+        "label": "SQL Injection",
+        "probability": 0.0
+      },
+      {
+        "label": "SSH-Bruteforce",
+        "probability": 0.0
+      }
+    ],
+    "class_id": 12,
+    "threat_score": 0.9999942886179269,
+    "model_name": "network_cse2018_dnn_fp32",
+    "model_version": "v4-fp32-epoch13",
+    "deployment_profile": "edge",
+    "feature_set_version": "cse-cic-ids2018-top40-v1",
+    "feature_contract_digest": "ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649",
+    "label_mapping_digest": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+    "inferred_at": "2026-10-06T07:19:14.610890Z",
+    "inference_latency_ms": 2918.396913
+  },
+  "evidence": {
+    "source": "network_security_ai",
+    "evidence_type": "network_threat_prediction",
+    "prediction": {
+      "predicted_class": "Infilteration",
+      "confidence": 0.9999942779541016,
+      "class_probabilities": [
+        {
+          "label": "Benign",
+          "probability": 5.711382073059212e-06
+        },
+        {
+          "label": "Bot",
+          "probability": 0.0
+        },
+        {
+          "label": "Brute Force -Web",
+          "probability": 0.0
+        },
+        {
+          "label": "Brute Force -XSS",
+          "probability": 0.0
+        },
+        {
+          "label": "DDOS attack-HOIC",
+          "probability": 0.0
+        },
+        {
+          "label": "DDOS attack-LOIC-UDP",
+          "probability": 0.0
+        },
+        {
+          "label": "DDoS attacks-LOIC-HTTP",
+          "probability": 0.0
+        },
+        {
+          "label": "DoS attacks-GoldenEye",
+          "probability": 0.0
+        },
+        {
+          "label": "DoS attacks-Hulk",
+          "probability": 0.0
+        },
+        {
+          "label": "DoS attacks-SlowHTTPTest",
+          "probability": 0.0
+        },
+        {
+          "label": "DoS attacks-Slowloris",
+          "probability": 0.0
+        },
+        {
+          "label": "FTP-BruteForce",
+          "probability": 0.0
+        },
+        {
+          "label": "Infilteration",
+          "probability": 0.9999942779541016
+        },
+        {
+          "label": "SQL Injection",
+          "probability": 0.0
+        },
+        {
+          "label": "SSH-Bruteforce",
+          "probability": 0.0
+        }
+      ],
+      "class_id": 12,
+      "threat_score": 0.9999942886179269,
+      "model_name": "network_cse2018_dnn_fp32",
+      "model_version": "v4-fp32-epoch13",
+      "deployment_profile": "edge",
+      "feature_set_version": "cse-cic-ids2018-top40-v1",
+      "feature_contract_digest": "ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649",
+      "label_mapping_digest": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+      "inferred_at": "2026-10-06T07:19:14.610890Z",
+      "inference_latency_ms": 2918.396913
+    },
+    "flow_reference": "synthetic-demo",
+    "model_derived": true,
+    "confidence_calibrated": false,
+    "attack_confirmed": false,
+    "schema_version": "network-evidence-v1"
+  }
+}

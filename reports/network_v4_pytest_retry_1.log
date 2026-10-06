@@ -1,0 +1,19 @@
+........................................................................ [ 12%]
+........................................................................ [ 25%]
+........................................................................ [ 37%]
+............
+============================= slowest 10 durations =============================
+51.39s call     tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[REJECT]
+29.60s call     tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[DEFER]
+21.58s setup    tests/integration/improvement_promotion/test_eligibility.py::test_terminal_review_remains_blocked_and_pinned_after_restart[DEFER]
+18.64s setup    tests/integration/improvement_review/test_review.py::test_separate_permission_and_unauthenticated_denied[roles2]
+18.52s setup    tests/integration/improvement_review/test_review.py::test_terminal_human_record_restart_and_no_authority[REJECT]
+18.21s setup    tests/integration/improvement_review/test_review.py::test_confirmation_exact_identity_purpose_snapshot_expiry[binding_digest]
+18.09s setup    tests/integration/improvement_review/test_review.py::test_graph_corruption_never_becomes_normal_exclusion
+12.54s call     tests/integration/offline_comparison/test_storage.py::test_durable_idempotent_query_restart_and_no_production_mutation
+10.77s call     tests/integration/improvement_review/test_review.py::test_separate_permission_and_unauthenticated_denied[roles2]
+10.61s call     tests/integration/improvement_review/test_review.py::test_graph_corruption_never_becomes_normal_exclusion
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! KeyboardInterrupt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/home/geonug/kdt-linux/autonomous-soc-agent/.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:1034: KeyboardInterrupt
+(to show a full traceback on KeyboardInterrupt use --full-trace)
+228 passed in 344.79s (0:05:44)

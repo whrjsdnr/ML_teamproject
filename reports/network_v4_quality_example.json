@@ -1,0 +1,25 @@
+{
+  "prediction": {
+    "prediction": "Benign",
+    "confidence": 0.7008444862917745,
+    "scores": "{\"class_probabilities\":{\"Benign\":0.7008444862917745,\"Bot\":4.865645106829628e-07,\"Brute Force -Web\":3.6301592726669507e-09,\"Brute Force -XSS\":3.697339595261535e-08,\"DDOS attack-HOIC\":1.3023250217143843e-08,\"DDOS attack-LOIC-UDP\":3.2575968136552438e-09,\"DDoS attacks-LOIC-HTTP\":1.9890016555391596e-08,\"DoS attacks-GoldenEye\":2.6596019688283556e-08,\"DoS attacks-Hulk\":3.297757292831319e-07,\"DoS attacks-SlowHTTPTest\":1.2087000789361524e-11,\"DoS attacks-Slowloris\":4.962441895108762e-05,\"FTP-BruteForce\":6.674784797313329e-09,\"Infilteration\":0.2991031138122741,\"SQL Injection\":4.722925128967193e-09,\"SSH-Bruteforce\":1.8443565249760159e-06},\"threat_score\":0.29915551370822546}",
+    "explanation": "{\"class_id\":0,\"confidence_calibrated\":false,\"confidence_semantics\":\"raw argmax probability\",\"dataset\":\"CSE-CIC-IDS2018\",\"deployment_profile\":\"detection_quality\",\"evaluation_scope\":\"development validation\",\"feature_contract_digest\":\"ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649\",\"feature_fingerprint\":\"8e4063f5103cb235fc751817a3f27a7cc99cc1afc833e2c4e8facca9ad43fe18\",\"feature_set_version\":\"cse-cic-ids2018-top40-v1\",\"inference_latency_ms\":226.217315,\"inferred_at\":\"2026-10-06T06:51:01.409035+00:00\",\"label_mapping_digest\":\"1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd\",\"latency_scope\":\"backend_call_including_preprocessing_and_cold_load\",\"model_artifact_digest\":\"eb28cc855a65d336cd1b2720ec4fcc2958874444e33fae5b78c1cae4e4c62924\",\"model_derived\":true,\"source_evidence_ids\":[],\"threat_score_semantics\":\"1 - P(Benign); uncalibrated model output\",\"type\":\"network_threat_prediction\"}",
+    "result_id": "7021a8ec-4f36-4036-b71d-68a81a6fa851",
+    "incident_id": "554f5d97-37df-4b99-8488-ffd557e63aff",
+    "model_name": "network_cse2018_lightgbm_v4b2",
+    "model_version": "v4-b2",
+    "task_type": "classification",
+    "created_at": "2026-10-06T06:51:01.412964Z"
+  },
+  "evidence": {
+    "evidence_id": "f7facb25-e23a-4814-9cfc-10fd9b872d58",
+    "incident_id": "554f5d97-37df-4b99-8488-ffd557e63aff",
+    "source": "network_security_ai",
+    "summary": "Network model produced an uncalibrated prediction; attack unconfirmed",
+    "raw_data": "{\"attack_confirmed\":false,\"class_id\":0,\"confidence\":0.7008444862917745,\"confidence_calibrated\":false,\"deployment_profile\":\"detection_quality\",\"feature_contract_digest\":\"ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649\",\"feature_fingerprint\":\"8e4063f5103cb235fc751817a3f27a7cc99cc1afc833e2c4e8facca9ad43fe18\",\"feature_set_version\":\"cse-cic-ids2018-top40-v1\",\"inference_latency_ms\":226.217315,\"inferred_at\":\"2026-10-06T06:51:01.409035+00:00\",\"label_mapping_digest\":\"1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd\",\"latency_scope\":\"backend_call_including_preprocessing_and_cold_load\",\"model\":\"network_cse2018_lightgbm_v4b2\",\"model_artifact_digest\":\"eb28cc855a65d336cd1b2720ec4fcc2958874444e33fae5b78c1cae4e4c62924\",\"model_derived\":true,\"model_version\":\"v4-b2\",\"predicted_class\":\"Benign\",\"result_id\":\"7021a8ec-4f36-4036-b71d-68a81a6fa851\",\"scores\":{\"class_probabilities\":{\"Benign\":0.7008444862917745,\"Bot\":4.865645106829628e-07,\"Brute Force -Web\":3.6301592726669507e-09,\"Brute Force -XSS\":3.697339595261535e-08,\"DDOS attack-HOIC\":1.3023250217143843e-08,\"DDOS attack-LOIC-UDP\":3.2575968136552438e-09,\"DDoS attacks-LOIC-HTTP\":1.9890016555391596e-08,\"DoS attacks-GoldenEye\":2.6596019688283556e-08,\"DoS attacks-Hulk\":3.297757292831319e-07,\"DoS attacks-SlowHTTPTest\":1.2087000789361524e-11,\"DoS attacks-Slowloris\":4.962441895108762e-05,\"FTP-BruteForce\":6.674784797313329e-09,\"Infilteration\":0.2991031138122741,\"SQL Injection\":4.722925128967193e-09,\"SSH-Bruteforce\":1.8443565249760159e-06},\"threat_score\":0.29915551370822546},\"source_evidence_ids\":[],\"threat_score_semantics\":\"1 - P(Benign); uncalibrated model output\",\"type\":\"network_threat_prediction\"}",
+    "observed_at": "2026-10-06T06:51:01.412964Z",
+    "collected_at": "2026-10-06T06:51:01.414871Z",
+    "tool_name": null,
+    "reliability": null
+  }
+}

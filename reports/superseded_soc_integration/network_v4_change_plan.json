@@ -1,0 +1,153 @@
+{
+  "source_root": "/home/geonug/kdt-linux/autonomous-soc-agent",
+  "staging_root": "/tmp/soc-network-integration",
+  "changes": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "old_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "new_sha256": "6b3e7170a76e4857d585d3a7f1e6cd25073327ae22523f381445fea6cce93574",
+      "bytes": 949
+    },
+    {
+      "path": "pyproject.toml",
+      "status": "modified",
+      "old_sha256": "ffe8029aedd6a467ce8259120b48ed4ce6d06977a86c20ec0542182ee104c4f6",
+      "new_sha256": "d2b38f5984bfdeac4130492747969ec2991dd01f20afde89cf7664af26add2bf",
+      "bytes": 1108
+    },
+    {
+      "path": "uv.lock",
+      "status": "modified",
+      "old_sha256": "3ed262572eb875bed73101ba4b052bd192c37c739af38f486e85943d3f366ed7",
+      "new_sha256": "8aa0c81fb2812f1d179ab9a87124959b33c179eba6f9a95a668edb154ef11ea2",
+      "bytes": 164934
+    },
+    {
+      "path": "src/soc_agent/assessment/prompts.py",
+      "status": "modified",
+      "old_sha256": "6364cb5fe016b3a12d2c696dd5bd9d5b60d91b2f8ed6b37552033302c8c8402a",
+      "new_sha256": "1ea829950f66572bba8ee1c927e861333a5a8feb2d20a85984800fa019c8fd42",
+      "bytes": 5218
+    },
+    {
+      "path": "src/soc_agent/assessment/validator.py",
+      "status": "modified",
+      "old_sha256": "1201379f2981ffba52783af438b1f8432c08a97adf116be8b83ee4871e22e6c4",
+      "new_sha256": "d1b19475c9a28a8a4da82a6923a2b95b36108a5c67123aa4bb22aa7da041064e",
+      "bytes": 3476
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/__init__.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "d89eb5f0aa3af1071d1ee3a41090d7e1c1544dfd72398943dceb5472b2676748",
+      "bytes": 1027
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/adapter.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "24af4d9496298775c7911bbccc4d58c0d5b5a84232fe0c957f42719df763675b",
+      "bytes": 5787
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/artifact_manifest.json",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "4db00b19111638de47528ba6cf7da35f0777715b5eb514243112dc50987e6657",
+      "bytes": 514
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/contracts.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "a09dcaca05098a029c959ff7cd3cbeef5c654fb22440d6cecbf455807648e535",
+      "bytes": 9238
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/evidence.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "c0dc14de26f69ffc28af1b7251288068f3fa412fdcaed3343b028fcc5e534578",
+      "bytes": 3423
+    },
+    {
+      "path": "src/soc_agent/security_ai/network/v4/predictors.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "e9874ba4d32dd4b083228bc8ccc696d1d1821316e013e358d118bf0a6bd62e69",
+      "bytes": 9194
+    },
+    {
+      "path": "tests/unit/security_ai/network_v4/__init__.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "84086ab1b281aedacfffcd1d3187b3e808aea09312b40cf6c3c2066ec61a2a2f",
+      "bytes": 61
+    },
+    {
+      "path": "tests/unit/security_ai/network_v4/conftest.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "33fd43c1f9cc68e5767a13d1c059461819b41c59be375800a2b3e066deccd57f",
+      "bytes": 2549
+    },
+    {
+      "path": "tests/unit/security_ai/network_v4/test_contracts.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "fae776f7ff5dc3ca90cbae8ede120641f4ae8dd4f3c71b56f473aa48b2d96b49",
+      "bytes": 5853
+    },
+    {
+      "path": "tests/unit/security_ai/network_v4/test_predictors.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "c5ee782a3018a6deadc8b84c41e5b8a89ad51b5965e16934a2e805295e9faf6d",
+      "bytes": 6789
+    },
+    {
+      "path": "tests/fixtures/network_v4/label_mapping.json",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+      "bytes": 377
+    },
+    {
+      "path": "tests/fixtures/network_v4/top40_features.csv",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "feef58ff01b7d9a8b992fb4475ebaeb910b11ebdf23cd9ff5658c10e86865b3d",
+      "bytes": 675
+    },
+    {
+      "path": "examples/network_v4/predict.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "75e849feb0476b514ea0c10dd47f45b37d54c89927cd5923e1b4610221557db2",
+      "bytes": 2795
+    },
+    {
+      "path": "examples/network_v4/synthetic_flow.json",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "8fc0bcf0aa3bfbcc7ae014a7bd951720de4ea178bba9da9a0fb09c39c453c63d",
+      "bytes": 983
+    },
+    {
+      "path": "tests/integration/test_network_security_ai_v4.py",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "8d8d1bb7abe222acbe69ec02a67ab5bd283ebbc87b5fefd1377a4ba4b24d4d01",
+      "bytes": 11397
+    },
+    {
+      "path": "docs/network-security-ai-v4.md",
+      "status": "added",
+      "old_sha256": null,
+      "new_sha256": "bdc293ae6083358ce888247f09bf29535b40db7b1150302e99b6fa0bee6000ba",
+      "bytes": 12077
+    }
+  ]
+}

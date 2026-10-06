@@ -1,0 +1,10 @@
+{
+  "model": "lightgbm",
+  "baseline_rss_mb": 645.3671875,
+  "after_input_rss_mb": 683.734375,
+  "after_model_rss_mb": 722.421875,
+  "after_inference_rss_mb": 723.00390625,
+  "peak_rss_mb": 777.68359375,
+  "model_load_delta_mb": 38.6875,
+  "peak_delta_from_baseline_mb": 132.31640625
+}

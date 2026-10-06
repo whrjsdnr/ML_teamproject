@@ -1,0 +1,76 @@
+{
+  "predicted_class": "Benign",
+  "confidence": 0.7008444862917745,
+  "class_probabilities": [
+    {
+      "label": "Benign",
+      "probability": 0.7008444862917745
+    },
+    {
+      "label": "Bot",
+      "probability": 4.865645106829628e-7
+    },
+    {
+      "label": "Brute Force -Web",
+      "probability": 3.6301592726669507e-9
+    },
+    {
+      "label": "Brute Force -XSS",
+      "probability": 3.697339595261535e-8
+    },
+    {
+      "label": "DDOS attack-HOIC",
+      "probability": 1.3023250217143843e-8
+    },
+    {
+      "label": "DDOS attack-LOIC-UDP",
+      "probability": 3.2575968136552438e-9
+    },
+    {
+      "label": "DDoS attacks-LOIC-HTTP",
+      "probability": 1.9890016555391596e-8
+    },
+    {
+      "label": "DoS attacks-GoldenEye",
+      "probability": 2.6596019688283556e-8
+    },
+    {
+      "label": "DoS attacks-Hulk",
+      "probability": 3.297757292831319e-7
+    },
+    {
+      "label": "DoS attacks-SlowHTTPTest",
+      "probability": 1.2087000789361524e-11
+    },
+    {
+      "label": "DoS attacks-Slowloris",
+      "probability": 0.00004962441895108762
+    },
+    {
+      "label": "FTP-BruteForce",
+      "probability": 6.674784797313329e-9
+    },
+    {
+      "label": "Infilteration",
+      "probability": 0.2991031138122741
+    },
+    {
+      "label": "SQL Injection",
+      "probability": 4.722925128967193e-9
+    },
+    {
+      "label": "SSH-Bruteforce",
+      "probability": 1.8443565249760159e-6
+    }
+  ],
+  "class_id": 0,
+  "threat_score": 0.29915551370822546,
+  "model_name": "network_cse2018_lightgbm_v4b2",
+  "model_version": "v4-b2",
+  "deployment_profile": "detection_quality",
+  "feature_set_version": "cse-cic-ids2018-top40-v1",
+  "feature_contract_digest": "ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649",
+  "label_mapping_digest": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+  "inferred_at": "2026-10-06T06:42:57.555793Z",
+  "inference_latency_ms": 1267.0072
+}

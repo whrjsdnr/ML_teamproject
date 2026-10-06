@@ -1,0 +1,20 @@
+........................................................................ [ 12%]
+........................................................................ [ 25%]
+........................................................................ [ 38%]
+........................................................................ [ 51%]
+........................................................................ [ 64%]
+........................................................................ [ 76%]
+........................................................................ [ 89%]
+..........................................................               [100%]
+============================= slowest 10 durations =============================
+54.62s setup    tests/unit/security_ai/packaging/test_adapters.py::test_adapter_input_rejection[schema-network_classifier]
+54.54s setup    tests/unit/security_ai/packaging/test_packages.py::test_roundtrip_all_development_rows[authentication_anomaly]
+22.79s call     tests/integration/improvement_review/test_review.py::test_new_candidate_and_comparison_do_not_rebind_old_review
+19.44s call     tests/integration/improvement_promotion/test_eligibility.py::test_source_and_confirmation_corruption_raise_integrity_errors
+18.37s setup    tests/integration/improvement_review/test_review.py::test_unknown_blocks_approve_without_consuming_confirmation
+16.88s setup    tests/integration/improvement_review/test_review.py::test_new_candidate_and_comparison_do_not_rebind_old_review
+16.77s call     tests/integration/offline_comparison/test_execution.py::test_new_proposal_snapshot_and_missing_baseline_fail_closed
+16.71s setup    tests/integration/improvement_review/test_transactions.py::test_record_insert_failure_rolls_back_confirmation_and_restart_replay
+16.61s setup    tests/integration/improvement_review/test_review.py::test_confirmation_exact_identity_purpose_snapshot_expiry[subject_id]
+16.27s setup    tests/integration/improvement_promotion/test_eligibility.py::test_source_and_confirmation_corruption_raise_integrity_errors
+562 passed in 470.02s (0:07:50)

@@ -1,0 +1,20 @@
+........................................................................ [ 12%]
+........................................................................ [ 25%]
+........................................................................ [ 38%]
+........................................................................ [ 51%]
+........................................................................ [ 64%]
+........................................................................ [ 76%]
+........................................................................ [ 89%]
+..........................................................               [100%]
+============================= slowest 10 durations =============================
+91.68s call     tests/scenarios/test_security_ai_evaluation.py::test_independent_evaluation_workflow
+57.03s call     tests/scenarios/test_security_ai_packaging.py::test_three_model_packaged_end_to_end
+45.80s setup    tests/unit/security_ai/packaging/test_adapters.py::test_explicit_registry_and_result_boundary[network_classifier]
+45.21s setup    tests/unit/security_ai/packaging/test_packages.py::test_file_tampering[manifest.json-network_classifier]
+21.78s call     tests/integration/improvement_review/test_review.py::test_reviewable_summary_snapshot_and_idempotent_queries
+19.26s call     tests/integration/improvement_review/test_transactions.py::test_independent_process_terminal_decision_and_replay[False]
+18.21s call     tests/integration/offline_comparison/test_execution.py::test_measured_vertical_slice_provenance_restart_and_authority
+17.17s setup    tests/integration/improvement_review/test_review.py::test_forged_request_digest_and_source_corruption_fail_closed
+16.76s setup    tests/integration/improvement_review/test_review.py::test_separate_permission_and_unauthenticated_denied[roles0]
+16.46s setup    tests/integration/improvement_review/test_review.py::test_reviewable_summary_snapshot_and_idempotent_queries
+562 passed in 578.17s (0:09:38)
