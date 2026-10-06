@@ -6,6 +6,31 @@
 
 현재 **CSE-CIC-IDS2018 기반 Network Attack Classification**에 대해 데이터 품질 분석, Security EDA, 데이터 분할 재설계, Feature Reduction, 다중 모델 비교 및 Ensemble 실험까지 완료했습니다.
 
+
+## 현재 팀 공유 기준: V4 모델 + 독립 Network Security AI
+
+이 저장소만 clone하면 실험 코드와 독립 inference module을 확인할 수 있습니다. Autonomous SOC Agent repository는 필요하지 않습니다. 아래 기존 V3 지표/설명은 실험 이력으로 보존하며, 현재 standalone profile은 다음과 같습니다.
+
+| Profile | 모델 | Full Validation Macro F1 | 목적 |
+|---|---|---:|---|
+| detection_quality | LightGBM Top40 V4-B2 | 0.808655 | 탐지 품질 |
+| edge | DNN FP32, epoch 13 | 0.698647 | 작은 크기와 낮은 latency |
+
+```text
+CSE-CIC-IDS2018 → EDA / Data Quality → Duplicate & Label Conflict Analysis
+→ Split V2 / V3 unique / V4 frequency-aware sampling → Top40 Feature Selection
+→ LightGBM / DNN → Statistical Validation → Quantization Experiment
+→ On-Device / Runtime Memory Benchmark → Network Security AI → Standalone Inference
+→ NetworkSecurityEvidence → [Integration Boundary: SOC는 별도 repository]
+```
+
+- [독립 패키지 설치·실행·artifact·API·테스트](packages/network-security-ai/README.md)
+- [학습/실험 재현 순서와 데이터 경계](docs/network_security_ai/reproducibility.md)
+- [세 작업 위치의 파일 분류와 정리 근거](docs/network_security_ai/source-inventory.md)
+
+ML 실험 환경은 root에서 `uv sync`로 설치합니다. 로컬 독립 package와 실제 LightGBM/joblib dependency가 root lock에도 명시되어 있습니다. Notebook root 설정은 저장소 root 또는 그 하위에서 시작한 kernel을 기준으로 repo를 찾습니다. **모델/데이터는 Git에 포함되지 않으므로 별도 제공이 필요합니다.** 재학습 없이 inference하려면 위 패키지 README의 모델 3개 경로를 준비하세요. Quantization은 실험이며 edge profile은 FP32입니다. DNN을 LightGBM보다 탐지 성능이 우수하다고 해석하지 않습니다.
+
+
 ---
 
 ## Project Pipeline

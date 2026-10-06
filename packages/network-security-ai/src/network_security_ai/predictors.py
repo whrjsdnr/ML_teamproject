@@ -19,6 +19,7 @@ from network_security_ai.contracts import (
     Top40Contract,
 )
 from network_security_ai.errors import SecurityAIInferenceError, SecurityAIOutputValidationError
+from network_security_ai.preprocessing import preprocess_dnn_batch
 from network_security_ai.schema import ClassProbability
 
 if TYPE_CHECKING:
@@ -231,11 +232,5 @@ class DNNNetworkThreatPredictor(_Predictor):
     def _probabilities(self, matrix: np.ndarray) -> np.ndarray:
         if self._runtime is None:
             self._runtime = load_dnn(self.config, self.contract)
-        scaler = self._runtime.scaler
-        matrix = matrix.copy()
-        rows, columns = np.where(np.isnan(matrix))
-        matrix[rows, columns] = np.asarray(scaler.mean_, dtype=np.float32)[columns]
-        transformed = np.asarray(scaler.transform(matrix), dtype=np.float32)
-        if transformed.shape != (1, 40) or not np.isfinite(transformed).all():
-            raise SecurityAIInferenceError("DNN scaler returned invalid input")
+        transformed = preprocess_dnn_batch(matrix, self._runtime.scaler)
         return self._runtime.probabilities(transformed)

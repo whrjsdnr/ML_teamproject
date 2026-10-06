@@ -1,7 +1,7 @@
 [project]
 name = "ml"
 version = "0.1.0"
-description = "Add your description here"
+description = "CSE-CIC-IDS2018 network experiments and standalone Network Security AI"
 readme = "README.md"
 authors = [
     { name = "whrjsdnr", email = "geonugjo@gmail.com" }
@@ -10,6 +10,9 @@ requires-python = ">=3.12"
 dependencies = [
     "duckdb>=1.5.6",
     "matplotlib>=3.11.2",
+    "lightgbm>=4.7.0",
+    "joblib>=1.6.0",
+    "network-security-ai>=0.1.0",
     "numpy>=2.5.3",
     "pandas>=3.0.6",
     "psutil>=7.2.2",
@@ -29,3 +32,6 @@ ml = "ml:main"
 [build-system]
 requires = ["uv_build>=0.12.8,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.sources]
+network-security-ai = { path = "packages/network-security-ai", editable = true }

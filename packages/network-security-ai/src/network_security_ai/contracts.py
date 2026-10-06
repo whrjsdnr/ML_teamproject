@@ -6,6 +6,8 @@ import json
 import math
 from collections.abc import Mapping
 from enum import StrEnum
+from importlib.resources import files
+from io import StringIO
 from pathlib import Path
 from typing import Protocol, Self
 
@@ -41,8 +43,8 @@ class NetworkSecurityAIConfig(Snapshot):
     enabled: bool = False
     profile: DeploymentProfile = DeploymentProfile.DETECTION_QUALITY
     artifact_root: Path
-    top40_path: Path = Path("results/feature_selection/top40_features.csv")
-    label_mapping_path: Path = Path("data/processed/network_ml/label_mapping.json")
+    top40_path: Path | None = None
+    label_mapping_path: Path | None = None
     lightgbm_path: Path = Path("models/network/lightgbm_top40_v4b2.txt")
     dnn_path: Path = Path("models/network/dnn_top40_v4_best.pt")
     scaler_path: Path = Path("models/network/dnn_top40_v4_scaler.joblib")
@@ -50,7 +52,9 @@ class NetworkSecurityAIConfig(Snapshot):
 
     @field_validator("top40_path", "label_mapping_path", "lightgbm_path", "dnn_path", "scaler_path")
     @classmethod
-    def relative_artifact(cls, value: Path) -> Path:
+    def relative_artifact(cls, value: Path | None) -> Path | None:
+        if value is None:
+            return None
         if value.is_absolute() or ".." in value.parts:
             raise ValueError("Artifact paths must be contained project-relative paths")
         return value
@@ -129,16 +133,14 @@ class Top40Contract:
                 for v in self.artifact_digests.values()
             ):
                 raise ValueError("Invalid bundle digest manifest")
-            self.verify_artifact(config, "top40_path")
-            self.verify_artifact(config, "label_mapping_path")
-            with config.artifact(config.top40_path).open(newline="", encoding="utf-8") as stream:
-                rows = list(csv.DictReader(stream))
+            feature_bytes = self._metadata_bytes(config, "top40_path", "top40_features.csv")
+            rows = list(csv.DictReader(StringIO(feature_bytes.decode("utf-8"), newline="")))
             if len(rows) != 40 or [int(r["rank"]) for r in rows] != list(range(1, 41)):
                 raise ValueError("Expected ordered ranks 1..40")
             self.names = tuple(r["feature"] for r in rows)
             if len(set(self.names)) != 40 or not all(self.names):
                 raise ValueError("Invalid Top40 names")
-            content = config.artifact(config.label_mapping_path).read_bytes()
+            content = self._metadata_bytes(config, "label_mapping_path", "label_mapping.json")
             mapping = json.loads(content)
             if (
                 not isinstance(mapping, dict)
@@ -160,8 +162,22 @@ class Top40Contract:
         except (OSError, ValueError, TypeError, KeyError) as error:
             raise NetworkArtifactError("Invalid Top40 or label mapping artifact") from error
 
+    def _metadata_bytes(
+        self, config: NetworkSecurityAIConfig, field: str, resource_name: str
+    ) -> bytes:
+        configured = getattr(config, field)
+        if configured is not None:
+            return self.verify_artifact(config, field).read_bytes()
+        content = files("network_security_ai").joinpath("resources", resource_name).read_bytes()
+        if hashlib.sha256(content).hexdigest() != self.artifact_digests[field]:
+            raise NetworkArtifactError("Bundled metadata differs from trusted model bundle")
+        return content
+
     def verify_artifact(self, config: NetworkSecurityAIConfig, field: str) -> Path:
-        path = config.artifact(getattr(config, field))
+        configured = getattr(config, field)
+        if configured is None:
+            raise NetworkArtifactError("This metadata uses a bundled package resource")
+        path = config.artifact(configured)
         digest = hashlib.sha256()
         with path.open("rb") as stream:
             for block in iter(lambda: stream.read(1024 * 1024), b""):

@@ -1,0 +1,41 @@
+rank,feature
+1,Fwd Act Data Pkts
+2,Fwd Seg Size Min
+3,Fwd Header Len
+4,ECE Flag Cnt
+5,Init Fwd Win Byts
+6,URG Flag Cnt
+7,RST Flag Cnt
+8,Dst Port
+9,Fwd PSH Flags
+10,Fwd Pkts/s
+11,Fwd Pkt Len Mean
+12,Pkt Len Max
+13,SYN Flag Cnt
+14,Fwd Seg Size Avg
+15,Bwd Header Len
+16,Init Bwd Win Byts
+17,Fwd IAT Std
+18,Fwd IAT Max
+19,Pkt Size Avg
+20,Fwd IAT Tot
+21,Bwd Pkt Len Max
+22,PSH Flag Cnt
+23,Flow IAT Mean
+24,Bwd IAT Min
+25,Bwd Pkt Len Std
+26,Pkt Len Mean
+27,Bwd IAT Max
+28,Fwd Pkt Len Std
+29,ACK Flag Cnt
+30,TotLen Bwd Pkts
+31,Pkt Len Std
+32,FIN Flag Cnt
+33,Bwd IAT Mean
+34,Flow Duration
+35,Flow IAT Max
+36,Subflow Bwd Byts
+37,Idle Max
+38,Fwd URG Flags
+39,Bwd Pkts/s
+40,Bwd IAT Std

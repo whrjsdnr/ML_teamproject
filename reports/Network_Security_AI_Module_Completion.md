@@ -96,3 +96,11 @@ PYTHONPATH=packages/network-security-ai/src:.venv/lib/python3.12/site-packages \
 NetworkSecurityEvidence를 연결점으로 남겼다. DNS 모델의 실제 DNSSecurityEvidence가 확인된 후 source/provenance/불확실성/시간 연계와 fusion 정책을 별도로 설계해야 한다. 이후 기존 ThreatAssessor → Investigation → Policy → Human Approval → Execution에 연결한다. 지금은 공통 evidence fusion contract와 알고리즘을 구현하지 않았다.
 
 한계: production traffic 검증 필요, DNN minority-class 성능 한계, SlowHTTP/FTP structural ambiguity, confidence calibration 미완료, embedded/ARM/NPU 검증 필요, CSE-CIC-IDS2018→drone traffic 일반화 미검증. V4 Validation 성능을 production 결과로 해석하지 않는다. Test V2는 V3에서 이미 소비했고 이번에는 재사용하지 않았다.
+
+## 팀 공유 정리 후 상태
+
+Standalone package를 canonical로 유지하고 Top40 CSV/label mapping을 checksum-verified bundled resource로 추가했습니다. SOC repository/ignored `data/` 없이 feature contract를 로드합니다. 공통 DNN inference preprocessing과 architecture를 memory benchmark에서 재사용하고 LightGBM benchmark는 raw Top40를 사용합니다. Notebook outputs와 모델/실험 결과는 보존했으며 notebook root 설정만 portable하게 변경했습니다.
+
+현재 설치/CLI/API/test/build 명령은 [package README](../packages/network-security-ai/README.md), 전체 실험 경로는 [재현 문서](../docs/network_security_ai/reproducibility.md), 파일 분류는 [inventory](../docs/network_security_ai/source-inventory.md)를 기준으로 합니다. 위 이전 SOC interpreter 검증 기록은 과거 작업 이력이며 현재 실행 환경 요구사항이 아닙니다. 오래된 patch/파일 manifest는 새 변경사항을 나타내지 않으므로 자동 적용하지 않습니다.
+
+팀 공유 정리 검증: standalone 전체 76 passed(기존 66 유지), benchmark regression 2 passed, Ruff/Format/Diff PASS, wheel/sdist build 및 SOC 없는 wheel import PASS, 실제 LightGBM/DNN synthetic CLI smoke exit 0. 상세: [validation](../docs/network_security_ai/validation.md).

@@ -32,3 +32,12 @@ models/
 
 # Large diagnostic artifacts
 results/split_diagnosis/split_v2_problem_pattern_frequency.csv
+
+# Local builds, test caches and regenerated binary experiment artifacts
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+*.whl
+*.tar.gz
+results/ondevice_benchmark_v4/*.pt
