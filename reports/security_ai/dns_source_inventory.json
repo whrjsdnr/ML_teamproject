@@ -1,0 +1,209 @@
+[
+  {
+    "path": "packages/dns_security_package/dns_security_package/README.md",
+    "classification": "DOCUMENTATION",
+    "role": "supplied usage README",
+    "dependencies": "none",
+    "execution_status": "readable; installation fenced block incomplete",
+    "size_bytes": 665,
+    "sha256": "24118e7dabd97898bdcb2dbd16d3e94c15ea69b6d24f9a9a87094d8412038139"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/README.md:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/demo.py",
+    "classification": "INFERENCE / EVALUATION",
+    "role": "two sample rows, not statistical evaluation",
+    "dependencies": "legacy DNSDetector",
+    "execution_status": "native TF UNVERIFIED; samples reused only as synthetic smoke",
+    "size_bytes": 1146,
+    "sha256": "411419552cd5f66896b42ecb756b9573f07f7f755bf21fbf71157a7e64b7cbda"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/demo.py:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/__init__.py",
+    "classification": "INFERENCE",
+    "role": "eager DNSDetector re-export",
+    "dependencies": "all legacy runtime dependencies",
+    "execution_status": "native import requires missing TF",
+    "size_bytes": 60,
+    "sha256": "81e5f726865fea6bb48c3dae951cdc11d524d57dea22e61f743314e3166a640e"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/__init__.py:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/__pycache__/detector.cpython-312.pyc",
+    "classification": "DOCUMENTATION",
+    "role": "supplied usage README",
+    "dependencies": "none",
+    "execution_status": "readable; installation fenced block incomplete",
+    "size_bytes": 4772,
+    "sha256": "b3265c050155696fb32a03312ef6aebf2f6e372bda831d2dcc114a3460fb1341"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/detector.py",
+    "classification": "INFERENCE / PREPROCESSING",
+    "role": "supplied eager TF+joblib INT8 detector",
+    "dependencies": "TF2.21, numpy, pandas, sklearn, joblib",
+    "execution_status": "native TF UNVERIFIED; original algorithm validated with LiteRT adapter",
+    "size_bytes": 3571,
+    "sha256": "6bc10d73f5adf6990c692f5ae230a2256ef856cdd7e7d1c5610e1d198760769a"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/detector.py:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/model/dnn_int8.tflite",
+    "classification": "ARTIFACT",
+    "role": "INT8 DNN",
+    "dependencies": "TFLite interpreter",
+    "execution_status": "actual load/inference PASS",
+    "size_bytes": 9288,
+    "sha256": "28e089af363dd565a4fb3d3f202de9e9f9804bd14a164de4fd7b61adb1201e33"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/model/dnn_int8.tflite:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/preprocessor/scaler.joblib",
+    "classification": "ARTIFACT",
+    "role": "named fitted StandardScaler",
+    "dependencies": "trusted joblib, sklearn1.9.1",
+    "execution_status": "actual load/inference PASS",
+    "size_bytes": 1135,
+    "sha256": "2735f7650a7d7888ee68f2df870b4e29d83666962931ae2aecb9aa339f40266a"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/dns_security/preprocessor/scaler.joblib:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/requirements_addon.txt",
+    "classification": "DOCUMENTATION",
+    "role": "tensorflow==2.21.0 addon only",
+    "dependencies": "assumes existing ML dependencies",
+    "execution_status": "not complete standalone packaging",
+    "size_bytes": 19,
+    "sha256": "18f18e4110549ee180e94327895411841b29cf485ff3012afec669626b8d43f3"
+  },
+  {
+    "path": "packages/dns_security_package/dns_security_package/requirements_addon.txt:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_EDA.ipynb",
+    "classification": "EXPERIMENT / PREPROCESSING / EVALUATION",
+    "role": "stateless string and stateful EDA",
+    "dependencies": "external DNS CSV, pandas/plotting; ML uses sklearn/xgboost/lightgbm",
+    "execution_status": "not executed; referenced DNS CSV absent",
+    "size_bytes": 537730,
+    "sha256": "c767afd549cf0f383338b0d33c2845752c7e09ba4a38fd9de1c4a62fef223225"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_EDA.ipynb:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_EDA_clean.pdf",
+    "classification": "DOCUMENTATION",
+    "role": "saved EDA/ML result; text inspected with PyMuPDF",
+    "dependencies": "PDF reader",
+    "execution_status": "readable; no DNN training/export code",
+    "size_bytes": 871464,
+    "sha256": "454986225fefbc43923496d749a9641788859e9f39098af692cd59e805ba9770"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_EDA_clean.pdf:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_ML.ipynb",
+    "classification": "EXPERIMENT / PREPROCESSING / EVALUATION / TRAINING",
+    "role": "RF/XGB/LGBM/IF training and saved metrics",
+    "dependencies": "external DNS CSV, pandas/plotting; ML uses sklearn/xgboost/lightgbm",
+    "execution_status": "not executed; referenced DNS CSV absent",
+    "size_bytes": 169901,
+    "sha256": "16585061430566be3ab70bba30b56872a296db07d1e8f5dbaba303f958c5ca1b"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_ML.ipynb:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_ML_clean.pdf",
+    "classification": "DOCUMENTATION",
+    "role": "saved EDA/ML result; text inspected with PyMuPDF",
+    "dependencies": "PDF reader",
+    "execution_status": "readable; no DNN training/export code",
+    "size_bytes": 560868,
+    "sha256": "7f49f520e83868f8cb00aa7e8ca79cd9f8c4422472e83fa6a63f96e46df33daa"
+  },
+  {
+    "path": "reports/CIC-Bell-DNS-EXF-2021_DNS_Security_ML_clean.pdf:Zone.Identifier",
+    "classification": "UNUSED",
+    "role": "Windows origin metadata",
+    "dependencies": "none",
+    "execution_status": "not executable; preserved",
+    "size_bytes": 25,
+    "sha256": "b952d24cf701bc4e7a7d21e1ae85c611824e80579a89836c0cb49b193446ccfe"
+  }
+]

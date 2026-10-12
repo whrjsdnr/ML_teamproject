@@ -1,0 +1,87 @@
+{
+  "schema_version": "security-ai-artifact-catalog-v1",
+  "version": "security-ai-artifacts-v1",
+  "repository": "whrjsdnr/ML_teamproject",
+  "release_tag": "security-ai-artifacts-v1",
+  "bundles": {
+    "network-quality": {
+      "filename": "security-ai-artifacts-v1-network-quality.tar.gz",
+      "size_bytes": 19959438,
+      "sha256": "2ca983baf8d85b97791e43c1f31f267b547a0d371e5d39bb0732108b48f97acf",
+      "model_version": "v4-b2",
+      "feature_contract_version": "cse-cic-ids2018-top40-v1",
+      "files": {
+        "models/network/lightgbm_top40_v4b2.txt": {
+          "size_bytes": 48637456,
+          "sha256": "eb28cc855a65d336cd1b2720ec4fcc2958874444e33fae5b78c1cae4e4c62924"
+        },
+        "metadata/network/top40_features.csv": {
+          "size_bytes": 675,
+          "sha256": "feef58ff01b7d9a8b992fb4475ebaeb910b11ebdf23cd9ff5658c10e86865b3d"
+        },
+        "metadata/network/label_mapping.json": {
+          "size_bytes": 377,
+          "sha256": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd"
+        },
+        "metadata/network/artifact_manifest.json": {
+          "size_bytes": 514,
+          "sha256": "4db00b19111638de47528ba6cf7da35f0777715b5eb514243112dc50987e6657"
+        }
+      }
+    },
+    "network-edge": {
+      "filename": "security-ai-artifacts-v1-network-edge.tar.gz",
+      "size_bytes": 361380,
+      "sha256": "4c513228e613c8013d3fef22f4bb8bf8f6d432d7834c6afddcf95915b1e21aeb",
+      "model_version": "v4-fp32-epoch13",
+      "feature_contract_version": "cse-cic-ids2018-top40-v1",
+      "files": {
+        "models/network/dnn_top40_v4_best.pt": {
+          "size_bytes": 398041,
+          "sha256": "85cbc702d1b0a137c4f44b23be6911691cc89d5bfef0c388cf282e9500c49160"
+        },
+        "models/network/dnn_top40_v4_scaler.joblib": {
+          "size_bytes": 1543,
+          "sha256": "528cfa770181bb61bdcc5d30b2cae8a171dfa63399f3fd33f9a15ab5fbc67d32"
+        },
+        "metadata/network/top40_features.csv": {
+          "size_bytes": 675,
+          "sha256": "feef58ff01b7d9a8b992fb4475ebaeb910b11ebdf23cd9ff5658c10e86865b3d"
+        },
+        "metadata/network/label_mapping.json": {
+          "size_bytes": 377,
+          "sha256": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd"
+        },
+        "metadata/network/artifact_manifest.json": {
+          "size_bytes": 514,
+          "sha256": "4db00b19111638de47528ba6cf7da35f0777715b5eb514243112dc50987e6657"
+        }
+      }
+    },
+    "dns": {
+      "filename": "security-ai-artifacts-v1-dns.tar.gz",
+      "size_bytes": 8304,
+      "sha256": "05241751478e9fd1d707534422e6b1033af9489006d8523f7bb78a210dbfd08b",
+      "model_version": "int8-sha256-28e089af363d",
+      "feature_contract_version": "cic-bell-dns-stateless9-v1",
+      "files": {
+        "dns/model/dnn_int8.tflite": {
+          "size_bytes": 9288,
+          "sha256": "28e089af363dd565a4fb3d3f202de9e9f9804bd14a164de4fd7b61adb1201e33"
+        },
+        "dns/preprocessor/scaler.joblib": {
+          "size_bytes": 1135,
+          "sha256": "2735f7650a7d7888ee68f2df870b4e29d83666962931ae2aecb9aa339f40266a"
+        },
+        "metadata/dns/artifact_manifest.json": {
+          "size_bytes": 2081,
+          "sha256": "e67debb2fbd2ecce96403f4f27db63bfe2b993e26847caff4479268572748740"
+        },
+        "metadata/dns/feature_contract.json": {
+          "size_bytes": 2700,
+          "sha256": "0533cc503ef5af33d3083c87fb5252e1c89c3fcf6f8f7ca0f3f05940ac0fb51a"
+        }
+      }
+    }
+  }
+}

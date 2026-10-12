@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-12",
+  "branch": "main",
+  "remote_repository": "whrjsdnr/ML_teamproject",
+  "visibility": "public",
+  "github_permissions": {
+    "admin": true,
+    "push": true
+  },
+  "remote_main_at_review": "59c16b29520cf8410984e2fe06566c2d5d496533",
+  "release_tag": "security-ai-artifacts-v1",
+  "release_tag_exists_before_publication": false,
+  "deployment": "GitHub Release versioned bundles; Git LFS not installed",
+  "tests": {
+    "network_tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "76",
+      "time": "0.784",
+      "timestamp": "2026-10-12T10:21:35.301650+09:00",
+      "hostname": "DESKTOP-GKHGCJG"
+    },
+    "dns_tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "61",
+      "time": "2.646",
+      "timestamp": "2026-10-12T10:21:36.511168+09:00",
+      "hostname": "DESKTOP-GKHGCJG"
+    },
+    "integration_tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "57",
+      "time": "1.312",
+      "timestamp": "2026-10-12T10:26:22.621212+09:00",
+      "hostname": "DESKTOP-GKHGCJG"
+    }
+  },
+  "total_package_tests": 194,
+  "distribution_security_tests": 40,
+  "ruff": "PASS",
+  "format": "PASS",
+  "wheel_sdist": "6 PASS",
+  "local_install_verify": "PASS for selected groups, network and all; 10 required files",
+  "actual_inference": "PASS LightGBM, Network FP32, DNS INT8, original Network/DNS CLI and integrated CLI",
+  "model_loading_missing_corrupt_errors": "PASS",
+  "remote_download": "BLOCKED: Release not published; awaiting explicit external-publication approval",
+  "push": "BLOCKED: awaiting explicit external-publication approval",
+  "dns_training_provenance": "UNVERIFIED; not changed",
+  "soc_modified": false
+}

@@ -1,0 +1,129 @@
+{
+  "backend": "network-edge",
+  "input": "synthetic; no accuracy claim",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.13.5",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "lightgbm": "4.7.0",
+    "torch": "2.14.1",
+    "ai-edge-litert": "2.3.0"
+  },
+  "model_load_ms": 4705.928814015351,
+  "setup_and_first_prediction_ms": 4815.036231011618,
+  "latency": {
+    "1": {
+      "calls_per_trial": 1,
+      "trials": 10,
+      "median_ms": 0.53986,
+      "max_ms": 0.79695
+    },
+    "32": {
+      "calls_per_trial": 32,
+      "trials": 10,
+      "median_ms": 12.917915,
+      "max_ms": 14.916846
+    }
+  },
+  "peak_rss_mib": 649.70703125,
+  "measurement": "independent Linux process; warm API calls incl validation; sequential batch",
+  "output": {
+    "schema_version": "security-ai-envelope-v1",
+    "evidence_id": "330251ea-3cbb-4269-b41c-cf075a57b35b",
+    "evidence_type": "network_threat_prediction",
+    "source": "network_security_ai",
+    "model_id": "network_cse2018_dnn_fp32",
+    "model_version": "v4-fp32-epoch13",
+    "timestamp": "2026-10-12T00:23:14.147207Z",
+    "observation_ref": null,
+    "payload": {
+      "source": "network_security_ai",
+      "evidence_type": "network_threat_prediction",
+      "prediction": {
+        "predicted_class": "Infilteration",
+        "confidence": 0.9999942779541016,
+        "class_probabilities": [
+          {
+            "label": "Benign",
+            "probability": 5.711382073059212e-06
+          },
+          {
+            "label": "Bot",
+            "probability": 0.0
+          },
+          {
+            "label": "Brute Force -Web",
+            "probability": 0.0
+          },
+          {
+            "label": "Brute Force -XSS",
+            "probability": 0.0
+          },
+          {
+            "label": "DDOS attack-HOIC",
+            "probability": 0.0
+          },
+          {
+            "label": "DDOS attack-LOIC-UDP",
+            "probability": 0.0
+          },
+          {
+            "label": "DDoS attacks-LOIC-HTTP",
+            "probability": 0.0
+          },
+          {
+            "label": "DoS attacks-GoldenEye",
+            "probability": 0.0
+          },
+          {
+            "label": "DoS attacks-Hulk",
+            "probability": 0.0
+          },
+          {
+            "label": "DoS attacks-SlowHTTPTest",
+            "probability": 0.0
+          },
+          {
+            "label": "DoS attacks-Slowloris",
+            "probability": 0.0
+          },
+          {
+            "label": "FTP-BruteForce",
+            "probability": 0.0
+          },
+          {
+            "label": "Infilteration",
+            "probability": 0.9999942779541016
+          },
+          {
+            "label": "SQL Injection",
+            "probability": 0.0
+          },
+          {
+            "label": "SSH-Bruteforce",
+            "probability": 0.0
+          }
+        ],
+        "class_id": 12,
+        "threat_score": 0.9999942886179269,
+        "model_name": "network_cse2018_dnn_fp32",
+        "model_version": "v4-fp32-epoch13",
+        "deployment_profile": "edge",
+        "feature_set_version": "cse-cic-ids2018-top40-v1",
+        "feature_contract_digest": "ac252fd93d3c5504803695fc609e8209701c74c812b163508b001490cb31b649",
+        "label_mapping_digest": "1c2b006bca8d80d86670d2f133f9f53864294c541a0f805fc6ab8d794f2677fd",
+        "inferred_at": "2026-10-12T00:23:14.147207Z",
+        "inference_latency_ms": 107.544029
+      },
+      "flow_reference": null,
+      "model_derived": true,
+      "confidence_calibrated": false,
+      "attack_confirmed": false,
+      "schema_version": "network-evidence-v1"
+    }
+  }
+}

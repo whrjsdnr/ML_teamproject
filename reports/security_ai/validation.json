@@ -1,0 +1,68 @@
+{
+  "status": "PASS_WITH_UNVERIFIED_TRAINING_PROVENANCE",
+  "date": "2026-10-12",
+  "tests": {
+    "full_tests.xml": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "156",
+        "time": "4.291",
+        "timestamp": "2026-10-12T09:36:01.258702+09:00",
+        "hostname": "DESKTOP-GKHGCJG"
+      }
+    ],
+    "base_wheel_tests.xml": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "6",
+        "tests": "154",
+        "time": "1.302",
+        "timestamp": "2026-10-12T09:37:36.940160+09:00",
+        "hostname": "DESKTOP-GKHGCJG"
+      }
+    ],
+    "team_install_tests.xml": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "154",
+        "time": "1.933",
+        "timestamp": "2026-10-12T09:44:10.457789+09:00",
+        "hostname": "DESKTOP-GKHGCJG"
+      }
+    ]
+  },
+  "network_tests": 76,
+  "dns_tests": 61,
+  "integration_tests": 17,
+  "benchmark_tests": 2,
+  "ruff_check": "PASS (0.16.7 and fresh lock 0.17.0)",
+  "ruff_format": "PASS",
+  "build": "6 wheel/sdist files built offline with standard uv build",
+  "build_directory": "/tmp/security-ai-dist-final",
+  "base_wheel_isolated_import": "PASS; python -I, no SOC and no optional runtimes",
+  "uv_sync_base": "PASS frozen/no-dev/offline",
+  "uv_sync_network_quality_dns_litert": "PASS frozen in /tmp/security-ai-uv-sync",
+  "uv_sync_actual_inference": "PASS for Network quality and DNS LiteRT; Pydantic2.14.1",
+  "legacy_parity": "35 synthetic rows; exact input/output parity using same LiteRT runtime",
+  "unverified": [
+    "DNS DNN training/export code and metrics",
+    "DNS train-only scaler fit and model/scaler original pairing",
+    "native TensorFlow runtime",
+    "domain/session/duplicate/time leakage on absent DNS CSV",
+    "artifact storage endpoint"
+  ],
+  "forbidden_actions_performed": [],
+  "git_diff_check": "PASS",
+  "existing_network_files_changed": false,
+  "original_dns_source_artifacts_preserved": "PASS: all reviewed original source/artifact SHA256 values still match",
+  "modified_tracked_count": 2,
+  "new_file_count": 58
+}

@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "fresh_environment": "/tmp/security-ai-artifact-validation",
+  "package_installation": "three local built wheels, fresh base dependencies; heavy runtime dependency directories reused from ML/cache via .pth; no SOC environment",
+  "results": {
+    "network-quality": {
+      "status": "PASS",
+      "version": "security-ai-artifacts-v1",
+      "model": "network-quality",
+      "installed_files": 4,
+      "reused_files": 0,
+      "verification": {
+        "status": "PASS",
+        "version": "security-ai-artifacts-v1",
+        "model": "network-quality",
+        "verified_files": 4
+      }
+    },
+    "network-edge": {
+      "status": "PASS",
+      "version": "security-ai-artifacts-v1",
+      "model": "network-edge",
+      "installed_files": 5,
+      "reused_files": 0,
+      "verification": {
+        "status": "PASS",
+        "version": "security-ai-artifacts-v1",
+        "model": "network-edge",
+        "verified_files": 5
+      }
+    },
+    "network": {
+      "status": "PASS",
+      "version": "security-ai-artifacts-v1",
+      "model": "network",
+      "installed_files": 6,
+      "reused_files": 0,
+      "verification": {
+        "status": "PASS",
+        "version": "security-ai-artifacts-v1",
+        "model": "network",
+        "verified_files": 6
+      }
+    },
+    "dns": {
+      "status": "PASS",
+      "version": "security-ai-artifacts-v1",
+      "model": "dns",
+      "installed_files": 4,
+      "reused_files": 0,
+      "verification": {
+        "status": "PASS",
+        "version": "security-ai-artifacts-v1",
+        "model": "dns",
+        "verified_files": 4
+      }
+    },
+    "idempotent": {
+      "status": "PASS",
+      "version": "security-ai-artifacts-v1",
+      "model": "all",
+      "installed_files": 0,
+      "reused_files": 10
+    },
+    "corrupt_existing_refused": "PASS",
+    "missing_network": {
+      "status": "PASS",
+      "exit_code": 1,
+      "no_prediction": true
+    },
+    "corrupt_dns_loader": {
+      "status": "PASS",
+      "exit_code": 1,
+      "no_prediction": true
+    },
+    "corrupt_verify": {
+      "status": "PASS",
+      "exit_code": 1,
+      "no_prediction": true
+    },
+    "wrong_version": {
+      "status": "PASS",
+      "exit_code": 1,
+      "no_prediction": true
+    }
+  },
+  "bundles": [
+    {
+      "group": "network-quality",
+      "path": "/tmp/security-ai-release-v1/security-ai-artifacts-v1-network-quality.tar.gz",
+      "size_bytes": 19959438,
+      "sha256": "2ca983baf8d85b97791e43c1f31f267b547a0d371e5d39bb0732108b48f97acf"
+    },
+    {
+      "group": "network-edge",
+      "path": "/tmp/security-ai-release-v1/security-ai-artifacts-v1-network-edge.tar.gz",
+      "size_bytes": 361380,
+      "sha256": "4c513228e613c8013d3fef22f4bb8bf8f6d432d7834c6afddcf95915b1e21aeb"
+    },
+    {
+      "group": "dns",
+      "path": "/tmp/security-ai-release-v1/security-ai-artifacts-v1-dns.tar.gz",
+      "size_bytes": 8304,
+      "sha256": "05241751478e9fd1d707534422e6b1033af9489006d8523f7bb78a210dbfd08b"
+    }
+  ],
+  "remote_download": "BLOCKED until approved Release publication"
+}

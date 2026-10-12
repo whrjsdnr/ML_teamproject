@@ -1,5 +1,11 @@
 # On-Device Network Threat Intelligence AI
 
+현재 독립 추론 배포 기준은 [Network + DNS Security AI 통합 패키지](packages/security-ai/README.md)입니다.
+기존 Network API를 보존하고 DNS INT8 DNN 추론·typed evidence envelope를 추가했습니다.
+DNS DNN의 학습/export 및 성능 provenance는 미검증이며, 아래 DNS 계획과 기존 모델 실험 설명은
+이력으로 보존합니다. [통합 보고서](reports/Security_AI_Integration_Report.md)와
+[SOC integration contract](docs/security_ai/soc_integration_contract.md)에서 검증 범위를 확인하세요.
+
 대규모 네트워크 보안 데이터를 분석하고 공격 행동을 탐지하는 **경량 Machine Learning 기반 Security AI**를 개발하는 프로젝트입니다.
 
 단순 IDS 분류 모델 구축을 넘어 **데이터 분석 → ML → 모델 해석 → 경량화 → On-Device Benchmark → Security AI 연동**까지 하나의 파이프라인으로 구현하는 것을 목표로 합니다.

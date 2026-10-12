@@ -1,0 +1,41 @@
+{
+  "schema_version": "security-ai-envelope-v1",
+  "evidence_id": "db7d7c54-db6c-4879-acb7-32c1d88d71a0",
+  "evidence_type": "dns_threat_prediction",
+  "source": "dns_security_ai",
+  "model_id": "dns_cicbell_dnn_int8",
+  "model_version": "int8-sha256-28e089af363d",
+  "timestamp": "2026-10-12T01:28:27.716955Z",
+  "observation_ref": null,
+  "payload": {
+    "schema_version": "dns-evidence-v1",
+    "evidence_id": "db7d7c54-db6c-4879-acb7-32c1d88d71a0",
+    "source": "dns_security_ai",
+    "evidence_type": "dns_threat_prediction",
+    "prediction": {
+      "prediction_type": "binary_classification",
+      "class_id": 0,
+      "label": "NORMAL",
+      "probability": 0.0,
+      "score_type": "uncalibrated_malicious_probability",
+      "threshold": 0.5,
+      "confidence_calibrated": false,
+      "model_id": "dns_cicbell_dnn_int8",
+      "model_version": "int8-sha256-28e089af363d",
+      "feature_schema_version": "cic-bell-dns-stateless9-v1",
+      "runtime": "litert",
+      "artifacts": {
+        "bundle_version": "dns-int8-reviewed-1",
+        "model_sha256": "28e089af363dd565a4fb3d3f202de9e9f9804bd14a164de4fd7b61adb1201e33",
+        "scaler_sha256": "2735f7650a7d7888ee68f2df870b4e29d83666962931ae2aecb9aa339f40266a",
+        "feature_contract_digest": "3276c1b595ec566677bce530f2839247b7fa1320dc5e3549f85c0c17c959edd0"
+      },
+      "inferred_at": "2026-10-12T01:28:27.716955Z",
+      "inference_latency_ms": 970.34992
+    },
+    "observation_ref": null,
+    "model_derived": true,
+    "confidence_calibrated": false,
+    "attack_confirmed": false
+  }
+}

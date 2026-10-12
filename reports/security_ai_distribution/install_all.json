@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "version": "security-ai-artifacts-v1",
+  "model": "all",
+  "installed_files": 10,
+  "reused_files": 0
+}

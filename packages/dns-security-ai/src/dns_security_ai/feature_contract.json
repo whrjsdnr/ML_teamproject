@@ -1,0 +1,98 @@
+{
+  "schema_version": "cic-bell-dns-stateless9-v1",
+  "ordered_features": [
+    {
+      "name": "FQDN_count",
+      "position": 0,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "subdomain_length",
+      "position": 1,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "numeric",
+      "position": 2,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "entropy",
+      "position": 3,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "special",
+      "position": 4,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "labels",
+      "position": 5,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "labels_max",
+      "position": 6,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "labels_average",
+      "position": 7,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    },
+    {
+      "name": "len",
+      "position": 8,
+      "dtype": "float32",
+      "required": true,
+      "missing": "reject",
+      "min": 0,
+      "max": "float32_max",
+      "unit": "UNVERIFIED; upstream dataset feature extraction unavailable"
+    }
+  ],
+  "observation_unit": "one stateless DNS feature record, not a flow; exact query aggregation UNVERIFIED",
+  "raw_domain_extractor": "not implemented: upstream semantics incomplete",
+  "preprocessing": "named StandardScaler.transform followed by round/clip/int8 using manifest tensor quantization"
+}

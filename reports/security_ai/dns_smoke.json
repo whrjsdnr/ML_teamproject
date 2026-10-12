@@ -1,0 +1,75 @@
+{
+  "backend": "dns",
+  "input": "synthetic; no accuracy claim",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "pydantic": "2.13.5",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "lightgbm": "4.7.0",
+    "torch": "2.14.1",
+    "ai-edge-litert": "2.3.0"
+  },
+  "model_load_ms": 1587.6121830078773,
+  "setup_and_first_prediction_ms": 1611.3011440029368,
+  "latency": {
+    "1": {
+      "calls_per_trial": 1,
+      "trials": 10,
+      "median_ms": 1.1536624999999998,
+      "max_ms": 1.847655
+    },
+    "32": {
+      "calls_per_trial": 32,
+      "trials": 10,
+      "median_ms": 55.7221715,
+      "max_ms": 148.304665
+    }
+  },
+  "peak_rss_mib": 199.63671875,
+  "measurement": "independent Linux process; warm API calls incl validation; sequential batch",
+  "output": {
+    "schema_version": "security-ai-envelope-v1",
+    "evidence_id": "256769fd-5b15-497e-9596-73128fce0890",
+    "evidence_type": "dns_threat_prediction",
+    "source": "dns_security_ai",
+    "model_id": "dns_cicbell_dnn_int8",
+    "model_version": "int8-sha256-28e089af363d",
+    "timestamp": "2026-10-12T00:19:35.864715Z",
+    "observation_ref": null,
+    "payload": {
+      "schema_version": "dns-evidence-v1",
+      "evidence_id": "256769fd-5b15-497e-9596-73128fce0890",
+      "source": "dns_security_ai",
+      "evidence_type": "dns_threat_prediction",
+      "prediction": {
+        "prediction_type": "binary_classification",
+        "class_id": 0,
+        "label": "NORMAL",
+        "probability": 0.0,
+        "score_type": "uncalibrated_malicious_probability",
+        "threshold": 0.5,
+        "confidence_calibrated": false,
+        "model_id": "dns_cicbell_dnn_int8",
+        "model_version": "int8-sha256-28e089af363d",
+        "feature_schema_version": "cic-bell-dns-stateless9-v1",
+        "runtime": "litert",
+        "artifacts": {
+          "bundle_version": "dns-int8-reviewed-1",
+          "model_sha256": "28e089af363dd565a4fb3d3f202de9e9f9804bd14a164de4fd7b61adb1201e33",
+          "scaler_sha256": "2735f7650a7d7888ee68f2df870b4e29d83666962931ae2aecb9aa339f40266a",
+          "feature_contract_digest": "3276c1b595ec566677bce530f2839247b7fa1320dc5e3549f85c0c17c959edd0"
+        },
+        "inferred_at": "2026-10-12T00:19:35.864715Z",
+        "inference_latency_ms": 23.330015
+      },
+      "observation_ref": null,
+      "model_derived": true,
+      "confidence_calibrated": false,
+      "attack_confirmed": false
+    }
+  }
+}

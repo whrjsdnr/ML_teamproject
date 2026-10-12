@@ -1,0 +1,11 @@
+{
+  "FQDN_count": 14.0,
+  "subdomain_length": 0.0,
+  "numeric": 0.0,
+  "entropy": 2.7813014714884527,
+  "special": 2.0,
+  "labels": 2.0,
+  "labels_max": 10.0,
+  "labels_average": 6.5,
+  "len": 11.0
+}

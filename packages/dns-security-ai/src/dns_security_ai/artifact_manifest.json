@@ -1,0 +1,80 @@
+{
+  "bundle_version": "dns-int8-reviewed-1",
+  "model_id": "dns_cicbell_dnn_int8",
+  "model_version": "int8-sha256-28e089af363d",
+  "training_version": "UNVERIFIED",
+  "feature_schema_version": "cic-bell-dns-stateless9-v1",
+  "feature_names": [
+    "FQDN_count",
+    "subdomain_length",
+    "numeric",
+    "entropy",
+    "special",
+    "labels",
+    "labels_max",
+    "labels_average",
+    "len"
+  ],
+  "feature_contract_digest": "3276c1b595ec566677bce530f2839247b7fa1320dc5e3549f85c0c17c959edd0",
+  "class_mapping": {
+    "NORMAL": 0,
+    "MALICIOUS": 1
+  },
+  "class_mapping_provenance": "legacy detector labels and notebook IDs; DNN training mapping UNVERIFIED",
+  "threshold": 0.5,
+  "threshold_basis": "supplied detector default, not validated/tuned",
+  "score_type": "uncalibrated_malicious_probability",
+  "training_provenance": "UNVERIFIED: DNN training/export code absent",
+  "calibration": "UNVERIFIED: no calibration artifact/code found",
+  "artifacts": {
+    "model_path": {
+      "filename": "model/dnn_int8.tflite",
+      "size_bytes": 9288,
+      "sha256": "28e089af363dd565a4fb3d3f202de9e9f9804bd14a164de4fd7b61adb1201e33",
+      "format": "TFLite INT8"
+    },
+    "scaler_path": {
+      "filename": "preprocessor/scaler.joblib",
+      "size_bytes": 1135,
+      "sha256": "2735f7650a7d7888ee68f2df870b4e29d83666962931ae2aecb9aa339f40266a",
+      "format": "trusted joblib StandardScaler",
+      "serialized_sklearn_version": "1.9.1",
+      "n_samples_seen": 162880
+    }
+  },
+  "tensors": {
+    "input": {
+      "shape": [
+        1,
+        9
+      ],
+      "dtype": "int8",
+      "quantization": [
+        0.0387900173664093,
+        -40
+      ]
+    },
+    "output": {
+      "shape": [
+        1,
+        1
+      ],
+      "dtype": "int8",
+      "quantization": [
+        0.00390625,
+        -128
+      ]
+    }
+  },
+  "review_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "pandas": "3.0.6",
+    "ai-edge-litert": "2.3.0"
+  },
+  "original_runtime_requirement": {
+    "tensorflow": "2.21.0"
+  }
+}

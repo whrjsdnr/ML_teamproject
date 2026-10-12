@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/tmp/security-ai-distribution-wheels/dns_security_ai-0.1.0.tar.gz",
+    "bytes": 11928,
+    "sha256": "4cb43d05961cb1d2062ad1bf345c22778f9016eebfc7bb7ceae7fca5e1392d2c",
+    "metadata_only_no_models": true
+  },
+  {
+    "path": "/tmp/security-ai-distribution-wheels/network_security_ai-0.1.0.tar.gz",
+    "bytes": 14687,
+    "sha256": "c26deeeee29b0628756a4dbe61098578855117cebd62debd4d5bb80429328f83",
+    "metadata_only_no_models": true
+  },
+  {
+    "path": "/tmp/security-ai-distribution-wheels/network_security_ai-0.1.0-py3-none-any.whl",
+    "bytes": 19172,
+    "sha256": "a16fe7ac06f156a63d2d1c3946f16b959251acce45b779f7e897e088b9660220",
+    "metadata_only_no_models": true
+  },
+  {
+    "path": "/tmp/security-ai-distribution-wheels/dns_security_ai-0.1.0-py3-none-any.whl",
+    "bytes": 15662,
+    "sha256": "cd959e3cc451b442e7385445f2782029fb22e3078aa0f32b8715440483a8cb20",
+    "metadata_only_no_models": true
+  },
+  {
+    "path": "/tmp/security-ai-distribution-wheels-final/security_ai-0.1.0.tar.gz",
+    "bytes": 17262,
+    "sha256": "dc32d8f871ca43550b6d4f6b3e6e76c6f336a52387d876ad554174cb8586928f",
+    "metadata_only_no_models": true
+  },
+  {
+    "path": "/tmp/security-ai-distribution-wheels-final/security_ai-0.1.0-py3-none-any.whl",
+    "bytes": 19609,
+    "sha256": "6ab3a6beba0353889693932013e3776047bd87478c099b50a6689efa57912b3a",
+    "metadata_only_no_models": true
+  }
+]

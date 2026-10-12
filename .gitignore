@@ -41,3 +41,12 @@ build/
 *.whl
 *.tar.gz
 results/ondevice_benchmark_v4/*.pt
+
+# Supplied DNS model artifacts are shared separately; preserve original local files.
+packages/dns_security_package/**/model/*.tflite
+packages/dns_security_package/**/preprocessor/*.joblib
+*:Zone.Identifier
+
+# Local installed/built Security AI bundles; only manifests belong in source Git.
+/artifacts/
+/artifact-bundles/

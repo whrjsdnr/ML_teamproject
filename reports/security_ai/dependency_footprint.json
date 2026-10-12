@@ -1,0 +1,65 @@
+{
+  "scope": "direct named distribution files only; excludes transitive dependencies and caches; existing environments shared through temporary .pth",
+  "packages": [
+    {
+      "distribution": "numpy",
+      "version": "2.5.4",
+      "installed_distribution_mib": 53.776,
+      "file_count": 930
+    },
+    {
+      "distribution": "pydantic",
+      "version": "2.13.5",
+      "installed_distribution_mib": 1.806,
+      "file_count": 113
+    },
+    {
+      "distribution": "pydantic-core",
+      "version": "2.46.5",
+      "installed_distribution_mib": 4.8,
+      "file_count": 12
+    },
+    {
+      "distribution": "lightgbm",
+      "version": "4.7.0",
+      "installed_distribution_mib": 9.288,
+      "file_count": 18
+    },
+    {
+      "distribution": "torch",
+      "version": "2.14.1",
+      "installed_distribution_mib": 1091.207,
+      "file_count": 12265
+    },
+    {
+      "distribution": "ai-edge-litert",
+      "version": "2.3.0",
+      "installed_distribution_mib": 56.907,
+      "file_count": 105
+    },
+    {
+      "distribution": "pandas",
+      "version": "3.0.6",
+      "installed_distribution_mib": 37.138,
+      "file_count": 1523
+    },
+    {
+      "distribution": "scikit-learn",
+      "version": "1.9.1",
+      "installed_distribution_mib": 29.609,
+      "file_count": 1010
+    },
+    {
+      "distribution": "scipy",
+      "version": "1.18.1",
+      "installed_distribution_mib": 106.753,
+      "file_count": 1434
+    },
+    {
+      "distribution": "joblib",
+      "version": "1.6.0",
+      "installed_distribution_mib": 0.879,
+      "file_count": 143
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "synthetic_rows": 35,
+  "quantized_inputs": "byte-identical",
+  "probability_and_label": "exact equality",
+  "runtime": "same LiteRT 2.3.0 interpreter for both implementations",
+  "native_tensorflow_equivalence": "UNVERIFIED: TensorFlow not installed",
+  "training_preprocessing_equivalence": "UNVERIFIED: DNN training code absent"
+}

@@ -1,0 +1,40 @@
+[project]
+name = "security-ai"
+version = "0.1.0"
+description = "Independent Network and DNS predictors with typed evidence envelopes"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["network-security-ai==0.1.0", "dns-security-ai==0.1.0", "pydantic>=2.13.5"]
+
+[project.optional-dependencies]
+network-quality = ["network-security-ai[detection-quality]==0.1.0"]
+network-edge = ["network-security-ai[edge]==0.1.0"]
+dns-litert = ["dns-security-ai[litert]==0.1.0"]
+dns-tensorflow = ["dns-security-ai[tensorflow]==0.1.0"]
+
+[project.scripts]
+security-ai = "security_ai.cli:main"
+security-ai-artifacts = "security_ai.artifact_cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "ruff>=0.16.7"]
+
+[tool.uv.sources]
+network-security-ai = { path = "../network-security-ai", editable = true }
+dns-security-ai = { path = "../dns-security-ai", editable = true }
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "../dns-security-ai/src", "../network-security-ai/src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
