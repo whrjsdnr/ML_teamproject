@@ -1,0 +1,329 @@
+{
+  "contract_version": "network-dataset-selection-plan:v1",
+  "plan_id": "iot23-network14-3sessions-v1",
+  "reviewed_at": "2026-10-15",
+  "baseline_ml": "309d4836580682b8cb6589264ab3fc227965f0fb",
+  "baseline_soc": "37bff82a18b3f5aa0b1b15649df38467fce9768f",
+  "decision": "ACQUISITION_READY",
+  "dataset": "IoT-23",
+  "publisher_dataset_version": "1.0.0",
+  "individual_snapshot_version": "official-individual-HEAD-2026-10-15; not proven identical to frozen Zenodo tar",
+  "official_source": "https://www.stratosphereips.org/datasets-iot23",
+  "official_record": "https://zenodo.org/records/4743746",
+  "download_approval": "AWAITING_EXPLICIT_USER_APPROVAL",
+  "automatic_download": false,
+  "new_raw_downloads": 0,
+  "actual_raw_bytes_downloaded": 0,
+  "new_raw_decompressed_bytes": 0,
+  "storage_directory": "data/raw/acquisition/iot23-network14-3sessions-v1",
+  "max_files": 6,
+  "expected_total_bytes": 137251065,
+  "download_budget_bytes": 268435456,
+  "timeout_seconds_per_file": 300,
+  "hard_process_watchdog_required": true,
+  "max_retries": 0,
+  "redirect_policy": "DENY; re-review changed endpoint",
+  "overwrite_existing": false,
+  "archive_expansion_budget_bytes": 0,
+  "format_policy": {
+    "PCAP": "Existing DownloadSpec + reviewed MIME and magic; actual magic not read yet",
+    "ZEEK_LABELED_FLOW": "BLOCKED_UNTIL_NARROW_LABEL_FORMAT_SUPPORT_TESTED; existing helper rejects .log.labeled; never relabel as Argus",
+    "missing_label_content_type": "UNKNOWN, reviewed prefix validation required before acceptance"
+  },
+  "files": [
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-8-1",
+      "role": "PCAP",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/2018-07-31-15-15-09-192.168.100.113.pcap",
+      "filename": "2018-07-31-15-15-09-192.168.100.113.pcap",
+      "relative_path": "CTU-IoT-Malware-Capture-8-1/2018-07-31-15-15-09-192.168.100.113.pcap",
+      "expected_bytes": 2098362,
+      "head_status": 200,
+      "head_content_type": "application/vnd.tcpdump.pcap",
+      "head_etag": "\"2004ba-580b085445280\"",
+      "head_last_modified": "Wed, 30 Jan 2019 17:48:42 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    },
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-8-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/bro/conn.log.labeled",
+      "filename": "conn.log.labeled",
+      "relative_path": "CTU-IoT-Malware-Capture-8-1/bro/conn.log.labeled",
+      "expected_bytes": 1431000,
+      "head_status": 200,
+      "head_content_type": "UNKNOWN",
+      "head_etag": "\"15d5d8-59a7e45504ac0\"",
+      "head_last_modified": "Wed, 25 Dec 2019 02:46:43 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    },
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-20-1",
+      "role": "PCAP",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/2018-10-02-13-12-30-192.168.100.103.pcap",
+      "filename": "2018-10-02-13-12-30-192.168.100.103.pcap",
+      "relative_path": "CTU-IoT-Malware-Capture-20-1/2018-10-02-13-12-30-192.168.100.103.pcap",
+      "expected_bytes": 4057401,
+      "head_status": 200,
+      "head_content_type": "application/vnd.tcpdump.pcap",
+      "head_etag": "\"3de939-580af8ba48380\"",
+      "head_last_modified": "Wed, 30 Jan 2019 16:38:54 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    },
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-20-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/bro/conn.log.labeled",
+      "filename": "conn.log.labeled",
+      "relative_path": "CTU-IoT-Malware-Capture-20-1/bro/conn.log.labeled",
+      "expected_bytes": 419604,
+      "head_status": 200,
+      "head_content_type": "UNKNOWN",
+      "head_etag": "\"66714-59a7b573fb0c0\"",
+      "head_last_modified": "Tue, 24 Dec 2019 23:16:59 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    },
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-34-1",
+      "role": "PCAP",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+      "filename": "2018-12-21-15-50-14-192.168.1.195.pcap",
+      "relative_path": "CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+      "expected_bytes": 126317980,
+      "head_status": 200,
+      "head_content_type": "application/vnd.tcpdump.pcap",
+      "head_etag": "\"787759c-580afcf5a7f80\"",
+      "head_last_modified": "Wed, 30 Jan 2019 16:57:50 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    },
+    {
+      "capture_session": "CTU-IoT-Malware-Capture-34-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+      "filename": "conn.log.labeled",
+      "relative_path": "CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+      "expected_bytes": 2926718,
+      "head_status": 200,
+      "head_content_type": "UNKNOWN",
+      "head_etag": "\"2ca87e-60c44ac76eebd\"",
+      "head_last_modified": "Mon, 11 Dec 2023 23:55:51 GMT",
+      "actual_sha256": "UNKNOWN",
+      "publisher_sha256": "UNKNOWN",
+      "acquired": false
+    }
+  ],
+  "terms": {
+    "dataset_license": "CC-BY-4.0 in official Zenodo API",
+    "publisher_faq": "Attribution-based reuse; no separate permission requested under current FAQ",
+    "legacy_individual_readme_notice": "Authorization wording present; record it alongside current dataset license/FAQ",
+    "source_snapshot_binding": "No equivalence to packaged release asserted; retain timestamps/ETags and hash fetched bytes after approval",
+    "raw_redistribution_planned": false,
+    "citation": "Garcia, Parmisano and Erquiaga (2020), IoT-23 v1.0.0, DOI 10.5281/zenodo.4743746"
+  },
+  "ctu13_s07_final": {
+    "label_timezone": "TIMEZONE_UNVERIFIED",
+    "verified_matches": 0,
+    "training_admission": "BLOCKED",
+    "role": "PRODUCER_DIAGNOSTIC_ONLY",
+    "saved_candidates": 237,
+    "new_investigation_rounds_authorized": false,
+    "full_reexpansion_authorized": false
+  },
+  "screened_ctu13_other": {
+    "sample": "Scenario 1 / Capture-Botnet-42 published ra.conf",
+    "finding": "RA_TZ absent in sampled config; not an exhaustive statement about every scenario",
+    "decision": "BLOCKED; no independently verified label-export clock; excluded from shortlist"
+  },
+  "shortlist": [
+    {
+      "dataset": "CIC-IDS2017",
+      "decision": "BLOCKED",
+      "official_source": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "raw_label_method": "Publisher five-tuple/time CSV labels and daily PCAPs; actual pairing unverified",
+      "sessions_reported": 5,
+      "bytes": "UNKNOWN_INDIVIDUAL_FILES",
+      "blocker": "Official download form currently reports server error; no authenticated exact file catalog",
+      "terms": "Research use with citation per publisher",
+      "class_distribution": "UNKNOWN_FOR_ADMITTED_SAMPLES"
+    },
+    {
+      "dataset": "UNSW-NB15",
+      "decision": "BLOCKED",
+      "official_source": "https://research.unsw.edu.au/projects/unsw-nb15-dataset",
+      "raw_label_method": "PCAP, UNSW-NB15_GT.csv, UNSW-NB15_LIST_EVENTS.csv; actual pairing unverified",
+      "sessions_reported": "UNKNOWN_FROM_CURRENT_VERIFIED_FILE_CATALOG",
+      "bytes": "100 GB corpus reported, individual file identities UNKNOWN",
+      "blocker": "Official SharePoint redirects to Microsoft login; no access bypass or mirror",
+      "terms": "Academic use; commercial use requires author agreement per publisher",
+      "class_distribution": "UNKNOWN_FOR_ADMITTED_SAMPLES"
+    },
+    {
+      "dataset": "IoT-23",
+      "decision": "ACQUISITION_READY",
+      "official_source": "https://www.stratosphereips.org/datasets-iot23",
+      "raw_label_method": "Analyst/Flaber-labeled Zeek conn.log.labeled derived from paired original PCAP, per official documentation",
+      "sessions_reported": 23,
+      "selected_sessions": 3,
+      "bytes": 137251065,
+      "blocker": "Raw files not acquired; actual binding/format/quality/holdout and Golden Pair still unverified",
+      "terms": "Official dataset CC-BY-4.0 and current FAQ, preserve legacy README notice",
+      "class_distribution": "Publisher summaries only; not actual acquired/admitted distribution"
+    }
+  ],
+  "producer": {
+    "id": "linux-observable-network",
+    "version": "1.1.0",
+    "source_origin": "OFFLINE_PCAP",
+    "feature_contract_version": "1.0.0",
+    "feature_count": 14,
+    "dtype": "float32",
+    "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+    "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+    "compatibility": "STRUCTURAL_EXPECTATION_ONLY_ACTUAL_BYTES_BLOCKED",
+    "actual_golden_pair": "NOT_RUN"
+  },
+  "label_contract": {
+    "timestamp": "Zeek ts seconds since Unix epoch by specification; verify actual #types/time values after acquisition",
+    "direction": "Zeek orig/resp != first-observed; exact bidirectional tuple + session + containing interval, no direction substitution",
+    "unknowns": "Missing duration, contradictory label or ambiguous tuple/time excluded; no default benign",
+    "raw_label_binding": "NOT_VERIFIED"
+  },
+  "holdout": {
+    "status": "PROPOSED_NOT_EXECUTED",
+    "unit": "whole capture session/day; campaign/sample/device overlap audit required",
+    "sessions": {
+      "train": [
+        "CTU-IoT-Malware-Capture-8-1"
+      ],
+      "validation": [
+        "CTU-IoT-Malware-Capture-20-1"
+      ],
+      "test": [
+        "CTU-IoT-Malware-Capture-34-1"
+      ]
+    },
+    "never_random_row_split": true,
+    "group_overlap_check": "NOT_RUN_ON_ACTUAL_DATA",
+    "duplicate_flow_check": "NOT_RUN_ON_ACTUAL_DATA",
+    "host_identity_independence": "UNVERIFIED; do not infer from private IP or filename",
+    "campaign_independence": "Different reported malware families; hashes/device/session relation must be audited",
+    "leakage_checks": [
+      "session/day overlap",
+      "duplicate raw packet/flow/sample",
+      "campaign/sample/device connected groups",
+      "no label/time/UID/source fields as model features",
+      "no fit or threshold selection on test"
+    ],
+    "test_holdout_sealed_before_fit": true,
+    "publisher_reported_labels": {
+      "8-1": {
+        "Benign": 2181,
+        "C&C": 8222
+      },
+      "20-1": {
+        "Benign": 3193,
+        "C&C-Torii": 16
+      },
+      "34-1": {
+        "Benign": 1923,
+        "C&C": 6706,
+        "DDoS": 14394,
+        "PartOfAHorizontalPortScan": 122
+      }
+    },
+    "current_file_distribution": "UNKNOWN; Capture34 labels last modified 2023 vs older published distribution",
+    "external_holdout": "NOT_ACQUIRED",
+    "fallback": "BLOCKED if required groups/classes are absent; no post-test split tuning"
+  },
+  "admission": "NOT_ADMITTED",
+  "verified_matches": 0,
+  "admitted_samples": 0,
+  "dataset_digest": "UNKNOWN",
+  "split_digest": "UNKNOWN",
+  "model_readiness": {
+    "Network Quality": "BLOCKED",
+    "Network Edge": "BLOCKED"
+  },
+  "training_authority": "NONE",
+  "operational_input": "NOT_INFERABLE",
+  "write_disposition": "WRITE_DENIED",
+  "metadata_receipts": [
+    {
+      "method": "GET",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/README.md",
+      "status": 200,
+      "content_length": "1688",
+      "content_type": "text/markdown",
+      "etag": "\"698-5908eea775c40\"",
+      "last_modified": "Tue, 20 Aug 2019 16:26:17 GMT",
+      "metadata_sha256": "1788755a075f580c3628e4698ba4dad699f91c058dede73bae3f480bb5cba840",
+      "metadata_bytes": 1688
+    },
+    {
+      "method": "GET",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/README.md",
+      "status": 200,
+      "content_length": "1786",
+      "content_type": "text/markdown",
+      "etag": "\"6fa-58faf98e8ddc0\"",
+      "last_modified": "Fri, 09 Aug 2019 14:00:31 GMT",
+      "metadata_sha256": "67a196f4c4203865df1e5ffe767551590d611d60aaab1b2df0ff865cfaee3e3c",
+      "metadata_bytes": 1786
+    },
+    {
+      "method": "GET",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-42-1/README.md",
+      "status": 200,
+      "content_length": "1528",
+      "content_type": "text/markdown",
+      "etag": "\"5f8-58db7ea5c4380\"",
+      "last_modified": "Mon, 15 Jul 2019 13:05:34 GMT",
+      "metadata_sha256": "3b3ca5b655db82a93e7f69fcbba76bb9de3f4fff3ea2938726062abe4ff889b3",
+      "metadata_bytes": 1528
+    },
+    {
+      "method": "GET",
+      "url": "https://zenodo.org/api/records/4743746",
+      "status": 200,
+      "content_length": "4941",
+      "content_type": "application/json",
+      "etag": "\"3\"",
+      "last_modified": null,
+      "metadata_sha256": "04f4d0237f62a16b36adce10205a9ff7d25ddefba57231f74b2b5d370dc668b7",
+      "metadata_bytes": 4941
+    },
+    {
+      "method": "GET",
+      "url": "https://zenodo.org/records/4743746/export/json",
+      "status": 200,
+      "content_length": "30177",
+      "content_type": "application/json",
+      "etag": null,
+      "last_modified": null,
+      "metadata_sha256": "182f141af11bb0a1d0b9571d672d615f15a217d8462f4322642a26f05af3f94a",
+      "metadata_bytes": 30177
+    },
+    {
+      "method": "GET",
+      "url": "https://www.stratosphereips.org/datasets-faq",
+      "status": 200,
+      "content_length": null,
+      "content_type": "text/html;charset=utf-8",
+      "etag": "W/\"cb7a0b45af8dd9fe54f3cdd854363103\"",
+      "last_modified": null,
+      "metadata_sha256": "94cb9460b5446e3bb119ffeb6e983dc9d0456dd7d70e275b63347e974d284bcd",
+      "metadata_bytes": 103231
+    }
+  ],
+  "manifest_digest": "a6e2cc2cc96ab5fa807065c4bdec7efe9a5a98471c850c93db96ab20b2aeccda"
+}
