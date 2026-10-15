@@ -326,8 +326,10 @@ def iter_bzip2(path: Path, *, max_expanded_bytes: int) -> Iterator[bytes]:
                 raise ValueError("ARCHIVE_COMPRESSED_LIMIT")
             if decoder.needs_input and not data:
                 raise ValueError("BZIP2_TRUNCATED")
+            if total >= max_expanded_bytes:
+                raise ValueError("ARCHIVE_EXPANSION_LIMIT")
             block = decoder.decompress(
-                data, max_length=min(65536, max_expanded_bytes - total + 1)
+                data, max_length=min(65536, max_expanded_bytes - total)
             )
             total += len(block)
             if total > max_expanded_bytes:

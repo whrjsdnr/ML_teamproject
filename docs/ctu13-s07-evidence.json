@@ -1,0 +1,218 @@
+{
+  "dataset_id": "ctu13-s07-header-pilot-v1",
+  "source_files": [
+    {
+      "filename": "capture20110816-2.truncated.pcap.bz2",
+      "size_bytes": 111664996,
+      "sha256": "246e43ea206de437c1bf32fb07f865a8971c86dda0fd95e6597985d9f9c85577",
+      "content_type": "application/x-bzip2",
+      "publisher_digest_verified": false,
+      "elapsed_seconds": 35.36354208299963
+    },
+    {
+      "filename": "capture20110816-2.binetflow",
+      "size_bytes": 15630512,
+      "sha256": "df0b5338190b967bd340a0d6c1bb3c34d1bbfb4b7ffa764c2dd26f77f1a26680",
+      "content_type": "UNKNOWN",
+      "publisher_digest_verified": false,
+      "elapsed_seconds": 5.737229827002011
+    }
+  ],
+  "counts": {
+    "raw_packets": 6330279,
+    "payload_truncated_records": 6330225,
+    "parsed_packets": 6323107,
+    "flows": 152401,
+    "incomplete_flows": 142032,
+    "UNKNOWN_LABEL": 9813,
+    "UNMATCHED": 319,
+    "CLOCK_UNVERIFIED": 237,
+    "diagnostic_candidate_rows": 237,
+    "MATCHED": 0,
+    "AMBIGUOUS": 0,
+    "excluded_from_training_flows": 152401
+  },
+  "parse_exclusions": {
+    "TRANSPORT_UNSUPPORTED": 7160,
+    "IP_FRAGMENT_UNSUPPORTED": 12
+  },
+  "closures": {
+    "PACKET_LIMIT": 904,
+    "RESOURCE_EVICTION": 139213,
+    "ACTIVE_TIMEOUT": 323,
+    "IDLE_TIMEOUT": 10046,
+    "INCOMPLETE_CAPTURE": 1915
+  },
+  "ip_families": {
+    "IPv4": 6323107
+  },
+  "protocols": {
+    "udp": 1701360,
+    "tcp": 4621747
+  },
+  "label_rows": {
+    "total_rows": 114077,
+    "UNKNOWN": 110369,
+    "NORMAL": 1668,
+    "unsupported_protocol": 1941,
+    "invalid_row": 36,
+    "BOTNET": 63
+  },
+  "candidate_label_distribution": {
+    "UNKNOWN": 9813,
+    "NORMAL": 237
+  },
+  "first_packet_ns": 1313495484049047000,
+  "last_packet_ns": 1313496536598790000,
+  "expanded_bytes_read": 536733893,
+  "expanded_sha256": "UNKNOWN_INCOMPLETE",
+  "archive_integrity": "BLOCKED",
+  "archive_failure": "ARCHIVE_EXPANSION_LIMIT",
+  "pcap_format": {
+    "format": "PCAPNG",
+    "link_type": "ETHERNET",
+    "endian": "<",
+    "timestamp_resolution_ns": 1000,
+    "snaplen": 262144
+  },
+  "label_clock": {
+    "offset_seconds_hypothesis": 7200,
+    "verified": false
+  },
+  "producer_version": "1.1.0",
+  "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+  "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+  "dataset_digest": "89b789959772bca6548a4483aefc3adc5f82bcc2b138d9c7f1b01f1a11e2cc9d",
+  "admitted_sample_count": 0,
+  "dataset_admission": "BLOCKED",
+  "retraining_readiness": "BLOCKED",
+  "holdout": "BLOCKED_SINGLE_CAPTURE_SESSION",
+  "capture_drop": "UNKNOWN",
+  "capture_gap": "UNKNOWN",
+  "operational_inference": "NOT_INFERABLE",
+  "finding_promotion": "BLOCKED",
+  "write": "WRITE_DENIED",
+  "elapsed_seconds": 172.2167195030015,
+  "reference_input": {
+    "kind": "ACTUAL_PCAP_DERIVED_REFERENCE_INPUT",
+    "source_identity": "246e43ea206de437c1bf32fb07f865a8971c86dda0fd95e6597985d9f9c85577",
+    "source_digest": "1d81895569fe6f9e2be18a64e77d57b875bbf3a51c244eb8cdccfd5f4af7e8d5",
+    "feature_names": [
+      "duration_seconds",
+      "forward_packet_count",
+      "backward_packet_count",
+      "forward_ip_bytes",
+      "backward_ip_bytes",
+      "ip_length_min",
+      "ip_length_max",
+      "ip_length_mean",
+      "ip_length_population_std",
+      "tcp_syn_packet_count",
+      "tcp_fin_packet_count",
+      "tcp_rst_packet_count",
+      "iat_mean_seconds",
+      "iat_max_seconds"
+    ],
+    "packet_metadata": [
+      {
+        "relative_ns": 0,
+        "ip_length": 361,
+        "forward": true,
+        "tcp_flags": 24
+      },
+      {
+        "relative_ns": 24230000,
+        "ip_length": 494,
+        "forward": false,
+        "tcp_flags": 24
+      },
+      {
+        "relative_ns": 24698000,
+        "ip_length": 409,
+        "forward": true,
+        "tcp_flags": 24
+      },
+      {
+        "relative_ns": 37531000,
+        "ip_length": 542,
+        "forward": false,
+        "tcp_flags": 24
+      },
+      {
+        "relative_ns": 72919000,
+        "ip_length": 52,
+        "forward": true,
+        "tcp_flags": 16
+      }
+    ],
+    "values": [
+      0.07291900366544724,
+      3.0,
+      2.0,
+      822.0,
+      1036.0,
+      52.0,
+      542.0,
+      371.6000061035156,
+      171.8564453125,
+      0.0,
+      0.0,
+      0.0,
+      0.01822975091636181,
+      0.035388000309467316
+    ],
+    "feature_digest": "e5077198969890c334577c296c9b3c0ccff314b52f65bd120fb61a8056e241e7",
+    "independent_reference_status": "VERIFIED_ARITHMETIC_ONLY",
+    "training_operational_parity": "BLOCKED",
+    "reference_method": "Independent Decimal(60 digits) sums/population variance/sqrt from sanitized observed metadata; does not independently validate raw header parsing or capture completeness",
+    "expected_float32_values": [
+      0.07291900366544724,
+      3.0,
+      2.0,
+      822.0,
+      1036.0,
+      52.0,
+      542.0,
+      371.6000061035156,
+      171.8564453125,
+      0.0,
+      0.0,
+      0.0,
+      0.01822975091636181,
+      0.035388000309467316
+    ],
+    "numerical_tolerance": "exact float32 on this sample; no global parity claim",
+    "producer_version": "1.1.0",
+    "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+    "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e"
+  },
+  "original_private_summary_digest": "37bc002e329e0e229b0b8736f7e9b099377518a5ec09dd4d516844623ab54689",
+  "archive_budget_audit": {
+    "limit_bytes": 536870912,
+    "preflight_decoded_bytes": 131072,
+    "main_pass_budget_bytes": 536739840,
+    "main_reader_delivered_bytes": 536733893,
+    "max_decoder_bytes_including_rejected_guard": 536870913,
+    "materialized_expanded_raw_files": 0,
+    "strict_decoder_total_limit": "FAILED_ONE_REJECTED_LOOKAHEAD_BYTE",
+    "fix": "No lookahead decompression in storage.iter_bzip2; regression proves decoded bytes <= cap",
+    "fixed_limiter_real_corpus_rerun": "NOT_RUN_NO_ADDITIONAL_EXPANSION_AUTHORIZED"
+  },
+  "matched_flow_ratio": 0.0,
+  "diagnostic_unique_binary_candidate_ratio": 0.0015551079061161017,
+  "download_execution": {
+    "get_attempts": 2,
+    "automatic_retries": 0,
+    "per_file_hard_watchdog_seconds": 300,
+    "download_total_bytes": 127295508,
+    "redirects_allowed": false,
+    "publisher_sha256": "UNKNOWN",
+    "planned_etags_verified_during_get": "NOT_OBSERVED",
+    "prior_head_metadata": "Plan metadata only; current requests were GET, no extra HEAD"
+  },
+  "assessment": "PARTIAL_ACQUISITION_VERIFIED_ADMISSION_BLOCKED",
+  "full_archive_packet_flow_totals": "UNKNOWN_PREFIX_ONLY",
+  "capture_session_split": "One scenario; no independent holdout or train/validation/test split",
+  "source_origin": "OFFLINE_PCAP",
+  "evidence_summary_digest": "7cf998478c20ad00264cb5a77ed1189e01c435baecf96b5371cd5e079e75a083"
+}
