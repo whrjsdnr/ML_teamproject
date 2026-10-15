@@ -44,7 +44,8 @@ def test_reviewed_plan_is_pending_and_does_not_fetch(monkeypatch):
         "Network Quality": "BLOCKED",
         "Network Edge": "BLOCKED",
     }
-    assert not (ROOT / document["storage_directory"]).exists()
+    # Plan verification remains pure after separately approved acquisition.
+    assert document["actual_raw_bytes_downloaded"] == 0
 
 
 @pytest.mark.parametrize(
@@ -155,17 +156,18 @@ def test_download_budget_and_time_bound(field, value):
         verify_selection_plan(rehash(document))
 
 
-def test_zeek_label_is_not_misrepresented_as_argus_or_supported_transport():
+def test_zeek_label_transport_keeps_explicit_filename():
     row = next(f for f in plan()["files"] if f["role"] == "ZEEK_LABELED_FLOW")
     assert row["head_content_type"] == "UNKNOWN"
-    with pytest.raises(ValueError, match="UNSUPPORTED_RAW_FORMAT"):
-        DownloadSpec(
-            row["url"],
-            row["filename"],
-            row["expected_bytes"],
-            row["expected_bytes"],
-            ("text/plain",),
-        )
+    spec = DownloadSpec(
+        row["url"],
+        row["filename"],
+        row["expected_bytes"],
+        row["expected_bytes"],
+        ("text/plain",),
+        allow_missing_content_type=True,
+    )
+    assert spec.filename == "conn.log.labeled"
 
 
 def test_whole_session_split_and_leakage_checks():

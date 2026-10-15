@@ -47,7 +47,7 @@ class DownloadSpec:
             or ".." in self.filename
         ):
             raise ValueError("INVALID_DOWNLOAD_NAME")
-        if not self.filename.endswith(
+        if self.filename != "conn.log.labeled" and not self.filename.endswith(
             (".pcap", ".bz2", ".zip", ".csv", ".json", ".binetflow")
         ):
             raise ValueError("UNSUPPORTED_RAW_FORMAT")
@@ -94,6 +94,8 @@ def private_directory(path: Path) -> Path:
 
 
 def _prefix_valid(name: str, prefix: bytes) -> bool:
+    if name == "conn.log.labeled":
+        return prefix.startswith(b"#separator \\x09\n") and b"#fields\t" in prefix
     if name.endswith(".bz2"):
         return prefix.startswith(b"BZh")
     if name.endswith(".zip"):

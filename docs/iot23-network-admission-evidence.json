@@ -1,0 +1,596 @@
+{
+  "contract": "iot23-sanitized-evidence:v1",
+  "acquisition": {
+    "contract": "iot23-acquisition:v1",
+    "approval": "USER_EXPLICIT_SIX_FILES_256MIB_300SECONDS_ZERO_RETRY",
+    "plan_sha256": "ac00cd5bdc22cc6c4a0a7b27c38142ff360bda5784c006057561f28a2c43a173",
+    "files": [
+      {
+        "filename": "2018-07-31-15-15-09-192.168.100.113.pcap",
+        "size_bytes": 2098362,
+        "sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+        "content_type": "application/vnd.tcpdump.pcap",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/2018-07-31-15-15-09-192.168.100.113.pcap",
+        "expected_bytes": 2098362,
+        "http_status": 200,
+        "duration_seconds": 2.927213205002772,
+        "acquired_at": "2026-10-15T07:30:25.225886+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-8-1/2018-07-31-15-15-09-192.168.100.113.pcap",
+        "capture_session": "CTU-IoT-Malware-Capture-8-1",
+        "role": "PCAP"
+      },
+      {
+        "filename": "conn.log.labeled",
+        "size_bytes": 1431000,
+        "sha256": "4877ca8f0f01902fbd18d28b7d06cb3d0be082355b7f2c8862c9deef1782eb8a",
+        "content_type": "UNKNOWN",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/bro/conn.log.labeled",
+        "expected_bytes": 1431000,
+        "http_status": 200,
+        "duration_seconds": 2.201528404999408,
+        "acquired_at": "2026-10-15T07:30:27.428971+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-8-1/bro/conn.log.labeled",
+        "capture_session": "CTU-IoT-Malware-Capture-8-1",
+        "role": "ZEEK_LABELED_FLOW"
+      },
+      {
+        "filename": "2018-10-02-13-12-30-192.168.100.103.pcap",
+        "size_bytes": 4057401,
+        "sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+        "content_type": "application/vnd.tcpdump.pcap",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/2018-10-02-13-12-30-192.168.100.103.pcap",
+        "expected_bytes": 4057401,
+        "http_status": 200,
+        "duration_seconds": 8.15352086799976,
+        "acquired_at": "2026-10-15T07:30:35.583945+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-20-1/2018-10-02-13-12-30-192.168.100.103.pcap",
+        "capture_session": "CTU-IoT-Malware-Capture-20-1",
+        "role": "PCAP"
+      },
+      {
+        "filename": "conn.log.labeled",
+        "size_bytes": 419604,
+        "sha256": "ef48ad72f65efd13d517223e61e4d877ba53a082ddb8159324b18d3f310d0711",
+        "content_type": "UNKNOWN",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/bro/conn.log.labeled",
+        "expected_bytes": 419604,
+        "http_status": 200,
+        "duration_seconds": 1.961457886001881,
+        "acquired_at": "2026-10-15T07:30:37.546191+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-20-1/bro/conn.log.labeled",
+        "capture_session": "CTU-IoT-Malware-Capture-20-1",
+        "role": "ZEEK_LABELED_FLOW"
+      },
+      {
+        "filename": "2018-12-21-15-50-14-192.168.1.195.pcap",
+        "size_bytes": 126317980,
+        "sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+        "content_type": "application/vnd.tcpdump.pcap",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+        "expected_bytes": 126317980,
+        "http_status": 200,
+        "duration_seconds": 16.754019738000352,
+        "acquired_at": "2026-10-15T07:30:54.300934+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-34-1/2018-12-21-15-50-14-192.168.1.195.pcap",
+        "capture_session": "CTU-IoT-Malware-Capture-34-1",
+        "role": "PCAP"
+      },
+      {
+        "filename": "conn.log.labeled",
+        "size_bytes": 2926718,
+        "sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "content_type": "UNKNOWN",
+        "publisher_digest_verified": false,
+        "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+        "expected_bytes": 2926718,
+        "http_status": 200,
+        "duration_seconds": 2.662021526000899,
+        "acquired_at": "2026-10-15T07:30:56.963767+00:00",
+        "relative_path": "CTU-IoT-Malware-Capture-34-1/bro/conn.log.labeled",
+        "capture_session": "CTU-IoT-Malware-Capture-34-1",
+        "role": "ZEEK_LABELED_FLOW"
+      }
+    ],
+    "download_budget_bytes": 268435456,
+    "archive_expansion_bytes": 0,
+    "status": "DOWNLOADED_NOT_ADMITTED",
+    "actual_total_bytes": 137251065
+  },
+  "inspection": {
+    "contract": "iot23-admission-inspection:v1",
+    "acquisition_digest": "effe42e0adf91c73f6641f9f3069eb2d92044c0676c91d0fe482ef6f78e375af",
+    "producer_configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+    "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+    "sessions": [
+      {
+        "session": "CTU-IoT-Malware-Capture-8-1",
+        "raw_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+        "label_sha256": "4877ca8f0f01902fbd18d28b7d06cb3d0be082355b7f2c8862c9deef1782eb8a",
+        "pcap": {
+          "format": "PCAP",
+          "endian": "<",
+          "timestamp_ns_per_tick": 1000,
+          "snaplen": 262144,
+          "link_type": 1,
+          "sha256_during_full_stream": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+          "stream_bytes": 2098362
+        },
+        "counts": {
+          "raw_packets": 23623,
+          "parsed_packets": 16677,
+          "transport:udp": 4341,
+          "ip:IPv4": 16677,
+          "transport:tcp": 12336,
+          "reconstructed_flows": 4237,
+          "closure:IDLE_TIMEOUT": 4235,
+          "closure:CAPTURE_END": 2
+        },
+        "parser_exclusions": {
+          "LINK_PROTOCOL_UNSUPPORTED": 6946
+        },
+        "flow_state_reasons": {
+          "IDLE_TIMEOUT": 4235,
+          "CAPTURE_END": 2
+        },
+        "peak_retained_state_bytes": 24248,
+        "label_counts": {
+          "total_rows": 10403,
+          "label:Benign": 2181,
+          "detail:-": 2181,
+          "label:Malicious": 8222,
+          "detail:C&C": 8222
+        },
+        "label_schema_digest": "8abde81a9d6e3639360daab5621814d8db88d4f13a36a2a52b55c58c59b8e541",
+        "binding_status": {
+          "VERIFIED_MATCH": 2162,
+          "CANDIDATE_MATCH": 2056,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 0,
+          "EXCLUDED": 19
+        },
+        "binding_reasons": {
+          "EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2162,
+          "MISSING_LABEL_DURATION": 19,
+          "ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 2056
+        },
+        "verified_class_distribution": {
+          "Benign": 2162
+        },
+        "duplicate_flow_count": 0,
+        "multi_segment_label_count": 0,
+        "time_range_ns": [
+          1533042911474174000,
+          1533129306734905000
+        ],
+        "label_epoch_range_ns": [
+          1533042911474174000,
+          1533129306734905000
+        ],
+        "observed_origin_address_hashes": [
+          "8c0e0e086d476f94eae22df1030f5153f3b63efdddaf51f8c5453c7925592a1b",
+          "b11c172c9217f247fd471c1578929a066341d21bd8073a08568dcbbd522b463f"
+        ],
+        "capture_drop_count": "UNKNOWN",
+        "capture_quality": "UNKNOWN",
+        "actual_reference_pairs": [
+          {
+            "source_identity": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "source_origin": "OFFLINE_PCAP",
+            "producer_version": "1.1.0",
+            "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+            "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+            "source_digest": "8c4b71c076d3caa81b258e071eade08c00bc513ad2aa5520b8a7c2f36fa68ffe",
+            "feature_digest": "302165303c6ee54b8505256506dbcd544acaab75c11507c6275e12ee53cc30eb",
+            "feature_names": [
+              "duration_seconds",
+              "forward_packet_count",
+              "backward_packet_count",
+              "forward_ip_bytes",
+              "backward_ip_bytes",
+              "ip_length_min",
+              "ip_length_max",
+              "ip_length_mean",
+              "ip_length_population_std",
+              "tcp_syn_packet_count",
+              "tcp_fin_packet_count",
+              "tcp_rst_packet_count",
+              "iat_mean_seconds",
+              "iat_max_seconds"
+            ],
+            "expected_values": [
+              0.005489999894052744,
+              1.0,
+              1.0,
+              76.0,
+              76.0,
+              76.0,
+              76.0,
+              76.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.005489999894052744,
+              0.005489999894052744
+            ],
+            "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+            "packet_metadata_digest": "300f08897105e4f2598875e5cdbbb954e6022dc13c0c48c21928101f984b3fe3",
+            "packet_count": 2,
+            "packet_lengths": [
+              76,
+              76
+            ],
+            "flags": [
+              0,
+              0
+            ],
+            "timestamp_offsets_ns": [
+              0,
+              5490000
+            ],
+            "first_observed_direction": [
+              true,
+              false
+            ],
+            "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+            "training_native_parity": "NOT_VERIFIED"
+          }
+        ],
+        "training_operational_parity": "NOT_VERIFIED",
+        "admitted_samples": 0,
+        "flow_records_sha256": "47a923a21027abb1a8390ff480f4a4ee2f0db0430bba330173370dfd5fca382e"
+      },
+      {
+        "session": "CTU-IoT-Malware-Capture-20-1",
+        "raw_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+        "label_sha256": "ef48ad72f65efd13d517223e61e4d877ba53a082ddb8159324b18d3f310d0711",
+        "pcap": {
+          "format": "PCAP",
+          "endian": "<",
+          "timestamp_ns_per_tick": 1000,
+          "snaplen": 262144,
+          "link_type": 1,
+          "sha256_during_full_stream": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+          "stream_bytes": 4057401
+        },
+        "counts": {
+          "raw_packets": 50156,
+          "parsed_packets": 41207,
+          "transport:udp": 5998,
+          "ip:IPv4": 41207,
+          "reconstructed_flows": 3921,
+          "closure:IDLE_TIMEOUT": 3214,
+          "transport:tcp": 35209,
+          "closure:ACTIVE_TIMEOUT": 706,
+          "closure:CAPTURE_END": 1
+        },
+        "parser_exclusions": {
+          "LINK_PROTOCOL_UNSUPPORTED": 8949
+        },
+        "flow_state_reasons": {
+          "IDLE_TIMEOUT": 3214,
+          "ACTIVE_TIMEOUT": 706,
+          "CAPTURE_END": 1
+        },
+        "peak_retained_state_bytes": 62995,
+        "label_counts": {
+          "total_rows": 3209,
+          "label:Benign": 3193,
+          "detail:-": 3193,
+          "label:Malicious": 16,
+          "detail:C&C-Torii": 16
+        },
+        "label_schema_digest": "8abde81a9d6e3639360daab5621814d8db88d4f13a36a2a52b55c58c59b8e541",
+        "binding_status": {
+          "VERIFIED_MATCH": 2300,
+          "CANDIDATE_MATCH": 36,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 1,
+          "EXCLUDED": 1584
+        },
+        "binding_reasons": {
+          "EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2300,
+          "MISSING_LABEL_DURATION": 877,
+          "CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 31,
+          "ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 5,
+          "LABEL_CAPTURE_QUALITY": 707,
+          "NO_EXACT_CONTAINING_INTERVAL": 1
+        },
+        "verified_class_distribution": {
+          "Benign": 2300
+        },
+        "duplicate_flow_count": 0,
+        "multi_segment_label_count": 17,
+        "time_range_ns": [
+          1538478769600293000,
+          1538565147243622000
+        ],
+        "label_epoch_range_ns": [
+          1538478769600293000,
+          1538565147243622000
+        ],
+        "observed_origin_address_hashes": [
+          "606fd9bcf963c0519ca8e4eb545ba6e11e282be7da756ebe09c6d89a42bd0944",
+          "8713df592da52eff5c754a34a33eaaac6ce784cca9a9f8231f79c0802b19e6cf",
+          "b11c172c9217f247fd471c1578929a066341d21bd8073a08568dcbbd522b463f"
+        ],
+        "capture_drop_count": "UNKNOWN",
+        "capture_quality": "UNKNOWN",
+        "actual_reference_pairs": [
+          {
+            "source_identity": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "source_origin": "OFFLINE_PCAP",
+            "producer_version": "1.1.0",
+            "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+            "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+            "source_digest": "532d064bb99117fa4844cf000464e79ca20c96fc9843a95b83bf3df284b52192",
+            "feature_digest": "2da0d59d6a461b2a3d946aad54392e40a5d77576bbe92cf6ab329c9f29cabfc5",
+            "feature_names": [
+              "duration_seconds",
+              "forward_packet_count",
+              "backward_packet_count",
+              "forward_ip_bytes",
+              "backward_ip_bytes",
+              "ip_length_min",
+              "ip_length_max",
+              "ip_length_mean",
+              "ip_length_population_std",
+              "tcp_syn_packet_count",
+              "tcp_fin_packet_count",
+              "tcp_rst_packet_count",
+              "iat_mean_seconds",
+              "iat_max_seconds"
+            ],
+            "expected_values": [
+              5.00515079498291,
+              2.0,
+              0.0,
+              134.0,
+              0.0,
+              67.0,
+              67.0,
+              67.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              5.00515079498291,
+              5.00515079498291
+            ],
+            "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+            "packet_metadata_digest": "57b91a1b3ab8cf337f451ff73a94318f23e1738d26507316629b00ccd5dcfa94",
+            "packet_count": 2,
+            "packet_lengths": [
+              67,
+              67
+            ],
+            "flags": [
+              0,
+              0
+            ],
+            "timestamp_offsets_ns": [
+              0,
+              5005151000
+            ],
+            "first_observed_direction": [
+              true,
+              true
+            ],
+            "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+            "training_native_parity": "NOT_VERIFIED"
+          }
+        ],
+        "training_operational_parity": "NOT_VERIFIED",
+        "admitted_samples": 0,
+        "flow_records_sha256": "e36db9298dc39b92a9e305c6c615aafa7b3aaa9f557ca0632afe9e6104ba900b"
+      },
+      {
+        "session": "CTU-IoT-Malware-Capture-34-1",
+        "raw_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+        "label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "pcap": {
+          "format": "PCAP",
+          "endian": "<",
+          "timestamp_ns_per_tick": 1000,
+          "snaplen": 262144,
+          "link_type": 1,
+          "sha256_during_full_stream": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+          "stream_bytes": 126317980
+        },
+        "counts": {
+          "raw_packets": 233865,
+          "parsed_packets": 170980,
+          "transport:tcp": 167905,
+          "ip:IPv4": 170980,
+          "transport:udp": 3075,
+          "reconstructed_flows": 7848,
+          "closure:IDLE_TIMEOUT": 7810,
+          "closure:PACKET_LIMIT": 26,
+          "closure:ACTIVE_TIMEOUT": 2,
+          "closure:CAPTURE_END": 10
+        },
+        "parser_exclusions": {
+          "LINK_PROTOCOL_UNSUPPORTED": 5396,
+          "IP_FRAGMENT_UNSUPPORTED": 57489
+        },
+        "flow_state_reasons": {
+          "IDLE_TIMEOUT": 7810,
+          "PACKET_LIMIT": 26,
+          "ACTIVE_TIMEOUT": 2,
+          "CAPTURE_END": 10
+        },
+        "peak_retained_state_bytes": 3287045,
+        "label_counts": {
+          "total_rows": 23145,
+          "label:Benign": 1923,
+          "detail:-": 1923,
+          "label:Malicious": 21222,
+          "detail:C&C": 6706,
+          "detail:PartOfAHorizontalPortScan": 122,
+          "detail:DDoS": 14394
+        },
+        "label_schema_digest": "b688c094bb5a40656751f2ef13ae3cf299cfbd4d355cf40ad151abac779fa92a",
+        "binding_status": {
+          "VERIFIED_MATCH": 1866,
+          "CANDIDATE_MATCH": 4755,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 4,
+          "EXCLUDED": 1223
+        },
+        "binding_reasons": {
+          "CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 2083,
+          "EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 1866,
+          "ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 2672,
+          "MISSING_LABEL_DURATION": 1197,
+          "NO_EXACT_CONTAINING_INTERVAL": 4,
+          "PACKET_LIMIT": 26
+        },
+        "verified_class_distribution": {
+          "Benign": 964,
+          "Malicious": 902
+        },
+        "duplicate_flow_count": 0,
+        "multi_segment_label_count": 510,
+        "time_range_ns": [
+          1545403816870900000,
+          1545490213942227000
+        ],
+        "label_epoch_range_ns": [
+          1545403816870900000,
+          1545490213942227000
+        ],
+        "observed_origin_address_hashes": [
+          "5ec9ae551adc2835b3498515f084723846af5bd8d9b212c37b401bc12ede534c",
+          "ebd6de3c1690af618558eb08e35b8d04b8789cda730ea4856db08421d4f7e554"
+        ],
+        "capture_drop_count": "UNKNOWN",
+        "capture_quality": "UNKNOWN",
+        "actual_reference_pairs": [
+          {
+            "source_identity": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "source_origin": "OFFLINE_PCAP",
+            "producer_version": "1.1.0",
+            "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+            "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+            "source_digest": "c2fe39b07e6fe93636ecde53bcc5c932e3933486c3d6014e9bc7a7528879c8e3",
+            "feature_digest": "dec3c2e5332db8e5f05d1b150a56ecdfc34ae73c8eb760dda0d2c3170031962f",
+            "feature_names": [
+              "duration_seconds",
+              "forward_packet_count",
+              "backward_packet_count",
+              "forward_ip_bytes",
+              "backward_ip_bytes",
+              "ip_length_min",
+              "ip_length_max",
+              "ip_length_mean",
+              "ip_length_population_std",
+              "tcp_syn_packet_count",
+              "tcp_fin_packet_count",
+              "tcp_rst_packet_count",
+              "iat_mean_seconds",
+              "iat_max_seconds"
+            ],
+            "expected_values": [
+              0.0014959999825805426,
+              1.0,
+              1.0,
+              76.0,
+              76.0,
+              76.0,
+              76.0,
+              76.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0014959999825805426,
+              0.0014959999825805426
+            ],
+            "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+            "packet_metadata_digest": "28154d40501844cf44a0ff3dcaec00b90d30bf249a5166af07667a7abda4d7c7",
+            "packet_count": 2,
+            "packet_lengths": [
+              76,
+              76
+            ],
+            "flags": [
+              0,
+              0
+            ],
+            "timestamp_offsets_ns": [
+              0,
+              1496000
+            ],
+            "first_observed_direction": [
+              true,
+              false
+            ],
+            "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+            "training_native_parity": "NOT_VERIFIED"
+          }
+        ],
+        "training_operational_parity": "NOT_VERIFIED",
+        "admitted_samples": 0,
+        "flow_records_sha256": "44d7d64886792a709764b728bd0bdc96bce509eb457d3dfd2ee1c0a3e0c0dfb6"
+      }
+    ],
+    "split": {
+      "train": "8-1",
+      "validation": "20-1",
+      "test": "34-1",
+      "status": "BLOCKED",
+      "exact_raw_flow_overlap_counts": {
+        "8-1 / 20-1": 0,
+        "8-1 / 34-1": 0,
+        "20-1 / 34-1": 0
+      },
+      "feature_value_collision_counts": {
+        "8-1 / 20-1": 92,
+        "8-1 / 34-1": 80,
+        "20-1 / 34-1": 79
+      },
+      "origin_address_overlap_counts": {
+        "CTU-IoT-Malware-Capture-8-1 / CTU-IoT-Malware-Capture-20-1": 1,
+        "CTU-IoT-Malware-Capture-8-1 / CTU-IoT-Malware-Capture-34-1": 0,
+        "CTU-IoT-Malware-Capture-20-1 / CTU-IoT-Malware-Capture-34-1": 0
+      },
+      "physical_host_and_campaign_independence": "UNVERIFIED",
+      "test_used_for_model_selection": false
+    },
+    "admission": "BLOCKED",
+    "admitted_samples": 0,
+    "network_quality": "BLOCKED",
+    "network_edge": "BLOCKED",
+    "operational_input": "NOT_INFERABLE",
+    "inference": "BLOCKED",
+    "write_disposition": "WRITE_DENIED",
+    "blockers": [
+      "Capture loss/gap provenance unknown",
+      "Physical device/campaign independence not verified",
+      "Training-to-native parity pair missing",
+      "Train and validation have zero strictly verified malicious flows"
+    ],
+    "gates": {
+      "raw_integrity": "PASS",
+      "label_integrity": "PASS",
+      "binding": "PASS",
+      "producer": "PASS",
+      "golden_pair": "PASS",
+      "manifest": "PASS",
+      "label_provenance": "PASS",
+      "split_leakage": "UNVERIFIED",
+      "holdout": "BLOCKED_CLASS_COVERAGE",
+      "capture_quality": "UNKNOWN"
+    },
+    "manifest_digest": "e833b021a361d35e968962ab5b3b1c626ca313523d89ef75f5496e5ffae909d6"
+  },
+  "pii_policy": "No packet payload, IP address, raw label row, Zeek UID or credential; hashes and aggregate counters only",
+  "training_executed": false,
+  "inference_executed": false,
+  "summary_digest": "af9050aea68687af6dc1d3798269402c1ddc5dda70fa2351bd68b863dc20a704"
+}
