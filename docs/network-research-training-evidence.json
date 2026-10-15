@@ -1,0 +1,2105 @@
+{
+  "contract": "network-research-training-evaluation:v1",
+  "status": "RESEARCH_EVALUATED",
+  "soc_baseline": "23767a0394d5f74384463c3be33fdfcf7c4c8865",
+  "ml_baseline": "8c6da5fa613e3053bf2cb4d73addfd248595c1d1",
+  "split_manifests": {
+    "train": {
+      "research_only": true,
+      "operational_admission": "BLOCKED",
+      "role": "train",
+      "session": "CTU-IoT-Malware-Capture-8-1",
+      "raw_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+      "label_sha256": "4877ca8f0f01902fbd18d28b7d06cb3d0be082355b7f2c8862c9deef1782eb8a",
+      "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+      "producer_version": "1.1.0",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "feature_names": [
+        "duration_seconds",
+        "forward_packet_count",
+        "backward_packet_count",
+        "forward_ip_bytes",
+        "backward_ip_bytes",
+        "ip_length_min",
+        "ip_length_max",
+        "ip_length_mean",
+        "ip_length_population_std",
+        "tcp_syn_packet_count",
+        "tcp_fin_packet_count",
+        "tcp_rst_packet_count",
+        "iat_mean_seconds",
+        "iat_max_seconds"
+      ],
+      "dtype": "float32",
+      "origin": "OFFLINE_PCAP",
+      "raw_packets": 23623,
+      "reconstructed_flows": 4237,
+      "binding_statuses": {
+        "VERIFIED_MATCH": 4218,
+        "EXCLUDED": 19
+      },
+      "excluded_reasons": {
+        "EXCLUDED:MISSING_LABEL_DURATION": 19
+      },
+      "sample_count": 4218,
+      "class_counts": {
+        "0": 2162,
+        "1": 2056
+      },
+      "row_digest": "4a1644c7943a16c804516d41790409ff5d79d2ec1db2b7de0a27e109b3b98712",
+      "golden_reference_classes": [
+        "Benign",
+        "Malicious"
+      ],
+      "capture_quality": "UNKNOWN",
+      "label_unit": "ONE_VERIFIED_PRODUCER_FLOW_NOT_ZEEK_CONNECTION_COUNT",
+      "manifest_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af"
+    },
+    "validation": {
+      "research_only": true,
+      "operational_admission": "BLOCKED",
+      "role": "validation",
+      "session": "CTU-IoT-Malware-Capture-3-1",
+      "raw_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+      "label_sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+      "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+      "producer_version": "1.1.0",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "feature_names": [
+        "duration_seconds",
+        "forward_packet_count",
+        "backward_packet_count",
+        "forward_ip_bytes",
+        "backward_ip_bytes",
+        "ip_length_min",
+        "ip_length_max",
+        "ip_length_mean",
+        "ip_length_population_std",
+        "tcp_syn_packet_count",
+        "tcp_fin_packet_count",
+        "tcp_rst_packet_count",
+        "iat_mean_seconds",
+        "iat_max_seconds"
+      ],
+      "dtype": "float32",
+      "origin": "OFFLINE_PCAP",
+      "raw_packets": 496959,
+      "reconstructed_flows": 86378,
+      "binding_statuses": {
+        "CANDIDATE_MATCH": 10044,
+        "VERIFIED_MATCH": 76320,
+        "EXCLUDED": 13,
+        "UNMATCHED": 1
+      },
+      "excluded_reasons": {
+        "CANDIDATE_MATCH:CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 4003,
+        "CANDIDATE_MATCH:ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 6041,
+        "EXCLUDED:MISSING_LABEL_DURATION": 13,
+        "UNMATCHED:NO_EXACT_CONTAINING_INTERVAL": 1
+      },
+      "sample_count": 76320,
+      "class_counts": {
+        "0": 2927,
+        "1": 73393
+      },
+      "row_digest": "bac9b2891f89369fe34f6fbbcb09a1d3cc209d0e819e2e5f680b5f3b2cf4dc87",
+      "golden_reference_classes": [
+        "Benign",
+        "Malicious"
+      ],
+      "capture_quality": "UNKNOWN",
+      "label_unit": "ONE_VERIFIED_PRODUCER_FLOW_NOT_ZEEK_CONNECTION_COUNT",
+      "manifest_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84"
+    },
+    "diagnostic": {
+      "research_only": true,
+      "operational_admission": "BLOCKED",
+      "role": "diagnostic",
+      "session": "CTU-IoT-Malware-Capture-20-1",
+      "raw_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+      "label_sha256": "ef48ad72f65efd13d517223e61e4d877ba53a082ddb8159324b18d3f310d0711",
+      "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+      "producer_version": "1.1.0",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "feature_names": [
+        "duration_seconds",
+        "forward_packet_count",
+        "backward_packet_count",
+        "forward_ip_bytes",
+        "backward_ip_bytes",
+        "ip_length_min",
+        "ip_length_max",
+        "ip_length_mean",
+        "ip_length_population_std",
+        "tcp_syn_packet_count",
+        "tcp_fin_packet_count",
+        "tcp_rst_packet_count",
+        "iat_mean_seconds",
+        "iat_max_seconds"
+      ],
+      "dtype": "float32",
+      "origin": "OFFLINE_PCAP",
+      "raw_packets": 50156,
+      "reconstructed_flows": 3921,
+      "binding_statuses": {
+        "VERIFIED_MATCH": 2304,
+        "EXCLUDED": 1584,
+        "CANDIDATE_MATCH": 32,
+        "UNMATCHED": 1
+      },
+      "excluded_reasons": {
+        "EXCLUDED:MISSING_LABEL_DURATION": 877,
+        "CANDIDATE_MATCH:CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 31,
+        "EXCLUDED:LABEL_CAPTURE_QUALITY": 707,
+        "UNMATCHED:NO_EXACT_CONTAINING_INTERVAL": 1,
+        "CANDIDATE_MATCH:ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 1
+      },
+      "sample_count": 2304,
+      "class_counts": {
+        "0": 2300,
+        "1": 4
+      },
+      "row_digest": "76dd4df86cce5a3d2b3f40733021d93d5758bf81de61f8b47ecb39e692d3aae6",
+      "golden_reference_classes": [
+        "Benign",
+        "Malicious"
+      ],
+      "capture_quality": "UNKNOWN",
+      "label_unit": "ONE_VERIFIED_PRODUCER_FLOW_NOT_ZEEK_CONNECTION_COUNT",
+      "manifest_digest": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a"
+    },
+    "test": {
+      "research_only": true,
+      "operational_admission": "BLOCKED",
+      "role": "test",
+      "session": "CTU-IoT-Malware-Capture-34-1",
+      "raw_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+      "label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+      "producer_version": "1.1.0",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "feature_names": [
+        "duration_seconds",
+        "forward_packet_count",
+        "backward_packet_count",
+        "forward_ip_bytes",
+        "backward_ip_bytes",
+        "ip_length_min",
+        "ip_length_max",
+        "ip_length_mean",
+        "ip_length_population_std",
+        "tcp_syn_packet_count",
+        "tcp_fin_packet_count",
+        "tcp_rst_packet_count",
+        "iat_mean_seconds",
+        "iat_max_seconds"
+      ],
+      "dtype": "float32",
+      "origin": "OFFLINE_PCAP",
+      "raw_packets": 233865,
+      "reconstructed_flows": 7848,
+      "binding_statuses": {
+        "CANDIDATE_MATCH": 2336,
+        "VERIFIED_MATCH": 4295,
+        "EXCLUDED": 1213,
+        "UNMATCHED": 4
+      },
+      "excluded_reasons": {
+        "CANDIDATE_MATCH:CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 2083,
+        "CANDIDATE_MATCH:ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 253,
+        "EXCLUDED:MISSING_LABEL_DURATION": 1187,
+        "UNMATCHED:NO_EXACT_CONTAINING_INTERVAL": 4,
+        "EXCLUDED:PACKET_LIMIT": 26
+      },
+      "sample_count": 4295,
+      "class_counts": {
+        "0": 981,
+        "1": 3314
+      },
+      "row_digest": "b27db95712eaac52cb58f181800d3209de33f8b6f260f4ba6cd2134e939ca9b2",
+      "golden_reference_classes": [
+        "Benign",
+        "Malicious"
+      ],
+      "capture_quality": "UNKNOWN",
+      "label_unit": "ONE_VERIFIED_PRODUCER_FLOW_NOT_ZEEK_CONNECTION_COUNT",
+      "manifest_digest": "5ed20bae1dd98659bd8d082adc16bb8ee75fdbaf5285a033b97f4120c28e12cb"
+    }
+  },
+  "split_review": {
+    "status": "RESEARCH_ONLY",
+    "roles": {
+      "train": "CTU-IoT-Malware-Capture-8-1",
+      "validation": "CTU-IoT-Malware-Capture-3-1",
+      "diagnostic": "CTU-IoT-Malware-Capture-20-1"
+    },
+    "manifests": {
+      "train": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+      "validation": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+      "diagnostic": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a"
+    },
+    "leakage": {
+      "train__validation": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 1,
+        "endpoint_hashes_overlap": 2,
+        "address_hashes_overlap": 2,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": false
+      },
+      "train__diagnostic": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 92,
+        "endpoint_hashes_overlap": 2,
+        "address_hashes_overlap": 2,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": true
+      },
+      "validation__diagnostic": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 4,
+        "endpoint_hashes_overlap": 2,
+        "address_hashes_overlap": 2,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": true
+      }
+    },
+    "test": "34-1_LOCKED_UNTIL_SELECTION_COMPLETE",
+    "operational_admission": "BLOCKED",
+    "manifest_digest": "59fd9e46465c335b989b6e748e8cc9450c731418c866766d6a7b3cc7c9cd8c0a"
+  },
+  "selection": {
+    "selection": {
+      "quality": "quality_rf",
+      "edge": "edge_lr",
+      "edge_accuracy_eligibility": true,
+      "scope": "RESEARCH_ONLY_NO_OPERATIONAL_PROMOTION"
+    },
+    "candidates": [
+      {
+        "status": "RESEARCH_ONLY",
+        "operational_promotion": false,
+        "model_id": "linux-network14-research-v1-quality_rf",
+        "candidate": "quality_rf",
+        "model_sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+        "model_size_bytes": 117241,
+        "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+        "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+        "producer": {
+          "producer_id": "linux-observable-network",
+          "semantic_version": "1.1.0",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "precision": "binary64 arithmetic; one final IEEE754 binary32 conversion",
+          "missing_value_policy": "REJECT; no imputation; no NaN/Inf",
+          "scaling": "NONE; any future fitted transform requires separate training-only binding",
+          "purpose": "OFFLINE_EXPERIMENTAL; NOT_LEGACY_COMPATIBLE",
+          "source_schema": "ordered-packet-metadata:v1",
+          "source_input_fields": {
+            "event_id": "nonempty bounded reference, unique within window",
+            "interface_id": "64 lowercase SHA256 characters; declaration, not attestation",
+            "capture_session_id": "1..128 characters; cannot combine sessions",
+            "timestamp_ns": "integer 0..2^63-1; real capture requires kernel timestamp binding",
+            "source_address/destination_address": "canonical IP strings of same family",
+            "source_port/destination_port": "integer 0..65535",
+            "transport": "tcp or udp",
+            "ip_length": "full IP bytes, 20..65535; transport minimum enforced",
+            "tcp_flags": "integer 0..511; UDP must be zero"
+          },
+          "direction": "FIRST_OBSERVED_ENDPOINT_PAIR; not host inbound/outbound",
+          "normalization": "canonical IP addresses; IP total lengths; no packet payload",
+          "idle_timeout_ns": 30000000000,
+          "active_timeout_ns": 120000000000,
+          "timeout_policy": "reject interval >= idle or span >= active; caller segments first",
+          "max_packets": 4096,
+          "length_statistics": "population statistics over IP lengths in both directions",
+          "iat": "consecutive ordered packet times in seconds; singleton IAT=0 by definition",
+          "loss_policy": "UNKNOWN diagnostic only; KNOWN_GAP rejected",
+          "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_origins": [
+            "OFFLINE_PCAP",
+            "NATIVE_AF_PACKET",
+            "FIXTURE"
+          ],
+          "timestamp_policy": "PCAP recorded epoch with declared resolution; native kernel timestamp; fixture explicit",
+          "truncation_policy": "payload truncation allowed only when all required IP/transport metadata are present",
+          "authority": "NO_OPERATIONAL_INFERENCE_OR_PROMOTION"
+        },
+        "feature_contract": {
+          "version": "1.0.0",
+          "names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "scaling": "NONE"
+        },
+        "train_dataset_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+        "validation_dataset_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+        "split_roles": {
+          "train": "8-1",
+          "validation": "3-1",
+          "diagnostic": "20-1",
+          "locked_test": "34-1"
+        },
+        "seed": 20261015,
+        "hyperparameters": {
+          "bootstrap": "True",
+          "ccp_alpha": "0.0",
+          "class_weight": "'balanced'",
+          "criterion": "'gini'",
+          "max_depth": "12",
+          "max_features": "'sqrt'",
+          "max_leaf_nodes": "None",
+          "max_samples": "None",
+          "min_impurity_decrease": "0.0",
+          "min_samples_leaf": "3",
+          "min_samples_split": "2",
+          "min_weight_fraction_leaf": "0.0",
+          "monotonic_cst": "None",
+          "n_estimators": "128",
+          "n_jobs": "1",
+          "oob_score": "False",
+          "random_state": "20261015",
+          "verbose": "0",
+          "warm_start": "False"
+        },
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.3",
+        "joblib_version": "1.6.0",
+        "python_version": "3.12.14",
+        "platform": "Linux",
+        "threads": 1,
+        "threshold": 0.35,
+        "selection_protocol": {
+          "quality": "MAX_VALIDATION_AP_THEN_F1_RECALL_NEGATIVE_FPR_NEGATIVE_BRIER",
+          "edge": "MIN_SINGLE_ROW_MEDIAN_CPU_LATENCY_AMONG_RECALL_GE_0.8_FPR_LE_0.1; ELSE_MAX_F1_AP_RESEARCH_LIMITED",
+          "threshold": "MAX_F1_THEN_RECALL_THEN_NEGATIVE_FPR_THEN_CLOSEST_TO_0.5; FIXED_GRID_0.05_TO_0.95",
+          "test": "ONE_FINAL_PASS_BOTH_SELECTED_MODELS_NO_TUNING; PREVIOUSLY_INSPECTED_SESSION_NOT_BLIND"
+        },
+        "train_only_preprocessing": {
+          "scaler": "NONE_TREE_MODEL",
+          "fit_rows": 4218,
+          "fitted_samples": null,
+          "imputation": "NONE_REJECT_MISSING",
+          "resampling": "NONE",
+          "class_weight": "balanced"
+        },
+        "validation_metrics": {
+          "n": 76320,
+          "class_counts": {
+            "benign": 2927,
+            "malicious": 73393
+          },
+          "threshold": 0.35,
+          "tn": 2835,
+          "fp": 92,
+          "fn": 15,
+          "tp": 73378,
+          "precision": 0.998747788212876,
+          "recall": 0.9997956208357746,
+          "f1": 0.9992714298359696,
+          "pr_auc_average_precision": 0.9999838080306905,
+          "roc_auc": 0.9996011103386293,
+          "fpr": 0.03143149982917663,
+          "fnr": 0.0002043791642254711,
+          "brier": 0.0279873246166941,
+          "ece_10_bins": 0.15581116106525159,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 721,
+              "mean_probability": 9.752080443828016e-05,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 5,
+              "mean_probability": 0.146875,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 2083,
+              "mean_probability": 0.2277551908305329,
+              "observed_malicious_fraction": 0.002400384061449832
+            },
+            {
+              "lower": 0.3,
+              "count": 950,
+              "mean_probability": 0.3664802631578947,
+              "observed_malicious_fraction": 0.9557894736842105
+            },
+            {
+              "lower": 0.4,
+              "count": 45,
+              "mean_probability": 0.4465277777777778,
+              "observed_malicious_fraction": 0.044444444444444446
+            },
+            {
+              "lower": 0.5,
+              "count": 41,
+              "mean_probability": 0.5333460365853658,
+              "observed_malicious_fraction": 0.14634146341463414
+            },
+            {
+              "lower": 0.6,
+              "count": 309,
+              "mean_probability": 0.6174403317152104,
+              "observed_malicious_fraction": 0.9902912621359223
+            },
+            {
+              "lower": 0.7,
+              "count": 2,
+              "mean_probability": 0.78515625,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.8,
+              "count": 72164,
+              "mean_probability": 0.8515625,
+              "observed_malicious_fraction": 1.0
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "validation_prediction_digest": "0c9cbdc8e4cf7a11dcd9acb50d0ec62a8fda5bc0f3ec72e82a68b50e85c69b95",
+        "benchmark": {
+          "single_row_repetitions": 100,
+          "warmup_calls": 1,
+          "single_row_wall_p50_ms": 4.173011,
+          "single_row_wall_p95_ms": 7.549347049999999,
+          "single_row_cpu_p50_ms": 4.1701845,
+          "batch_n": 76320,
+          "batch_wall_seconds": 0.057831762002024334,
+          "batch_cpu_seconds": 0.05783729900000001,
+          "batch_flows_per_second": 1319690.0346444314
+        },
+        "training": {
+          "wall_seconds": 0.18727624399616616,
+          "cpu_seconds": 0.18727966699999987,
+          "rss_before_fit_bytes": 585539584,
+          "peak_process_rss_kib": 653240,
+          "peak_scope": "ISOLATED_CANDIDATE_PROCESS_INCLUDING_DATA_LOAD_TRAIN_AND_VALIDATION"
+        },
+        "manifest_digest": "80bb31b38c6e35dac1628f8c5c3ed1843ae81779ca3173a356f18473821b5f66"
+      },
+      {
+        "status": "RESEARCH_ONLY",
+        "operational_promotion": false,
+        "model_id": "linux-network14-research-v1-quality_hgb",
+        "candidate": "quality_hgb",
+        "model_sha256": "258e59ecdec544eb60a4d353a0bacdc017dd27d8686495d89f6ae1e16538146c",
+        "model_size_bytes": 58416,
+        "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+        "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+        "producer": {
+          "producer_id": "linux-observable-network",
+          "semantic_version": "1.1.0",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "precision": "binary64 arithmetic; one final IEEE754 binary32 conversion",
+          "missing_value_policy": "REJECT; no imputation; no NaN/Inf",
+          "scaling": "NONE; any future fitted transform requires separate training-only binding",
+          "purpose": "OFFLINE_EXPERIMENTAL; NOT_LEGACY_COMPATIBLE",
+          "source_schema": "ordered-packet-metadata:v1",
+          "source_input_fields": {
+            "event_id": "nonempty bounded reference, unique within window",
+            "interface_id": "64 lowercase SHA256 characters; declaration, not attestation",
+            "capture_session_id": "1..128 characters; cannot combine sessions",
+            "timestamp_ns": "integer 0..2^63-1; real capture requires kernel timestamp binding",
+            "source_address/destination_address": "canonical IP strings of same family",
+            "source_port/destination_port": "integer 0..65535",
+            "transport": "tcp or udp",
+            "ip_length": "full IP bytes, 20..65535; transport minimum enforced",
+            "tcp_flags": "integer 0..511; UDP must be zero"
+          },
+          "direction": "FIRST_OBSERVED_ENDPOINT_PAIR; not host inbound/outbound",
+          "normalization": "canonical IP addresses; IP total lengths; no packet payload",
+          "idle_timeout_ns": 30000000000,
+          "active_timeout_ns": 120000000000,
+          "timeout_policy": "reject interval >= idle or span >= active; caller segments first",
+          "max_packets": 4096,
+          "length_statistics": "population statistics over IP lengths in both directions",
+          "iat": "consecutive ordered packet times in seconds; singleton IAT=0 by definition",
+          "loss_policy": "UNKNOWN diagnostic only; KNOWN_GAP rejected",
+          "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_origins": [
+            "OFFLINE_PCAP",
+            "NATIVE_AF_PACKET",
+            "FIXTURE"
+          ],
+          "timestamp_policy": "PCAP recorded epoch with declared resolution; native kernel timestamp; fixture explicit",
+          "truncation_policy": "payload truncation allowed only when all required IP/transport metadata are present",
+          "authority": "NO_OPERATIONAL_INFERENCE_OR_PROMOTION"
+        },
+        "feature_contract": {
+          "version": "1.0.0",
+          "names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "scaling": "NONE"
+        },
+        "train_dataset_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+        "validation_dataset_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+        "split_roles": {
+          "train": "8-1",
+          "validation": "3-1",
+          "diagnostic": "20-1",
+          "locked_test": "34-1"
+        },
+        "seed": 20261015,
+        "hyperparameters": {
+          "categorical_features": "'from_dtype'",
+          "class_weight": "'balanced'",
+          "early_stopping": "False",
+          "interaction_cst": "None",
+          "l2_regularization": "0.0",
+          "learning_rate": "0.08",
+          "loss": "'log_loss'",
+          "max_bins": "255",
+          "max_depth": "6",
+          "max_features": "1.0",
+          "max_iter": "100",
+          "max_leaf_nodes": "15",
+          "min_samples_leaf": "20",
+          "monotonic_cst": "None",
+          "n_iter_no_change": "10",
+          "random_state": "20261015",
+          "scoring": "'loss'",
+          "tol": "1e-07",
+          "validation_fraction": "0.1",
+          "verbose": "0",
+          "warm_start": "False"
+        },
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.3",
+        "joblib_version": "1.6.0",
+        "python_version": "3.12.14",
+        "platform": "Linux",
+        "threads": 1,
+        "threshold": 0.5,
+        "selection_protocol": {
+          "quality": "MAX_VALIDATION_AP_THEN_F1_RECALL_NEGATIVE_FPR_NEGATIVE_BRIER",
+          "edge": "MIN_SINGLE_ROW_MEDIAN_CPU_LATENCY_AMONG_RECALL_GE_0.8_FPR_LE_0.1; ELSE_MAX_F1_AP_RESEARCH_LIMITED",
+          "threshold": "MAX_F1_THEN_RECALL_THEN_NEGATIVE_FPR_THEN_CLOSEST_TO_0.5; FIXED_GRID_0.05_TO_0.95",
+          "test": "ONE_FINAL_PASS_BOTH_SELECTED_MODELS_NO_TUNING; PREVIOUSLY_INSPECTED_SESSION_NOT_BLIND"
+        },
+        "train_only_preprocessing": {
+          "scaler": "NONE_TREE_MODEL",
+          "fit_rows": 4218,
+          "fitted_samples": null,
+          "imputation": "NONE_REJECT_MISSING",
+          "resampling": "NONE",
+          "class_weight": "balanced"
+        },
+        "validation_metrics": {
+          "n": 76320,
+          "class_counts": {
+            "benign": 2927,
+            "malicious": 73393
+          },
+          "threshold": 0.5,
+          "tn": 2785,
+          "fp": 142,
+          "fn": 899,
+          "tp": 72494,
+          "precision": 0.9980450465333994,
+          "recall": 0.9877508754240868,
+          "f1": 0.9928712789925289,
+          "pr_auc_average_precision": 0.9975992185308605,
+          "roc_auc": 0.9696185193656135,
+          "fpr": 0.04851383669285958,
+          "fnr": 0.012249124575913234,
+          "brier": 0.01363551630798089,
+          "ece_10_bins": 0.01347690934155348,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 3684,
+              "mean_probability": 0.00016302776780865606,
+              "observed_malicious_fraction": 0.24402823018458197
+            },
+            {
+              "lower": 0.9,
+              "count": 72636,
+              "mean_probability": 0.9998369722347592,
+              "observed_malicious_fraction": 0.9980450465333994
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "validation_prediction_digest": "c3dcec49cd1741efe660d7bbab973320bd54b4f5fc8223e1f03e2a6fc89afd87",
+        "benchmark": {
+          "single_row_repetitions": 100,
+          "warmup_calls": 1,
+          "single_row_wall_p50_ms": 0.565974,
+          "single_row_wall_p95_ms": 0.8888593499999998,
+          "single_row_cpu_p50_ms": 0.564816,
+          "batch_n": 76320,
+          "batch_wall_seconds": 0.15343366299930494,
+          "batch_cpu_seconds": 0.1533994070000002,
+          "batch_flows_per_second": 497413.6607841118
+        },
+        "training": {
+          "wall_seconds": 0.205457659001695,
+          "cpu_seconds": 0.20546089700000003,
+          "rss_before_fit_bytes": 584773632,
+          "peak_process_rss_kib": 653336,
+          "peak_scope": "ISOLATED_CANDIDATE_PROCESS_INCLUDING_DATA_LOAD_TRAIN_AND_VALIDATION"
+        },
+        "manifest_digest": "8105b382281ef32959403a5b78733d65604a7c363e3aa35ff386f983411f1cbd"
+      },
+      {
+        "status": "RESEARCH_ONLY",
+        "operational_promotion": false,
+        "model_id": "linux-network14-research-v1-edge_lr",
+        "candidate": "edge_lr",
+        "model_sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+        "model_size_bytes": 1773,
+        "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+        "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+        "producer": {
+          "producer_id": "linux-observable-network",
+          "semantic_version": "1.1.0",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "precision": "binary64 arithmetic; one final IEEE754 binary32 conversion",
+          "missing_value_policy": "REJECT; no imputation; no NaN/Inf",
+          "scaling": "NONE; any future fitted transform requires separate training-only binding",
+          "purpose": "OFFLINE_EXPERIMENTAL; NOT_LEGACY_COMPATIBLE",
+          "source_schema": "ordered-packet-metadata:v1",
+          "source_input_fields": {
+            "event_id": "nonempty bounded reference, unique within window",
+            "interface_id": "64 lowercase SHA256 characters; declaration, not attestation",
+            "capture_session_id": "1..128 characters; cannot combine sessions",
+            "timestamp_ns": "integer 0..2^63-1; real capture requires kernel timestamp binding",
+            "source_address/destination_address": "canonical IP strings of same family",
+            "source_port/destination_port": "integer 0..65535",
+            "transport": "tcp or udp",
+            "ip_length": "full IP bytes, 20..65535; transport minimum enforced",
+            "tcp_flags": "integer 0..511; UDP must be zero"
+          },
+          "direction": "FIRST_OBSERVED_ENDPOINT_PAIR; not host inbound/outbound",
+          "normalization": "canonical IP addresses; IP total lengths; no packet payload",
+          "idle_timeout_ns": 30000000000,
+          "active_timeout_ns": 120000000000,
+          "timeout_policy": "reject interval >= idle or span >= active; caller segments first",
+          "max_packets": 4096,
+          "length_statistics": "population statistics over IP lengths in both directions",
+          "iat": "consecutive ordered packet times in seconds; singleton IAT=0 by definition",
+          "loss_policy": "UNKNOWN diagnostic only; KNOWN_GAP rejected",
+          "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_origins": [
+            "OFFLINE_PCAP",
+            "NATIVE_AF_PACKET",
+            "FIXTURE"
+          ],
+          "timestamp_policy": "PCAP recorded epoch with declared resolution; native kernel timestamp; fixture explicit",
+          "truncation_policy": "payload truncation allowed only when all required IP/transport metadata are present",
+          "authority": "NO_OPERATIONAL_INFERENCE_OR_PROMOTION"
+        },
+        "feature_contract": {
+          "version": "1.0.0",
+          "names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "scaling": "NONE"
+        },
+        "train_dataset_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+        "validation_dataset_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+        "split_roles": {
+          "train": "8-1",
+          "validation": "3-1",
+          "diagnostic": "20-1",
+          "locked_test": "34-1"
+        },
+        "seed": 20261015,
+        "hyperparameters": {
+          "memory": "None",
+          "steps": "[('standardscaler', StandardScaler()), ('logisticregression', LogisticRegression(class_weight='balanced', max_iter=2000,\n                   random_state=20261015))]",
+          "transform_input": "None",
+          "verbose": "False",
+          "standardscaler": "StandardScaler()",
+          "logisticregression": "LogisticRegression(class_weight='balanced', max_iter=2000,\n                   random_state=20261015)",
+          "standardscaler__copy": "True",
+          "standardscaler__with_mean": "True",
+          "standardscaler__with_std": "True",
+          "logisticregression__C": "1.0",
+          "logisticregression__class_weight": "'balanced'",
+          "logisticregression__dual": "False",
+          "logisticregression__fit_intercept": "True",
+          "logisticregression__intercept_scaling": "1",
+          "logisticregression__l1_ratio": "0.0",
+          "logisticregression__max_iter": "2000",
+          "logisticregression__n_jobs": "None",
+          "logisticregression__penalty": "'deprecated'",
+          "logisticregression__random_state": "20261015",
+          "logisticregression__solver": "'lbfgs'",
+          "logisticregression__tol": "0.0001",
+          "logisticregression__verbose": "0",
+          "logisticregression__warm_start": "False"
+        },
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.3",
+        "joblib_version": "1.6.0",
+        "python_version": "3.12.14",
+        "platform": "Linux",
+        "threads": 1,
+        "threshold": 0.8,
+        "selection_protocol": {
+          "quality": "MAX_VALIDATION_AP_THEN_F1_RECALL_NEGATIVE_FPR_NEGATIVE_BRIER",
+          "edge": "MIN_SINGLE_ROW_MEDIAN_CPU_LATENCY_AMONG_RECALL_GE_0.8_FPR_LE_0.1; ELSE_MAX_F1_AP_RESEARCH_LIMITED",
+          "threshold": "MAX_F1_THEN_RECALL_THEN_NEGATIVE_FPR_THEN_CLOSEST_TO_0.5; FIXED_GRID_0.05_TO_0.95",
+          "test": "ONE_FINAL_PASS_BOTH_SELECTED_MODELS_NO_TUNING; PREVIOUSLY_INSPECTED_SESSION_NOT_BLIND"
+        },
+        "train_only_preprocessing": {
+          "scaler": "StandardScaler",
+          "fit_rows": 4218,
+          "fitted_samples": 4218,
+          "imputation": "NONE_REJECT_MISSING",
+          "resampling": "NONE",
+          "class_weight": "balanced"
+        },
+        "validation_metrics": {
+          "n": 76320,
+          "class_counts": {
+            "benign": 2927,
+            "malicious": 73393
+          },
+          "threshold": 0.8,
+          "tn": 2873,
+          "fp": 54,
+          "fn": 919,
+          "tp": 72474,
+          "precision": 0.9992554599602912,
+          "recall": 0.9874783698717862,
+          "f1": 0.9933320084155125,
+          "pr_auc_average_precision": 0.9994370436978237,
+          "roc_auc": 0.9919212298262159,
+          "fpr": 0.018448923812777587,
+          "fnr": 0.012521630128213862,
+          "brier": 0.01412017922848463,
+          "ece_10_bins": 0.047984117169785,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 828,
+              "mean_probability": 0.0005216205609031022,
+              "observed_malicious_fraction": 0.022946859903381644
+            },
+            {
+              "lower": 0.1,
+              "count": 73,
+              "mean_probability": 0.16207090020179749,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 27,
+              "mean_probability": 0.25954824686050415,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.3,
+              "count": 851,
+              "mean_probability": 0.3898833990097046,
+              "observed_malicious_fraction": 0.9036427732079906
+            },
+            {
+              "lower": 0.4,
+              "count": 1,
+              "mean_probability": 0.42309045791625977,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.5,
+              "count": 1608,
+              "mean_probability": 0.5601285696029663,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.6,
+              "count": 124,
+              "mean_probability": 0.6692878603935242,
+              "observed_malicious_fraction": 0.6532258064516129
+            },
+            {
+              "lower": 0.7,
+              "count": 280,
+              "mean_probability": 0.7318332195281982,
+              "observed_malicious_fraction": 0.17857142857142858
+            },
+            {
+              "lower": 0.8,
+              "count": 359,
+              "mean_probability": 0.8848360180854797,
+              "observed_malicious_fraction": 0.8579387186629527
+            },
+            {
+              "lower": 0.9,
+              "count": 72169,
+              "mean_probability": 0.9705848693847656,
+              "observed_malicious_fraction": 0.9999584309052363
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "validation_prediction_digest": "34aeb99e85768cf8202fdfd8a5d9a4a8048c64665a21738a9cd629479e76ae29",
+        "benchmark": {
+          "single_row_repetitions": 100,
+          "warmup_calls": 1,
+          "single_row_wall_p50_ms": 0.2202675,
+          "single_row_wall_p95_ms": 0.3531065,
+          "single_row_cpu_p50_ms": 0.2195215,
+          "batch_n": 76320,
+          "batch_wall_seconds": 0.0039669049947406165,
+          "batch_cpu_seconds": 0.003968556000000234,
+          "batch_flows_per_second": 19239180.19241354
+        },
+        "training": {
+          "wall_seconds": 0.01249094100057846,
+          "cpu_seconds": 0.012492239000000183,
+          "rss_before_fit_bytes": 584908800,
+          "peak_process_rss_kib": 653228,
+          "peak_scope": "ISOLATED_CANDIDATE_PROCESS_INCLUDING_DATA_LOAD_TRAIN_AND_VALIDATION"
+        },
+        "manifest_digest": "293e6046e2b46777c383ae0b5de5951596238d4f26e552263022b9b65357e2d9"
+      },
+      {
+        "status": "RESEARCH_ONLY",
+        "operational_promotion": false,
+        "model_id": "linux-network14-research-v1-edge_rf",
+        "candidate": "edge_rf",
+        "model_sha256": "455ec349379a9d9ca62e3c658aa7792ab385f3a85c28bdab81e778efd8c0f2ae",
+        "model_size_bytes": 50681,
+        "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+        "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+        "producer": {
+          "producer_id": "linux-observable-network",
+          "semantic_version": "1.1.0",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "precision": "binary64 arithmetic; one final IEEE754 binary32 conversion",
+          "missing_value_policy": "REJECT; no imputation; no NaN/Inf",
+          "scaling": "NONE; any future fitted transform requires separate training-only binding",
+          "purpose": "OFFLINE_EXPERIMENTAL; NOT_LEGACY_COMPATIBLE",
+          "source_schema": "ordered-packet-metadata:v1",
+          "source_input_fields": {
+            "event_id": "nonempty bounded reference, unique within window",
+            "interface_id": "64 lowercase SHA256 characters; declaration, not attestation",
+            "capture_session_id": "1..128 characters; cannot combine sessions",
+            "timestamp_ns": "integer 0..2^63-1; real capture requires kernel timestamp binding",
+            "source_address/destination_address": "canonical IP strings of same family",
+            "source_port/destination_port": "integer 0..65535",
+            "transport": "tcp or udp",
+            "ip_length": "full IP bytes, 20..65535; transport minimum enforced",
+            "tcp_flags": "integer 0..511; UDP must be zero"
+          },
+          "direction": "FIRST_OBSERVED_ENDPOINT_PAIR; not host inbound/outbound",
+          "normalization": "canonical IP addresses; IP total lengths; no packet payload",
+          "idle_timeout_ns": 30000000000,
+          "active_timeout_ns": 120000000000,
+          "timeout_policy": "reject interval >= idle or span >= active; caller segments first",
+          "max_packets": 4096,
+          "length_statistics": "population statistics over IP lengths in both directions",
+          "iat": "consecutive ordered packet times in seconds; singleton IAT=0 by definition",
+          "loss_policy": "UNKNOWN diagnostic only; KNOWN_GAP rejected",
+          "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_origins": [
+            "OFFLINE_PCAP",
+            "NATIVE_AF_PACKET",
+            "FIXTURE"
+          ],
+          "timestamp_policy": "PCAP recorded epoch with declared resolution; native kernel timestamp; fixture explicit",
+          "truncation_policy": "payload truncation allowed only when all required IP/transport metadata are present",
+          "authority": "NO_OPERATIONAL_INFERENCE_OR_PROMOTION"
+        },
+        "feature_contract": {
+          "version": "1.0.0",
+          "names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "scaling": "NONE"
+        },
+        "train_dataset_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+        "validation_dataset_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+        "split_roles": {
+          "train": "8-1",
+          "validation": "3-1",
+          "diagnostic": "20-1",
+          "locked_test": "34-1"
+        },
+        "seed": 20261015,
+        "hyperparameters": {
+          "bootstrap": "True",
+          "ccp_alpha": "0.0",
+          "class_weight": "'balanced'",
+          "criterion": "'gini'",
+          "max_depth": "6",
+          "max_features": "'sqrt'",
+          "max_leaf_nodes": "None",
+          "max_samples": "None",
+          "min_impurity_decrease": "0.0",
+          "min_samples_leaf": "5",
+          "min_samples_split": "2",
+          "min_weight_fraction_leaf": "0.0",
+          "monotonic_cst": "None",
+          "n_estimators": "24",
+          "n_jobs": "1",
+          "oob_score": "False",
+          "random_state": "20261015",
+          "verbose": "0",
+          "warm_start": "False"
+        },
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.3",
+        "joblib_version": "1.6.0",
+        "python_version": "3.12.14",
+        "platform": "Linux",
+        "threads": 1,
+        "threshold": 0.45,
+        "selection_protocol": {
+          "quality": "MAX_VALIDATION_AP_THEN_F1_RECALL_NEGATIVE_FPR_NEGATIVE_BRIER",
+          "edge": "MIN_SINGLE_ROW_MEDIAN_CPU_LATENCY_AMONG_RECALL_GE_0.8_FPR_LE_0.1; ELSE_MAX_F1_AP_RESEARCH_LIMITED",
+          "threshold": "MAX_F1_THEN_RECALL_THEN_NEGATIVE_FPR_THEN_CLOSEST_TO_0.5; FIXED_GRID_0.05_TO_0.95",
+          "test": "ONE_FINAL_PASS_BOTH_SELECTED_MODELS_NO_TUNING; PREVIOUSLY_INSPECTED_SESSION_NOT_BLIND"
+        },
+        "train_only_preprocessing": {
+          "scaler": "NONE_TREE_MODEL",
+          "fit_rows": 4218,
+          "fitted_samples": null,
+          "imputation": "NONE_REJECT_MISSING",
+          "resampling": "NONE",
+          "class_weight": "balanced"
+        },
+        "validation_metrics": {
+          "n": 76320,
+          "class_counts": {
+            "benign": 2927,
+            "malicious": 73393
+          },
+          "threshold": 0.45,
+          "tn": 2886,
+          "fp": 41,
+          "fn": 15,
+          "tp": 73378,
+          "precision": 0.9994415614486714,
+          "recall": 0.9997956208357746,
+          "f1": 0.9996185597907528,
+          "pr_auc_average_precision": 0.9999922837802689,
+          "roc_auc": 0.9998829562119188,
+          "fpr": 0.01400751622822002,
+          "fnr": 0.0002043791642254711,
+          "brier": 0.020906672198928486,
+          "ece_10_bins": 0.1326640024458421,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 721,
+              "mean_probability": 0.0001155802126675913,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 5,
+              "mean_probability": 0.16666666666666666,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 2060,
+              "mean_probability": 0.2500404530744336,
+              "observed_malicious_fraction": 0.0004854368932038835
+            },
+            {
+              "lower": 0.3,
+              "count": 77,
+              "mean_probability": 0.362012987012987,
+              "observed_malicious_fraction": 0.18181818181818182
+            },
+            {
+              "lower": 0.4,
+              "count": 974,
+              "mean_probability": 0.45670773442847357,
+              "observed_malicious_fraction": 0.9271047227926078
+            },
+            {
+              "lower": 0.5,
+              "count": 7,
+              "mean_probability": 0.5297619047619048,
+              "observed_malicious_fraction": 0.14285714285714285
+            },
+            {
+              "lower": 0.6,
+              "count": 310,
+              "mean_probability": 0.625,
+              "observed_malicious_fraction": 0.9935483870967742
+            },
+            {
+              "lower": 0.7,
+              "count": 1,
+              "mean_probability": 0.7083333333333334,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.8,
+              "count": 72165,
+              "mean_probability": 0.875,
+              "observed_malicious_fraction": 1.0
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "validation_prediction_digest": "55f97620144d525cd70c3aba071478f51c20477f331b33a9cb24dab12a983d78",
+        "benchmark": {
+          "single_row_repetitions": 100,
+          "warmup_calls": 1,
+          "single_row_wall_p50_ms": 1.0657815,
+          "single_row_wall_p95_ms": 1.7662487999999998,
+          "single_row_cpu_p50_ms": 1.0634975,
+          "batch_n": 76320,
+          "batch_wall_seconds": 0.011159260000567883,
+          "batch_cpu_seconds": 0.011161652999999827,
+          "batch_flows_per_second": 6839163.169969707
+        },
+        "training": {
+          "wall_seconds": 0.03798863500560401,
+          "cpu_seconds": 0.03798211399999962,
+          "rss_before_fit_bytes": 585519104,
+          "peak_process_rss_kib": 653344,
+          "peak_scope": "ISOLATED_CANDIDATE_PROCESS_INCLUDING_DATA_LOAD_TRAIN_AND_VALIDATION"
+        },
+        "manifest_digest": "4c96991d82d16fb6a2419d413ddb731792c0341f7299ef1f8f4012e85f2915d6"
+      },
+      {
+        "status": "RESEARCH_ONLY",
+        "operational_promotion": false,
+        "model_id": "linux-network14-research-v1-edge_hgb",
+        "candidate": "edge_hgb",
+        "model_sha256": "a266d6f0defc1c78163f9d9fe1987a8922d8296f116880290e33b53ae594f3b5",
+        "model_size_bytes": 28544,
+        "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+        "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+        "producer": {
+          "producer_id": "linux-observable-network",
+          "semantic_version": "1.1.0",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "precision": "binary64 arithmetic; one final IEEE754 binary32 conversion",
+          "missing_value_policy": "REJECT; no imputation; no NaN/Inf",
+          "scaling": "NONE; any future fitted transform requires separate training-only binding",
+          "purpose": "OFFLINE_EXPERIMENTAL; NOT_LEGACY_COMPATIBLE",
+          "source_schema": "ordered-packet-metadata:v1",
+          "source_input_fields": {
+            "event_id": "nonempty bounded reference, unique within window",
+            "interface_id": "64 lowercase SHA256 characters; declaration, not attestation",
+            "capture_session_id": "1..128 characters; cannot combine sessions",
+            "timestamp_ns": "integer 0..2^63-1; real capture requires kernel timestamp binding",
+            "source_address/destination_address": "canonical IP strings of same family",
+            "source_port/destination_port": "integer 0..65535",
+            "transport": "tcp or udp",
+            "ip_length": "full IP bytes, 20..65535; transport minimum enforced",
+            "tcp_flags": "integer 0..511; UDP must be zero"
+          },
+          "direction": "FIRST_OBSERVED_ENDPOINT_PAIR; not host inbound/outbound",
+          "normalization": "canonical IP addresses; IP total lengths; no packet payload",
+          "idle_timeout_ns": 30000000000,
+          "active_timeout_ns": 120000000000,
+          "timeout_policy": "reject interval >= idle or span >= active; caller segments first",
+          "max_packets": 4096,
+          "length_statistics": "population statistics over IP lengths in both directions",
+          "iat": "consecutive ordered packet times in seconds; singleton IAT=0 by definition",
+          "loss_policy": "UNKNOWN diagnostic only; KNOWN_GAP rejected",
+          "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_origins": [
+            "OFFLINE_PCAP",
+            "NATIVE_AF_PACKET",
+            "FIXTURE"
+          ],
+          "timestamp_policy": "PCAP recorded epoch with declared resolution; native kernel timestamp; fixture explicit",
+          "truncation_policy": "payload truncation allowed only when all required IP/transport metadata are present",
+          "authority": "NO_OPERATIONAL_INFERENCE_OR_PROMOTION"
+        },
+        "feature_contract": {
+          "version": "1.0.0",
+          "names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "dtype": "float32",
+          "scaling": "NONE"
+        },
+        "train_dataset_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+        "validation_dataset_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+        "split_roles": {
+          "train": "8-1",
+          "validation": "3-1",
+          "diagnostic": "20-1",
+          "locked_test": "34-1"
+        },
+        "seed": 20261015,
+        "hyperparameters": {
+          "categorical_features": "'from_dtype'",
+          "class_weight": "'balanced'",
+          "early_stopping": "False",
+          "interaction_cst": "None",
+          "l2_regularization": "0.0",
+          "learning_rate": "0.1",
+          "loss": "'log_loss'",
+          "max_bins": "255",
+          "max_depth": "3",
+          "max_features": "1.0",
+          "max_iter": "32",
+          "max_leaf_nodes": "7",
+          "min_samples_leaf": "20",
+          "monotonic_cst": "None",
+          "n_iter_no_change": "10",
+          "random_state": "20261015",
+          "scoring": "'loss'",
+          "tol": "1e-07",
+          "validation_fraction": "0.1",
+          "verbose": "0",
+          "warm_start": "False"
+        },
+        "sklearn_version": "1.9.1",
+        "numpy_version": "2.5.3",
+        "joblib_version": "1.6.0",
+        "python_version": "3.12.14",
+        "platform": "Linux",
+        "threads": 1,
+        "threshold": 0.5,
+        "selection_protocol": {
+          "quality": "MAX_VALIDATION_AP_THEN_F1_RECALL_NEGATIVE_FPR_NEGATIVE_BRIER",
+          "edge": "MIN_SINGLE_ROW_MEDIAN_CPU_LATENCY_AMONG_RECALL_GE_0.8_FPR_LE_0.1; ELSE_MAX_F1_AP_RESEARCH_LIMITED",
+          "threshold": "MAX_F1_THEN_RECALL_THEN_NEGATIVE_FPR_THEN_CLOSEST_TO_0.5; FIXED_GRID_0.05_TO_0.95",
+          "test": "ONE_FINAL_PASS_BOTH_SELECTED_MODELS_NO_TUNING; PREVIOUSLY_INSPECTED_SESSION_NOT_BLIND"
+        },
+        "train_only_preprocessing": {
+          "scaler": "NONE_TREE_MODEL",
+          "fit_rows": 4218,
+          "fitted_samples": null,
+          "imputation": "NONE_REJECT_MISSING",
+          "resampling": "NONE",
+          "class_weight": "balanced"
+        },
+        "validation_metrics": {
+          "n": 76320,
+          "class_counts": {
+            "benign": 2927,
+            "malicious": 73393
+          },
+          "threshold": 0.5,
+          "tn": 2785,
+          "fp": 142,
+          "fn": 899,
+          "tp": 72494,
+          "precision": 0.9980450465333994,
+          "recall": 0.9877508754240868,
+          "f1": 0.9928712789925289,
+          "pr_auc_average_precision": 0.9979791575211001,
+          "roc_auc": 0.9745800569106479,
+          "fpr": 0.04851383669285958,
+          "fnr": 0.012249124575913234,
+          "brier": 0.013490423279139453,
+          "ece_10_bins": 0.027702703632244724,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 3684,
+              "mean_probability": 0.019684278122678953,
+              "observed_malicious_fraction": 0.24402823018458197
+            },
+            {
+              "lower": 0.9,
+              "count": 72636,
+              "mean_probability": 0.9803157219310416,
+              "observed_malicious_fraction": 0.9980450465333994
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "validation_prediction_digest": "81e97caed24a9252e0e124bd660cc3e539d3485439b7e9657ea779155e04772b",
+        "benchmark": {
+          "single_row_repetitions": 100,
+          "warmup_calls": 1,
+          "single_row_wall_p50_ms": 0.2599515,
+          "single_row_wall_p95_ms": 0.47120675,
+          "single_row_cpu_p50_ms": 0.259202,
+          "batch_n": 76320,
+          "batch_wall_seconds": 0.050920253997901455,
+          "batch_cpu_seconds": 0.05092336200000025,
+          "batch_flows_per_second": 1498814.2047199004
+        },
+        "training": {
+          "wall_seconds": 0.1304012260006857,
+          "cpu_seconds": 0.13040275300000026,
+          "rss_before_fit_bytes": 585605120,
+          "peak_process_rss_kib": 653348,
+          "peak_scope": "ISOLATED_CANDIDATE_PROCESS_INCLUDING_DATA_LOAD_TRAIN_AND_VALIDATION"
+        },
+        "manifest_digest": "49a53a30796e90140a5b193d650d5ea3c9368bd0f26758f900a188ad451cf907"
+      }
+    ],
+    "manifest_digest": "c48edd3e14deeb0e9e407fd6db348fd2917b580d6701f31eed270a643e518d11"
+  },
+  "test_lock": {
+    "contract": "network-research-test-lock:v1",
+    "status": "RESEARCH_ONLY",
+    "created_at": "2026-10-15T08:50:46.209838+00:00",
+    "selected": {
+      "quality": {
+        "candidate": "quality_rf",
+        "manifest_digest": "80bb31b38c6e35dac1628f8c5c3ed1843ae81779ca3173a356f18473821b5f66",
+        "model_sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+        "threshold": 0.35
+      },
+      "edge": {
+        "candidate": "edge_lr",
+        "manifest_digest": "293e6046e2b46777c383ae0b5de5951596238d4f26e552263022b9b65357e2d9",
+        "model_sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+        "threshold": 0.8
+      }
+    },
+    "selection_digest": "c48edd3e14deeb0e9e407fd6db348fd2917b580d6701f31eed270a643e518d11",
+    "train_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+    "validation_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+    "diagnostic_digest": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+    "test_raw_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+    "test_label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+    "evaluation_code_sha256": {
+      "src/ml/network_research/__init__.py": "7c7c41f4b33c6775d799bcc2711eaa6ba16b93b0765f56388a4f6b17d14700ce",
+      "src/ml/network_research/__main__.py": "aa0e8f20329af752bcdfdba2076625e16f2c46a95bbc7d662bc8d92084066fb5",
+      "src/ml/network_research/artifacts.py": "4d1cc539312dd462ae2f37ce2104cb019abf0e451241aaef63c7cb7ac1008e81",
+      "src/ml/network_research/dataset.py": "c9b0ea8c743a15ba8ad588e89c57e89e3287b52580ab0389f9ee08b2ed4ea4f9",
+      "src/ml/network_research/evaluation.py": "e9c62af230b9d3d8f0982483579c7cf00e8ec9326bfb9ab61fa93ccfae8b286c",
+      "src/ml/network_research/locked_test.py": "66894a29e7048b73c3279927e41a0a40f42a154e6cb5b1dd3595439f35c021f0",
+      "src/ml/network_research/training.py": "cafad4635d5582dc68ef615f14ffa816504c5230828caa76a1b430d211ab0596",
+      "src/ml/verified_producers/network_v1_1.py": "19fbcd702632b9b86605681b3b3f54a5b759b9ee26c373256dae360cf4b4634f",
+      "src/ml/ctu13/flows.py": "1ef7b7c9ad4011057843f043df95bcabc5e01c5911345f5b3078631452cf72f9",
+      "src/ml/ctu13/pcap.py": "f6d8d8d26f8f569b459da55d5c3e8cd95b1a1cdf1bc9e60abfd3477995b39df0",
+      "src/ml/iot23/zeek.py": "1963a303ffa9468cb8b3fda92877d7fe42276de3539de0805ba5cd820e0e531e"
+    },
+    "sklearn_version": "1.9.1",
+    "numpy_version": "2.5.3",
+    "python_version": "3.12.14",
+    "test_session": "34-1",
+    "test_role": "FINAL_EVALUATION_ONLY_NOT_TRAINING_OR_SELECTION",
+    "blind_holdout": false,
+    "previous_label_binding_inspection": true,
+    "attempt_budget": 1,
+    "automatic_retry": false,
+    "operational_promotion": false,
+    "manifest_digest": "1c2aedc3c3c5ccbb24fc09a6a7ac047acde379cc064c5c1734fcf9dd13c727b3"
+  },
+  "test_result": {
+    "status": "RESEARCH_EVALUATED",
+    "operational_promotion": false,
+    "test_lock_digest": "1c2aedc3c3c5ccbb24fc09a6a7ac047acde379cc064c5c1734fcf9dd13c727b3",
+    "test_dataset": {
+      "research_only": true,
+      "operational_admission": "BLOCKED",
+      "role": "test",
+      "session": "CTU-IoT-Malware-Capture-34-1",
+      "raw_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+      "label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+      "producer_version": "1.1.0",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "feature_contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "feature_names": [
+        "duration_seconds",
+        "forward_packet_count",
+        "backward_packet_count",
+        "forward_ip_bytes",
+        "backward_ip_bytes",
+        "ip_length_min",
+        "ip_length_max",
+        "ip_length_mean",
+        "ip_length_population_std",
+        "tcp_syn_packet_count",
+        "tcp_fin_packet_count",
+        "tcp_rst_packet_count",
+        "iat_mean_seconds",
+        "iat_max_seconds"
+      ],
+      "dtype": "float32",
+      "origin": "OFFLINE_PCAP",
+      "raw_packets": 233865,
+      "reconstructed_flows": 7848,
+      "binding_statuses": {
+        "CANDIDATE_MATCH": 2336,
+        "VERIFIED_MATCH": 4295,
+        "EXCLUDED": 1213,
+        "UNMATCHED": 4
+      },
+      "excluded_reasons": {
+        "CANDIDATE_MATCH:CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 2083,
+        "CANDIDATE_MATCH:ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 253,
+        "EXCLUDED:MISSING_LABEL_DURATION": 1187,
+        "UNMATCHED:NO_EXACT_CONTAINING_INTERVAL": 4,
+        "EXCLUDED:PACKET_LIMIT": 26
+      },
+      "sample_count": 4295,
+      "class_counts": {
+        "0": 981,
+        "1": 3314
+      },
+      "row_digest": "b27db95712eaac52cb58f181800d3209de33f8b6f260f4ba6cd2134e939ca9b2",
+      "golden_reference_classes": [
+        "Benign",
+        "Malicious"
+      ],
+      "capture_quality": "UNKNOWN",
+      "label_unit": "ONE_VERIFIED_PRODUCER_FLOW_NOT_ZEEK_CONNECTION_COUNT",
+      "manifest_digest": "5ed20bae1dd98659bd8d082adc16bb8ee75fdbaf5285a033b97f4120c28e12cb"
+    },
+    "results": {
+      "quality": {
+        "metrics": {
+          "n": 4295,
+          "class_counts": {
+            "benign": 981,
+            "malicious": 3314
+          },
+          "threshold": 0.35,
+          "tn": 832,
+          "fp": 149,
+          "fn": 372,
+          "tp": 2942,
+          "precision": 0.9517955354254287,
+          "recall": 0.8877489438744719,
+          "f1": 0.9186572989851678,
+          "pr_auc_average_precision": 0.9846346552602696,
+          "roc_auc": 0.9527150438906514,
+          "fpr": 0.15188583078491336,
+          "fnr": 0.11225105612552806,
+          "brier": 0.10806933082163125,
+          "ece_10_bins": 0.1970987339930151,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 783,
+              "mean_probability": 0.0016163793103448276,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 2,
+              "mean_probability": 0.15625,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 418,
+              "mean_probability": 0.2911558014354067,
+              "observed_malicious_fraction": 0.8899521531100478
+            },
+            {
+              "lower": 0.3,
+              "count": 261,
+              "mean_probability": 0.35225095785440613,
+              "observed_malicious_fraction": 0.9616858237547893
+            },
+            {
+              "lower": 0.5,
+              "count": 404,
+              "mean_probability": 0.5304764851485149,
+              "observed_malicious_fraction": 0.6905940594059405
+            },
+            {
+              "lower": 0.6,
+              "count": 2,
+              "mean_probability": 0.66015625,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.7,
+              "count": 8,
+              "mean_probability": 0.724609375,
+              "observed_malicious_fraction": 0.25
+            },
+            {
+              "lower": 0.8,
+              "count": 2408,
+              "mean_probability": 0.8515625,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.9,
+              "count": 9,
+              "mean_probability": 1.0,
+              "observed_malicious_fraction": 0.0
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "prediction_digest": "31dadd77ca424012c433a364b963dc5fcef8f915a7b4ca3c5b63c308f6774ae1",
+        "novel_feature_values_n": 3927,
+        "novel_feature_values_metrics": {
+          "n": 3927,
+          "class_counts": {
+            "benign": 615,
+            "malicious": 3312
+          },
+          "threshold": 0.35,
+          "tn": 474,
+          "fp": 141,
+          "fn": 372,
+          "tp": 2940,
+          "precision": 0.9542356377799416,
+          "recall": 0.8876811594202898,
+          "f1": 0.9197559831065227,
+          "pr_auc_average_precision": 0.9850866011474846,
+          "roc_auc": 0.9271086171006638,
+          "fpr": 0.22926829268292684,
+          "fnr": 0.11231884057971014,
+          "brier": 0.11771791680095334,
+          "ece_10_bins": 0.21599463649095998,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 425,
+              "mean_probability": 0.002977941176470588,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.1,
+              "count": 2,
+              "mean_probability": 0.15625,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.2,
+              "count": 418,
+              "mean_probability": 0.2911558014354067,
+              "observed_malicious_fraction": 0.8899521531100478
+            },
+            {
+              "lower": 0.3,
+              "count": 251,
+              "mean_probability": 0.3516558764940239,
+              "observed_malicious_fraction": 0.9920318725099602
+            },
+            {
+              "lower": 0.5,
+              "count": 404,
+              "mean_probability": 0.5304764851485149,
+              "observed_malicious_fraction": 0.6905940594059405
+            },
+            {
+              "lower": 0.6,
+              "count": 2,
+              "mean_probability": 0.66015625,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.7,
+              "count": 8,
+              "mean_probability": 0.724609375,
+              "observed_malicious_fraction": 0.25
+            },
+            {
+              "lower": 0.8,
+              "count": 2408,
+              "mean_probability": 0.8515625,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.9,
+              "count": 9,
+              "mean_probability": 1.0,
+              "observed_malicious_fraction": 0.0
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        }
+      },
+      "edge": {
+        "metrics": {
+          "n": 4295,
+          "class_counts": {
+            "benign": 981,
+            "malicious": 3314
+          },
+          "threshold": 0.8,
+          "tn": 970,
+          "fp": 11,
+          "fn": 903,
+          "tp": 2411,
+          "precision": 0.9954582989265071,
+          "recall": 0.7275196137598069,
+          "f1": 0.8406555090655509,
+          "pr_auc_average_precision": 0.912923467543311,
+          "roc_auc": 0.7207599182290927,
+          "fpr": 0.011213047910295617,
+          "fnr": 0.2724803862401931,
+          "brier": 0.2198430895805359,
+          "ece_10_bins": 0.23778986708992295,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 1733,
+              "mean_probability": 0.00012557140144053847,
+              "observed_malicious_fraction": 0.51933064050779
+            },
+            {
+              "lower": 0.3,
+              "count": 10,
+              "mean_probability": 0.3980580270290375,
+              "observed_malicious_fraction": 0.2
+            },
+            {
+              "lower": 0.4,
+              "count": 125,
+              "mean_probability": 0.4707421064376831,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.6,
+              "count": 4,
+              "mean_probability": 0.6057052612304688,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.7,
+              "count": 1,
+              "mean_probability": 0.7054533958435059,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.8,
+              "count": 1,
+              "mean_probability": 0.887179970741272,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.9,
+              "count": 2421,
+              "mean_probability": 0.9715524315834045,
+              "observed_malicious_fraction": 0.9954564229657167
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        },
+        "prediction_digest": "8e0f32221bb1f4bfda647dfa6989486dbe3db9b811113378f1314ba5851a3933",
+        "novel_feature_values_n": 3927,
+        "novel_feature_values_metrics": {
+          "n": 3927,
+          "class_counts": {
+            "benign": 615,
+            "malicious": 3312
+          },
+          "threshold": 0.8,
+          "tn": 604,
+          "fp": 11,
+          "fn": 901,
+          "tp": 2411,
+          "precision": 0.9954582989265071,
+          "recall": 0.7279589371980676,
+          "f1": 0.8409487268922219,
+          "pr_auc_average_precision": 0.9342430983921372,
+          "roc_auc": 0.7161683555241349,
+          "fpr": 0.01788617886178862,
+          "fnr": 0.27204106280193235,
+          "brier": 0.23993730545043945,
+          "ece_10_bins": 0.25959095690757117,
+          "calibration_bins": [
+            {
+              "lower": 0.0,
+              "count": 1375,
+              "mean_probability": 9.514643170405179e-05,
+              "observed_malicious_fraction": 0.6545454545454545
+            },
+            {
+              "lower": 0.4,
+              "count": 125,
+              "mean_probability": 0.4707421064376831,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.6,
+              "count": 4,
+              "mean_probability": 0.6057052612304688,
+              "observed_malicious_fraction": 0.0
+            },
+            {
+              "lower": 0.7,
+              "count": 1,
+              "mean_probability": 0.7054533958435059,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.8,
+              "count": 1,
+              "mean_probability": 0.887179970741272,
+              "observed_malicious_fraction": 1.0
+            },
+            {
+              "lower": 0.9,
+              "count": 2421,
+              "mean_probability": 0.9715524315834045,
+              "observed_malicious_fraction": 0.9954564229657167
+            }
+          ],
+          "single_class_metrics": "BOTH_CLASSES_PRESENT"
+        }
+      }
+    },
+    "leakage": {
+      "train__test": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 80,
+        "endpoint_hashes_overlap": 2,
+        "address_hashes_overlap": 2,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": true
+      },
+      "validation__test": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 4,
+        "endpoint_hashes_overlap": 1,
+        "address_hashes_overlap": 1,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": true
+      },
+      "diagnostic__test": {
+        "flow_id_overlap": 0,
+        "raw_fingerprint_overlap": 0,
+        "label_references_overlap": 0,
+        "feature_digest_overlap": 0,
+        "feature_values_digest_overlap": 79,
+        "endpoint_hashes_overlap": 4,
+        "address_hashes_overlap": 4,
+        "session_overlap": 0,
+        "feature_collisions_policy": "REPORT_IDENTICAL_VALUES_NOT_PROOF_OF_SAME_RAW_FLOW; NO_TEST_FILTER_TUNING",
+        "host_campaign_independence": "UNVERIFIED",
+        "time_overlap": false,
+        "forward_time_order": true
+      }
+    },
+    "evaluation_passes": 1,
+    "predictions_per_selected_model": 1,
+    "limitations": [
+      "PREVIOUSLY_INSPECTED_NOT_BLIND",
+      "DEVICE_CAMPAIGN_UNVERIFIED",
+      "CAPTURE_QUALITY_UNKNOWN",
+      "NO_OPERATIONAL_GENERALIZATION",
+      "VALIDATION_PREDATES_TRAIN_RESEARCH_PROTOCOL"
+    ],
+    "manifest_digest": "a57a284cbf7e91d8cc4abfed2aad41774428bb0720e18bb10f03f4aadbcd4eec"
+  },
+  "diagnostic": {
+    "status": "AUXILIARY_DIAGNOSTIC_ONLY_NO_SELECTION",
+    "dataset_digest": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+    "results": {
+      "quality": {
+        "n": 2304,
+        "class_counts": {
+          "benign": 2300,
+          "malicious": 4
+        },
+        "threshold": 0.35,
+        "tn": 2128,
+        "fp": 172,
+        "fn": 0,
+        "tp": 4,
+        "precision": 0.022727272727272728,
+        "recall": 1.0,
+        "f1": 0.044444444444444446,
+        "pr_auc_average_precision": 1.0,
+        "roc_auc": 1.0,
+        "fpr": 0.07478260869565218,
+        "fnr": 0.0,
+        "brier": 0.02535170978969998,
+        "ece_10_bins": 0.050120035807291664,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "count": 2057,
+            "mean_probability": 0.0007709953816237238,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.1,
+            "count": 3,
+            "mean_probability": 0.13802083333333334,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.2,
+            "count": 61,
+            "mean_probability": 0.24346823770491804,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.3,
+            "count": 7,
+            "mean_probability": 0.3359375,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.4,
+            "count": 6,
+            "mean_probability": 0.4557291666666667,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.5,
+            "count": 166,
+            "mean_probability": 0.5625,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.9,
+            "count": 4,
+            "mean_probability": 0.958984375,
+            "observed_malicious_fraction": 1.0
+          }
+        ],
+        "single_class_metrics": "BOTH_CLASSES_PRESENT"
+      },
+      "edge": {
+        "n": 2304,
+        "class_counts": {
+          "benign": 2300,
+          "malicious": 4
+        },
+        "threshold": 0.8,
+        "tn": 2299,
+        "fp": 1,
+        "fn": 0,
+        "tp": 4,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8888888888888888,
+        "pr_auc_average_precision": 1.0,
+        "roc_auc": 1.0,
+        "fpr": 0.0004347826086956522,
+        "fnr": 0.0,
+        "brier": 0.01663140207529068,
+        "ece_10_bins": 0.035711227489729123,
+        "calibration_bins": [
+          {
+            "lower": 0.0,
+            "count": 2120,
+            "mean_probability": 0.000308568705804646,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.1,
+            "count": 8,
+            "mean_probability": 0.1375415027141571,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.2,
+            "count": 3,
+            "mean_probability": 0.25805455446243286,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.3,
+            "count": 2,
+            "mean_probability": 0.3150603175163269,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.4,
+            "count": 166,
+            "mean_probability": 0.47075966000556946,
+            "observed_malicious_fraction": 0.0
+          },
+          {
+            "lower": 0.9,
+            "count": 5,
+            "mean_probability": 0.9947565197944641,
+            "observed_malicious_fraction": 0.8
+          }
+        ],
+        "single_class_metrics": "BOTH_CLASSES_PRESENT"
+      }
+    },
+    "limitation": "ONLY_FOUR_MALICIOUS_FLOWS_NOT_OPERATIONAL_EVIDENCE",
+    "manifest_digest": "d9adfc502dbf2a66198c7d8a198754667289d675f0c52798ab2cc32fac004f85"
+  },
+  "package": {
+    "contract": "linux-network14-research-package:v1",
+    "status": "RESEARCH_ONLY",
+    "operational_promotion": false,
+    "models": {
+      "quality": {
+        "model_id": "linux-network14-research-v1-quality_rf",
+        "relative_path": "quality_rf/model.joblib",
+        "sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+        "artifact_manifest_digest": "80bb31b38c6e35dac1628f8c5c3ed1843ae81779ca3173a356f18473821b5f66",
+        "size_bytes": 117241
+      },
+      "edge": {
+        "model_id": "linux-network14-research-v1-edge_lr",
+        "relative_path": "edge_lr/model.joblib",
+        "sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+        "artifact_manifest_digest": "293e6046e2b46777c383ae0b5de5951596238d4f26e552263022b9b65357e2d9",
+        "size_bytes": 1773
+      }
+    },
+    "test_lock_digest": "1c2aedc3c3c5ccbb24fc09a6a7ac047acde379cc064c5c1734fcf9dd13c727b3",
+    "test_result_digest": "a57a284cbf7e91d8cc4abfed2aad41774428bb0720e18bb10f03f4aadbcd4eec",
+    "selection_digest": "c48edd3e14deeb0e9e407fd6db348fd2917b580d6701f31eed270a643e518d11",
+    "dataset_manifests": {
+      "train": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+      "validation": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+      "diagnostic": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+      "test": "5ed20bae1dd98659bd8d082adc16bb8ee75fdbaf5285a033b97f4120c28e12cb"
+    },
+    "binary_distribution": "LOCAL_ONLY_IGNORED_MODELS_DIRECTORY_NO_RAW_DATA_OR_CREDENTIALS",
+    "license_status": "SOURCE_DATA_AND_MODEL_REDISTRIBUTION_NOT_REASSESSED; NO_BINARY_REDISTRIBUTION",
+    "manifest_digest": "d11b5885343d3e0df05597540ddeae568ee94619360a2accbe43b80f66d94c6d"
+  },
+  "export_dataset_reproduction": {
+    "train": {
+      "rows": 4218,
+      "manifest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+      "exact_reproduction": true
+    },
+    "validation": {
+      "rows": 76320,
+      "manifest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+      "exact_reproduction": true
+    },
+    "diagnostic": {
+      "rows": 2304,
+      "manifest": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+      "exact_reproduction": true
+    }
+  },
+  "export_test_feature_reproduction": {
+    "exact_test_feature_and_label_reproduction": true,
+    "n": 4295,
+    "manifest_digest": "5ed20bae1dd98659bd8d082adc16bb8ee75fdbaf5285a033b97f4120c28e12cb",
+    "test_model_predictions_repeated": false
+  },
+  "export_training_reproduction": {
+    "candidates": {
+      "quality_rf": {
+        "model_sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+        "validation_predictions_and_metrics_identical": true
+      },
+      "quality_hgb": {
+        "model_sha256": "258e59ecdec544eb60a4d353a0bacdc017dd27d8686495d89f6ae1e16538146c",
+        "validation_predictions_and_metrics_identical": true
+      },
+      "edge_lr": {
+        "model_sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+        "validation_predictions_and_metrics_identical": true
+      },
+      "edge_rf": {
+        "model_sha256": "455ec349379a9d9ca62e3c658aa7792ab385f3a85c28bdab81e778efd8c0f2ae",
+        "validation_predictions_and_metrics_identical": true
+      },
+      "edge_hgb": {
+        "model_sha256": "a266d6f0defc1c78163f9d9fe1987a8922d8296f116880290e33b53ae594f3b5",
+        "validation_predictions_and_metrics_identical": true
+      }
+    },
+    "test_not_replayed": true,
+    "source_identity_delta": {
+      "src/ml/ctu13/pcap.py": {
+        "evaluated": "f6d8d8d26f8f569b459da55d5c3e8cd95b1a1cdf1bc9e60abfd3477995b39df0",
+        "committed_export": "90065fef249c2b7ee9210c53499dbd8f8037ea737d34d398e3f5ff4532a21980"
+      }
+    },
+    "source_identity_explanation": "Pre-existing user PCAPNG-only second-interface guard excluded. All four inputs classic PCAP. Four split rows and model outputs checked independently; original lock not rewritten.",
+    "test_lock_original_digest_verified": true,
+    "owned_evaluation_code_exact_match": true,
+    "test_confusion_derived_metrics_verified": true,
+    "test_ap_roc": "ORIGINAL_LOCAL_DIGEST_RECEIPT_NOT_REEXECUTED",
+    "selected": {
+      "quality": "quality_rf",
+      "edge": "edge_lr",
+      "edge_accuracy_eligibility": true,
+      "scope": "RESEARCH_ONLY_NO_OPERATIONAL_PROMOTION"
+    }
+  },
+  "legacy_artifacts_unchanged": 7,
+  "operational_input": "NOT_INFERABLE",
+  "inference_gate": "BLOCKED",
+  "feature_generation": "DIAGNOSTIC_ONLY",
+  "write_disposition": "WRITE_DENIED",
+  "manifest_digest": "b97db61bd203f31851ae534e6594272b515829987a13313c3cff7d5075e3d1b0"
+}

@@ -1,0 +1,49 @@
+{
+  "contract": "network-research-test-lock:v1",
+  "status": "RESEARCH_ONLY",
+  "created_at": "2026-10-15T08:50:46.209838+00:00",
+  "selected": {
+    "quality": {
+      "candidate": "quality_rf",
+      "manifest_digest": "80bb31b38c6e35dac1628f8c5c3ed1843ae81779ca3173a356f18473821b5f66",
+      "model_sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+      "threshold": 0.35
+    },
+    "edge": {
+      "candidate": "edge_lr",
+      "manifest_digest": "293e6046e2b46777c383ae0b5de5951596238d4f26e552263022b9b65357e2d9",
+      "model_sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+      "threshold": 0.8
+    }
+  },
+  "selection_digest": "c48edd3e14deeb0e9e407fd6db348fd2917b580d6701f31eed270a643e518d11",
+  "train_digest": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+  "validation_digest": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+  "diagnostic_digest": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+  "test_raw_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+  "test_label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+  "evaluation_code_sha256": {
+    "src/ml/network_research/__init__.py": "7c7c41f4b33c6775d799bcc2711eaa6ba16b93b0765f56388a4f6b17d14700ce",
+    "src/ml/network_research/__main__.py": "aa0e8f20329af752bcdfdba2076625e16f2c46a95bbc7d662bc8d92084066fb5",
+    "src/ml/network_research/artifacts.py": "4d1cc539312dd462ae2f37ce2104cb019abf0e451241aaef63c7cb7ac1008e81",
+    "src/ml/network_research/dataset.py": "c9b0ea8c743a15ba8ad588e89c57e89e3287b52580ab0389f9ee08b2ed4ea4f9",
+    "src/ml/network_research/evaluation.py": "e9c62af230b9d3d8f0982483579c7cf00e8ec9326bfb9ab61fa93ccfae8b286c",
+    "src/ml/network_research/locked_test.py": "66894a29e7048b73c3279927e41a0a40f42a154e6cb5b1dd3595439f35c021f0",
+    "src/ml/network_research/training.py": "cafad4635d5582dc68ef615f14ffa816504c5230828caa76a1b430d211ab0596",
+    "src/ml/verified_producers/network_v1_1.py": "19fbcd702632b9b86605681b3b3f54a5b759b9ee26c373256dae360cf4b4634f",
+    "src/ml/ctu13/flows.py": "1ef7b7c9ad4011057843f043df95bcabc5e01c5911345f5b3078631452cf72f9",
+    "src/ml/ctu13/pcap.py": "f6d8d8d26f8f569b459da55d5c3e8cd95b1a1cdf1bc9e60abfd3477995b39df0",
+    "src/ml/iot23/zeek.py": "1963a303ffa9468cb8b3fda92877d7fe42276de3539de0805ba5cd820e0e531e"
+  },
+  "sklearn_version": "1.9.1",
+  "numpy_version": "2.5.3",
+  "python_version": "3.12.14",
+  "test_session": "34-1",
+  "test_role": "FINAL_EVALUATION_ONLY_NOT_TRAINING_OR_SELECTION",
+  "blind_holdout": false,
+  "previous_label_binding_inspection": true,
+  "attempt_budget": 1,
+  "automatic_retry": false,
+  "operational_promotion": false,
+  "manifest_digest": "1c2aedc3c3c5ccbb24fc09a6a7ac047acde379cc064c5c1734fcf9dd13c727b3"
+}

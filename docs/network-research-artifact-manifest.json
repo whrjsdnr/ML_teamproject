@@ -1,0 +1,33 @@
+{
+  "contract": "linux-network14-research-package:v1",
+  "status": "RESEARCH_ONLY",
+  "operational_promotion": false,
+  "models": {
+    "quality": {
+      "model_id": "linux-network14-research-v1-quality_rf",
+      "relative_path": "quality_rf/model.joblib",
+      "sha256": "53c1029cc70b9d038bf46278818905c969dc3ddfb086c673466298ebdfa56603",
+      "artifact_manifest_digest": "80bb31b38c6e35dac1628f8c5c3ed1843ae81779ca3173a356f18473821b5f66",
+      "size_bytes": 117241
+    },
+    "edge": {
+      "model_id": "linux-network14-research-v1-edge_lr",
+      "relative_path": "edge_lr/model.joblib",
+      "sha256": "661322193df782f958e88eb9da23f0dc4d17be328cfa63635865ce63e0fd2882",
+      "artifact_manifest_digest": "293e6046e2b46777c383ae0b5de5951596238d4f26e552263022b9b65357e2d9",
+      "size_bytes": 1773
+    }
+  },
+  "test_lock_digest": "1c2aedc3c3c5ccbb24fc09a6a7ac047acde379cc064c5c1734fcf9dd13c727b3",
+  "test_result_digest": "a57a284cbf7e91d8cc4abfed2aad41774428bb0720e18bb10f03f4aadbcd4eec",
+  "selection_digest": "c48edd3e14deeb0e9e407fd6db348fd2917b580d6701f31eed270a643e518d11",
+  "dataset_manifests": {
+    "train": "ef812c1609929f2fbf0ce1dfcb671b214162cc973686925e20f4fdbdd31568af",
+    "validation": "d50b604126b0f0fa16749c3612e96578bc9da59ec60ef7c2df7b320d252f9b84",
+    "diagnostic": "79afae9020821afd0dabeefc7e809f3ee4d5cbb390baef8723589e7cd312970a",
+    "test": "5ed20bae1dd98659bd8d082adc16bb8ee75fdbaf5285a033b97f4120c28e12cb"
+  },
+  "binary_distribution": "LOCAL_ONLY_IGNORED_MODELS_DIRECTORY_NO_RAW_DATA_OR_CREDENTIALS",
+  "license_status": "SOURCE_DATA_AND_MODEL_REDISTRIBUTION_NOT_REASSESSED; NO_BINARY_REDISTRIBUTION",
+  "manifest_digest": "d11b5885343d3e0df05597540ddeae568ee94619360a2accbe43b80f66d94c6d"
+}
