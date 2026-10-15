@@ -1,0 +1,14 @@
+{
+  "contract": "iot23-recovery-policy-lock:v1",
+  "created_at": "2026-10-15T08:00:57.533983+00:00",
+  "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+  "source_sha256": {
+    "src/ml/iot23/recovery.py": "820d2e292dedfe76041e1e5ff264806cb8297c4805a56294e35e373a7c053740",
+    "src/ml/iot23/wire_reference.py": "76caaa2ba2c5ba2448fd98c4f2a6a270543454a3e481c1e55fe1c8e11b706d24",
+    "src/ml/iot23/binding_audit.py": "749559f5677e26fddd82ec033f6ad86571500a90449ad153ca7a29e08c110c87"
+  },
+  "train_validation_audit_digest": "bd5795f81a50e86035f2f43de0bee3e824dac74897ab6ca338ffb212533185cd",
+  "test_opened_for_rule_selection": false,
+  "test_role": "34-1_REGRESSION_ONLY_NO_TRAINING_SELECTION_TUNING",
+  "manifest_digest": "cf6cba6aa1af76b5fafe8d2d6ee3d8d80e29b3286b9528d99f9e947640a17f7c"
+}

@@ -1,0 +1,3417 @@
+{
+  "contract": "iot23-binding-recovery-evidence:v1",
+  "ml_baseline": "52a01ae6de0d6433d2e0825c69ec58fed1ffc3f7",
+  "soc_baseline": "d07a796b2923f4e7b83bd56568feba04e965cd0f",
+  "raw_identities": [
+    {
+      "session": "CTU-IoT-Malware-Capture-8-1",
+      "role": "PCAP",
+      "sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+      "bytes": 2098362
+    },
+    {
+      "session": "CTU-IoT-Malware-Capture-8-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "sha256": "4877ca8f0f01902fbd18d28b7d06cb3d0be082355b7f2c8862c9deef1782eb8a",
+      "bytes": 1431000
+    },
+    {
+      "session": "CTU-IoT-Malware-Capture-20-1",
+      "role": "PCAP",
+      "sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+      "bytes": 4057401
+    },
+    {
+      "session": "CTU-IoT-Malware-Capture-20-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "sha256": "ef48ad72f65efd13d517223e61e4d877ba53a082ddb8159324b18d3f310d0711",
+      "bytes": 419604
+    },
+    {
+      "session": "CTU-IoT-Malware-Capture-34-1",
+      "role": "PCAP",
+      "sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+      "bytes": 126317980
+    },
+    {
+      "session": "CTU-IoT-Malware-Capture-34-1",
+      "role": "ZEEK_LABELED_FLOW",
+      "sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+      "bytes": 2926718
+    }
+  ],
+  "policy_lock": {
+    "contract": "iot23-recovery-policy-lock:v1",
+    "created_at": "2026-10-15T08:00:57.533983+00:00",
+    "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+    "source_sha256": {
+      "src/ml/iot23/recovery.py": "820d2e292dedfe76041e1e5ff264806cb8297c4805a56294e35e373a7c053740",
+      "src/ml/iot23/wire_reference.py": "76caaa2ba2c5ba2448fd98c4f2a6a270543454a3e481c1e55fe1c8e11b706d24",
+      "src/ml/iot23/binding_audit.py": "749559f5677e26fddd82ec033f6ad86571500a90449ad153ca7a29e08c110c87"
+    },
+    "train_validation_audit_digest": "bd5795f81a50e86035f2f43de0bee3e824dac74897ab6ca338ffb212533185cd",
+    "test_opened_for_rule_selection": false,
+    "test_role": "34-1_REGRESSION_ONLY_NO_TRAINING_SELECTION_TUNING",
+    "manifest_digest": "cf6cba6aa1af76b5fafe8d2d6ee3d8d80e29b3286b9528d99f9e947640a17f7c"
+  },
+  "train_validation": {
+    "contract": "iot23-binding-recovery-audit:v1",
+    "policy": {
+      "id": "iot23-exact-syn-partition:v1",
+      "clock_shift_ns": 0,
+      "counter_tolerance": 0,
+      "flow_segmentation": "UNCHANGED_NETWORK14_30S_IDLE_120S_ACTIVE",
+      "allowed_recovery": "SYN_ONLY_IDENTICAL_SEQUENCE_ZERO_PAYLOAD_ZERO_ACK",
+      "missing_duration": "SINGLE_PACKET_EXACT_START_AND_COUNTS_ONLY_NO_IMPUTATION",
+      "mapping": "DISJOINT_EXHAUSTIVE_PACKET_PARTITION_ALL_LABELS_CONCORDANT",
+      "test_session": "34-1_SEALED_NOT_FOR_RULE_SELECTION",
+      "authority": "NO_TRAINING_OR_OPERATIONAL_PROMOTION"
+    },
+    "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+    "producer_configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+    "sessions": [
+      {
+        "session": "CTU-IoT-Malware-Capture-8-1",
+        "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+        "label_sha256": "4877ca8f0f01902fbd18d28b7d06cb3d0be082355b7f2c8862c9deef1782eb8a",
+        "baseline_counts": {
+          "raw_packets": 23623,
+          "parsed_packets": 16677,
+          "transport:udp": 4341,
+          "ip:IPv4": 16677,
+          "transport:tcp": 12336,
+          "reconstructed_flows": 4237,
+          "closure:IDLE_TIMEOUT": 4235,
+          "closure:CAPTURE_END": 2
+        },
+        "zeek_distribution": {
+          "total_rows": 10403,
+          "label:Benign": 2181,
+          "detail:-": 2181,
+          "label:Malicious": 8222,
+          "detail:C&C": 8222
+        },
+        "baseline_binding": {
+          "VERIFIED_MATCH": 2162,
+          "CANDIDATE_MATCH": 2056,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 0,
+          "EXCLUDED": 19
+        },
+        "current_binding": {
+          "VERIFIED_MATCH": 4218,
+          "CANDIDATE_MATCH": 0,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 0,
+          "EXCLUDED": 19
+        },
+        "baseline_verified_classes": {
+          "Benign": 2162
+        },
+        "verified_classes": {
+          "Benign": 2162,
+          "Malicious": 2056
+        },
+        "new_verified": 2056,
+        "failure_taxonomy_by_original_label": {
+          "Benign / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2162,
+          "Benign / MISSING_LABEL_DURATION": 19,
+          "Malicious / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 2056
+        },
+        "independent_reference_counts": {
+          "bytes_read": 2098362,
+          "raw_packets": 23623,
+          "parsed_packets": 16677,
+          "flags:0": 4341,
+          "flags:24": 2,
+          "REFERENCE_LINK_UNSUPPORTED": 6946,
+          "flags:2": 12334
+        },
+        "observed_packet_categories": {
+          "UDP": 2179,
+          "TCP": 2058,
+          "SYN": 2056,
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": 2056
+        },
+        "representative_references": {
+          "UDP": {
+            "flow_id": "2bb485953f8cde3065f488964989c1af9b2ecc9e9d9a51002c4985dc4a71582b",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              1,
+              2
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "df1f2cda496047b26865aa068259c2ff4edd0ba671f70e3b0623af0f2b7000d4",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "5dbb3714d3e49d4ec909ac31b147f1e914f880c50b2a27ecd3ffb0f575668107",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 5490000,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "6014183266a3e96faebfc5160e732c9c3e9ee9e91d37525204fa4e40a4ef023c",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "BASELINE_Benign": {
+            "flow_id": "2bb485953f8cde3065f488964989c1af9b2ecc9e9d9a51002c4985dc4a71582b",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              1,
+              2
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "df1f2cda496047b26865aa068259c2ff4edd0ba671f70e3b0623af0f2b7000d4",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "5dbb3714d3e49d4ec909ac31b147f1e914f880c50b2a27ecd3ffb0f575668107",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 5490000,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "6014183266a3e96faebfc5160e732c9c3e9ee9e91d37525204fa4e40a4ef023c",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "TCP": {
+            "flow_id": "fe4ff8cb3ed46db8944b057621c0d6d38062b4fb766c56f9b7229d21e463181d",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              3
+            ],
+            "full_packet_count": 1,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "EXCLUDED",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "d50b39f5f204167f1ea38dca3e84553c8d4cf7808361be3dbc1a1581d9f4cce4",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 24,
+                "ip_length": 88,
+                "relative_sequence": 0,
+                "payload_bytes": 36,
+                "payload_sha256": "77eb5e5d2ad66df2cb1eca15f30853b2ca93715a2102d566a08c7cc78a2e7718",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "SYN": {
+            "flow_id": "454c5a25cab0d54ffdabc230db1938bada8b7a537f16c6d18d739c9031decd6e",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              488,
+              489,
+              492,
+              495,
+              496,
+              497
+            ],
+            "full_packet_count": 6,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "4_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "d75873bcbe00e3a02df1d12938b30b32d153a769d6873da948740328908e079c",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "ad69a4b81e28d1bd32ac444b7b7559948c1e2c953b4dc89f025bc79e43d54974",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "ed001f210a6136e7381b935d7689552bac29d35c111865fdc2cb93c92adc9023",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "091eefbc997495a0d7fc2bb0589b14252f9742a6ede66a2f88ad65496fa2a8c5",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "77a341f1fd319c5f3f517bd6ddd653f915d029c91014b1bf358809b2e3b09d91",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "df5d7eccc1992a03615315896160c09fc2c6e382c00d06a955ec7131735c73eb",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1071384000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3151458000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7231378000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15791510000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32431525000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": {
+            "flow_id": "454c5a25cab0d54ffdabc230db1938bada8b7a537f16c6d18d739c9031decd6e",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              488,
+              489,
+              492,
+              495,
+              496,
+              497
+            ],
+            "full_packet_count": 6,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "4_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "d75873bcbe00e3a02df1d12938b30b32d153a769d6873da948740328908e079c",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "ad69a4b81e28d1bd32ac444b7b7559948c1e2c953b4dc89f025bc79e43d54974",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "ed001f210a6136e7381b935d7689552bac29d35c111865fdc2cb93c92adc9023",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "091eefbc997495a0d7fc2bb0589b14252f9742a6ede66a2f88ad65496fa2a8c5",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "77a341f1fd319c5f3f517bd6ddd653f915d029c91014b1bf358809b2e3b09d91",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "df5d7eccc1992a03615315896160c09fc2c6e382c00d06a955ec7131735c73eb",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1071384000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3151458000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7231378000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15791510000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32431525000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "RECOVERED_Malicious": {
+            "flow_id": "454c5a25cab0d54ffdabc230db1938bada8b7a537f16c6d18d739c9031decd6e",
+            "source_sha256": "80dcc2602519479ddcde889fa902fee19a76696630811452f8df38888af894f2",
+            "packet_indices": [
+              488,
+              489,
+              492,
+              495,
+              496,
+              497
+            ],
+            "full_packet_count": 6,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "4_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "d75873bcbe00e3a02df1d12938b30b32d153a769d6873da948740328908e079c",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "ad69a4b81e28d1bd32ac444b7b7559948c1e2c953b4dc89f025bc79e43d54974",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "ed001f210a6136e7381b935d7689552bac29d35c111865fdc2cb93c92adc9023",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "091eefbc997495a0d7fc2bb0589b14252f9742a6ede66a2f88ad65496fa2a8c5",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "77a341f1fd319c5f3f517bd6ddd653f915d029c91014b1bf358809b2e3b09d91",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "df5d7eccc1992a03615315896160c09fc2c6e382c00d06a955ec7131735c73eb",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1071384000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3151458000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7231378000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15791510000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32431525000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          }
+        },
+        "diagnostic_rows_digest": "977babc2610fcdc86e3b0615d89bda6173268b263626635d52cfd3b6f17a1d6e",
+        "verified_label_reference_count": 10384,
+        "admitted_samples": 0,
+        "capture_quality": "UNKNOWN",
+        "uid_reconstructed_from_pcap": false,
+        "manifest_digest": "036038275bc441d96cd0e25776746856dce48214483ba24e62dd80da6cd26719"
+      },
+      {
+        "session": "CTU-IoT-Malware-Capture-20-1",
+        "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+        "label_sha256": "ef48ad72f65efd13d517223e61e4d877ba53a082ddb8159324b18d3f310d0711",
+        "baseline_counts": {
+          "raw_packets": 50156,
+          "parsed_packets": 41207,
+          "transport:udp": 5998,
+          "ip:IPv4": 41207,
+          "reconstructed_flows": 3921,
+          "closure:IDLE_TIMEOUT": 3214,
+          "transport:tcp": 35209,
+          "closure:ACTIVE_TIMEOUT": 706,
+          "closure:CAPTURE_END": 1
+        },
+        "zeek_distribution": {
+          "total_rows": 3209,
+          "label:Benign": 3193,
+          "detail:-": 3193,
+          "label:Malicious": 16,
+          "detail:C&C-Torii": 16
+        },
+        "baseline_binding": {
+          "VERIFIED_MATCH": 2300,
+          "CANDIDATE_MATCH": 36,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 1,
+          "EXCLUDED": 1584
+        },
+        "current_binding": {
+          "VERIFIED_MATCH": 2304,
+          "CANDIDATE_MATCH": 32,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 1,
+          "EXCLUDED": 1584
+        },
+        "baseline_verified_classes": {
+          "Benign": 2300
+        },
+        "verified_classes": {
+          "Benign": 2300,
+          "Malicious": 4
+        },
+        "new_verified": 4,
+        "failure_taxonomy_by_original_label": {
+          "Benign / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2300,
+          "Benign / MISSING_LABEL_DURATION": 877,
+          "Benign / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 31,
+          "Malicious / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 5,
+          "Malicious / LABEL_CAPTURE_QUALITY": 707,
+          "UNKNOWN / NO_EXACT_CONTAINING_INTERVAL": 1
+        },
+        "independent_reference_counts": {
+          "bytes_read": 4057401,
+          "raw_packets": 50156,
+          "parsed_packets": 41207,
+          "flags:0": 5998,
+          "REFERENCE_LINK_UNSUPPORTED": 8949,
+          "flags:24": 1734,
+          "flags:2": 29,
+          "flags:18": 3,
+          "flags:16": 33440,
+          "flags:17": 2,
+          "flags:20": 1
+        },
+        "observed_packet_categories": {
+          "UDP": 3207,
+          "TCP": 714,
+          "SYN": 7,
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": 23,
+          "ACK_ONLY": 709,
+          "FIN": 1,
+          "RST": 1
+        },
+        "representative_references": {
+          "UDP": {
+            "flow_id": "8ec06a7f33d00eff48733861392b17ee5e560c6f6d3e2348906ce9bda2a4ea88",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              1,
+              2
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "b765afd98f0cf9925e6d82ce9949a33ef58278757b7e56f002f80b0b240f7507",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 67,
+                "relative_sequence": null,
+                "payload_bytes": 39,
+                "payload_sha256": "53f062803540947e18e4181c68758ec6fb87af4cfe158ce9d70fe820976d3034",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 5005151000,
+                "flags": 0,
+                "ip_length": 67,
+                "relative_sequence": null,
+                "payload_bytes": 39,
+                "payload_sha256": "53f062803540947e18e4181c68758ec6fb87af4cfe158ce9d70fe820976d3034",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "BASELINE_Benign": {
+            "flow_id": "8ec06a7f33d00eff48733861392b17ee5e560c6f6d3e2348906ce9bda2a4ea88",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              1,
+              2
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "b765afd98f0cf9925e6d82ce9949a33ef58278757b7e56f002f80b0b240f7507",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 67,
+                "relative_sequence": null,
+                "payload_bytes": 39,
+                "payload_sha256": "53f062803540947e18e4181c68758ec6fb87af4cfe158ce9d70fe820976d3034",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 5005151000,
+                "flags": 0,
+                "ip_length": 67,
+                "relative_sequence": null,
+                "payload_bytes": 39,
+                "payload_sha256": "53f062803540947e18e4181c68758ec6fb87af4cfe158ce9d70fe820976d3034",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "TCP": {
+            "flow_id": "d43e9ab52c3d5e14939dad2b31876a8d0de74c4f06632a0b7adbcfcd60c4b817",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              110
+            ],
+            "full_packet_count": 1,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "EXCLUDED",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "5db5edb386f7cce795aeca3608c6d3dd48bf2bd1c869903bef9115302412902d",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 24,
+                "ip_length": 88,
+                "relative_sequence": 0,
+                "payload_bytes": 36,
+                "payload_sha256": "2f29362562e88b174027ad5982adebad053087652cfed47e4d49ae97b45e5aba",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "SYN": {
+            "flow_id": "8670acb2c39907aea1d1502535f63ec56ead648f595377c7ec74ed49abb0236a",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              151,
+              153,
+              154,
+              162,
+              164
+            ],
+            "full_packet_count": 5,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "3_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "edc3593fd331f77f8a4caeeafb29e00a087dc65b0f0844018ba77079c26bfea8",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "9cce8721e6d57305ee739c109c29ca7e1fa58203f41f76bf4d5bf64511709d9d",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "54bb917657849b259c42a761cfafb716fa6e5ed2c2f82c12c7c629037c17bacc",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "f1d15c90e2ff386189826cff361a2e74718f8c890855fd4c3515786c8632538c",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "432e9cd0fd38946599fe3995c99c6e211f9ba8e8d6c8dcd86466e45af064839f",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1074389000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3154212000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7234138000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15713805000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": {
+            "flow_id": "8670acb2c39907aea1d1502535f63ec56ead648f595377c7ec74ed49abb0236a",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              151,
+              153,
+              154,
+              162,
+              164
+            ],
+            "full_packet_count": 5,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "3_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "edc3593fd331f77f8a4caeeafb29e00a087dc65b0f0844018ba77079c26bfea8",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "9cce8721e6d57305ee739c109c29ca7e1fa58203f41f76bf4d5bf64511709d9d",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "54bb917657849b259c42a761cfafb716fa6e5ed2c2f82c12c7c629037c17bacc",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "f1d15c90e2ff386189826cff361a2e74718f8c890855fd4c3515786c8632538c",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "432e9cd0fd38946599fe3995c99c6e211f9ba8e8d6c8dcd86466e45af064839f",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1074389000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3154212000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7234138000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15713805000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "RECOVERED_Malicious": {
+            "flow_id": "8670acb2c39907aea1d1502535f63ec56ead648f595377c7ec74ed49abb0236a",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              151,
+              153,
+              154,
+              162,
+              164
+            ],
+            "full_packet_count": 5,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "3_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "edc3593fd331f77f8a4caeeafb29e00a087dc65b0f0844018ba77079c26bfea8",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "9cce8721e6d57305ee739c109c29ca7e1fa58203f41f76bf4d5bf64511709d9d",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "54bb917657849b259c42a761cfafb716fa6e5ed2c2f82c12c7c629037c17bacc",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "f1d15c90e2ff386189826cff361a2e74718f8c890855fd4c3515786c8632538c",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "432e9cd0fd38946599fe3995c99c6e211f9ba8e8d6c8dcd86466e45af064839f",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1074389000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3154212000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7234138000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15713805000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "ACK_ONLY": {
+            "flow_id": "b2f749b6701174604056a1a35eb92456328074330e1a3e4b2753d2f50475aaeb",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              259,
+              260,
+              261,
+              262,
+              263,
+              264,
+              265,
+              266,
+              267,
+              269,
+              270,
+              271,
+              272,
+              273,
+              274,
+              282
+            ],
+            "full_packet_count": 61,
+            "omitted_sample_packet_count": 45,
+            "recorded_status": "EXCLUDED",
+            "label": "Malicious",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "67f7457c309182a7c3ef39f3d33027f4bc946a2ba062af95f7e81fced1b419e1",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1025413000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3105224000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3317358000,
+                "flags": 18,
+                "ip_length": 52,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 3318101000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3318603000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1460,
+                "payload_sha256": "2cd63876ca03eed0f708e5a1925ef4d5b354d9b60f7c6a7b5386e20b757b593e",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3476519000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 3477516000,
+                "flags": 24,
+                "ip_length": 1619,
+                "relative_sequence": 1461,
+                "payload_bytes": 1579,
+                "payload_sha256": "6b7fe529a501555ad69d145a5e9ebfa76cfec95c9b284eb5772afcb328e88b60",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3654409000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 4401238000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1460,
+                "payload_sha256": "80c22a504bd8dcb32078474ef74c8497795f126d783de7ee79aabfd9cee6449f",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 4401244000,
+                "flags": 24,
+                "ip_length": 159,
+                "relative_sequence": 2921,
+                "payload_bytes": 119,
+                "payload_sha256": "1948ec02f32f84702e6d6b1a273a6dc0f3465070e7a265b354dab9810cb0bff3",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 4401249000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1461,
+                "payload_bytes": 1460,
+                "payload_sha256": "4efd0635ccb5a95ae916f83176dfd0b8e9ed49ff61c380420fcc1fa67b465b6c",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 4401731000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 3040,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 4401981000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 3040,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 4402481000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 3040,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 9556285000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 3039,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "FIN": {
+            "flow_id": "566ffc63f8b14cf0e7eb751cc37928c02ab7820f044acbe87c772fee5507266c",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              24732,
+              24733,
+              24734,
+              24735,
+              24736,
+              24737,
+              24738,
+              24739,
+              24742,
+              24743,
+              24744,
+              24745,
+              24746,
+              24747,
+              24750,
+              24751
+            ],
+            "full_packet_count": 35,
+            "omitted_sample_packet_count": 19,
+            "recorded_status": "UNMATCHED",
+            "label": null,
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "eada03e13b505235a0005b80c3728d62938dca52166e9359ede7930f158898bd",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 483000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 5151088000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 5151570000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 10341905000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 10342389000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 15763589000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15764076000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 20915435000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 20915919000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 26079002000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 26079501000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 31231594000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 31232091000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 36381944000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 36382432000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "RST": {
+            "flow_id": "562a8da385242ac264de09a5c095c8ec5787408e9cbf346bd0253e89cbd5c68b",
+            "source_sha256": "4d0a00c33a4bf11228158baddd47c38f702731ea8d75ef1201061fc8bbd878b9",
+            "packet_indices": [
+              24779,
+              24780,
+              24783,
+              24784,
+              24785,
+              24786,
+              24787,
+              24788,
+              24789,
+              24790,
+              24791,
+              24792
+            ],
+            "full_packet_count": 12,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Malicious",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "c4b6e57d3058780f713e0c795ec72e0e76863f7a58ca02574991b4cfdbf3a2b6",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1026181000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3106261000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7186199000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7357843000,
+                "flags": 18,
+                "ip_length": 52,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 7358590000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7359092000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1460,
+                "payload_sha256": "3cbacb70df0444a3eb43c54cf1c55b2d33d4b59e7d3d47cc89d1b3cc95db320d",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7536489000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 7537242000,
+                "flags": 24,
+                "ip_length": 1622,
+                "relative_sequence": 1461,
+                "payload_bytes": 1582,
+                "payload_sha256": "32e6da568d64f3c1c4a597a9e25eca28530eeb3a5ed4f507c1979c0d34ba5582",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7710152000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 7710165000,
+                "flags": 16,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 9372968000,
+                "flags": 20,
+                "ip_length": 40,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              }
+            ]
+          }
+        },
+        "diagnostic_rows_digest": "f71c196a886bae9b093095430fd0d7cb53cd909de515806a29182364be3676b7",
+        "verified_label_reference_count": 2312,
+        "admitted_samples": 0,
+        "capture_quality": "UNKNOWN",
+        "uid_reconstructed_from_pcap": false,
+        "manifest_digest": "f17a2f94861f99dab874f13b90080cd69ac7cc7a786253936eb2f1a6ff814f9b"
+      }
+    ],
+    "scope": "TRAIN_VALIDATION_DIAGNOSTIC",
+    "test_used_for_rule_selection": false,
+    "admitted_samples": 0,
+    "admission": "BLOCKED",
+    "operational_input": "NOT_INFERABLE",
+    "write_disposition": "WRITE_DENIED",
+    "holdout_review": {
+      "class_presence": {
+        "train": "PASS",
+        "validation": "PASS"
+      },
+      "validation_malicious_flows": 4,
+      "independence": "UNVERIFIED_DEVICE_CAMPAIGN_GROUPS",
+      "capture_quality": "UNKNOWN",
+      "test_session": "34-1_SEALED",
+      "random_row_split": false,
+      "test_used_for_selection": false,
+      "admission": "BLOCKED",
+      "admitted_samples": 0,
+      "reason": "Class presence alone does not prove independent holdout or capture quality"
+    },
+    "manifest_digest": "bd5795f81a50e86035f2f43de0bee3e824dac74897ab6ca338ffb212533185cd"
+  },
+  "sealed_test_regression": {
+    "contract": "iot23-binding-recovery-audit:v1",
+    "policy": {
+      "id": "iot23-exact-syn-partition:v1",
+      "clock_shift_ns": 0,
+      "counter_tolerance": 0,
+      "flow_segmentation": "UNCHANGED_NETWORK14_30S_IDLE_120S_ACTIVE",
+      "allowed_recovery": "SYN_ONLY_IDENTICAL_SEQUENCE_ZERO_PAYLOAD_ZERO_ACK",
+      "missing_duration": "SINGLE_PACKET_EXACT_START_AND_COUNTS_ONLY_NO_IMPUTATION",
+      "mapping": "DISJOINT_EXHAUSTIVE_PACKET_PARTITION_ALL_LABELS_CONCORDANT",
+      "test_session": "34-1_SEALED_NOT_FOR_RULE_SELECTION",
+      "authority": "NO_TRAINING_OR_OPERATIONAL_PROMOTION"
+    },
+    "policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+    "producer_configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+    "sessions": [
+      {
+        "session": "CTU-IoT-Malware-Capture-34-1",
+        "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+        "label_sha256": "d69e49b2aae8c1bd33286936531658202dec47d989f0439bad3f8be180467a6e",
+        "baseline_counts": {
+          "raw_packets": 233865,
+          "parsed_packets": 170980,
+          "transport:tcp": 167905,
+          "ip:IPv4": 170980,
+          "transport:udp": 3075,
+          "reconstructed_flows": 7848,
+          "closure:IDLE_TIMEOUT": 7810,
+          "closure:PACKET_LIMIT": 26,
+          "closure:ACTIVE_TIMEOUT": 2,
+          "closure:CAPTURE_END": 10
+        },
+        "zeek_distribution": {
+          "total_rows": 23145,
+          "label:Benign": 1923,
+          "detail:-": 1923,
+          "label:Malicious": 21222,
+          "detail:C&C": 6706,
+          "detail:PartOfAHorizontalPortScan": 122,
+          "detail:DDoS": 14394
+        },
+        "baseline_binding": {
+          "VERIFIED_MATCH": 1866,
+          "CANDIDATE_MATCH": 4755,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 4,
+          "EXCLUDED": 1223
+        },
+        "current_binding": {
+          "VERIFIED_MATCH": 4295,
+          "CANDIDATE_MATCH": 2336,
+          "AMBIGUOUS": 0,
+          "UNMATCHED": 4,
+          "EXCLUDED": 1213
+        },
+        "baseline_verified_classes": {
+          "Benign": 964,
+          "Malicious": 902
+        },
+        "verified_classes": {
+          "Benign": 981,
+          "Malicious": 3314
+        },
+        "new_verified": 2429,
+        "failure_taxonomy_by_original_label": {
+          "Benign / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 19,
+          "Benign / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 964,
+          "Benign / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 21,
+          "Benign / MISSING_LABEL_DURATION": 885,
+          "Malicious / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 2651,
+          "Malicious / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 2064,
+          "UNKNOWN / NO_EXACT_CONTAINING_INTERVAL": 4,
+          "Malicious / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 902,
+          "Malicious / PACKET_LIMIT": 10,
+          "UNKNOWN / PACKET_LIMIT": 14,
+          "Malicious / MISSING_LABEL_DURATION": 312,
+          "Benign / PACKET_LIMIT": 2
+        },
+        "independent_reference_counts": {
+          "bytes_read": 126317980,
+          "raw_packets": 233865,
+          "parsed_packets": 170980,
+          "flags:24": 10000,
+          "flags:16": 12391,
+          "flags:2": 13434,
+          "flags:0": 3075,
+          "flags:18": 1654,
+          "flags:25": 13,
+          "flags:17": 1663,
+          "REFERENCE_LINK_UNSUPPORTED": 5396,
+          "flags:4": 54,
+          "flags:258": 100265,
+          "REFERENCE_FRAGMENT_UNSUPPORTED": 57489,
+          "flags:58": 28431
+        },
+        "observed_packet_categories": {
+          "TCP": 6030,
+          "ACK_ONLY": 3187,
+          "UDP": 1818,
+          "FIN": 1650,
+          "SYN": 4462,
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": 3629,
+          "RST": 54
+        },
+        "representative_references": {
+          "TCP": {
+            "flow_id": "dfedf1beebf742ddedf7551ba460ed32e79f2fbd3aa8b1c83cbde2aebda6dbb5",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "full_packet_count": 9,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "07ebba4a975ff3b00cfad660d77c7ef3a84ec3431ca0bd1f9a2212ab39832147",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 24,
+                "ip_length": 92,
+                "relative_sequence": 0,
+                "payload_bytes": 40,
+                "payload_sha256": "d250b7754772c680e43fa8146cc7e71695312da7168f20f2eac680e1317c40f7",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 4999000,
+                "flags": 24,
+                "ip_length": 140,
+                "relative_sequence": 0,
+                "payload_bytes": 88,
+                "payload_sha256": "0438fd3d7bf605cb5a84e71d9f1a471e322c74e1e1960a5f4aa427d3f8bc1b7c",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 6752000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 87446000,
+                "flags": 24,
+                "ip_length": 156,
+                "relative_sequence": 88,
+                "payload_bytes": 104,
+                "payload_sha256": "1a01659009775fc48432dde322f3765b9573882f05350e28494b94fe316f3bed",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 87695000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 88446000,
+                "flags": 24,
+                "ip_length": 92,
+                "relative_sequence": 192,
+                "payload_bytes": 40,
+                "payload_sha256": "196a8fabbbc182a99cbbb65e34893fd4963b5157469ec7772b33381673affdd8",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 88695000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 90196000,
+                "flags": 24,
+                "ip_length": 140,
+                "relative_sequence": 232,
+                "payload_bytes": 88,
+                "payload_sha256": "e7a906ae89a57d8318078e52e94d2962a3077c45b3f716efb3a8372fdf3029c9",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 90204000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "ACK_ONLY": {
+            "flow_id": "dfedf1beebf742ddedf7551ba460ed32e79f2fbd3aa8b1c83cbde2aebda6dbb5",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "full_packet_count": 9,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "07ebba4a975ff3b00cfad660d77c7ef3a84ec3431ca0bd1f9a2212ab39832147",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 24,
+                "ip_length": 92,
+                "relative_sequence": 0,
+                "payload_bytes": 40,
+                "payload_sha256": "d250b7754772c680e43fa8146cc7e71695312da7168f20f2eac680e1317c40f7",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 4999000,
+                "flags": 24,
+                "ip_length": 140,
+                "relative_sequence": 0,
+                "payload_bytes": 88,
+                "payload_sha256": "0438fd3d7bf605cb5a84e71d9f1a471e322c74e1e1960a5f4aa427d3f8bc1b7c",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 6752000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 87446000,
+                "flags": 24,
+                "ip_length": 156,
+                "relative_sequence": 88,
+                "payload_bytes": 104,
+                "payload_sha256": "1a01659009775fc48432dde322f3765b9573882f05350e28494b94fe316f3bed",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 87695000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 88446000,
+                "flags": 24,
+                "ip_length": 92,
+                "relative_sequence": 192,
+                "payload_bytes": 40,
+                "payload_sha256": "196a8fabbbc182a99cbbb65e34893fd4963b5157469ec7772b33381673affdd8",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 88695000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 90196000,
+                "flags": 24,
+                "ip_length": 140,
+                "relative_sequence": 232,
+                "payload_bytes": 88,
+                "payload_sha256": "e7a906ae89a57d8318078e52e94d2962a3077c45b3f716efb3a8372fdf3029c9",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 90204000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 40,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "UDP": {
+            "flow_id": "44df8ca20c75ad161ff576c8b994e5549aeef4ff1c211158e389b46aad0433ba",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              15,
+              16
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "117a4ffde4a8fa91af20759fc76d626086c25046a44ac96dad5e6388909355ab",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "c82c577daf87fe80fe45e29f28ca927e38b4921091ba85c9f85152638928ba11",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1496000,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "19520fdd7c3e80a1db621285fd8bbbf9c61bbcbb565a9ccb0b154f138101c9ef",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "BASELINE_Benign": {
+            "flow_id": "44df8ca20c75ad161ff576c8b994e5549aeef4ff1c211158e389b46aad0433ba",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              15,
+              16
+            ],
+            "full_packet_count": 2,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "117a4ffde4a8fa91af20759fc76d626086c25046a44ac96dad5e6388909355ab",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "c82c577daf87fe80fe45e29f28ca927e38b4921091ba85c9f85152638928ba11",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1496000,
+                "flags": 0,
+                "ip_length": 76,
+                "relative_sequence": null,
+                "payload_bytes": 48,
+                "payload_sha256": "19520fdd7c3e80a1db621285fd8bbbf9c61bbcbb565a9ccb0b154f138101c9ef",
+                "first_seen_direction": false
+              }
+            ]
+          },
+          "FIN": {
+            "flow_id": "cb12c804e3b2b3b846ff6d9a9a21a136f1d83c14b96c2326f478aa4af1900bbd",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              17,
+              18,
+              19,
+              20,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "full_packet_count": 196,
+            "omitted_sample_packet_count": 180,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "ce535b5892520fadabdcbf6c08675a929eafe2b5a299a2a6b628ec91d0091973",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1059397000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3139211000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7219146000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15379237000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32019244000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32035983000,
+                "flags": 18,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32036732000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32037232000,
+                "flags": 24,
+                "ip_length": 201,
+                "relative_sequence": 1,
+                "payload_bytes": 149,
+                "payload_sha256": "046a6f369b55e6b6d4c7abc78c265f2cde5636a86e2ad78cb8ca62605c8a354b",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32069465000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069715000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1449,
+                "payload_bytes": 1448,
+                "payload_sha256": "ec1fd88dd113f901543e54d98f228959738c9187599d3f50fe1fff662f27e0c5",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069724000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 4345,
+                "payload_bytes": 1448,
+                "payload_sha256": "ecea636c864ee66885831ed2d55e71f13e9ab6fb95c34bc9e6de4f0c7d550012",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32070213000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32070464000,
+                "flags": 16,
+                "ip_length": 72,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32081210000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1448,
+                "payload_sha256": "d2177c97ef7278091a588c5d531a12563d70e9180f2e0527150ecee22c239c13",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32081707000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "SYN": {
+            "flow_id": "cb12c804e3b2b3b846ff6d9a9a21a136f1d83c14b96c2326f478aa4af1900bbd",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              17,
+              18,
+              19,
+              20,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "full_packet_count": 196,
+            "omitted_sample_packet_count": 180,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "ce535b5892520fadabdcbf6c08675a929eafe2b5a299a2a6b628ec91d0091973",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1059397000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3139211000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7219146000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15379237000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32019244000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32035983000,
+                "flags": 18,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32036732000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32037232000,
+                "flags": 24,
+                "ip_length": 201,
+                "relative_sequence": 1,
+                "payload_bytes": 149,
+                "payload_sha256": "046a6f369b55e6b6d4c7abc78c265f2cde5636a86e2ad78cb8ca62605c8a354b",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32069465000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069715000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1449,
+                "payload_bytes": 1448,
+                "payload_sha256": "ec1fd88dd113f901543e54d98f228959738c9187599d3f50fe1fff662f27e0c5",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069724000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 4345,
+                "payload_bytes": 1448,
+                "payload_sha256": "ecea636c864ee66885831ed2d55e71f13e9ab6fb95c34bc9e6de4f0c7d550012",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32070213000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32070464000,
+                "flags": 16,
+                "ip_length": 72,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32081210000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1448,
+                "payload_sha256": "d2177c97ef7278091a588c5d531a12563d70e9180f2e0527150ecee22c239c13",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32081707000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "EXACT_SEQUENCE_PAYLOAD_REPEAT": {
+            "flow_id": "cb12c804e3b2b3b846ff6d9a9a21a136f1d83c14b96c2326f478aa4af1900bbd",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              17,
+              18,
+              19,
+              20,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            "full_packet_count": 196,
+            "omitted_sample_packet_count": 180,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "ce535b5892520fadabdcbf6c08675a929eafe2b5a299a2a6b628ec91d0091973",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1059397000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3139211000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7219146000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15379237000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32019244000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32035983000,
+                "flags": 18,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32036732000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32037232000,
+                "flags": 24,
+                "ip_length": 201,
+                "relative_sequence": 1,
+                "payload_bytes": 149,
+                "payload_sha256": "046a6f369b55e6b6d4c7abc78c265f2cde5636a86e2ad78cb8ca62605c8a354b",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32069465000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069715000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1449,
+                "payload_bytes": 1448,
+                "payload_sha256": "ec1fd88dd113f901543e54d98f228959738c9187599d3f50fe1fff662f27e0c5",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32069724000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 4345,
+                "payload_bytes": 1448,
+                "payload_sha256": "ecea636c864ee66885831ed2d55e71f13e9ab6fb95c34bc9e6de4f0c7d550012",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32070213000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32070464000,
+                "flags": 16,
+                "ip_length": 72,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32081210000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1448,
+                "payload_sha256": "d2177c97ef7278091a588c5d531a12563d70e9180f2e0527150ecee22c239c13",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 32081707000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "RECOVERED_Benign": {
+            "flow_id": "33b6ada3d2a954488c5f388884e1508128db78ba8ace35eb5536d3a79b26e7f4",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              910,
+              916,
+              917,
+              918,
+              919,
+              920
+            ],
+            "full_packet_count": 6,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Benign",
+            "cardinality": "4_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "a564c306673309a8213bb022f37f978ed08d09c82f04424d58d197fbcf434cdf",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "852515378590e59d88979fd9c402ef2066614f427e3ae5853e9ef200f28b35ad",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "19056e2a8c72ce37a144c84294db2503f8e5eae19ff64e02001818d722c8550b",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "28adc8585973fecfd5670e909a9f36f3125e0e0ea8cc4543f98706c68832516d",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "c4a6459f272025b960c5bcaac31a90fb918c666f29acdf0fe8b3e2e37da43223",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "54e9a4741f634e2636d6960dde7ebcccf1bc711911954792e73ff614c911137f",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1034151000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3114215000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7194146000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 15834213000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 32474224000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "BASELINE_Malicious": {
+            "flow_id": "6ea259ffc2d5d73fb3bb247a04afb6efdf8dc01c680cd3237228027de730f413",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              1602,
+              1604,
+              1605,
+              1606,
+              1607,
+              1608,
+              1610,
+              1611,
+              1612,
+              1613,
+              1614,
+              1615,
+              1617
+            ],
+            "full_packet_count": 13,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "dd92845365c491047cc91658b09d04aa64818fb109981a39c13de5028bcdf034",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 55708000,
+                "flags": 18,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 56458000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 82441000,
+                "flags": 24,
+                "ip_length": 185,
+                "relative_sequence": 1,
+                "payload_bytes": 133,
+                "payload_sha256": "cec4dbd873cb6fef633157fa39b6f5766a20c3b97125ba2524de3f66c96e1a5d",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 82707000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1000669000,
+                "flags": 24,
+                "ip_length": 112,
+                "relative_sequence": 1,
+                "payload_bytes": 60,
+                "payload_sha256": "9a338885c290199155f99219cdae37e3ec47b1b916fd09cfbba248832c7ca321",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1060886000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 134,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1060892000,
+                "flags": 24,
+                "ip_length": 68,
+                "relative_sequence": 134,
+                "payload_bytes": 16,
+                "payload_sha256": "ca05981d6adf6c204a3aaa89f59e360ad27f20f109152b97f8b15eacd3b00cde",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1061384000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 61,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1061884000,
+                "flags": 24,
+                "ip_length": 67,
+                "relative_sequence": 61,
+                "payload_bytes": 15,
+                "payload_sha256": "1bd9d2adfa17f997fd195d5d0a06dcc56ef496b5c3e0ec21b5b8fc056454377e",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1079625000,
+                "flags": 24,
+                "ip_length": 146,
+                "relative_sequence": 150,
+                "payload_bytes": 94,
+                "payload_sha256": "53be39aa6bc7439b518da92dfeb2be7f56b26ba9c0a047db3f48da107f80ca7a",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1079632000,
+                "flags": 17,
+                "ip_length": 52,
+                "relative_sequence": 244,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1128098000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 76,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "RECOVERED_Malicious": {
+            "flow_id": "685834a881e4d5ebe82c0021514cf400509a03e52599cb10db4b80c23ae80300",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              1616,
+              1618,
+              1620,
+              1626
+            ],
+            "full_packet_count": 4,
+            "omitted_sample_packet_count": 0,
+            "recorded_status": "VERIFIED_MATCH",
+            "label": "Malicious",
+            "cardinality": "2_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+            "proof_digest": "ecfba30e1b13531879422c3126076173b59fff23151604a3b3314df874e10d56",
+            "independent_partition_reference": {
+              "status": "PASS",
+              "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+              "connection_counters": [
+                {
+                  "label_reference": "0c2651c344bb24dd6e90ce6f778cea936fcf66627162a9fefdedd48f0932688c",
+                  "packet_count": 3,
+                  "actual_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    3,
+                    180,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "label_reference": "845df666ca476605250523807b8fcbeffe1eae7d2ae30b1cc38e62a81272a868",
+                  "packet_count": 1,
+                  "actual_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ],
+                  "expected_counts": [
+                    1,
+                    60,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            "reference_wire_digest": "c84232fcec4ec7c81c19a9e65657f5e8e4dd8091252e7aa7b8e07ede65aa9806",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1017423000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 3097488000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 7177429000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              }
+            ]
+          },
+          "RST": {
+            "flow_id": "8d613b275324dcac2f551c711d9cdc2932739de005a6feafc0d641830fa7875f",
+            "source_sha256": "92ec7e2f6658ee4b007d0b816986c46cc0338bc5e2bec6ceaaca566c695e4699",
+            "packet_indices": [
+              2489,
+              2494,
+              2495,
+              2496,
+              2497,
+              2498,
+              2499,
+              2500,
+              2501,
+              2502,
+              2503,
+              2504,
+              2505,
+              2506,
+              2507,
+              2508
+            ],
+            "full_packet_count": 130,
+            "omitted_sample_packet_count": 114,
+            "recorded_status": "CANDIDATE_MATCH",
+            "label": "Benign",
+            "cardinality": "BASELINE",
+            "proof_digest": null,
+            "independent_partition_reference": {
+              "status": "NOT_APPLICABLE_TO_BASELINE"
+            },
+            "reference_wire_digest": "d5ba036c847f3ecd397ee6d7f87e5e15051ed09e1b45d9b00c9be1848965c04c",
+            "sample": [
+              {
+                "offset_ns": 0,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1009926000,
+                "flags": 2,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1029665000,
+                "flags": 18,
+                "ip_length": 60,
+                "relative_sequence": 0,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1030162000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1030663000,
+                "flags": 24,
+                "ip_length": 201,
+                "relative_sequence": 1,
+                "payload_bytes": 149,
+                "payload_sha256": "33b636c0ee12a867189b93d191001269f14213af666ff394b1807c5fb49de7b4",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1060896000,
+                "flags": 16,
+                "ip_length": 52,
+                "relative_sequence": 1,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1061148000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1449,
+                "payload_bytes": 1448,
+                "payload_sha256": "0534274a28e4389856238d7ad608c1609f416ccb9606e889c19615157587df1d",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1061155000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 4345,
+                "payload_bytes": 1448,
+                "payload_sha256": "52f6daef3b3e70347ecae642752608033c080ebf421727854c233e29a02352a9",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1061644000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1061894000,
+                "flags": 16,
+                "ip_length": 72,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1072640000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 1,
+                "payload_bytes": 1448,
+                "payload_sha256": "308a0e551611c5c82a95c1678d158a896c25b8e66d4c82c52f160de999fe4708",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1073137000,
+                "flags": 16,
+                "ip_length": 64,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1084633000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 7241,
+                "payload_bytes": 1448,
+                "payload_sha256": "2ba086a451c7a920b73b0e755f94c064ac309076a55181aa4fa3c0b2b112a986",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1085381000,
+                "flags": 16,
+                "ip_length": 72,
+                "relative_sequence": 150,
+                "payload_bytes": 0,
+                "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "first_seen_direction": true
+              },
+              {
+                "offset_ns": 1111128000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 2897,
+                "payload_bytes": 1448,
+                "payload_sha256": "8f119918836d414b4106b0ac6343f92af567c47f5c8a45f37303c185bd26ae42",
+                "first_seen_direction": false
+              },
+              {
+                "offset_ns": 1111144000,
+                "flags": 16,
+                "ip_length": 1500,
+                "relative_sequence": 10137,
+                "payload_bytes": 1448,
+                "payload_sha256": "f7139ef49078a9e8f3685804b6b18373999157779e8e9306c8782bdf6b4bde2a",
+                "first_seen_direction": false
+              }
+            ]
+          }
+        },
+        "diagnostic_rows_digest": "4d6e9716808e62c14429f34960251ad48f5ef6960a73b93e3c102e31d508fb51",
+        "verified_label_reference_count": 6732,
+        "admitted_samples": 0,
+        "capture_quality": "UNKNOWN",
+        "uid_reconstructed_from_pcap": false,
+        "manifest_digest": "1192f57c65068a9370d4ae57d76df09d754f02256d0d454a9541bc3408230ef8"
+      }
+    ],
+    "scope": "SEALED_TEST_REGRESSION_ONLY",
+    "test_used_for_rule_selection": false,
+    "admitted_samples": 0,
+    "admission": "BLOCKED",
+    "operational_input": "NOT_INFERABLE",
+    "write_disposition": "WRITE_DENIED",
+    "policy_lock_digest": "cf6cba6aa1af76b5fafe8d2d6ee3d8d80e29b3286b9528d99f9e947640a17f7c",
+    "manifest_digest": "aab59809a861fa1b7b42f678c658de1c2ab3707b378f2879829a754242ddd6f9"
+  },
+  "additional_train_validation_reason_counts": {
+    "8-1": {
+      "Benign / VERIFIED_MATCH / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2162,
+      "Benign / EXCLUDED / MISSING_LABEL_DURATION": 19,
+      "Malicious / VERIFIED_MATCH / EXACT_SYN_PACKET_PARTITION": 2056
+    },
+    "20-1": {
+      "Benign / VERIFIED_MATCH / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2300,
+      "Benign / EXCLUDED / MISSING_LABEL_DURATION": 877,
+      "Benign / CANDIDATE_MATCH / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 31,
+      "Malicious / VERIFIED_MATCH / EXACT_SYN_PACKET_PARTITION": 4,
+      "Malicious / EXCLUDED / LABEL_CAPTURE_QUALITY": 707,
+      "UNKNOWN / UNMATCHED / NO_EXACT_CONTAINING_INTERVAL": 1,
+      "Malicious / CANDIDATE_MATCH / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 1
+    }
+  },
+  "candidate_metadata": [
+    {
+      "session": "3-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/2018-05-21_capture.pcap",
+      "method": "HEAD",
+      "status": 200,
+      "content_length": "57919772",
+      "content_type": "application/vnd.tcpdump.pcap",
+      "etag": "\"373c91c-580afb895a400\"",
+      "last_modified": "Wed, 30 Jan 2019 16:51:28 GMT",
+      "raw_body_bytes_read": 0
+    },
+    {
+      "session": "3-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/bro/conn.log.labeled",
+      "method": "HEAD",
+      "status": 200,
+      "content_length": "24383537",
+      "content_type": null,
+      "etag": "\"1741031-59a84e67f0d40\"",
+      "last_modified": "Wed, 25 Dec 2019 10:41:17 GMT",
+      "raw_body_bytes_read": 0
+    },
+    {
+      "session": "3-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/README.md",
+      "method": "GET",
+      "status": 200,
+      "content_length": "3663",
+      "content_type": "text/markdown",
+      "etag": "\"e4f-590cc5415db80\"",
+      "last_modified": "Fri, 23 Aug 2019 17:42:22 GMT",
+      "raw_body_bytes_read": 0,
+      "metadata_bytes": 3663,
+      "metadata_sha256": "426f8ce8680c2593815f6d8bdc4f1f9cf183210a26d9459f135d4d100e91558f"
+    },
+    {
+      "session": "60-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-60-1/2019-09-20-02-40-32-192.168.1.195.pcap",
+      "method": "HEAD",
+      "status": 200,
+      "content_length": "22028429274",
+      "content_type": "application/vnd.tcpdump.pcap",
+      "etag": "\"520ff27da-5953af04133c0\"",
+      "last_modified": "Sat, 19 Oct 2019 03:20:55 GMT",
+      "raw_body_bytes_read": 0
+    },
+    {
+      "session": "60-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-60-1/bro/conn.log.labeled",
+      "method": "HEAD",
+      "status": 200,
+      "content_length": "467559811",
+      "content_type": null,
+      "etag": "\"1bde6583-59a7b75e2b540\"",
+      "last_modified": "Tue, 24 Dec 2019 23:25:33 GMT",
+      "raw_body_bytes_read": 0
+    },
+    {
+      "session": "60-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-60-1/README.md",
+      "method": "GET",
+      "status": 200,
+      "content_length": "1873",
+      "content_type": "text/markdown",
+      "etag": "\"751-5953aa5b07500\"",
+      "last_modified": "Sat, 19 Oct 2019 03:00:04 GMT",
+      "raw_body_bytes_read": 0,
+      "metadata_bytes": 1873,
+      "metadata_sha256": "6ab25ea8b2cc2d95b19c5b9f477d81c4a8e9ae0e04c3cf489d1e8461e3ce2fba"
+    }
+  ],
+  "existing_capture_device_metadata": [
+    {
+      "session": "8-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-8-1/README.md",
+      "metadata_bytes": 1688,
+      "sha256": "1788755a075f580c3628e4698ba4dad699f91c058dede73bae3f480bb5cba840",
+      "device_identity_excerpt": [
+        "- Probable Malware Name: Hakai"
+      ],
+      "raw_dataset_bytes_downloaded": 0
+    },
+    {
+      "session": "20-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-20-1/README.md",
+      "metadata_bytes": 1786,
+      "sha256": "67a196f4c4203865df1e5ffe767551590d611d60aaab1b2df0ff865cfaee3e3c",
+      "device_identity_excerpt": [
+        "- Probable Malware Name: Torii",
+        "# Origin device: RPi-01"
+      ],
+      "raw_dataset_bytes_downloaded": 0
+    },
+    {
+      "session": "34-1",
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-34-1/README.md",
+      "metadata_bytes": 1596,
+      "sha256": "940e8778cba292b4c9d2f8b7e10d77976c8eccfc8b6b8bfa79faa53230203f7f",
+      "device_identity_excerpt": [
+        "- Probable Malware Name: Mirai",
+        "# Origin device: RPi02"
+      ],
+      "raw_dataset_bytes_downloaded": 0
+    }
+  ],
+  "additional_candidates": [
+    {
+      "session": "3-1",
+      "publisher_family": "Muhstik",
+      "publisher_benign_rows": 4536,
+      "publisher_non_benign_rows": 151567,
+      "pcap_bytes": 57919772,
+      "label_bytes": 24383537,
+      "decision": "PREFERRED_FUTURE_ACQUISITION_CANDIDATE_NOT_ADMITTED",
+      "compatibility": "STRUCTURAL_ONLY_ACTUAL_FORMAT_NOT_ACQUIRED",
+      "device": "Raspberry Pi mentioned; unique physical ID UNKNOWN",
+      "holdout": "UNVERIFIED; May2018 chronology requires future split redesign, test34 remains sealed"
+    },
+    {
+      "session": "60-1",
+      "publisher_family": "Gafgyt (catalog spelling Gagfyt)",
+      "publisher_benign_rows": 2476,
+      "publisher_non_benign_rows": 3578552,
+      "pcap_bytes": 22028429274,
+      "label_bytes": 467559811,
+      "decision": "BLOCKED_FOR_NEXT_BOUNDED_STAGE",
+      "compatibility": "NOT_VERIFIED; exceeds current downloader/reference reader and label limits",
+      "device": "RPi-02; conservatively group with test34 RPi02 pending proof",
+      "holdout": "BLOCKED_POTENTIAL_SHARED_DEVICE"
+    }
+  ],
+  "admission": "BLOCKED",
+  "admitted_samples": 0,
+  "network_quality": "BLOCKED",
+  "network_edge": "BLOCKED",
+  "new_raw_download_bytes": 0,
+  "new_raw_capture": false,
+  "new_training": false,
+  "operational_input": "NOT_INFERABLE",
+  "write_disposition": "WRITE_DENIED",
+  "manifest_digest": "a4370333b1a713a28ff6cae5c2ecb4f220a7c9bc613706ec5b06c2373bdc2ca8"
+}
