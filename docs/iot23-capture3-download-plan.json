@@ -1,0 +1,49 @@
+{
+  "contract": "iot23-capture3-download-plan:v1",
+  "approval": "USER_EXPLICIT_CAPTURE3_TWO_FILES_256MIB_300S_ZERO_RETRY",
+  "storage_directory": "data/raw/acquisition/iot23-capture-3-1-muhstik-v1",
+  "max_files": 2,
+  "expected_total_bytes": 82303309,
+  "download_budget_bytes": 268435456,
+  "timeout_seconds_per_file": 300,
+  "max_retries": 0,
+  "archive_expansion_bytes": 0,
+  "overwrite_existing": false,
+  "redirects": "DENY",
+  "files": [
+    {
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/2018-05-21_capture.pcap",
+      "expected_bytes": 57919772,
+      "http_status": 200,
+      "content_type": "application/vnd.tcpdump.pcap",
+      "etag": "\"373c91c-580afb895a400\"",
+      "last_modified": "Wed, 30 Jan 2019 16:51:28 GMT",
+      "method": "HEAD",
+      "raw_body_bytes": 0,
+      "role": "PCAP",
+      "filename": "2018-05-21_capture.pcap",
+      "relative_path": "pcap/2018-05-21_capture.pcap",
+      "capture_session": "CTU-IoT-Malware-Capture-3-1",
+      "publisher_sha256": "UNKNOWN"
+    },
+    {
+      "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/bro/conn.log.labeled",
+      "expected_bytes": 24383537,
+      "http_status": 200,
+      "content_type": null,
+      "etag": "\"1741031-59a84e67f0d40\"",
+      "last_modified": "Wed, 25 Dec 2019 10:41:17 GMT",
+      "method": "HEAD",
+      "raw_body_bytes": 0,
+      "role": "ZEEK_LABELED_FLOW",
+      "filename": "conn.log.labeled",
+      "relative_path": "bro/conn.log.labeled",
+      "capture_session": "CTU-IoT-Malware-Capture-3-1",
+      "publisher_sha256": "UNKNOWN"
+    }
+  ],
+  "training_authority": "NONE",
+  "operational_input": "NOT_INFERABLE",
+  "write_disposition": "WRITE_DENIED",
+  "manifest_digest": "6864df68808a1d8e5891dff64d7ef606f849548783261b3e4fe142170097dc1b"
+}

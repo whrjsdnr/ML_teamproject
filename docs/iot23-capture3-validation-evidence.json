@@ -1,0 +1,1560 @@
+{
+  "contract": "iot23-capture3-sanitized-evidence:v1",
+  "ml_baseline": "484f9ac62b6d597113ebf44016410100a81a2f76",
+  "soc_baseline": "78e1f8798fa3573f0623add902441691d235c006",
+  "validation": {
+    "contract": "iot23-capture3-validation:v1",
+    "download": {
+      "contract": "iot23-capture3-acquisition:v1",
+      "plan_digest": "6864df68808a1d8e5891dff64d7ef606f849548783261b3e4fe142170097dc1b",
+      "plan_sha256": "dcb96050b2073fdee29b6ab052569f3455b524df1db51cbce71a47453b158f01",
+      "status": "DOWNLOADED_NOT_ADMITTED",
+      "files": [
+        {
+          "filename": "2018-05-21_capture.pcap",
+          "size_bytes": 57919772,
+          "sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "content_type": "application/vnd.tcpdump.pcap",
+          "publisher_digest_verified": false,
+          "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/2018-05-21_capture.pcap",
+          "expected_bytes": 57919772,
+          "http_status": 200,
+          "duration_seconds": 21.757288494998647,
+          "acquired_at": "2026-10-15T08:19:50.858268+00:00",
+          "relative_path": "pcap/2018-05-21_capture.pcap",
+          "capture_session": "CTU-IoT-Malware-Capture-3-1",
+          "role": "PCAP"
+        },
+        {
+          "filename": "conn.log.labeled",
+          "size_bytes": 24383537,
+          "sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+          "content_type": "UNKNOWN",
+          "publisher_digest_verified": false,
+          "url": "https://mcfp.felk.cvut.cz/publicDatasets/IoT-23-Dataset/IndividualScenarios/CTU-IoT-Malware-Capture-3-1/bro/conn.log.labeled",
+          "expected_bytes": 24383537,
+          "http_status": 200,
+          "duration_seconds": 5.493423326002812,
+          "acquired_at": "2026-10-15T08:19:56.352532+00:00",
+          "relative_path": "bro/conn.log.labeled",
+          "capture_session": "CTU-IoT-Malware-Capture-3-1",
+          "role": "ZEEK_LABELED_FLOW"
+        }
+      ],
+      "archive_expansion_bytes": 0,
+      "actual_total_bytes": 82303309
+    },
+    "baseline": {
+      "session": "CTU-IoT-Malware-Capture-3-1",
+      "raw_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+      "label_sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+      "pcap": {
+        "format": "PCAP",
+        "endian": "<",
+        "timestamp_ns_per_tick": 1000,
+        "snaplen": 262144,
+        "link_type": 1,
+        "sha256_during_full_stream": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+        "stream_bytes": 57919772
+      },
+      "counts": {
+        "raw_packets": 496959,
+        "parsed_packets": 489567,
+        "transport:udp": 1507,
+        "ip:IPv4": 489567,
+        "transport:tcp": 488060,
+        "reconstructed_flows": 86378,
+        "closure:IDLE_TIMEOUT": 86372,
+        "closure:ACTIVE_TIMEOUT": 1,
+        "closure:CAPTURE_END": 5
+      },
+      "parser_exclusions": {
+        "LINK_PROTOCOL_UNSUPPORTED": 5658,
+        "TRANSPORT_UNSUPPORTED": 1734
+      },
+      "flow_state_reasons": {
+        "IDLE_TIMEOUT": 86372,
+        "ACTIVE_TIMEOUT": 1,
+        "CAPTURE_END": 5
+      },
+      "peak_retained_state_bytes": 1151781,
+      "label_counts": {
+        "total_rows": 156103,
+        "label:Malicious": 151567,
+        "detail:PartOfAHorizontalPortScan": 145597,
+        "label:Benign": 4536,
+        "detail:-": 4536,
+        "detail:C&C": 8,
+        "unsupported_protocol": 1207,
+        "detail:Attack": 5962
+      },
+      "label_schema_digest": "8abde81a9d6e3639360daab5621814d8db88d4f13a36a2a52b55c58c59b8e541",
+      "binding_status": {
+        "VERIFIED_MATCH": 3386,
+        "CANDIDATE_MATCH": 82210,
+        "AMBIGUOUS": 0,
+        "UNMATCHED": 1,
+        "EXCLUDED": 781
+      },
+      "binding_reasons": {
+        "CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 4003,
+        "EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 3386,
+        "ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 78207,
+        "MISSING_LABEL_DURATION": 781,
+        "NO_EXACT_CONTAINING_INTERVAL": 1
+      },
+      "verified_class_distribution": {
+        "Benign": 2927,
+        "Malicious": 459
+      },
+      "duplicate_flow_count": 0,
+      "multi_segment_label_count": 146,
+      "time_range_ns": [
+        1526756239958006000,
+        1526886287960915000
+      ],
+      "label_epoch_range_ns": [
+        1526756239958006000,
+        1526886287960915000
+      ],
+      "observed_origin_address_hashes": [
+        "0c55ac6d871c1c852b9ff5113b469763e328913dba04c533022350b7eeffd0b6",
+        "df3b0c392159ff7a95d95bab14b4e560ca5057711ac698a96dcf85d19a6fd196"
+      ],
+      "capture_drop_count": "UNKNOWN",
+      "capture_quality": "UNKNOWN",
+      "actual_reference_pairs": [
+        {
+          "source_identity": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "source_origin": "OFFLINE_PCAP",
+          "producer_version": "1.1.0",
+          "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+          "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_digest": "7fcd89d70734be6f879430df3ecc278b54f30734a9f905a7b800396222ab073d",
+          "feature_digest": "e92b7b44a5d7a9a47832e93e92ccb714327260f537f0960721414508b6893028",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "expected_values": [
+            0.07726100087165833,
+            5.0,
+            4.0,
+            296.0,
+            488.0,
+            52.0,
+            216.0,
+            87.11111450195312,
+            49.01801300048828,
+            0.0,
+            0.0,
+            0.0,
+            0.00965762510895729,
+            0.06516599655151367
+          ],
+          "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+          "packet_metadata_digest": "4f2353c4f6bc60d9089def1fe8ce11bffbc813e1a2ff1723a9c69ae6ef950b5c",
+          "packet_count": 9,
+          "packet_lengths": [
+            88,
+            88,
+            52,
+            88,
+            52,
+            216,
+            52,
+            96,
+            52
+          ],
+          "flags": [
+            24,
+            24,
+            16,
+            24,
+            16,
+            24,
+            16,
+            24,
+            16
+          ],
+          "timestamp_offsets_ns": [
+            0,
+            4143000,
+            4256000,
+            10754000,
+            10870000,
+            76036000,
+            76102000,
+            77196000,
+            77261000
+          ],
+          "first_observed_direction": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+          "training_native_parity": "NOT_VERIFIED"
+        }
+      ],
+      "training_operational_parity": "NOT_VERIFIED",
+      "admitted_samples": 0
+    },
+    "binding": {
+      "session": "CTU-IoT-Malware-Capture-3-1",
+      "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+      "label_sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+      "baseline_counts": {
+        "raw_packets": 496959,
+        "parsed_packets": 489567,
+        "transport:udp": 1507,
+        "ip:IPv4": 489567,
+        "transport:tcp": 488060,
+        "reconstructed_flows": 86378,
+        "closure:IDLE_TIMEOUT": 86372,
+        "closure:ACTIVE_TIMEOUT": 1,
+        "closure:CAPTURE_END": 5
+      },
+      "zeek_distribution": {
+        "total_rows": 156103,
+        "label:Malicious": 151567,
+        "detail:PartOfAHorizontalPortScan": 145597,
+        "label:Benign": 4536,
+        "detail:-": 4536,
+        "detail:C&C": 8,
+        "unsupported_protocol": 1207,
+        "detail:Attack": 5962
+      },
+      "baseline_binding": {
+        "VERIFIED_MATCH": 3386,
+        "CANDIDATE_MATCH": 82210,
+        "AMBIGUOUS": 0,
+        "UNMATCHED": 1,
+        "EXCLUDED": 781
+      },
+      "current_binding": {
+        "VERIFIED_MATCH": 76320,
+        "CANDIDATE_MATCH": 10044,
+        "AMBIGUOUS": 0,
+        "UNMATCHED": 1,
+        "EXCLUDED": 13
+      },
+      "baseline_verified_classes": {
+        "Benign": 2927,
+        "Malicious": 459
+      },
+      "verified_classes": {
+        "Benign": 2927,
+        "Malicious": 73393
+      },
+      "new_verified": 72934,
+      "failure_taxonomy_by_original_label": {
+        "Benign / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 470,
+        "Benign / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2927,
+        "Malicious / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 78138,
+        "Malicious / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 3533,
+        "Malicious / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 459,
+        "Malicious / MISSING_LABEL_DURATION": 768,
+        "Benign / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 69,
+        "Benign / MISSING_LABEL_DURATION": 13,
+        "UNKNOWN / NO_EXACT_CONTAINING_INTERVAL": 1
+      },
+      "independent_reference_counts": {
+        "bytes_read": 57919772,
+        "raw_packets": 496959,
+        "parsed_packets": 489567,
+        "flags:0": 1507,
+        "REFERENCE_LINK_UNSUPPORTED": 5658,
+        "flags:24": 88200,
+        "flags:16": 77665,
+        "flags:2": 299970,
+        "flags:18": 6308,
+        "flags:17": 12079,
+        "flags:4": 1033,
+        "REFERENCE_TRANSPORT_UNSUPPORTED": 1734,
+        "flags:20": 2369,
+        "flags:25": 436
+      },
+      "observed_packet_categories": {
+        "UDP": 739,
+        "TCP": 85639,
+        "ACK_ONLY": 10074,
+        "SYN": 81771,
+        "EXACT_SEQUENCE_PAYLOAD_REPEAT": 74058,
+        "FIN": 6137,
+        "RST": 2724
+      },
+      "representative_references": {
+        "UDP": {
+          "flow_id": "db2c3832cbf287f091de4c5c46618e60f5ae523c572fd9487bd5aaf5186c41f4",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            2,
+            4,
+            6,
+            8,
+            12,
+            13,
+            20,
+            21,
+            26,
+            28,
+            31,
+            32
+          ],
+          "full_packet_count": 12,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "CANDIDATE_MATCH",
+          "label": "Benign",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "afb38aa9da961bd1f79cdeeb54c1ff229f1aa0dd486d683cd5320f523b04da0e",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "e8974d748248f05163bd12d41e3198fa63a8462e273531db12fe41eaeaf08d8d",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 14574000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "0cf59037524c61b0e2845bd4853b86d425e0b4f36dd4eaa7a49507b6484e1653",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 1999948000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "dd47ca2f15dfb3669f6df45b26a37c8a15333c908fefaaf38e312ba4f55b5525",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 2012427000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "e7764290bc9d7324addfe5ac6bbc134de10555e127588e0d153ff36da1b0af95",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 3999924000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "3ac54b60b8b457a1065670be5c38081437fa4007ba78a0f965ba6262c6a561f0",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 4014163000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "f65fcb17ea0397d408a88d38f6e0770cfe3381c9108154b8175d56fd5714f272",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 5999978000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "7e7c2b5bfb9b26ffa6f98d1a6e971c0dddc44a9719713409e08520e24d023455",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 6015197000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "32a14d04d1b8232d4c4c62fcf20dfabbfb648af423f4751c99f73f2e3da6ff99",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 7999973000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "bc25b490394d3fb89322af04e98153b79f5aeb76fde486f4ef790ed6e1aab246",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 8012063000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "3239fa9cb54fb00ccd628f35d505456aaa3a470d0cbdc36eb6088d0f68386b44",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 9999751000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "cdb362f7c4591252a905dbd9fb0f457bfedf754b2bed3b4201ba24b9bc7f060b",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 10015303000,
+              "flags": 0,
+              "ip_length": 76,
+              "relative_sequence": null,
+              "payload_bytes": 48,
+              "payload_sha256": "63b140b4f1e43eb94053bdedd6693d67cd3104cd3726cc1ce642c5a46837d8a9",
+              "first_seen_direction": false
+            }
+          ]
+        },
+        "TCP": {
+          "flow_id": "e04125ae4f11c74d3359b3916e88b024d08d4c3f68615007e8d53a1671ee4342",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            41,
+            42,
+            43,
+            44
+          ],
+          "full_packet_count": 9,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Benign",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "a2c6c17821e69f136fd7b7927e45d6877cf9c825a5954ccde701155776622240",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "0ef1f3b1ead049176adb21f090ca80edd1cad5be811a654134e75faac6d11683",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 4143000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "10066a8dd834df14810962dc166f71c8d4d9dc6386533f13f3ab9a47f8a7e8f1",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 4256000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 10754000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 36,
+              "payload_bytes": 36,
+              "payload_sha256": "eb4f3254640baacb830fbd068bf560d4e6950d00d56bd7d130c1c634c2645590",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 10870000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 76036000,
+              "flags": 24,
+              "ip_length": 216,
+              "relative_sequence": 72,
+              "payload_bytes": 164,
+              "payload_sha256": "66d3a58e1d8221c8472ea1dbf0cd002a46361be326f141151bd4ec3d69443446",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 76102000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 77196000,
+              "flags": 24,
+              "ip_length": 96,
+              "relative_sequence": 236,
+              "payload_bytes": 44,
+              "payload_sha256": "50fa06c31fdd5789f4eaacdc214788d776742d22e6c9407b5aae4ae47bd014f0",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 77261000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "ACK_ONLY": {
+          "flow_id": "e04125ae4f11c74d3359b3916e88b024d08d4c3f68615007e8d53a1671ee4342",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            41,
+            42,
+            43,
+            44
+          ],
+          "full_packet_count": 9,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Benign",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "a2c6c17821e69f136fd7b7927e45d6877cf9c825a5954ccde701155776622240",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "0ef1f3b1ead049176adb21f090ca80edd1cad5be811a654134e75faac6d11683",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 4143000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "10066a8dd834df14810962dc166f71c8d4d9dc6386533f13f3ab9a47f8a7e8f1",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 4256000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 10754000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 36,
+              "payload_bytes": 36,
+              "payload_sha256": "eb4f3254640baacb830fbd068bf560d4e6950d00d56bd7d130c1c634c2645590",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 10870000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 76036000,
+              "flags": 24,
+              "ip_length": 216,
+              "relative_sequence": 72,
+              "payload_bytes": 164,
+              "payload_sha256": "66d3a58e1d8221c8472ea1dbf0cd002a46361be326f141151bd4ec3d69443446",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 76102000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 77196000,
+              "flags": 24,
+              "ip_length": 96,
+              "relative_sequence": 236,
+              "payload_bytes": 44,
+              "payload_sha256": "50fa06c31fdd5789f4eaacdc214788d776742d22e6c9407b5aae4ae47bd014f0",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 77261000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "BASELINE_Benign": {
+          "flow_id": "e04125ae4f11c74d3359b3916e88b024d08d4c3f68615007e8d53a1671ee4342",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            41,
+            42,
+            43,
+            44
+          ],
+          "full_packet_count": 9,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Benign",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "a2c6c17821e69f136fd7b7927e45d6877cf9c825a5954ccde701155776622240",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "0ef1f3b1ead049176adb21f090ca80edd1cad5be811a654134e75faac6d11683",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 4143000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 0,
+              "payload_bytes": 36,
+              "payload_sha256": "10066a8dd834df14810962dc166f71c8d4d9dc6386533f13f3ab9a47f8a7e8f1",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 4256000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 10754000,
+              "flags": 24,
+              "ip_length": 88,
+              "relative_sequence": 36,
+              "payload_bytes": 36,
+              "payload_sha256": "eb4f3254640baacb830fbd068bf560d4e6950d00d56bd7d130c1c634c2645590",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 10870000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 76036000,
+              "flags": 24,
+              "ip_length": 216,
+              "relative_sequence": 72,
+              "payload_bytes": 164,
+              "payload_sha256": "66d3a58e1d8221c8472ea1dbf0cd002a46361be326f141151bd4ec3d69443446",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 76102000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 77196000,
+              "flags": 24,
+              "ip_length": 96,
+              "relative_sequence": 236,
+              "payload_bytes": 44,
+              "payload_sha256": "50fa06c31fdd5789f4eaacdc214788d776742d22e6c9407b5aae4ae47bd014f0",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 77261000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 36,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "SYN": {
+          "flow_id": "0a57f14b011405f0c99d4f41f7e9d0356477e90a559385ab9c52944f314fdb35",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            40,
+            45,
+            46,
+            47
+          ],
+          "full_packet_count": 4,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Malicious",
+          "cardinality": "2_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+          "proof_digest": "54bea7ded9db78727584a520e0f1166be3f692e0123ed47ce678c9a79c582b1c",
+          "independent_partition_reference": {
+            "status": "PASS",
+            "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+            "connection_counters": [
+              {
+                "label_reference": "2f072919e5138a8d4566fd5d4aa74819410edc0597efc18e26accb1538a66a7a",
+                "packet_count": 3,
+                "actual_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ]
+              },
+              {
+                "label_reference": "e2930cc0c7b10f0a8f162a8ddd852824bba50f18bb897b072bbff545a0615952",
+                "packet_count": 1,
+                "actual_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "reference_wire_digest": "07abf27654bc73c8f3c9366f17533663219f8e307140407fbbdee905412e1050",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 998250000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 2998333000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 7008376000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "EXACT_SEQUENCE_PAYLOAD_REPEAT": {
+          "flow_id": "0a57f14b011405f0c99d4f41f7e9d0356477e90a559385ab9c52944f314fdb35",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            40,
+            45,
+            46,
+            47
+          ],
+          "full_packet_count": 4,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Malicious",
+          "cardinality": "2_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+          "proof_digest": "54bea7ded9db78727584a520e0f1166be3f692e0123ed47ce678c9a79c582b1c",
+          "independent_partition_reference": {
+            "status": "PASS",
+            "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+            "connection_counters": [
+              {
+                "label_reference": "2f072919e5138a8d4566fd5d4aa74819410edc0597efc18e26accb1538a66a7a",
+                "packet_count": 3,
+                "actual_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ]
+              },
+              {
+                "label_reference": "e2930cc0c7b10f0a8f162a8ddd852824bba50f18bb897b072bbff545a0615952",
+                "packet_count": 1,
+                "actual_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "reference_wire_digest": "07abf27654bc73c8f3c9366f17533663219f8e307140407fbbdee905412e1050",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 998250000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 2998333000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 7008376000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "RECOVERED_Malicious": {
+          "flow_id": "0a57f14b011405f0c99d4f41f7e9d0356477e90a559385ab9c52944f314fdb35",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            40,
+            45,
+            46,
+            47
+          ],
+          "full_packet_count": 4,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Malicious",
+          "cardinality": "2_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW",
+          "proof_digest": "54bea7ded9db78727584a520e0f1166be3f692e0123ed47ce678c9a79c582b1c",
+          "independent_partition_reference": {
+            "status": "PASS",
+            "method": "independent wire decoder; row-first count table; disjoint exhaustive coverage",
+            "connection_counters": [
+              {
+                "label_reference": "2f072919e5138a8d4566fd5d4aa74819410edc0597efc18e26accb1538a66a7a",
+                "packet_count": 3,
+                "actual_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  3,
+                  180,
+                  0,
+                  0
+                ]
+              },
+              {
+                "label_reference": "e2930cc0c7b10f0a8f162a8ddd852824bba50f18bb897b072bbff545a0615952",
+                "packet_count": 1,
+                "actual_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ],
+                "expected_counts": [
+                  1,
+                  60,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          "reference_wire_digest": "07abf27654bc73c8f3c9366f17533663219f8e307140407fbbdee905412e1050",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 998250000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 2998333000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 7008376000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "FIN": {
+          "flow_id": "186dcb17a144e264b9d7462d7f3be215eba37b480a336fba26640329897d6fd5",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            133
+          ],
+          "full_packet_count": 11,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "CANDIDATE_MATCH",
+          "label": "Malicious",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "71e037cfa36dd5a2708e70277607093acbea08f632f0b0722afa782ad4b4febb",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 246759000,
+              "flags": 18,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 247400000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 1,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 1000589000,
+              "flags": 24,
+              "ip_length": 130,
+              "relative_sequence": 1,
+              "payload_bytes": 78,
+              "payload_sha256": "a5f6c69dc772e24cb28e5c9dcd84bfeee3f6807c02ad98a50bf16293ca7e515c",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 1245733000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 1,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 1246181000,
+              "flags": 24,
+              "ip_length": 67,
+              "relative_sequence": 1,
+              "payload_bytes": 15,
+              "payload_sha256": "2c8825f08375385187cc7338d21f1a0258387573be5518462a17a6b71bf8c01e",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 1246788000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 79,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 1247172000,
+              "flags": 24,
+              "ip_length": 66,
+              "relative_sequence": 79,
+              "payload_bytes": 14,
+              "payload_sha256": "50b096815a818bad5f4f1212e940db50e911c8303151410403291855807d0e67",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 1493234000,
+              "flags": 24,
+              "ip_length": 227,
+              "relative_sequence": 16,
+              "payload_bytes": 175,
+              "payload_sha256": "2162ae736ea8105d2dca7cb8c819130bbb7a9f69a6d2ebe1d116188c2b62dbbf",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 1493676000,
+              "flags": 17,
+              "ip_length": 52,
+              "relative_sequence": 191,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 1531948000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 93,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "RST": {
+          "flow_id": "6914898a4a048ea0b377acfa6f86178374142087b3f55a74bf82c0ec6b90d449",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            189,
+            190,
+            191,
+            192
+          ],
+          "full_packet_count": 4,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "CANDIDATE_MATCH",
+          "label": "Malicious",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "6844f8cdb7092143f2ae8d2c2b924a629da99ac25a631f9f212ed9ab8621c985",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 16,
+              "ip_length": 40,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 543000,
+              "flags": 16,
+              "ip_length": 52,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": false
+            },
+            {
+              "offset_ns": 229885000,
+              "flags": 4,
+              "ip_length": 40,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 246480000,
+              "flags": 4,
+              "ip_length": 40,
+              "relative_sequence": 1,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        },
+        "BASELINE_Malicious": {
+          "flow_id": "4d4d0367da935dd495e4d504f02005df58347b7fe3e782c9f1c385612c6dadfd",
+          "source_sha256": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "packet_indices": [
+            762,
+            767,
+            775
+          ],
+          "full_packet_count": 3,
+          "omitted_sample_packet_count": 0,
+          "recorded_status": "VERIFIED_MATCH",
+          "label": "Malicious",
+          "cardinality": "BASELINE",
+          "proof_digest": null,
+          "independent_partition_reference": {
+            "status": "NOT_APPLICABLE_TO_BASELINE"
+          },
+          "reference_wire_digest": "a9a388cdde559cf83a75b15c34f91423c1cec9fd104a1a3d5b01f6895226e560",
+          "sample": [
+            {
+              "offset_ns": 0,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 992202000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            },
+            {
+              "offset_ns": 2991991000,
+              "flags": 2,
+              "ip_length": 60,
+              "relative_sequence": 0,
+              "payload_bytes": 0,
+              "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "first_seen_direction": true
+            }
+          ]
+        }
+      },
+      "diagnostic_rows_digest": "e8204addf1995535c4212563a1d3d5a96e0595b2b8cd2fb6880472506609e187",
+      "verified_label_reference_count": 148486,
+      "admitted_samples": 0,
+      "capture_quality": "UNKNOWN",
+      "uid_reconstructed_from_pcap": false,
+      "manifest_digest": "dc71933fa13e416af8547e2fd567a546a473e4da4d4278d44f41fe3ea974c231"
+    },
+    "details": {
+      "status_by_source_label": {
+        "CANDIDATE_MATCH / Benign": 539,
+        "VERIFIED_MATCH / Benign": 2927,
+        "VERIFIED_MATCH / Malicious": 73393,
+        "CANDIDATE_MATCH / Malicious": 9505,
+        "EXCLUDED / Benign": 13,
+        "UNMATCHED / UNKNOWN": 1
+      },
+      "reason_by_source_label": {
+        "CANDIDATE_MATCH / Benign / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 470,
+        "VERIFIED_MATCH / Benign / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 2927,
+        "VERIFIED_MATCH / Malicious / EXACT_SYN_PACKET_PARTITION": 72934,
+        "CANDIDATE_MATCH / Malicious / CONNECTION_FRAGMENT_OR_COUNTER_MISMATCH": 3533,
+        "VERIFIED_MATCH / Malicious / EXACT_EPOCH_TUPLE_COUNTS_FIRST_SEEN_ORIENTATION_RECORDED": 459,
+        "CANDIDATE_MATCH / Malicious / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 5972,
+        "CANDIDATE_MATCH / Benign / ZEEK_DURATION_DOES_NOT_CONTAIN_ALL_PACKETS": 69,
+        "EXCLUDED / Benign / MISSING_LABEL_DURATION": 13,
+        "UNMATCHED / UNKNOWN / NO_EXACT_CONTAINING_INTERVAL": 1
+      },
+      "mapping_cardinality": {
+        "BASELINE": 13444,
+        "2_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW": 72166,
+        "1_ZEEK_CONNECTIONS_TO_1_UNCHANGED_PRODUCER_FLOW": 768
+      },
+      "finite_float32_vectors": 76320,
+      "actual_capture3_reference_pairs": {
+        "Benign": {
+          "source_identity": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "source_origin": "OFFLINE_PCAP",
+          "producer_version": "1.1.0",
+          "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+          "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_digest": "7fcd89d70734be6f879430df3ecc278b54f30734a9f905a7b800396222ab073d",
+          "feature_digest": "e92b7b44a5d7a9a47832e93e92ccb714327260f537f0960721414508b6893028",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "expected_values": [
+            0.07726100087165833,
+            5.0,
+            4.0,
+            296.0,
+            488.0,
+            52.0,
+            216.0,
+            87.11111450195312,
+            49.01801300048828,
+            0.0,
+            0.0,
+            0.0,
+            0.00965762510895729,
+            0.06516599655151367
+          ],
+          "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+          "packet_metadata_digest": "4f2353c4f6bc60d9089def1fe8ce11bffbc813e1a2ff1723a9c69ae6ef950b5c",
+          "packet_count": 9,
+          "packet_lengths": [
+            88,
+            88,
+            52,
+            88,
+            52,
+            216,
+            52,
+            96,
+            52
+          ],
+          "flags": [
+            24,
+            24,
+            16,
+            24,
+            16,
+            24,
+            16,
+            24,
+            16
+          ],
+          "timestamp_offsets_ns": [
+            0,
+            4143000,
+            4256000,
+            10754000,
+            10870000,
+            76036000,
+            76102000,
+            77196000,
+            77261000
+          ],
+          "first_observed_direction": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+          "training_native_parity": "NOT_VERIFIED"
+        },
+        "Malicious": {
+          "source_identity": "c674dc0c8d584fa66e6f00c60df973c5fbacad551c850a76d75ec9952641d00b",
+          "source_origin": "OFFLINE_PCAP",
+          "producer_version": "1.1.0",
+          "configuration_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+          "contract_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+          "source_digest": "6880e8946ac8fa56c3510ae1acc694c68dd60be283af4e0e881d76c1d37b9c9a",
+          "feature_digest": "270342829080819e5297eef0e5449962d9c0c8d29598fd3885b86810ca51c047",
+          "feature_names": [
+            "duration_seconds",
+            "forward_packet_count",
+            "backward_packet_count",
+            "forward_ip_bytes",
+            "backward_ip_bytes",
+            "ip_length_min",
+            "ip_length_max",
+            "ip_length_mean",
+            "ip_length_population_std",
+            "tcp_syn_packet_count",
+            "tcp_fin_packet_count",
+            "tcp_rst_packet_count",
+            "iat_mean_seconds",
+            "iat_max_seconds"
+          ],
+          "expected_values": [
+            7.008376121520996,
+            4.0,
+            0.0,
+            240.0,
+            0.0,
+            60.0,
+            60.0,
+            60.0,
+            0.0,
+            4.0,
+            0.0,
+            0.0,
+            2.336125373840332,
+            4.010043144226074
+          ],
+          "reference_method": "statistics.mean/pstdev; integer counters; independent two-pass; final float32",
+          "packet_metadata_digest": "905567cae1bb4dfabe15acb1c19bf21f7011a3acc28adbed3b9302680cbb6e55",
+          "packet_count": 4,
+          "packet_lengths": [
+            60,
+            60,
+            60,
+            60
+          ],
+          "flags": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "timestamp_offsets_ns": [
+            0,
+            998250000,
+            2998333000,
+            7008376000
+          ],
+          "first_observed_direction": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "artifact_binding": "NONE_NEW_MODEL_NOT_TRAINED",
+          "training_native_parity": "NOT_VERIFIED"
+        }
+      },
+      "feature_schema_digest": "84ba0916f0ce4e9e12bb70712db2cd1eaea84ba4173acd57b647faf38efb1c6e",
+      "producer_config_digest": "7999723911ce3d2e9cd3b3b6e0d45e11f44b1316cdf9c7f4883d7e2a69ca21a7",
+      "operational_parity": "NOT_VERIFIED"
+    },
+    "holdout": {
+      "fixed_roles": {
+        "train": "8-1",
+        "validation_candidate": "3-1",
+        "diagnostic": "20-1",
+        "test": "34-1_SEALED"
+      },
+      "class_presence": {
+        "train": "PASS",
+        "validation_candidate": "PASS"
+      },
+      "time_overlap": "PASS_NO_OVERLAP",
+      "forward_chronology": "FAIL_VALIDATION_PREDATES_TRAIN",
+      "origin_address_hash_overlap": 0,
+      "exact_raw_flow_duplicate_count": 0,
+      "device_independence": "UNVERIFIED",
+      "campaign_independence": "UNVERIFIED_DIFFERENT_FAMILY_IS_NOT_SUFFICIENT",
+      "capture_quality": "UNKNOWN",
+      "source_group_leakage": "UNVERIFIED",
+      "test34_reassigned": false,
+      "model_selection_executed": false,
+      "gates": {
+        "raw_integrity": "PASS",
+        "label_integrity": "PASS",
+        "binding": "PASS",
+        "producer": "PASS",
+        "golden_pair": "PASS",
+        "manifest": "PASS",
+        "split_leakage": "UNVERIFIED_DEVICE_CAMPAIGN",
+        "holdout": "BLOCKED",
+        "label_provenance": "PASS",
+        "capture_quality": "UNKNOWN"
+      },
+      "independent_validation": "BLOCKED",
+      "admission": "BLOCKED",
+      "network_quality": "BLOCKED",
+      "network_edge": "BLOCKED",
+      "admitted_samples": 0
+    },
+    "reused_policy_digest": "304e76f801004bc4a5b372cb3dc088d3dc090ab1da3ebede8b2915dfdbaad893",
+    "policy_lock_digest": "cf6cba6aa1af76b5fafe8d2d6ee3d8d80e29b3286b9528d99f9e947640a17f7c",
+    "frozen_train_diagnostic_audit_digest": "bd5795f81a50e86035f2f43de0bee3e824dac74897ab6ca338ffb212533185cd",
+    "admission": "BLOCKED",
+    "admitted_samples": 0,
+    "training_executed": false,
+    "operational_input": "NOT_INFERABLE",
+    "write_disposition": "WRITE_DENIED",
+    "manifest_digest": "4b35479d6d16959566347eca5f04e19e5d43b0180d807bab988bd4aeab539e70"
+  },
+  "raw_label_quality": {
+    "source_sha256": "9851009bbca03e15089fa1a356dd4b5eee4a98161a51703626058a0b507f50d0",
+    "counts": {
+      "total_rows": 156103,
+      "duplicate_rows": 0,
+      "duplicate_uid_all_protocols": 0,
+      "proto:tcp": 154158,
+      "proto:udp": 738,
+      "proto:icmp": 1207
+    },
+    "unset_or_empty_fields": {
+      "service": 150195,
+      "local_orig": 156103,
+      "local_resp": 156103,
+      "tunnel_parents": 156103,
+      "duration": 73944,
+      "orig_bytes": 73944,
+      "resp_bytes": 73944,
+      "detailed-label": 4536,
+      "history": 1207
+    },
+    "method": "existing columns(); independent full-row hash and UID sets across all protocols; no imputation"
+  },
+  "original_six_files_preserved": true,
+  "test34_role": "SEALED_NO_NEW_PARSE_OR_MODEL_USE",
+  "new_native_capture": false,
+  "new_training": false,
+  "new_inference": false,
+  "pii_policy": "No packet payload, raw label rows, original source addresses, raw UID or credentials; numeric reference samples/digests only",
+  "manifest_digest": "b1375f2d6d992bb2aae03083d0253a055a1608ccfaa0bfaeb2343aadb34ad389"
+}
