@@ -1,0 +1,108 @@
+{
+  "contract_version": "offline-golden:v1",
+  "numeric_tolerance": {
+    "absolute": 1e-06,
+    "relative": 1e-06
+  },
+  "cases": [
+    {
+      "kind": "network",
+      "source_origin": "EXPLICIT_PACKET_FIXTURE",
+      "capture_quality": "UNKNOWN",
+      "packets": [
+        {
+          "event_id": "packet-1",
+          "interface_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "capture_session_id": "hand-fixture-1",
+          "timestamp_ns": 0,
+          "source_address": "192.0.2.1",
+          "destination_address": "192.0.2.2",
+          "source_port": 10000,
+          "destination_port": 20000,
+          "transport": "tcp",
+          "ip_length": 40,
+          "tcp_flags": 2
+        },
+        {
+          "event_id": "packet-2",
+          "interface_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "capture_session_id": "hand-fixture-1",
+          "timestamp_ns": 1000000000,
+          "source_address": "192.0.2.2",
+          "destination_address": "192.0.2.1",
+          "source_port": 20000,
+          "destination_port": 10000,
+          "transport": "tcp",
+          "ip_length": 80,
+          "tcp_flags": 18
+        },
+        {
+          "event_id": "packet-3",
+          "interface_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "capture_session_id": "hand-fixture-1",
+          "timestamp_ns": 3000000000,
+          "source_address": "192.0.2.1",
+          "destination_address": "192.0.2.2",
+          "source_port": 10000,
+          "destination_port": 20000,
+          "transport": "tcp",
+          "ip_length": 40,
+          "tcp_flags": 1
+        }
+      ],
+      "expected": [
+        3,
+        2,
+        1,
+        80,
+        80,
+        40,
+        80,
+        53.333333333333336,
+        18.856180831641268,
+        2,
+        1,
+        0,
+        1.5,
+        2
+      ],
+      "reference": "HAND_CALCULATED: lengths 40,80,40; variance 3200/9; IAT 1,2 seconds",
+      "configuration_digest": "fda9b1f4dc860de50d68401468f0e4eef6d117f57a6c06d1fd88b0ebf4059ac0",
+      "origin": "SYNTHETIC_HAND_CHECKED_NOT_TRAINING_GROUND_TRUTH"
+    },
+    {
+      "kind": "dns",
+      "source_origin": "EXPLICIT_FQDN_FIXTURE",
+      "fqdn": "Aa.11.",
+      "expected": [
+        5,
+        2,
+        2,
+        2,
+        0.5,
+        0,
+        1
+      ],
+      "reference": "HAND_CALCULATED: aa11 -> two a, two 1; entropy log2(2)=1",
+      "configuration_digest": "452769e5e4477fe6e6c5f87a5048424d24abcaabdc79a45e6c40b318e19ea3f5",
+      "origin": "SYNTHETIC_HAND_CHECKED_NOT_TRAINING_GROUND_TRUTH"
+    },
+    {
+      "kind": "dns",
+      "source_origin": "EXPLICIT_FQDN_FIXTURE",
+      "fqdn": "A-._1.",
+      "expected": [
+        5,
+        2,
+        2,
+        2,
+        0.25,
+        0.5,
+        2
+      ],
+      "reference": "HAND_CALCULATED: a-_1 -> four distinct characters; entropy log2(4)=2",
+      "configuration_digest": "452769e5e4477fe6e6c5f87a5048424d24abcaabdc79a45e6c40b318e19ea3f5",
+      "origin": "SYNTHETIC_HAND_CHECKED_NOT_TRAINING_GROUND_TRUTH"
+    }
+  ]
+}
